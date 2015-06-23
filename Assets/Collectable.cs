@@ -28,7 +28,8 @@ public class Collectable : MonoBehaviour {
 
 	void Attach(GameObject attachTo){
 		if (!attached) {
-			gameObject.transform.parent = attachTo.transform.Find("PointEnd");
+			gameObject.transform.parent = attachTo.transform.FindChild("PointFace").transform.FindChild ("PointEnd");
+			transform.localPosition = Vector3.zero;
 			rb.isKinematic = true;
 			rb.freezeRotation = true;
 			attached = true;
