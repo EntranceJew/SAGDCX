@@ -252,7 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6402687bbec71fd4b8d73a4f2a7836e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &361177221
 Transform:
   m_ObjectHideFlags: 0
@@ -265,6 +264,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &554253209 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 119866, guid: e8575239ca342f046b9d6b4c60ac6e2f, type: 2}
+  m_PrefabInternal: {fileID: 1698578905}
+--- !u!114 &554253214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554253209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a114a36674d3944fbd2434beaafb86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbed: {fileID: 0}
+  grabDistance: 100
+  useToggleDrag: 1
 --- !u!1001 &638731534
 Prefab:
   m_ObjectHideFlags: 0
