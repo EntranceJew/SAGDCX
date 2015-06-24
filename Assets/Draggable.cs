@@ -14,7 +14,7 @@ public class Draggable : MonoBehaviour {
 		if (useToggleDrag) {
 			UpdateToggleDrag ();
 		} else {
-			UpdateHoldDrag (); 
+			//UpdateHoldDrag (); 
 		}
 	}
 	
@@ -27,7 +27,7 @@ public class Draggable : MonoBehaviour {
 		}
 	}
 	
-	// Drags when user holds down button function 
+	/*// Drags when user holds down button function 
 	void UpdateHoldDrag () {
 		if (Input.GetButtonDown("Fire1")){
 			if (grabbed) {
@@ -37,7 +37,7 @@ public class Draggable : MonoBehaviour {
 				grabbed = null; 
 			}
 		}
-	}
+	}*/
 	
 	void Grab() {
 		if (grabbed) {
@@ -53,11 +53,12 @@ public class Draggable : MonoBehaviour {
 	
 	void Drag() {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		Vector3 position = transform.position + transform.forward / grabDistance;
+		Vector3 position = transform.position + transform.forward;
 		Plane plane = new Plane(-transform.forward, position);
 		float distance;
 		if (plane.Raycast(ray, out distance)) {
-			grabbed.position = ray.origin + ray.direction / distance;
+			Vector3 temp = ray.origin + ray.direction / distance;
+			grabbed.position = temp;
 			grabbed.rotation = transform.rotation; 
 		} 
 	}
