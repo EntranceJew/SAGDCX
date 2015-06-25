@@ -5,19 +5,22 @@ public class MorphManager : MonoBehaviour {
 
 	// the extent to which a given blend can be distorted
 	public float maxDistortion = 100.0f;
-	// bump this up for more of a lava-lamp sorta look
+	// bump this up to force things to at least be this messed up
 	public float minDistortion = 50.0f;
-	// how much to distort something if it isn't near its target goal
-	public float distortAmount = 0.5f;
-	// the if the distance between the target value and its current value is smaller than this, it will not be modified 
-	//public float minDistortionDelta = 2.1f;
-	// how many blends get modified in a given cycle, too high and the screen starts to shake
-	public int blendsToModify = 5;
+	// the shortest possible time a blend could take to lerp into position
+	public float minDistortionTime = 1.0f;
+	// the longest possible time a blend could take to lerp into position
+	public float maxDistortionTime = 10.0f;
 
 	private SkinnedMeshRenderer skinnedMeshRenderer;
 	private Mesh skinnedMesh;
 	private int blendShapeCount;
-
+	private float[] targetValues;
+	// note: we could get rid of the starting values and
+	// just have a logarithmic approach to the desired value using currentValue
+	private float[] startingValues;
+	private float[] finishingTimes;
+	
 	void Awake (){
 		skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer> ();
 		skinnedMesh = GetComponent<SkinnedMeshRenderer> ().sharedMesh;
@@ -26,36 +29,50 @@ public class MorphManager : MonoBehaviour {
 	void Start (){
 		// defaults
 		blendShapeCount = skinnedMesh.blendShapeCount; 
+		targetValues = new float[blendShapeCount];
+		startingValues = new float[blendShapeCount];
+		finishingTimes = new float[blendShapeCount];
+
+		for (int i = 0; i < blendShapeCount; i++) {
+			ResetBlend(i);
+		}
 	}
 	
 	void Update (){
-		for(int i = 0; i < blendsToModify; i++){
-			int targetBlend = Random.Range (0, blendShapeCount);
-			float currentValue = skinnedMeshRenderer.GetBlendShapeWeight(targetBlend);
+		for(int i = 0; i < blendShapeCount; i++){
+			float currentValue = skinnedMeshRenderer.GetBlendShapeWeight(i);
 
-			//float targetValue = Random.Range (minDistortion, maxDistortion);
+			currentValue = Mathf.Lerp (startingValues[i], targetValues[i], Time.time / finishingTimes[i]);
 
-			currentValue += Random.Range (-distortAmount, distortAmount);
-
-			// only modify if the target is X distance from the current position
-			//if( minDistortionDelta < Mathf.Abs (currentValue - targetValue)){
-				// but only modify it by this amount
-			//	if(targetValue > currentValue){
-			//		currentValue -= distortAmount;
-			//	} else if(targetValue < currentValue) {
-			//		currentValue -= distortAmount;
-			//	}
-			//}
+			// you've been at this for too long, cut it out
+			if(Time.time >= finishingTimes[i]){
+				ResetBlend(i, currentValue);
+			}
 
 			// don't let things get too far out of control
 			if( currentValue < minDistortion ){
-				currentValue = minDistortion;
+				ResetBlend(i, minDistortion);
 			} else if( currentValue > maxDistortion ){
-				currentValue = maxDistortion;
+				ResetBlend(i, maxDistortion);
 			}
 
 			// apply the changes
-			skinnedMeshRenderer.SetBlendShapeWeight (targetBlend, currentValue);
+			skinnedMeshRenderer.SetBlendShapeWeight (i, currentValue);
 		}
+	}
+
+	void ResetBlend(int i, float newVal){
+		targetValues[i] = Random.Range (minDistortion, maxDistortion);
+		finishingTimes[i] = Time.time + Random.Range (minDistortionTime, maxDistortionTime);
+
+		startingValues [i] = newVal;
+	}
+
+	// OH SWEET BABY JESUS I'M OVERRIDING A METHOD.
+	void ResetBlend(int i){
+		targetValues [i] = Random.Range (minDistortion, maxDistortion);
+		finishingTimes [i] = Time.time + Random.Range (minDistortionTime, maxDistortionTime);
+
+		startingValues [i] = skinnedMeshRenderer.GetBlendShapeWeight (i);
 	}
 }

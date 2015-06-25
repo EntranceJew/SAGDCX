@@ -755,10 +755,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67e8e8295291674f9f869654be8ceb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistortion: 1000
+  maxDistortion: 100
   minDistortion: 50
-  distortAmount: .100000001
-  blendsToModify: 50
+  minDistortionTime: 90
+  maxDistortionTime: 100
 --- !u!1 &1437963190
 GameObject:
   m_ObjectHideFlags: 0

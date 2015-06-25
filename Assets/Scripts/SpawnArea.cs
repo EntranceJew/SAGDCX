@@ -32,7 +32,7 @@ public class SpawnArea : MonoBehaviour {
 			Random.Range (spawnPos.y, spawnBox.y + spawnPos.y / 2 ),
 			0.0f
 		);
-		Debug.Log (newPos);
+		//Debug.Log (newPos);
 		return newPos;
 	}
 }
