@@ -25,6 +25,11 @@ public class SpawnArea : MonoBehaviour {
 		return Instantiate (spawnObject, position, transform.rotation);
 	}
 
+	public void SpawnA(Object objToSpawn){
+		Vector3 position = getRandomPosition ();
+		Instantiate (objToSpawn, position, transform.rotation);
+	}
+
 	public Vector3 getRandomPosition(){
 		Vector3 spawnBox = gameObject.transform.localScale;
 		Vector3 spawnPos = gameObject.transform.position;

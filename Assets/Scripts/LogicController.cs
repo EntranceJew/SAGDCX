@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class LogicController : MonoBehaviour {
 	public GameObject thingToSpawn;
@@ -15,7 +16,7 @@ public class LogicController : MonoBehaviour {
 	}
 
 	void UpdateControls(){
-		if (Input.GetButtonDown ("Fire1")) {
+		if (Input.GetButtonDown ("Fire1") && !EventSystem.current.IsPointerOverGameObject()) {
 			Vector3 mousePos = Input.mousePosition;
 			mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 

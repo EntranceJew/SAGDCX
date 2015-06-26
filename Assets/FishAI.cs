@@ -6,10 +6,14 @@ public class FishAI : MonoBehaviour {
 	float smooth = 2.0f;
 	float tiltAngle = 30.0f;
 	Rigidbody rb;
+	float startDrag;
+
+	public float inWaterDrag = 10.0f;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		startDrag = rb.drag;
 	}
 	
 	void Update () {
@@ -22,6 +26,26 @@ public class FishAI : MonoBehaviour {
 			transform.rotation = Quaternion.Slerp (transform.rotation, newRotation, Time.deltaTime * 8);
 			rb.AddForce ((foodTarget.transform.position - transform.position) * 8);
 		}
+	}
+
+	void OnCollisionEnter(Collision col){
+		if (col.gameObject.tag == "Food") {
+			Eat(col.gameObject);
+		}
+	}
+
+	void OnTriggerEnter(Collider col){
+		if (col.gameObject.tag == "Water") {
+			rb.useGravity = false;
+			rb.drag = inWaterDrag;
+		}
+	}
+
+	void OnTriggerExit(Collider col){
+		if (col.gameObject.tag == "Water") {
+			rb.useGravity = true;
+			rb.drag = startDrag;
+		};
 	}
 
 	public void FindFood (){
@@ -45,13 +69,12 @@ public class FishAI : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision col) {
-		if (col.gameObject.tag == "Food") {
-			Destroy ( col.gameObject );
-		}
-	}
-
 	public void SetFoodTarget(GameObject food){
 		foodTarget = food;
+	}
+
+	void Eat(GameObject food){
+		Debug.Log ("FUCK YOUR PANCAKES.");
+		Destroy (food);
 	}
 }
