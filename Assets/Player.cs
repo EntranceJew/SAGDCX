@@ -12,9 +12,14 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	public void holdObject (GameObject objectToHold) {
-		holding = true;
-		heldObject = objectToHold;
+	public bool holdObject (GameObject objectToHold) {
+		if (holding) {
+			return false;
+		} else {
+			holding = true;
+			heldObject = objectToHold;
+			return true;
+		}
 	}
 
 	void ThrowObject () {

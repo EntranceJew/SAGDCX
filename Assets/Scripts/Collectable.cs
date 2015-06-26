@@ -30,10 +30,14 @@ public class Collectable : MonoBehaviour {
 
 	void Attach(GameObject attachTo){
 		if (attached == null) {
-			attached = attachTo;
-			rb.isKinematic = true;
 			Player pl = attachTo.GetComponent<Player>();
-			pl.holdObject(gameObject);
+			if(pl.holdObject(gameObject)){
+				attached = attachTo;
+				rb.isKinematic = true;
+				Debug.Log ("I'm the baby, gotta love me!");
+			} else {
+				Debug.Log ("I'M NOT THE FAVORITE ANYMORE, TAKE ME TO HOT TOPIC SO I CAN LOOK AT GRUMPY CAT POSTERS.");
+			}
 		} else {
 			Debug.Log ("Tried to attach to something, but was already attached.");
 		}
