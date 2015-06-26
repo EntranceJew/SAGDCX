@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class SpawnArea : MonoBehaviour {
+	public bool enabled;
 	public GameObject spawnObject;
 	public float rateOfSpawn;
 	private float nextSpawn;
@@ -13,7 +14,7 @@ public class SpawnArea : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > nextSpawn) {
+		if (Time.time > nextSpawn && enabled) {
 			nextSpawn = Time.time + rateOfSpawn;
 			SpawnThis ();
 		}
