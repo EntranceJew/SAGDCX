@@ -12,7 +12,7 @@ GameObject:
   - 136: {fileID: 13619414}
   - 23: {fileID: 2308756}
   m_Layer: 0
-  m_Name: BurgStool
+  m_Name: BarStool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
