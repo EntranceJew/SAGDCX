@@ -5,6 +5,7 @@ using System.Collections;
 // and by from I mean EntranceJew had to pick apart that ancient mess AND translate it into C#
 // AND figure out what the hell went wrong in the formatting that means "ITALICIZE"
 public class Draggable : MonoBehaviour {
+	public string tagFilter = "Food";
 	public GameObject grabbedObject;
 	public float grabDistance = 10.0f;
 
@@ -56,8 +57,10 @@ public class Draggable : MonoBehaviour {
 		} else {
 			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
-				grabbedObject = hit.transform.gameObject;
-				//DebugPoint(hit.transform, "GrabRaycast");
+				if(hit.transform.gameObject.tag == tagFilter){
+					grabbedObject = hit.transform.gameObject;
+					//DebugPoint(hit.transform, "GrabRaycast");
+				}
 			}
 		}
 	}
