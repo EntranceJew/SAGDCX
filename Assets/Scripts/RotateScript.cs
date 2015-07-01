@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class RotateScript : MonoBehaviour {
-	public float rotationSpeed = 1;
+	public float rotationSpeed;
 
 
 	// Update is called once per frame
 	void Update () {
-		transform.Rotate (0, rotationSpeed, 0);
+		gameObject.GetComponent<Rigidbody> ().AddTorque(new Vector3(0,rotationSpeed,0));
 	}
 }
