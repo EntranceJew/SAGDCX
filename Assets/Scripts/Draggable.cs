@@ -10,9 +10,7 @@ public class Draggable : MonoBehaviour {
 	public GameObject grabbedObject;
 	public float grabDistance = 10.0f;
 
-	public GameObject debugPoint;
-	public GameObject debugArrow;
-
+	public bool debug;
 	public List<Ray> debugRayList = new List<Ray> ();
 	
 	public bool useToggleDrag; // Didn't know which style you prefer.
@@ -33,12 +31,13 @@ public class Draggable : MonoBehaviour {
 			//UpdateHoldDrag (); 
 		}
 
-		Debug.Log ("Debug Ray Size: " + debugRayList.Count);
+		if (debug) {
+			Debug.Log ("Debug Ray Size: " + debugRayList.Count);
 
-		foreach (Ray ray in debugRayList) {
-			Debug.DrawRay(ray.origin,ray.direction * 50000, Color.cyan);
+			foreach (Ray ray in debugRayList) {
+				Debug.DrawRay (ray.origin, ray.direction * 50000, Color.cyan);
+			}
 		}
-
 	}
 	
 	// Toggles drag with mouse click 
@@ -69,7 +68,7 @@ public class Draggable : MonoBehaviour {
 			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
 				if(hit.transform.gameObject.tag == tagFilter){
-					debugRayList.Add(ray);
+					if (debug) {debugRayList.Add(ray);}
 					grabbedObject = hit.transform.gameObject;
 					//DebugPoint(hit.transform, "GrabRaycast");
 				}
@@ -86,21 +85,4 @@ public class Draggable : MonoBehaviour {
 			//grabbedObject.transform.rotation = transform.rotation;
 		}
 	}
-
-	void DebugPoint(Vector3 position, string identifier){
-		GameObject go = (GameObject) Instantiate (debugPoint, position, Quaternion.identity);
-		go.name = "DebugPoint "+identifier+" @ "+Time.time;
-	}
-
-	void DebugPoint(Transform transform, string identifier){
-		GameObject go = (GameObject) Instantiate (debugPoint, transform.position, transform.rotation);
-		go.name = "DebugPoint "+identifier+" @ "+Time.time;
-	}
-	
-	void DebugArrow(Vector3 position, Vector3 direction, string identifier){
-		Vector3 newPos = position + direction;
-		GameObject go = (GameObject) Instantiate (debugArrow, position, new Quaternion(newPos.x, newPos.y, newPos.z, 0.0f));
-		go.name = "DebugArrow "+identifier+" @ "+Time.time;
-	}
-
 }
