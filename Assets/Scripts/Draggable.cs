@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 // from: http://answers.unity3d.com/questions/55406/picking-dragging-objects-with-mouse.html
 // and by from I mean EntranceJew had to pick apart that ancient mess AND translate it into C#
@@ -11,8 +12,11 @@ public class Draggable : MonoBehaviour {
 
 	public GameObject debugPoint;
 	public GameObject debugArrow;
+
+	public List<Ray> debugRayList = new List<Ray> ();
 	
 	public bool useToggleDrag; // Didn't know which style you prefer.
+
 
 	public Ray ray;
 	public Vector3 position;
@@ -28,6 +32,13 @@ public class Draggable : MonoBehaviour {
 		} else {
 			//UpdateHoldDrag (); 
 		}
+
+		Debug.Log ("Debug Ray Size: " + debugRayList.Count);
+
+		foreach (Ray ray in debugRayList) {
+			Debug.DrawRay(ray.origin,ray.direction * 50000, Color.cyan);
+		}
+
 	}
 	
 	// Toggles drag with mouse click 
@@ -58,6 +69,7 @@ public class Draggable : MonoBehaviour {
 			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
 				if(hit.transform.gameObject.tag == tagFilter){
+					debugRayList.Add(ray);
 					grabbedObject = hit.transform.gameObject;
 					//DebugPoint(hit.transform, "GrabRaycast");
 				}
@@ -90,4 +102,5 @@ public class Draggable : MonoBehaviour {
 		GameObject go = (GameObject) Instantiate (debugArrow, position, new Quaternion(newPos.x, newPos.y, newPos.z, 0.0f));
 		go.name = "DebugArrow "+identifier+" @ "+Time.time;
 	}
+
 }
