@@ -12,15 +12,14 @@ public class Food : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	void OnCollisionEnter(Collision col){
-		if (isFoodPope && col.gameObject.tag == "Food") {
-			Food f = col.gameObject.GetComponent<Food>();
-			f.GetObtained(bb);
-			f.isFoodPope = true;
-			this.isFoodPope = false;
+		if (isFoodPope && col.gameObject.tag == "Food" && col.gameObject.transform.parent != bb.gameObject) {
+			Debug.Log ("GRANTING NEW OBJECT: "+col.gameObject);
+			isFoodPope = false;
+			bb.ObtainNewPart(col.gameObject);
 		}
 	}
 
@@ -28,5 +27,6 @@ public class Food : MonoBehaviour {
 	public void GetObtained(BurgBuilder newBurgBuilder){
 		bb = newBurgBuilder;
 		gameObject.transform.parent = bb.gameObject.transform;
+		this.isFoodPope = true;
 	}
 }

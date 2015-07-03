@@ -20,9 +20,9 @@ public class BurgBuilder : MonoBehaviour {
 		// because the first condition clashes with the second half and boy am I tired.
 		// part.transform.parent != null & part.transform.parent.gameObject != this.gameObject
 		if (part.transform.parent == null 
-		    || (part.transform.parent != null && part.transform.parent != this.transform)) {
+			|| (part.transform.parent != null && part.transform.parent != this.transform)) {
 			//Debug.Log ("I just found myself a new " + part.name);
-			part.GetComponent<Food>().GetObtained(this);
+			part.GetComponent<Food> ().GetObtained (this);
 
 			//Vector3 pzt = pz.transform.localPosition;
 
@@ -34,6 +34,8 @@ public class BurgBuilder : MonoBehaviour {
 			//rb.useGravity = false;
 			//rb.isKinematic = true;
 			//rb.freezeRotation = true;
+		} else {
+			Debug.Log ("NO, FUCK YOUR " + part.name);
 		}
 	}
 }
