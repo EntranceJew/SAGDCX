@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2328900}
   - 54: {fileID: 5486042}
   - 65: {fileID: 6560360}
+  - 114: {fileID: 11455344}
   m_Layer: 0
   m_Name: Patty
   m_TagString: Food
@@ -89,6 +90,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.25322175, y: 2.24320722, z: .397077858}
   m_Center: {x: -.00666511059, y: .00372117711, z: .00215224153}
+--- !u!114 &11455344
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a1c26159d90c7498ba813c546bf770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
