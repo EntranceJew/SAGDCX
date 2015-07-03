@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Food
   - Water
+  - MainCanvas
+  - BurgBuilder
   layers:
   - Default
   - TransparentFX
