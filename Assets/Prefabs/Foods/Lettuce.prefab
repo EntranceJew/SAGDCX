@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2315972}
   - 54: {fileID: 5477068}
   - 65: {fileID: 6547310}
+  - 114: {fileID: 11411322}
   m_Layer: 0
   m_Name: Lettuce
   m_TagString: Food
@@ -69,7 +70,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125926}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 5
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -89,6 +90,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.97288537, y: 2.24211264, z: .123124629}
   m_Center: {x: -.0683698356, y: -.040290948, z: -.0052718143}
+--- !u!114 &11411322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a1c26159d90c7498ba813c546bf770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFoodPope: 0
+  bb: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -119,6 +133,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

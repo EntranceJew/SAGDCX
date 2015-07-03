@@ -21,4 +21,8 @@ public class GetOrder : MonoBehaviour {
 		instruction = canvas.transform.Find("OrderText").gameObject.GetComponent<Text> ();
 		instruction.text = "Your order is: " + order.toString ();
 	}
+
+	void Update (){
+
+	}
 }

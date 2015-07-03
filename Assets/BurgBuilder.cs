@@ -21,19 +21,19 @@ public class BurgBuilder : MonoBehaviour {
 		// part.transform.parent != null & part.transform.parent.gameObject != this.gameObject
 		if (part.transform.parent == null 
 		    || (part.transform.parent != null && part.transform.parent != this.transform)) {
-			Debug.Log ("I just found myself a new " + part.name);
-			part.transform.parent = this.gameObject.transform;
+			//Debug.Log ("I just found myself a new " + part.name);
+			part.GetComponent<Food>().GetObtained(this);
 
-			Vector3 pzt = pz.transform.localPosition;
+			//Vector3 pzt = pz.transform.localPosition;
 
-			pzt.y += 0.7f;
+			//pzt.y += 0.7f;
 
-			pz.transform.localPosition = pzt;
+			//pz.transform.localPosition = pzt;
 
-			Rigidbody rb = part.GetComponent<Rigidbody> ();
-			rb.useGravity = false;
-			rb.isKinematic = true;
-			rb.freezeRotation = true;
+			//Rigidbody rb = part.GetComponent<Rigidbody> ();
+			//rb.useGravity = false;
+			//rb.isKinematic = true;
+			//rb.freezeRotation = true;
 		}
 	}
 }
