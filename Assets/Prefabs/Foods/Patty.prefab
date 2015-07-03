@@ -1,47 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &125926
+--- !u!1 &159302
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 457552}
-  - 33: {fileID: 3338968}
-  - 23: {fileID: 2315972}
-  - 54: {fileID: 5477068}
-  - 65: {fileID: 6547310}
+  - 4: {fileID: 480858}
+  - 33: {fileID: 3375164}
+  - 23: {fileID: 2328900}
+  - 54: {fileID: 5486042}
+  - 65: {fileID: 6560360}
+  - 114: {fileID: 11455344}
   m_Layer: 0
-  m_Name: Lettuce
+  m_Name: Patty
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &457552
+--- !u!4 &480858
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 159302}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2315972
+--- !u!23 &2328900
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 159302}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0697958b046e5584b9deaace4562b9bb, type: 2}
+  - {fileID: 2100000, guid: f6ce14a035b634d46ae1d153c84256a6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -55,40 +56,53 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3338968
+--- !u!33 &3375164
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
-  m_Mesh: {fileID: 4300000, guid: d3af22b21d169f94eac1a357867f98d6, type: 3}
---- !u!54 &5477068
+  m_GameObject: {fileID: 159302}
+  m_Mesh: {fileID: 4300000, guid: 5f6291958508c6f479c98fc065c996be, type: 3}
+--- !u!54 &5486042
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 159302}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 5
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &6547310
+--- !u!65 &6560360
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 159302}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.97288537, y: 2.24211264, z: .123124629}
-  m_Center: {x: -.0683698356, y: -.040290948, z: -.0052718143}
+  m_Size: {x: 2.25322175, y: 2.24320722, z: .397077858}
+  m_Center: {x: -.00666511059, y: .00372117711, z: .00215224153}
+--- !u!114 &11455344
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a1c26159d90c7498ba813c546bf770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFoodPope: 0
+  bb: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -116,7 +130,15 @@ Prefab:
       propertyPath: m_Drag
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 125926}
+  m_RootGameObject: {fileID: 159302}
   m_IsPrefabParent: 1

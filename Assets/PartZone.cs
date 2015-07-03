@@ -16,8 +16,10 @@ public class PartZone : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Food") {
-			Debug.Log (col.gameObject);
+			//Debug.Log (col.gameObject);
+			col.gameObject.GetComponent<Food>().isFoodPope = true;
 			bb.ObtainNewPart(col.gameObject);
+			Destroy (this.gameObject);
 		}
 	}
 }

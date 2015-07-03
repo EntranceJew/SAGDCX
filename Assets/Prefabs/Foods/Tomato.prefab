@@ -1,47 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &110524
+--- !u!1 &191002
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 403452}
-  - 33: {fileID: 3381612}
-  - 23: {fileID: 2369388}
-  - 54: {fileID: 5472190}
-  - 65: {fileID: 6520068}
+  - 4: {fileID: 465356}
+  - 33: {fileID: 3352630}
+  - 23: {fileID: 2330186}
+  - 54: {fileID: 5406800}
+  - 65: {fileID: 6568234}
+  - 114: {fileID: 11435854}
   m_Layer: 0
-  m_Name: Onion
+  m_Name: Tomato
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &403452
+--- !u!4 &465356
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110524}
+  m_GameObject: {fileID: 191002}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2369388
+--- !u!23 &2330186
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110524}
+  m_GameObject: {fileID: 191002}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0c5636f053690f94e8806f00e1b8b657, type: 2}
+  - {fileID: 2100000, guid: c6475c5579d4b0b40a78ecb2752c669d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -55,40 +56,53 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3381612
+--- !u!33 &3352630
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110524}
-  m_Mesh: {fileID: 4300000, guid: 909dd6c5dca423f4e8d3631dcb11abbf, type: 3}
---- !u!54 &5472190
+  m_GameObject: {fileID: 191002}
+  m_Mesh: {fileID: 4300000, guid: 250135d525a9f234ca9964b52c6e598c, type: 3}
+--- !u!54 &5406800
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110524}
+  m_GameObject: {fileID: 191002}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 5
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &6520068
+--- !u!65 &6568234
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110524}
+  m_GameObject: {fileID: 191002}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.99999976, z: .10235855}
-  m_Center: {x: 0, y: 0, z: -.00117923121}
+  m_Size: {x: 1.39999998, y: 1.39999986, z: .0999999866}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11435854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a1c26159d90c7498ba813c546bf770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFoodPope: 0
+  bb: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -96,6 +110,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Food
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -109,14 +127,18 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: Food
+      propertyPath: m_Drag
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_Drag
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 110524}
+  m_RootGameObject: {fileID: 191002}
   m_IsPrefabParent: 1
