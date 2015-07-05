@@ -9,6 +9,7 @@ public class Draggable : MonoBehaviour {
 	public string tagFilter = "Food";
 	public GameObject grabbedObject;
 	public float grabDistance = 10.0f;
+	public float floor = 0f;
 
 	public bool debug;
 	public List<Ray> debugRayList = new List<Ray> ();
@@ -81,6 +82,9 @@ public class Draggable : MonoBehaviour {
 		plane = new Plane(-transform.forward, position);
 		if (plane.Raycast(ray, out distance)) {
 			temp = ray.origin + ray.direction * distance;
+			if (temp.y < floor){
+				temp.y = floor;
+			}
 			grabbedObject.transform.position = temp;
 			//grabbedObject.transform.rotation = transform.rotation;
 		}

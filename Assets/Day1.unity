@@ -1107,6 +1107,7 @@ MonoBehaviour:
   tagFilter: Food
   grabbedObject: {fileID: 0}
   grabDistance: 100
+  floor: 1
   debug: 0
   useToggleDrag: 1
   position: {x: 0, y: 0, z: 0}
@@ -1147,6 +1148,7 @@ MonoBehaviour:
   distance: 0
   position: {x: 0, y: 0, z: 0}
   temp: {x: 0, y: 0, z: 0}
+  floor: 1
 --- !u!114 &1522864821
 MonoBehaviour:
   m_ObjectHideFlags: 0
