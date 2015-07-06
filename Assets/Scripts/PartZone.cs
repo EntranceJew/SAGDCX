@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PartZone : MonoBehaviour {
 	public BurgBuilder bb;
+	public bool enabled = true;
 
 	// Use this for initialization
 	void Start () {
@@ -15,11 +16,13 @@ public class PartZone : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		if (col.gameObject.tag == "Food") {
-			//Debug.Log (col.gameObject);
-			col.gameObject.GetComponent<Food>().isFoodPope = true;
-			bb.ObtainNewPart(col.gameObject);
-			Destroy (this.gameObject);
+		if (enabled) {
+			if (col.gameObject.tag == "Food") {
+				//Debug.Log (col.gameObject);
+				col.gameObject.GetComponent<Food> ().isFoodPope = true;
+				bb.ObtainNewPart (col.gameObject);
+				enabled = false;
+			}
 		}
 	}
 }

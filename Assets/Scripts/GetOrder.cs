@@ -64,4 +64,8 @@ public class GetOrder : MonoBehaviour {
 			}
 		}
 	}
+
+	public Order CurrentOrder() {
+		return order;
+	}
 }
