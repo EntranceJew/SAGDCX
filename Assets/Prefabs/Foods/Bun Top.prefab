@@ -16,7 +16,7 @@ GameObject:
   - 64: {fileID: 6457426}
   - 114: {fileID: 11458496}
   m_Layer: 0
-  m_Name: BunTop
+  m_Name: Bun Top
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,6 +105,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFoodPope: 0
   bb: {fileID: 0}
+  foodCategories:
+    bunTop: 0
+    lettuce: 0
+    onion: 0
+    tomato: 0
+    pickles: 0
+    cheese: 0
+    patty: 0
+    bunBottom: 0
 --- !u!198 &19838070
 ParticleSystem:
   m_ObjectHideFlags: 1
