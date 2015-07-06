@@ -469,15 +469,6 @@ MonoBehaviour:
   example: {fileID: 250770377}
   upVar: .5
   rand: 1
-  BunBottom: {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
-  Patty: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
-  Cheese: {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
-  Lettuce: {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
-  Tomato: {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
-  Onion: {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
-  Pickles: {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
-  BunTop: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
-  Rat: {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
 --- !u!1001 &169030423
 Prefab:
   m_ObjectHideFlags: 0
@@ -4387,6 +4378,62 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 752aefacf6f3a18488dc05bea616a1d6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2031356191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2031356192}
+  - 114: {fileID: 2031356193}
+  m_Layer: 0
+  m_Name: IngredientGameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2031356192
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2031356191}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.19349241, y: 5.64071321, z: 1.42418814}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+--- !u!114 &2031356193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2031356191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa2240543e392448ba08a983181d2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientList:
+  - {fileID: 183780, guid: 8ec6465b673d4a64dbc740e4510e32a1, type: 2}
+  - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+  - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+  - {fileID: 157486, guid: 9924481f0d446cd4b9563a548cb9e39e, type: 2}
+  - {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
+  - {fileID: 153890, guid: 27cf64ddc7fa2bb48b16a4b6658dd6b0, type: 2}
+  - {fileID: 135180, guid: 0a507f95a4609894a988ea754bcad2c2, type: 2}
+  - {fileID: 166252, guid: 15f10e76772538c43b47f6429a1ceb4f, type: 2}
+  - {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
+  - {fileID: 130346, guid: 983f6f90b3efad54a89db59f62945100, type: 2}
+  - {fileID: 133794, guid: 993006d869e86d449879ae5176d85c8f, type: 2}
+  - {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
+  - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
+  - {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
+  - {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
+  - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
 --- !u!4 &2056433833 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 7010841170408314c88ea2b6ace4fdca, type: 3}
