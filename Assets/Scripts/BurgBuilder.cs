@@ -14,13 +14,12 @@ public class BurgBuilder : MonoBehaviour {
 	
 	}
 
-	public void ObtainNewPart(GameObject part){
+	public bool ObtainNewPart(GameObject part){
 		// We only accept orphans.
 		// Originally we only cared if the object's parent wasn't us but that's more effort,
 		// because the first condition clashes with the second half and boy am I tired.
 		// part.transform.parent != null & part.transform.parent.gameObject != this.gameObject
-		if (part.transform.parent == null 
-			|| (part.transform.parent != null && part.transform.parent != this.transform)) {
+		if (!BelongsToMe(part)) {
 			//Debug.Log ("I just found myself a new " + part.name);
 			part.GetComponent<Food> ().GetObtained (this);
 
@@ -34,8 +33,24 @@ public class BurgBuilder : MonoBehaviour {
 			//rb.useGravity = false;
 			//rb.isKinematic = true;
 			//rb.freezeRotation = true;
+			return true;
 		} else {
+			return false;
 			Debug.Log ("NO, FUCK YOUR " + part.name);
+		}
+	}
+
+	public bool BelongsToMe(GameObject part){
+		if (part.transform.parent != null) {
+			if(part.transform.parent != gameObject.transform){
+				Debug.Log ("I was its parent.");
+				return false;
+			} else {
+				return true;
+			}
+		} else {
+			Debug.Log ("Did not have parent.");
+			return false;
 		}
 	}
 }

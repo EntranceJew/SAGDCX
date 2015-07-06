@@ -64,6 +64,7 @@ public class Draggable : MonoBehaviour {
 	
 	void Grab() {
 		if (grabbedObject != null) {
+			grabbedObject.GetComponent<Food>().Released();
 			grabbedObject = null;
 		} else {
 			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -71,6 +72,7 @@ public class Draggable : MonoBehaviour {
 				if(hit.transform.gameObject.tag == tagFilter){
 					if (debug) {debugRayList.Add(ray);}
 					grabbedObject = hit.transform.gameObject;
+					grabbedObject.GetComponent<Food>().Grabbed();
 					//DebugPoint(hit.transform, "GrabRaycast");
 				}
 			}

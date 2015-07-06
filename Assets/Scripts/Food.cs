@@ -17,10 +17,11 @@ public class Food : MonoBehaviour {
 	public bool isFoodPope;
 	public BurgBuilder bb;
 	public FoodCategories foodCategories;
+	public bool isGrabbed;
 
 	// Use this for initialization
 	void Start () {
-		
+		isGrabbed = false;
 	}
 	
 	// Update is called once per frame
@@ -29,9 +30,9 @@ public class Food : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		if (isFoodPope && col.gameObject.tag == "Food" && col.gameObject.transform.parent != bb.gameObject) {
+		if (isFoodPope && col.gameObject.tag == "Food" && !isGrabbed && !col.gameObject.GetComponent<Food>().isGrabbed) {
 			Debug.Log ("GRANTING NEW OBJECT: "+col.gameObject);
-			isFoodPope = false;
+			//isFoodPope = false;
 			bb.ObtainNewPart(col.gameObject);
 		}
 	}
@@ -41,5 +42,18 @@ public class Food : MonoBehaviour {
 		bb = newBurgBuilder;
 		gameObject.transform.parent = bb.gameObject.transform;
 		this.isFoodPope = true;
+	}
+
+	public void Grabbed(){
+		isGrabbed = true;
+		if (isFoodPope) {
+			isFoodPope = false;
+			gameObject.transform.parent = null;
+			bb = null;
+		}
+	}
+
+	public void Released(){
+		isGrabbed = false;
 	}
 }
