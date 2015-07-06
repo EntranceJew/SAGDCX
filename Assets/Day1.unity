@@ -3360,7 +3360,7 @@ Prefab:
     - target: {fileID: 11476040, guid: 752aefacf6f3a18488dc05bea616a1d6, type: 2}
       propertyPath: spawnList.Array.data[3]
       value: 
-      objectReference: {fileID: 112882, guid: b50c1fd6ac434b741870bda733d87c88, type: 2}
+      objectReference: {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
     - target: {fileID: 11476040, guid: 752aefacf6f3a18488dc05bea616a1d6, type: 2}
       propertyPath: spawnList.Array.data[1]
       value: 
@@ -3393,6 +3393,10 @@ Prefab:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 2139853223}
+    - target: {fileID: 421012, guid: 752aefacf6f3a18488dc05bea616a1d6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .349999994
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 752aefacf6f3a18488dc05bea616a1d6, type: 2}
   m_IsPrefabParent: 0
@@ -4704,13 +4708,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stock:
-  - name: BunTop
+  - name: Bun Top
     quantity: 5
   - name: Patty
     quantity: 5
   - name: Cheese
     quantity: 6
-  - name: BunBottom
+  - name: ' Bun Bottom'
     quantity: 3
   - name: Rat
     quantity: 9

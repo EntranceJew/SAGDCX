@@ -14,7 +14,7 @@ GameObject:
   - 65: {fileID: 6520526}
   - 114: {fileID: 11474482}
   m_Layer: 0
-  m_Name: BreadSlice
+  m_Name: Bread Slice
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,6 +104,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFoodPope: 0
   bb: {fileID: 0}
+  foodCategories:
+    bunTop: 0
+    lettuce: 0
+    onion: 0
+    tomato: 0
+    pickles: 0
+    cheese: 0
+    patty: 0
+    bunBottom: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
