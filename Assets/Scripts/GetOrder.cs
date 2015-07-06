@@ -5,6 +5,7 @@ using System.Collections;
 public class GetOrder : MonoBehaviour {
 	
 	GameObject canvas;
+	GameObject ingListObject;
 	Text instruction;
 	Order order;
 	public GameObject example;
@@ -12,20 +13,12 @@ public class GetOrder : MonoBehaviour {
 	
 	public bool rand;
 	
-	
-	//INGREDIENTS!
-	public GameObject BunBottom;
-	public GameObject Patty;
-	public GameObject Cheese;
-	public GameObject Lettuce;
-	public GameObject Tomato;
-	public GameObject Onion;
-	public GameObject Pickles;
-	public GameObject BunTop;
-	public GameObject Rat;
-	
+
 	
 	void Start () {
+		//Load Ingredients
+		ingListObject = GameObject.Find ("IngredientGameObject");
+
 		//Get the order
 		OrderCreation ();
 		
@@ -37,9 +30,7 @@ public class GetOrder : MonoBehaviour {
 		canvas = GameObject.FindGameObjectWithTag("MainCanvas");
 		
 		if (rand) {
-			order = new Order ();
-		} else {
-			order = new Order ("Normal");
+			order = new Order (ingListObject.GetComponent<IngredientList>().ingredientList);
 		}
 		instruction = canvas.transform.Find("OrderText").gameObject.GetComponent<Text> ();
 		instruction.text = "Your order is: " + order.toString ();
@@ -52,41 +43,16 @@ public class GetOrder : MonoBehaviour {
 		
 		//Take order
 		int ingredient = 0;
-		while (ingredient <= order.completeOrder.Count) {
-			//Look at ingredient
-			GameObject ing = FindGameObjectForIngredient(order.completeOrder[ingredient]);
+		while (ingredient < order.completeOrder.Count) {
 			//Find where to drop it.
 			Vector3 finalPos = example.transform.position;
 			finalPos.y += ingredient * upVar;
 			//Instantiate ingredient
-			GameObject addedIngredient = Instantiate(ing, finalPos, Quaternion.identity) as GameObject;
+			GameObject addedIngredient = (GameObject) Instantiate(order.completeOrder[ingredient], finalPos, Quaternion.identity);
 			addedIngredient.transform.SetParent(example.transform);
 			addedIngredient.transform.localRotation = Quaternion.Euler(-90,0,0);
 			//Repeat
 			ingredient++;
-		}
-	}
-	
-	GameObject FindGameObjectForIngredient(string prefabName) {
-		switch (prefabName) {
-		case "BunBottom":
-			return BunBottom;
-		case "Patty":
-			return Patty;
-		case "Cheese":
-			return Cheese;
-		case "Lettuce":
-			return Lettuce;
-		case "Tomato":
-			return Tomato;
-		case "Onion": 
-			return Onion;
-		case "Pickles":
-			return Pickles;
-		case "BunTop":
-			return BunTop;
-		default:
-			return Rat;
 		}
 	}
 	
