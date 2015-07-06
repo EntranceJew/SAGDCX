@@ -41,5 +41,8 @@ public class RingBell : MonoBehaviour {
 			}
 		}
 
+
+		//Don't forget to tell the lightbulb that a new order is needed to be gotten.
+		lb.GetComponent<GetOrder> ().NewOrder ();
 	}
 }

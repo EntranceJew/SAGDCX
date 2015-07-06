@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PartZone : MonoBehaviour {
 	public BurgBuilder bb;
-	public bool enabled = true;
+	new public bool enabled = true;
 
 	// Use this for initialization
 	void Start () {

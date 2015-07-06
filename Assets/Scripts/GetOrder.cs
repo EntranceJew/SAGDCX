@@ -19,6 +19,11 @@ public class GetOrder : MonoBehaviour {
 		//Load Ingredients
 		ingListObject = GameObject.Find ("IngredientGameObject");
 
+		//New Order
+		NewOrder ();
+	}
+
+	public void NewOrder() {
 		//Get the order
 		OrderCreation ();
 		
@@ -34,6 +39,8 @@ public class GetOrder : MonoBehaviour {
 		}
 		instruction = canvas.transform.Find("OrderText").gameObject.GetComponent<Text> ();
 		instruction.text = "Your order is: " + order.toString ();
+
+		MakeOrderExample ();
 	}
 	
 	void MakeOrderExample() {
@@ -60,7 +67,7 @@ public class GetOrder : MonoBehaviour {
 		foreach (Transform child in example.transform) {
 			if (child != example.transform) {
 				//Ok good we aren't deleting the actual example burger gameobject container
-				Destroy (child);
+				Destroy (child.gameObject);
 			}
 		}
 	}

@@ -111,7 +111,8 @@ MonoBehaviour:
     pickles: 0
     cheese: 0
     patty: 0
-    bunBottom: 0
+    bunBottom: 1
+  isGrabbed: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -146,6 +147,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mass
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.bunBottom
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

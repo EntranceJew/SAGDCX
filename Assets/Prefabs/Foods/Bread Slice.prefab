@@ -105,14 +105,15 @@ MonoBehaviour:
   isFoodPope: 0
   bb: {fileID: 0}
   foodCategories:
-    bunTop: 0
+    bunTop: .75
     lettuce: 0
     onion: 0
     tomato: 0
     pickles: 0
     cheese: 0
     patty: 0
-    bunBottom: 0
+    bunBottom: .75
+  isGrabbed: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -123,6 +124,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Food
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isGrabbed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.bunBottom
+      value: .75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.bunTop
+      value: .75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
