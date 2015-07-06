@@ -39,4 +39,14 @@ public class Inventory : MonoBehaviour {
 			i++;
 		}
 	}
+
+	public void Add(string name, int quantity){
+		int i = 0;
+		foreach (InventoryItems item in stock) {
+			if(item.name == name){
+				stock[i].quantity += quantity;
+			}
+			i++;
+		}
+	}
 }
