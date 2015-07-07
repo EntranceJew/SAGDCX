@@ -86,6 +86,7 @@ MonoBehaviour:
     bunBottom: 0
   isGrabbed: 0
   foodType: 0
+  foodName: Filler
 --- !u!135 &13518732
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -104,7 +105,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: foodName
+      value: Filler
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170314}

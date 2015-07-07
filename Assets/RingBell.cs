@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class RingBell : MonoBehaviour {
 	GameObject lb;
 	GameObject burgBuild;
+	float bestSum = 0;
+	List<GameObject> bestOrder;
 
 	public GameObject fillerFood;
 
@@ -25,7 +27,17 @@ public class RingBell : MonoBehaviour {
 		}
 
 		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.
-		List<GameObject> highestOverall = HighestScoringOrder(order.completeOrder, burgObjects);
+		HighestScoringOrder(order.completeOrder, burgObjects);
+
+		string str = "";
+
+		for (int i = 0; i < order.completeOrder.Count; i++) {
+			str += order.completeOrder[i].GetComponent<Food>().foodName + " filled with " + bestOrder[i].GetComponent<Food>().foodName + " ";
+		}
+
+		str += SumResult (order.completeOrder, bestOrder);
+
+		Debug.Log (str);
 
 		//Trash burger
 		foreach (Transform t in burgBuild.transform) {
@@ -46,8 +58,7 @@ public class RingBell : MonoBehaviour {
 		lb.GetComponent<GetOrder> ().NewOrder ();
 	}
 
-	List<GameObject> HighestScoringOrder(List<GameObject> originalOrder, List<GameObject> originalZone) {
-		List<GameObject> output = new List<GameObject>();
+	void HighestScoringOrder(List<GameObject> originalOrder, List<GameObject> originalZone) {
 		List<GameObject> available = originalZone;
 
 
@@ -55,21 +66,19 @@ public class RingBell : MonoBehaviour {
 			available.Add (fillerFood);
 		}
 		List<GameObject> empty = new List<GameObject> ();
-		Permute (empty, available);
-
-
-		output = originalZone;
-
-		return output;
+		Permute (originalOrder, empty, available);
 	}
 
-	void Permute(List<GameObject> usedList, List<GameObject> unusedYet) {
+	void Permute(List<GameObject> orderRequested, List<GameObject> usedList, List<GameObject> unusedYet) {
 		if (unusedYet.Count == 0) {
-			string str = "Permute: ";
-			foreach (GameObject obj in usedList) {
-				str += obj.transform.name + " : ";
+
+
+			float sum = SumResult(orderRequested, usedList);
+
+			if (sum > bestSum) {
+				bestSum = sum;
+				bestOrder = usedList;
 			}
-			Debug.Log (str);
 
 			return;
 		}
@@ -79,46 +88,40 @@ public class RingBell : MonoBehaviour {
 			List<GameObject> tempUnusedList = new List<GameObject>(unusedYet);
 			tempUsedList.Add(unusedYet[i]);
 			tempUnusedList.RemoveAt(i);
-			Permute(tempUsedList, tempUnusedList);
+			Permute(orderRequested, tempUsedList, tempUnusedList);
 		}
 	}
 
 	float SumResult(List<GameObject> orderRequested, List<GameObject> orderChecking) {
-		float result = 0f;
-
-
+		float totalScore = 0;
 		for (int i = 0; i < orderRequested.Count; i++) {
-			result += CheckTwoIngredients(orderRequested[i], orderChecking[i]);
+			GameObject request = orderRequested[i];
+			GameObject check = orderChecking[i];
+			totalScore += CheckTwoIngredients(request, check);
 		}
 
-		return result;
+		return totalScore;
 	}
 
 	float CheckTwoIngredients (GameObject requested, GameObject recieved) {
-		float result = 0;
-		float MaxScore = 100f;
-		float PerfectBonus = 50f;
+		float score = 0;
 
-		if (requested.name == recieved.name) {
-			result = MaxScore + PerfectBonus;
+		if (requested.GetComponent<Food>().foodName == recieved.GetComponent<Food>().foodName) {
+			score = 150;
 		} else {
-			result = MaxScore * GetValueGivenEnum(requested.GetComponent<Food>().foodType, recieved);
+			float percentScore = GetValueGivenEnum(requested.GetComponent<Food>().foodType, recieved);
+			score = 100 * percentScore;
 		}
 
-		return result;
+
+		return score;
 	}
 
 	float GetValueGivenEnum (FoodEnum givenEnum, GameObject recieved) {
 		FoodCategories fc = recieved.GetComponent<Food> ().foodCategories;
 		switch (givenEnum) {
-		case FoodEnum.Cheese:
-			return fc.cheese;
-		case FoodEnum.Meat:
-			return fc.patty;
-		case FoodEnum.Vegetable:
-			return fc.lettuce;
 		default: 
-			return fc.bunBottom;
+			return fc.bun;
 		}
 	}
 }

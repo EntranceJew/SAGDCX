@@ -106,15 +106,13 @@ MonoBehaviour:
   isFoodPope: 0
   bb: {fileID: 0}
   foodCategories:
-    bunTop: 1
-    lettuce: 0
-    onion: 0
-    tomato: 0
-    pickles: 0
-    cheese: 0
-    patty: 0
-    bunBottom: 0
+    bun: 1
+    vegetable: .100000001
+    meat: .100000001
+    cheese: .100000001
   isGrabbed: 0
+  foodType: 0
+  foodName: Bun
 --- !u!198 &19838070
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1232,6 +1230,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: foodCategories.bunTop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodName
+      value: Bun
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.bun
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.vegetable
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.meat
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.cheese
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

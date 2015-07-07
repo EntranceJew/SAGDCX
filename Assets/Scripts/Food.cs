@@ -3,14 +3,10 @@ using System.Collections;
 
 [System.Serializable]
 public class FoodCategories {
-	public float bunTop;
-	public float lettuce;
-	public float onion;
-	public float tomato;
-	public float pickles;
+	public float bun;
+	public float vegetable;
+	public float meat;
 	public float cheese;
-	public float patty;
-	public float bunBottom;
 }
 
 public enum FoodEnum {
@@ -26,6 +22,7 @@ public class Food : MonoBehaviour {
 	public FoodCategories foodCategories;
 	public bool isGrabbed;
 	public FoodEnum foodType;
+	public string foodName; //I'm sorry ejew I can't think of how to do this otherwise (to evaluate if the prefab clone is the same thing as the original or w/e)
 
 	// Use this for initialization
 	void Start () {
