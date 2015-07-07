@@ -49,7 +49,7 @@ public class BurgBuilder : MonoBehaviour {
 				return true;
 			}
 		} else {
-			Debug.Log ("Did not have parent.");
+		//	Debug.Log ("Did not have parent.");
 			return false;
 		}
 	}

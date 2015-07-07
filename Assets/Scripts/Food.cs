@@ -39,7 +39,7 @@ public class Food : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col){
 		if (isFoodPope && col.gameObject.tag == "Food" && !isGrabbed && !col.gameObject.GetComponent<Food>().isGrabbed) {
-			Debug.Log ("GRANTING NEW OBJECT: "+col.gameObject);
+			//Debug.Log ("GRANTING NEW OBJECT: "+col.gameObject);
 			//isFoodPope = false;
 			bb.ObtainNewPart(col.gameObject);
 		}

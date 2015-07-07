@@ -25,7 +25,7 @@ public class RingBell : MonoBehaviour {
 		}
 
 		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.
-		//List<GameObject> highestOverall = HighestScoringOrder(order.completeOrder, burgObjects);
+		List<GameObject> highestOverall = HighestScoringOrder(order.completeOrder, burgObjects);
 
 		//Trash burger
 		foreach (Transform t in burgBuild.transform) {
@@ -49,19 +49,38 @@ public class RingBell : MonoBehaviour {
 	List<GameObject> HighestScoringOrder(List<GameObject> originalOrder, List<GameObject> originalZone) {
 		List<GameObject> output = new List<GameObject>();
 		List<GameObject> available = originalZone;
-		List <GameObject> tempAvailable;
-		List<GameObject> used;
-		float highScore = 0;
+
 
 		while (available.Count < originalOrder.Count) {
 			available.Add (fillerFood);
 		}
+		List<GameObject> empty = new List<GameObject> ();
+		Permute (empty, available);
 
 
-
-
+		output = originalZone;
 
 		return output;
+	}
+
+	void Permute(List<GameObject> usedList, List<GameObject> unusedYet) {
+		if (unusedYet.Count == 0) {
+			string str = "Permute: ";
+			foreach (GameObject obj in usedList) {
+				str += obj.transform.name + " : ";
+			}
+			Debug.Log (str);
+
+			return;
+		}
+
+		for (int i = 0; i < unusedYet.Count; i++) {
+			List<GameObject> tempUsedList = new List<GameObject>(usedList);
+			List<GameObject> tempUnusedList = new List<GameObject>(unusedYet);
+			tempUsedList.Add(unusedYet[i]);
+			tempUnusedList.RemoveAt(i);
+			Permute(tempUsedList, tempUnusedList);
+		}
 	}
 
 	float SumResult(List<GameObject> orderRequested, List<GameObject> orderChecking) {
