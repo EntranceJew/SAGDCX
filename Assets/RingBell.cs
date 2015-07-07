@@ -6,6 +6,8 @@ public class RingBell : MonoBehaviour {
 	GameObject lb;
 	GameObject burgBuild;
 
+	public GameObject fillerFood;
+
 	void Start() {
 		lb = GameObject.Find ("Lightbulb");
 		burgBuild = GameObject.Find ("BurgBuilder");
@@ -23,9 +25,7 @@ public class RingBell : MonoBehaviour {
 		}
 
 		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.
-		foreach (GameObject obj in burgObjects) {
-			print (obj.name);
-		}
+		//List<GameObject> highestOverall = HighestScoringOrder(order.completeOrder, burgObjects);
 
 		//Trash burger
 		foreach (Transform t in burgBuild.transform) {
@@ -44,5 +44,62 @@ public class RingBell : MonoBehaviour {
 
 		//Don't forget to tell the lightbulb that a new order is needed to be gotten.
 		lb.GetComponent<GetOrder> ().NewOrder ();
+	}
+
+	List<GameObject> HighestScoringOrder(List<GameObject> originalOrder, List<GameObject> originalZone) {
+		List<GameObject> output = new List<GameObject>();
+		List<GameObject> available = originalZone;
+		List <GameObject> tempAvailable;
+		List<GameObject> used;
+		float highScore = 0;
+
+		while (available.Count < originalOrder.Count) {
+			available.Add (fillerFood);
+		}
+
+
+
+
+
+		return output;
+	}
+
+	float SumResult(List<GameObject> orderRequested, List<GameObject> orderChecking) {
+		float result = 0f;
+
+
+		for (int i = 0; i < orderRequested.Count; i++) {
+			result += CheckTwoIngredients(orderRequested[i], orderChecking[i]);
+		}
+
+		return result;
+	}
+
+	float CheckTwoIngredients (GameObject requested, GameObject recieved) {
+		float result = 0;
+		float MaxScore = 100f;
+		float PerfectBonus = 50f;
+
+		if (requested.name == recieved.name) {
+			result = MaxScore + PerfectBonus;
+		} else {
+			result = MaxScore * GetValueGivenEnum(requested.GetComponent<Food>().foodType, recieved);
+		}
+
+		return result;
+	}
+
+	float GetValueGivenEnum (FoodEnum givenEnum, GameObject recieved) {
+		FoodCategories fc = recieved.GetComponent<Food> ().foodCategories;
+		switch (givenEnum) {
+		case FoodEnum.Cheese:
+			return fc.cheese;
+		case FoodEnum.Meat:
+			return fc.patty;
+		case FoodEnum.Vegetable:
+			return fc.lettuce;
+		default: 
+			return fc.bunBottom;
+		}
 	}
 }

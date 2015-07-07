@@ -13,11 +13,19 @@ public class FoodCategories {
 	public float bunBottom;
 }
 
+public enum FoodEnum {
+	Bun,
+	Vegetable,
+	Meat,
+	Cheese
+}
+
 public class Food : MonoBehaviour {
 	public bool isFoodPope;
 	public BurgBuilder bb;
 	public FoodCategories foodCategories;
 	public bool isGrabbed;
+	public FoodEnum foodType;
 
 	// Use this for initialization
 	void Start () {

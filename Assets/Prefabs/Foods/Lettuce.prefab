@@ -105,7 +105,7 @@ MonoBehaviour:
   bb: {fileID: 0}
   foodCategories:
     bunTop: 0
-    lettuce: 1
+    lettuce: 0
     onion: 0
     tomato: 0
     pickles: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
     patty: 0
     bunBottom: 0
   isGrabbed: 0
+  foodType: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -150,6 +151,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: foodCategories.lettuce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
