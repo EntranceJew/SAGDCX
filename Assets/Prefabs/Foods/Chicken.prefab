@@ -13,6 +13,7 @@ GameObject:
   - 54: {fileID: 5428552}
   - 65: {fileID: 6585768}
   - 114: {fileID: 11481452}
+  - 82: {fileID: 8215738}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Food
@@ -90,6 +91,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.54574871, y: 1.91360521, z: .322820306}
   m_Center: {x: .00390303135, y: -.020258544, z: .00320823444}
+--- !u!82 &8215738
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153890}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11481452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,6 +181,10 @@ MonoBehaviour:
   isGrabbed: 0
   foodType: 2
   foodName: Chicken
+  grabSound: {fileID: 0}
+  releaseSound: {fileID: 0}
+  hitSoftSound: {fileID: 0}
+  hitHardSound: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
