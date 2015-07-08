@@ -3,15 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class RingBell : MonoBehaviour {
-	GameObject lb;
-	GameObject burgBuild;
+	public GameObject lb;
+	public GameObject burgBuild;
 
-
-
-	void Start() {
-		lb = GameObject.Find ("Lightbulb");
-		burgBuild = GameObject.Find ("BurgBuilder");
-	}
 
 	void OnMouseDown() {
 		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.

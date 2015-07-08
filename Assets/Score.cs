@@ -8,24 +8,29 @@ public class Score : MonoBehaviour {
 	public GameObject fillerFood;
 
 	public void EvaluateBurger(List<GameObject> order, List<GameObject> burg) {
-		HighestScoringOrder(order, burg);
+		bestSum = 0;
+		bestOrder = new List<GameObject> ();
+		if (burg.Count != 0) {
+			HighestScoringOrder (order, burg);
 
 
-		string str = "";
+			string str = "";
+
+
+			for (int i = 0; i < order.Count; i++) {
+				str += order [i].GetComponent<Food> ().foodName + " filled with " + bestOrder [i].GetComponent<Food> ().foodName + " ";
+			}
+
 		
-		for (int i = 0; i < order.Count; i++) {
-			str += order[i].GetComponent<Food>().foodName + " filled with " + bestOrder[i].GetComponent<Food>().foodName + " ";
+			str += SumResult (order, bestOrder);
+		
+			Debug.Log (str);
 		}
-		
-		str += SumResult (order, bestOrder);
-		
-		Debug.Log (str);
 	}
 
 	void HighestScoringOrder(List<GameObject> originalOrder, List<GameObject> originalZone) {
 		List<GameObject> available = originalZone;
-		bestSum = 0;
-		bestOrder = new List<GameObject> ();
+
 		
 		
 		while (available.Count < originalOrder.Count) {
