@@ -52,7 +52,9 @@ public class RingBell : MonoBehaviour {
 				t.GetComponent<PartZone>().enabled = true;
 			}
 		}
-
+		
+		AudioSource audio = GetComponent<AudioSource> ();
+		audio.Play ();
 
 		//Don't forget to tell the lightbulb that a new order is needed to be gotten.
 		lb.GetComponent<GetOrder> ().NewOrder ();
