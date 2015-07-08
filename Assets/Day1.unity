@@ -923,7 +923,7 @@ Transform:
   - {fileID: 1834520949}
   - {fileID: 229258874}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &239913952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5310,6 +5310,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1911050101}
     m_Modifications:
+    - target: {fileID: 11490230, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
+      propertyPath: spawnList.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 412368, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.80000019
@@ -5346,6 +5350,10 @@ Prefab:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 2139853223}
+    - target: {fileID: 11490230, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
+      propertyPath: spawnList.Array.data[7]
+      value: 
+      objectReference: {fileID: 114696, guid: 19c377dd28af55d4fa831f3b9a6c18b5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
   m_IsPrefabParent: 0
@@ -6871,6 +6879,7 @@ MonoBehaviour:
   - {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
   - {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
   - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
+  - {fileID: 114696, guid: 19c377dd28af55d4fa831f3b9a6c18b5, type: 2}
 --- !u!1 &2035873714
 GameObject:
   m_ObjectHideFlags: 0
