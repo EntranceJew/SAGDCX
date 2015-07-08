@@ -38,6 +38,7 @@ public class Food : MonoBehaviour {
 	void Start () {
 		isGrabbed = false;
 		soundmaker = GetComponent<AudioSource> ();
+		transform.rotation = Quaternion.Euler (new Vector3(-90, Random.Range (0,360), 0));
 	}
 	
 	// Update is called once per frame
