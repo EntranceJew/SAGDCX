@@ -3918,6 +3918,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adc2ec840c28dd4a9e09120b24d4c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1355821374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355821372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c71c0240b91884e939d04ef4a0bd0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   fillerFood: {fileID: 170314, guid: ae4f639767943354ebf8fdc0916c7994, type: 2}
 --- !u!135 &1355821377
 SphereCollider:
