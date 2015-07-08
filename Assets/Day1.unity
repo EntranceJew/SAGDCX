@@ -1699,6 +1699,7 @@ MonoBehaviour:
   - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
   - {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
   - {fileID: 190024, guid: 61bcb51c5a1d5a946bea0f2650957eb3, type: 2}
+  - {fileID: 189984, guid: 46f2dde8146bcff4a86418ad1afa4956, type: 2}
   inventory: {fileID: 2139853223}
 --- !u!54 &500669056
 Rigidbody:
@@ -4938,7 +4939,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11416874, guid: eb834858c357cac41994ef0836f264e3, type: 2}
       propertyPath: spawnList.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 428200, guid: eb834858c357cac41994ef0836f264e3, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6937,6 +6938,7 @@ MonoBehaviour:
   - {fileID: 114696, guid: 19c377dd28af55d4fa831f3b9a6c18b5, type: 2}
   - {fileID: 167574, guid: e0fcfbbac547044419920080da57003f, type: 2}
   - {fileID: 190024, guid: 61bcb51c5a1d5a946bea0f2650957eb3, type: 2}
+  - {fileID: 189984, guid: 46f2dde8146bcff4a86418ad1afa4956, type: 2}
 --- !u!1 &2035873714
 GameObject:
   m_ObjectHideFlags: 0
