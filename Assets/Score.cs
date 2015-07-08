@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Score : MonoBehaviour {
-	float bestSum = 0;
+	float bestSum = -100;
 	List<GameObject> bestOrder;
 	public GameObject fillerFood;
 
 	public void EvaluateBurger(List<GameObject> order, List<GameObject> burg) {
-		bestSum = 0;
+		bestSum = -100;
 		bestOrder = new List<GameObject> ();
 		if (burg.Count != 0) {
 			HighestScoringOrder (order, burg);
