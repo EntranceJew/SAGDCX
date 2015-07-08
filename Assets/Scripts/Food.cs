@@ -7,13 +7,15 @@ public class FoodCategories {
 	public float vegetable;
 	public float meat;
 	public float cheese;
+	public float condiment;
 }
 
 public enum FoodEnum {
 	Bun,
 	Vegetable,
 	Meat,
-	Cheese
+	Cheese,
+	Condiment
 }
 
 public class Food : MonoBehaviour {
