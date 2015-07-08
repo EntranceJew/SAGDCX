@@ -7,40 +7,46 @@ public class Score : MonoBehaviour {
 	List<GameObject> bestOrder;
 	public GameObject fillerFood;
 
+	public bool done = false;
+	public int depth = 0;
+
 	public void EvaluateBurger(List<GameObject> order, List<GameObject> burg) {
 		bestSum = -100;
 		bestOrder = new List<GameObject> ();
+		done = false;
 		if (burg.Count != 0) {
-			HighestScoringOrder (order, burg);
-
+			StartCoroutine(HighestScoringOrder (order, burg));
+			done = true;
 
 			string str = "";
 
 
+			/*
 			for (int i = 0; i < order.Count; i++) {
-				str += order [i].GetComponent<Food> ().foodName + " filled with " + bestOrder [i].GetComponent<Food> ().foodName + " ";
+				str += order[i].GetComponent<Food> ().foodName + " filled with " + bestOrder[i].GetComponent<Food> ().foodName + " ";
 			}
 
 		
 			str += SumResult (order, bestOrder);
 		
 			Debug.Log (str);
+			*/
 		}
 	}
 
-	void HighestScoringOrder(List<GameObject> originalOrder, List<GameObject> originalZone) {
+	public IEnumerator HighestScoringOrder(List<GameObject> originalOrder, List<GameObject> originalZone) {
 		List<GameObject> available = originalZone;
 
-		
-		
 		while (available.Count < originalOrder.Count) {
 			available.Add (fillerFood);
 		}
 		List<GameObject> empty = new List<GameObject> ();
-		Permute (originalOrder, empty, available);
+		yield return null;
+		StartCoroutine(Permute (originalOrder, empty, available));
 	}
 	
-	void Permute(List<GameObject> orderRequested, List<GameObject> usedList, List<GameObject> unusedYet) {
+	public IEnumerator Permute(List<GameObject> orderRequested, List<GameObject> usedList, List<GameObject> unusedYet) {
+		depth++;
 		if (unusedYet.Count == 0) {
 			
 			
@@ -51,7 +57,7 @@ public class Score : MonoBehaviour {
 				bestOrder = usedList;
 			}
 			
-			return;
+			return true;
 		}
 		
 		for (int i = 0; i < unusedYet.Count; i++) {
@@ -59,7 +65,8 @@ public class Score : MonoBehaviour {
 			List<GameObject> tempUnusedList = new List<GameObject>(unusedYet);
 			tempUsedList.Add(unusedYet[i]);
 			tempUnusedList.RemoveAt(i);
-			Permute(orderRequested, tempUsedList, tempUnusedList);
+			yield return null;
+			StartCoroutine(Permute(orderRequested, tempUsedList, tempUnusedList));
 		}
 	}
 	

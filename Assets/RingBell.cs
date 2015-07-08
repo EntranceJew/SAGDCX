@@ -6,31 +6,56 @@ public class RingBell : MonoBehaviour {
 	public GameObject lb;
 	public GameObject burgBuild;
 
+	public bool evaluated = false;
+	public bool isEvaluating = false;
+
+	private Score score;
+
+	void Start(){
+		score = GetComponent<Score> ();
+	}
 
 	void OnMouseDown() {
 		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.
-		GetComponent<Score> ().EvaluateBurger (GetOrder (), GetBurger ());
-
-
-		//Trash burger
-		foreach (Transform t in burgBuild.transform) {
-			if (t.name != "PartZone") {
-				Destroy (t.gameObject);
-			}
+		if (!isEvaluating) {
+			isEvaluating = true;
+			score.EvaluateBurger(GetOrder(), GetBurger());
+			Debug.Log ("THE STAGE IS SET!");
 		}
+	}
 
-		//Allow new burg to be made
+	void Update(){
+		if (isEvaluating) {
+			evaluated = score.done;
+		}
+		if(evaluated) {
+			Debug.Log ("BACK TO REALITY!");
+			isEvaluating = false;
+			//Trash burger
+			/*
 			foreach (Transform t in burgBuild.transform) {
-			if (t.name == "PartZone") {
-				t.GetComponent<PartZone>().enabled = true;
+				if (t.name != "PartZone") {
+					Destroy (t.gameObject);
+				}
 			}
+			
+			//Allow new burg to be made
+			foreach (Transform t in burgBuild.transform) {
+				if (t.name == "PartZone") {
+					t.GetComponent<PartZone>().enabled = true;
+				}
+			}
+			*/
+			
+			AudioSource audio = GetComponent<AudioSource> ();
+			audio.Play ();
+			
+			//Don't forget to tell the lightbulb that a new order is needed to be gotten.
+			/*
+			lb.GetComponent<GetOrder> ().NewOrder ();
+			*/
+			evaluated = false;
 		}
-		
-		AudioSource audio = GetComponent<AudioSource> ();
-		audio.Play ();
-
-		//Don't forget to tell the lightbulb that a new order is needed to be gotten.
-		lb.GetComponent<GetOrder> ().NewOrder ();
 	}
 
 
