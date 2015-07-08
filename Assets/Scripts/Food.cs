@@ -46,9 +46,11 @@ public class Food : MonoBehaviour {
 	}
 
 	public void PlaySound(AudioClip clipToPlay){
-		soundmaker.Stop ();
-		soundmaker.clip = clipToPlay;
-		soundmaker.Play ();
+		if (soundmaker != null) {
+			soundmaker.Stop ();
+			soundmaker.clip = clipToPlay;
+			soundmaker.Play ();
+		}
 	}
 
 	void OnCollisionEnter(Collision col){
