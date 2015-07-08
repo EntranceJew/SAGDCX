@@ -91,6 +91,16 @@ public class Score : MonoBehaviour {
 	float GetValueGivenEnum (FoodEnum givenEnum, GameObject recieved) {
 		FoodCategories fc = recieved.GetComponent<Food> ().foodCategories;
 		switch (givenEnum) {
+		case FoodEnum.Bun:
+			return fc.bun;
+		case FoodEnum.Cheese:
+			return fc.cheese;
+		case FoodEnum.Condiment:
+			return fc.condiment;
+		case FoodEnum.Meat:
+			return fc.meat;
+		case FoodEnum.Vegetable:
+			return fc.vegetable;
 		default: 
 			return fc.bun;
 		}
