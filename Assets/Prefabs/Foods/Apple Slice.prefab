@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11482402}
   - 82: {fileID: 8231120}
   m_Layer: 0
-  m_Name: AppleSlice
+  m_Name: Apple Slice
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
     condiment: 0
   isGrabbed: 0
   foodType: 1
-  foodName: AppleSlice
+  foodName: Apple Slice
   grabSound: {fileID: 0}
   releaseSound: {fileID: 0}
   hitSoftSound: {fileID: 0}
@@ -193,7 +193,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: foodName
+      value: Apple Slice
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 167574}
