@@ -102,7 +102,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -179,13 +179,15 @@ MonoBehaviour:
     vegetable: .400000006
     meat: .200000003
     cheese: .300000012
+    condiment: 0
   isGrabbed: 0
   foodType: 0
   foodName: Naan
-  grabSound: {fileID: 0}
-  releaseSound: {fileID: 0}
-  hitSoftSound: {fileID: 0}
-  hitHardSound: {fileID: 0}
+  grabSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  hitSoftSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  hitHardSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  soundmaker: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -216,6 +218,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: foodCategories.cheese
       value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: grabSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+    - target: {fileID: 0}
+      propertyPath: releaseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+    - target: {fileID: 0}
+      propertyPath: hitSoftSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+    - target: {fileID: 0}
+      propertyPath: hitHardSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

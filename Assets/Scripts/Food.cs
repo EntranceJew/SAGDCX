@@ -32,7 +32,7 @@ public class Food : MonoBehaviour {
 	public AudioClip hitSoftSound;
 	public AudioClip hitHardSound;
 
-	private AudioSource soundmaker;
+	public AudioSource soundmaker;
 
 	// Use this for initialization
 	void Start () {
