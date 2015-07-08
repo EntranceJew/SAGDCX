@@ -25,6 +25,7 @@ public class Food : MonoBehaviour {
 	public bool isGrabbed;
 	public FoodEnum foodType;
 	public string foodName; //I'm sorry ejew I can't think of how to do this otherwise (to evaluate if the prefab clone is the same thing as the original or w/e)
+	private float spawnTime;
 
 	public AudioClip grabSound;
 	public AudioClip releaseSound;
@@ -36,6 +37,7 @@ public class Food : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		spawnTime = Time.time;
 		isGrabbed = false;
 		soundmaker = GetComponent<AudioSource> ();
 		transform.rotation = Quaternion.Euler (new Vector3(-90, Random.Range (0,360), 0));
@@ -43,7 +45,11 @@ public class Food : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (Time.time >= spawnTime + 0.5f) {
+			if (soundmaker.mute == true) {
+				soundmaker.mute = false;
+			}
+		}
 	}
 
 	public void PlaySound(AudioClip clipToPlay){
