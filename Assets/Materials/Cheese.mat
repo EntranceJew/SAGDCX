@@ -80,7 +80,7 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ToonShade
+          name: _SpecGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -94,7 +94,7 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _SpecGlossMap
+          name: _ToonShade
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -123,7 +123,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0
+        second: .0970000029
       data:
         first:
           name: _BumpScale
@@ -156,15 +156,15 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: .397058845, g: .336815447, b: 0, a: 1}
+        second: {r: .0588235259, g: .0503579527, b: .0030276808, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 0, a: 1}
+        second: {r: .948529422, g: .837707341, b: .0557958446, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _OutlineColor

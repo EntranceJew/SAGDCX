@@ -923,7 +923,7 @@ Transform:
   - {fileID: 1834520949}
   - {fileID: 229258874}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &239913952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,6 +1698,9 @@ MonoBehaviour:
   - {fileID: 166252, guid: 15f10e76772538c43b47f6429a1ceb4f, type: 2}
   - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
   - {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
+  - {fileID: 190024, guid: 61bcb51c5a1d5a946bea0f2650957eb3, type: 2}
+  - {fileID: 189984, guid: 46f2dde8146bcff4a86418ad1afa4956, type: 2}
+  - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
   inventory: {fileID: 2139853223}
 --- !u!54 &500669056
 Rigidbody:
@@ -1906,6 +1909,7 @@ MonoBehaviour:
   - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
   - {fileID: 183780, guid: 8ec6465b673d4a64dbc740e4510e32a1, type: 2}
   - {fileID: 133794, guid: 993006d869e86d449879ae5176d85c8f, type: 2}
+  - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
   inventory: {fileID: 2139853223}
 --- !u!23 &595526796
 MeshRenderer:
@@ -4935,6 +4939,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1911050101}
     m_Modifications:
+    - target: {fileID: 11416874, guid: eb834858c357cac41994ef0836f264e3, type: 2}
+      propertyPath: spawnList.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 428200, guid: eb834858c357cac41994ef0836f264e3, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.03999996
@@ -5358,7 +5366,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11490230, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
       propertyPath: spawnList.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 412368, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -5404,6 +5412,10 @@ Prefab:
       propertyPath: spawnList.Array.data[8]
       value: 
       objectReference: {fileID: 167574, guid: e0fcfbbac547044419920080da57003f, type: 2}
+    - target: {fileID: 11490230, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
+      propertyPath: spawnList.Array.data[9]
+      value: 
+      objectReference: {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
   m_IsPrefabParent: 0
@@ -6931,6 +6943,9 @@ MonoBehaviour:
   - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
   - {fileID: 114696, guid: 19c377dd28af55d4fa831f3b9a6c18b5, type: 2}
   - {fileID: 167574, guid: e0fcfbbac547044419920080da57003f, type: 2}
+  - {fileID: 190024, guid: 61bcb51c5a1d5a946bea0f2650957eb3, type: 2}
+  - {fileID: 189984, guid: 46f2dde8146bcff4a86418ad1afa4956, type: 2}
+  - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
 --- !u!1 &2035873714
 GameObject:
   m_ObjectHideFlags: 0
