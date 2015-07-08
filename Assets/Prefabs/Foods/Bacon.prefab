@@ -1,50 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &114696
+--- !u!1 &177512
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 411262}
-  - 33: {fileID: 3326664}
-  - 23: {fileID: 2309660}
-  - 54: {fileID: 5498162}
-  - 65: {fileID: 6565042}
-  - 114: {fileID: 11435526}
-  - 82: {fileID: 8244940}
+  - 4: {fileID: 479680}
+  - 33: {fileID: 3300860}
+  - 23: {fileID: 2323902}
+  - 54: {fileID: 5420300}
+  - 65: {fileID: 6558086}
+  - 114: {fileID: 11400694}
+  - 82: {fileID: 8225100}
   m_Layer: 0
-  m_Name: Pepper
+  m_Name: Bacon
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &411262
+--- !u!4 &479680
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114696}
+  m_GameObject: {fileID: 177512}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
-  m_LocalPosition: {x: 5.76173687, y: .557557583, z: -.477944136}
+  m_LocalPosition: {x: 6.26333237, y: .535330176, z: -.678139448}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2309660
+--- !u!23 &2323902
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114696}
+  m_GameObject: {fileID: 177512}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 885200cb9f86de548b9b03aad7f42f02, type: 2}
-  - {fileID: 2100000, guid: 97370863fed2afd4f9fba0023eb2f817, type: 2}
+  - {fileID: 2100000, guid: 2006c5a4c66c85545a7b0210712cf79d, type: 2}
+  - {fileID: 2100000, guid: cc11f557c05aafe41b0b953e78ade97a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -58,19 +58,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3326664
+--- !u!33 &3300860
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114696}
-  m_Mesh: {fileID: 4300000, guid: 52e48bbaeb90d1742ac1fd3553ea0d3a, type: 3}
---- !u!54 &5498162
+  m_GameObject: {fileID: 177512}
+  m_Mesh: {fileID: 4300000, guid: 5297ae5911bf3da4e97c15cca748ce03, type: 3}
+--- !u!54 &5420300
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114696}
+  m_GameObject: {fileID: 177512}
   serializedVersion: 2
   m_Mass: 5
   m_Drag: 5
@@ -80,24 +80,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &6565042
+--- !u!65 &6558086
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114696}
+  m_GameObject: {fileID: 177512}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.79264069, y: .353416711, z: .264971346}
-  m_Center: {x: -.0324259996, y: -.0372959562, z: .0749280825}
---- !u!82 &8244940
+  m_Size: {x: 2.10942793, y: 1.09584177, z: .0732104257}
+  m_Center: {x: -.00953012705, y: -.0171786528, z: .00127506244}
+--- !u!82 &8225100
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114696}
+  m_GameObject: {fileID: 177512}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -106,7 +106,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -161,12 +161,12 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11435526
+--- !u!114 &11400694
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114696}
+  m_GameObject: {fileID: 177512}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a1c26159d90c7498ba813c546bf770, type: 3}
@@ -175,14 +175,14 @@ MonoBehaviour:
   isFoodPope: 0
   bb: {fileID: 0}
   foodCategories:
-    bun: .400000006
-    vegetable: 1
-    meat: .400000006
+    bun: .100000001
+    vegetable: .100000001
+    meat: 1
     cheese: .100000001
     condiment: 0
   isGrabbed: 0
-  foodType: 1
-  foodName: Pepper
+  foodType: 2
+  foodName: Bacon
   grabSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   hitSoftSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
@@ -194,36 +194,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: Food
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: grabSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-    - target: {fileID: 0}
-      propertyPath: releaseSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-    - target: {fileID: 0}
-      propertyPath: hitSoftSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-    - target: {fileID: 0}
-      propertyPath: hitHardSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-    - target: {fileID: 0}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Mute
-      value: 1
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 114696}
+  m_RootGameObject: {fileID: 177512}
   m_IsPrefabParent: 1
