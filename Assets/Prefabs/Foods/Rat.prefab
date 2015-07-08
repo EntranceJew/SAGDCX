@@ -11,8 +11,8 @@ GameObject:
   - 33: {fileID: 3373324}
   - 23: {fileID: 2392876}
   - 54: {fileID: 5456348}
-  - 64: {fileID: 6430804}
   - 114: {fileID: 11448554}
+  - 65: {fileID: 6559238}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Food
@@ -26,8 +26,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176296}
-  m_LocalRotation: {x: -.620218396, y: .339601666, z: .339601696, w: .620218277}
-  m_LocalPosition: {x: -.134288982, y: 1.93599999, z: .962000012}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 3.68729281, y: .735914171, z: -.429715872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,8 +79,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!64 &6430804
-MeshCollider:
+--- !u!65 &6559238
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -89,8 +89,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: 63792a14625ddfa48acdc35331db3045, type: 3}
+  m_Size: {x: 1.96000004, y: 1.81754124, z: .360000014}
+  m_Center: {x: .0399999991, y: 0, z: .00538164331}
 --- !u!114 &11448554
 MonoBehaviour:
   m_ObjectHideFlags: 1
