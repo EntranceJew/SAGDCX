@@ -178,6 +178,7 @@ MonoBehaviour:
     vegetable: 1
     meat: 0
     cheese: 0
+    condiment: .800000012
   isGrabbed: 0
   foodType: 1
   foodName: Relish
@@ -203,6 +204,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: foodCategories.vegetable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.condiment
+      value: .800000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

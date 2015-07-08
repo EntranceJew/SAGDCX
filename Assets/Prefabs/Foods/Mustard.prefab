@@ -175,9 +175,10 @@ MonoBehaviour:
   bb: {fileID: 0}
   foodCategories:
     bun: 0
-    vegetable: 0
+    vegetable: .5
     meat: 0
     cheese: 0
+    condiment: 1
   isGrabbed: 0
   foodType: 0
   foodName: Mustard
@@ -195,6 +196,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: foodName
       value: Mustard
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.condiment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCategories.vegetable
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
