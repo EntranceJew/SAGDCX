@@ -55,6 +55,9 @@ public class Food : MonoBehaviour {
 			//isFoodPope = false;
 			bb.ObtainNewPart(col.gameObject);
 		}
+
+		PlaySound (hitSoftSound);
+
 	}
 
 	// something to do when we're now property of the burg builder
@@ -66,6 +69,9 @@ public class Food : MonoBehaviour {
 
 	public void Grabbed(){
 		isGrabbed = true;
+
+		PlaySound(grabSound);
+
 		if (isFoodPope) {
 			isFoodPope = false;
 			gameObject.transform.parent = null;
