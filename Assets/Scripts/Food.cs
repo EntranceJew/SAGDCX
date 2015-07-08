@@ -24,14 +24,29 @@ public class Food : MonoBehaviour {
 	public FoodEnum foodType;
 	public string foodName; //I'm sorry ejew I can't think of how to do this otherwise (to evaluate if the prefab clone is the same thing as the original or w/e)
 
+	public AudioClip grabSound;
+	public AudioClip releaseSound;
+
+	public AudioClip hitSoftSound;
+	public AudioClip hitHardSound;
+
+	private AudioSource soundmaker;
+
 	// Use this for initialization
 	void Start () {
 		isGrabbed = false;
+		soundmaker = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+	}
+
+	public void PlaySound(AudioClip clipToPlay){
+		soundmaker.Stop ();
+		soundmaker.clip = clipToPlay;
+		soundmaker.Play ();
 	}
 
 	void OnCollisionEnter(Collision col){
