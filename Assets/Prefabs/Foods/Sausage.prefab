@@ -184,7 +184,7 @@ MonoBehaviour:
   foodName: Sausage
   grabSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-  hitSoftSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  hitSoftSound: {fileID: 8300000, guid: 4ffad6479b0c9f14cbf5b4b234cef0c7, type: 3}
   hitHardSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   soundmaker: {fileID: 0}
 --- !u!1001 &100100000
@@ -205,7 +205,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: hitSoftSound
       value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+      objectReference: {fileID: 8300000, guid: 4ffad6479b0c9f14cbf5b4b234cef0c7, type: 3}
     - target: {fileID: 0}
       propertyPath: hitHardSound
       value: 
