@@ -65,7 +65,7 @@ public class Score : MonoBehaviour {
 			List<GameObject> tempUnusedList = new List<GameObject>(unusedYet);
 			tempUsedList.Add(unusedYet[i]);
 			tempUnusedList.RemoveAt(i);
-			yield return null;
+			yield return new WaitForSeconds(0.01f);
 			StartCoroutine(Permute(orderRequested, tempUsedList, tempUnusedList));
 		}
 	}
