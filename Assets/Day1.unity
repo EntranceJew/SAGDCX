@@ -693,9 +693,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 153021547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2e321808e0ebb742830ed701c2b87bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a104e3a1ba924043a4d56e692a752e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rMenu: {fileID: 1473224184}
   example: {fileID: 250770377}
   upVar: .5
   rand: 1

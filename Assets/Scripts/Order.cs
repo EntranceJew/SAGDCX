@@ -7,7 +7,9 @@ public class Order {
 
 	//RANDOM order for empty constructor
 	public Order (List<GameObject> inList) {
-		completeOrder = RandomIngredients (inList);
+		Debug.Log (inList);
+		completeOrder = inList;
+		completeOrder.Reverse();
 	}
 	
 	public List<GameObject> RandomIngredients(List<GameObject> allList) {
