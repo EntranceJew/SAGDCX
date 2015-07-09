@@ -436,7 +436,7 @@ ParticleSystem:
     boxZ: 1
     arc: 360
     placementMode: 2
-    m_Mesh: {fileID: 4300000, guid: 7e1a34962ea989d46b1099ee21166350, type: 3}
+    m_Mesh: {fileID: 4300000, guid: a7848b9122f13c24cb96acb5cc41d409, type: 3}
     randomDirection: 0
   EmissionModule:
     enabled: 1
@@ -1351,6 +1351,14 @@ Prefab:
       propertyPath: Mute
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 934c2af3e3833b04f8b1dcd9854019d8, type: 3}
+    - target: {fileID: 0}
+      propertyPath: ShapeModule.m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: a7848b9122f13c24cb96acb5cc41d409, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 120490}
