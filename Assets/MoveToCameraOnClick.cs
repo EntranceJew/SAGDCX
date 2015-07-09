@@ -4,6 +4,9 @@ using System.Collections;
 public class MoveToCameraOnClick : MonoBehaviour {
 	public Transform ownPosition;
 	public Transform cameraPosition;
+
+	public GameObject theCamera;
+
 	public bool wall = true;
 	public float speed;
 	float percent = 1;
@@ -16,8 +19,15 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		wall = !wall;
-		percent = 0;
+		if (wall) {
+			if (!Camera.main.GetComponent<LookTowards>().attached) {
+				Camera.main.GetComponent<LookTowards>().attached = true;
+				MoveToCamera ();
+			}
+		} else {
+			Camera.main.GetComponent<LookTowards>().attached = false;
+			MoveToWall ();
+		}
 	}
 
 	void Move() {
@@ -39,5 +49,15 @@ public class MoveToCameraOnClick : MonoBehaviour {
 		if (percent > 1) {
 			percent = 1;
 		}
+	}
+
+	void MoveToCamera() {
+		wall = false;
+		percent = 0;
+	}
+
+	void MoveToWall() {
+		wall = true;
+		percent = 0;
 	}
 }

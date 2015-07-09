@@ -25,4 +25,12 @@ public class AltScore : MonoBehaviour {
 	float TopsAndBottomsMatch(){
 		return 0.0f;
 	}
+
+	public float GetMinScore () {
+		return 0;
+	}
+
+	public float GetMaxScore () {
+		return 500;
+	}
 }

@@ -57,7 +57,7 @@ public class Score : MonoBehaviour {
 				bestOrder = usedList;
 			}
 			
-			return true;
+			yield break;
 		}
 		
 		for (int i = 0; i < unusedYet.Count; i++) {
