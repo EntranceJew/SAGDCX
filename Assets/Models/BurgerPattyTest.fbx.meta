@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1b70931c1ad1d0e4582ea85306942ce3
-timeCreated: 1436468734
+guid: 161da3fa1a12fdc45af0be2c8e864588
+timeCreated: 1436467670
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sausage
+    4300000: Icosphere.001
   materials:
     importMaterials: 1
     materialName: 0
