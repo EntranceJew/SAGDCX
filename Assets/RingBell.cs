@@ -22,6 +22,8 @@ public class RingBell : MonoBehaviour {
 			score.EvaluateBurger(GetOrder(), GetBurger());
 			Debug.Log ("THE STAGE IS SET!");
 		}
+		AudioSource audio = GetComponent<AudioSource> ();
+		audio.Play ();
 	}
 
 	void Update(){
@@ -46,9 +48,6 @@ public class RingBell : MonoBehaviour {
 				}
 			}
 			*/
-			
-			AudioSource audio = GetComponent<AudioSource> ();
-			audio.Play ();
 			
 			//Don't forget to tell the lightbulb that a new order is needed to be gotten.
 			/*
