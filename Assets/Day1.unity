@@ -549,7 +549,7 @@ Transform:
   - {fileID: 1065905714}
   - {fileID: 1407087414}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1 &135924724
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +923,7 @@ Transform:
   - {fileID: 1834520949}
   - {fileID: 229258874}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &239913952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,7 +1035,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!1 &283817976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,7 +1462,7 @@ Transform:
   - {fileID: 47498609}
   - {fileID: 2012272018}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &443243620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2448,6 +2448,33 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 652574894}
+--- !u!1 &690422711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 690422712}
+  m_Layer: 0
+  m_Name: PhotoPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &690422712
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 690422711}
+  m_LocalRotation: {x: 1.00762662e-07, y: .618476629, z: .785803199, w: -1.280237e-07}
+  m_LocalPosition: {x: 6.92000008, y: 4.55000019, z: 6.1500001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &718414759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,7 +2944,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d017e866a436a244687ad1dd501bc8fc, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d017e866a436a244687ad1dd501bc8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -3023,7 +3050,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!114 &891384555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3427,7 +3454,7 @@ Transform:
   m_Children:
   - {fileID: 304183330}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &1152997215
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,7 +3748,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1522864817}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1251510919
 GameObject:
   m_ObjectHideFlags: 0
@@ -4342,6 +4369,33 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87eb6ce4ed610684eb3164e5da27a41b, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1375762271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1375762272}
+  m_Layer: 0
+  m_Name: PhotoMoveTo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1375762272
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375762271}
+  m_LocalRotation: {x: -1.1520229e-07, y: -.707106948, z: -.70710659, w: 1.15202347e-07}
+  m_LocalPosition: {x: 0, y: 0, z: 6.53999996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1522864817}
+  m_RootOrder: 0
 --- !u!1 &1376186311
 GameObject:
   m_ObjectHideFlags: 0
@@ -4715,6 +4769,8 @@ MonoBehaviour:
   - name: Bacon & Cheese
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
+    - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
     - {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
     - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
     - {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
@@ -4724,6 +4780,8 @@ MonoBehaviour:
   - name: Double Size Burger
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
+    - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
     - {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
     - {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
     - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
@@ -4736,6 +4794,8 @@ MonoBehaviour:
   - name: The Big Show
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
+    - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
     - {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
     - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
     - {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
@@ -4745,6 +4805,8 @@ MonoBehaviour:
   - name: The Double Big Show
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
+    - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
     - {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
     - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
     - {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
@@ -4755,6 +4817,8 @@ MonoBehaviour:
   - name: The Triple Big Show
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
+    - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
     - {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
     - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
     - {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
@@ -4766,6 +4830,7 @@ MonoBehaviour:
   - name: Double Bacon & Cheese
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
     - {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
     - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
     - {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
@@ -4777,12 +4842,16 @@ MonoBehaviour:
   - name: Skimpy Hamburger
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
+    - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
   - name: SKimpy Hamburger w/ Cheese
     contents:
     - {fileID: 0}
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
+    - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
@@ -4797,7 +4866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
 --- !u!1001 &1508975593
 Prefab:
   m_ObjectHideFlags: 0
@@ -4951,9 +5020,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 5.21999979, z: -8.60999966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1375762272}
   - {fileID: 1243544908}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &1522864818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5226,7 +5296,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490836, guid: 450b1ac6d188b2543a847797fc49ce8a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 450b1ac6d188b2543a847797fc49ce8a, type: 2}
@@ -5312,7 +5382,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
       propertyPath: m_Name
@@ -5348,7 +5418,7 @@ Transform:
   m_Children:
   - {fileID: 183841031}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1001 &1693930869
 Prefab:
   m_ObjectHideFlags: 0
@@ -5386,7 +5456,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7010841170408314c88ea2b6ace4fdca, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7010841170408314c88ea2b6ace4fdca, type: 3}
@@ -6349,7 +6419,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1911050100
 GameObject:
   m_ObjectHideFlags: 0
@@ -6383,7 +6453,7 @@ Transform:
   - {fileID: 1152997216}
   - {fileID: 1841975491}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!1 &1925125020
 GameObject:
   m_ObjectHideFlags: 0
@@ -6688,7 +6758,7 @@ Transform:
   m_Children:
   - {fileID: 538077717}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!1 &2007731778
 GameObject:
   m_ObjectHideFlags: 0
@@ -6762,7 +6832,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &2012272017
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,7 +7080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!114 &2031356193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7260,6 +7330,37 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2061058464}
+--- !u!1 &2070875402 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 7010841170408314c88ea2b6ace4fdca, type: 3}
+  m_PrefabInternal: {fileID: 1693930869}
+--- !u!65 &2070875403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2070875402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.71011448, y: .630269408, z: 8.29584694}
+  m_Center: {x: 0, y: -.065027155, z: 0}
+--- !u!114 &2070875404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2070875402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58230298092711749a11c11f9feec447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownPosition: {fileID: 690422712}
+  cameraPosition: {fileID: 1375762272}
+  wall: 1
+  speed: 0
 --- !u!1001 &2098637425
 Prefab:
   m_ObjectHideFlags: 0
@@ -7437,4 +7538,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
