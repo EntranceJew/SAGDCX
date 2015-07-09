@@ -5687,7 +5687,7 @@ Transform:
   - {fileID: 1375762272}
   - {fileID: 1243544908}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &1522864818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7892,6 +7892,7 @@ MonoBehaviour:
   - {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
   - {fileID: 176600, guid: 9c2884352f33cee419923ff6c0fd1a8d, type: 2}
   - {fileID: 181392, guid: 8d1355310f1cb1d4b8830f8b4bb170ea, type: 2}
+  - {fileID: 111818, guid: 70c98d55039c1144cb18d517d53f9a4e, type: 2}
 --- !u!1 &2054011862
 GameObject:
   m_ObjectHideFlags: 0
@@ -8174,7 +8175,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
       propertyPath: spawnList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 414350, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
       propertyPath: m_LocalPosition.x
@@ -8224,6 +8225,10 @@ Prefab:
       propertyPath: spawnList.Array.data[1]
       value: 
       objectReference: {fileID: 181392, guid: 8d1355310f1cb1d4b8830f8b4bb170ea, type: 2}
+    - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
+      propertyPath: spawnList.Array.data[2]
+      value: 
+      objectReference: {fileID: 111818, guid: 70c98d55039c1144cb18d517d53f9a4e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
   m_IsPrefabParent: 0
@@ -8377,6 +8382,8 @@ MonoBehaviour:
     quantity: 4
   - name: Shoelace
     quantity: 2
+  - name: Dog Treat
+    quantity: 1
 --- !u!4 &2139853225
 Transform:
   m_ObjectHideFlags: 0
