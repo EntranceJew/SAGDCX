@@ -34,7 +34,7 @@ public class AltGetOrder : MonoBehaviour {
 
 		order = new Order (rMenuItem.contents);
 		instruction = canvas.transform.Find("OrderText").gameObject.GetComponent<Text> ();
-		instruction.text = "Your order is: " + "["+rMenuItem.name+"] " + order.toString ();
+		instruction.text = "Your order is: " + "["+rMenuItem.name+"]\n" + order.toString ();
 
 		MakeOrderExample ();
 	}
