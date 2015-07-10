@@ -102,14 +102,17 @@ public class AltScore : MonoBehaviour {
 	bool isExactMatch(){
 		int i = 0;
 		foreach (GameObject orderItem in theOrder) {
-			if(theBurg[i] != null){
-				if(AreNamedSimilar(orderItem, theBurg[i])){
-					return true;
-				}
+			if(i > theBurg.Count-1){
+				// we done ran out of burg, can't possibly match
+				return false;
+			}
+
+			if(!AreNamedSimilar(orderItem, theBurg[i])){
+				return false;
 			}
 			i++;
 		}
-		return false;
+		return true;
 	}
 
 	int numPartsFound(){
@@ -123,7 +126,7 @@ public class AltScore : MonoBehaviour {
 		}
 
 		foreach (GameObject orderItem in theOrder) {
-			if(theBurg[i] == null){
+			if(i > theBurg.Count-1){
 				// we done ran out of burg
 				break;
 			}

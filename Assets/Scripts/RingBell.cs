@@ -9,10 +9,10 @@ public class RingBell : MonoBehaviour {
 	public bool evaluated = false;
 	public bool isEvaluating = false;
 
-	private Score score;
+	private AltScore score;
 
 	void Start(){
-		score = GetComponent<Score> ();
+		score = GetComponent<AltScore> ();
 	}
 
 	void OnMouseDown() {
@@ -20,7 +20,6 @@ public class RingBell : MonoBehaviour {
 		if (!isEvaluating) {
 			isEvaluating = true;
 			score.EvaluateBurger(GetOrder(), GetBurger());
-			Debug.Log ("THE STAGE IS SET!");
 		}
 		AudioSource audio = GetComponent<AudioSource> ();
 		audio.Play ();
@@ -31,28 +30,10 @@ public class RingBell : MonoBehaviour {
 			evaluated = score.done;
 		}
 		if(evaluated) {
-			Debug.Log ("BACK TO REALITY!");
 			isEvaluating = false;
-			//Trash burger
-			/*
-			foreach (Transform t in burgBuild.transform) {
-				if (t.name != "PartZone") {
-					Destroy (t.gameObject);
-				}
-			}
-			
-			//Allow new burg to be made
-			foreach (Transform t in burgBuild.transform) {
-				if (t.name == "PartZone") {
-					t.GetComponent<PartZone>().enabled = true;
-				}
-			}
-			*/
-			
-			//Don't forget to tell the lightbulb that a new order is needed to be gotten.
-			/*
-			lb.GetComponent<GetOrder> ().NewOrder ();
-			*/
+
+
+
 			evaluated = false;
 		}
 	}
@@ -60,7 +41,7 @@ public class RingBell : MonoBehaviour {
 
 	List<GameObject> GetOrder() {
 		//Get order from the lightbulb
-		return lb.GetComponent<GetOrder> ().CurrentOrder().completeOrder;
+		return lb.GetComponent<AltGetOrder> ().CurrentOrder().completeOrder;
 	}
 
 	List<GameObject> GetBurger() {
@@ -73,6 +54,21 @@ public class RingBell : MonoBehaviour {
 		}
 
 		return burgObjects;
+	}
+
+	void TrashBurger(){
+		foreach (Transform t in burgBuild.transform) {
+			if (t.name != "PartZone") {
+				Destroy (t.gameObject);
+			}
+		}
+		
+		//Allow new burg to be made
+		foreach (Transform t in burgBuild.transform) {
+			if (t.name == "PartZone") {
+				t.GetComponent<PartZone> ().enabled = true;
+			}
+		}
 	}
 
 }
