@@ -39,7 +39,7 @@ public class Order {
 		//completeOrder = completeOrder.Reverse ();
 		//List<GameObject> flippedList = completeOrder.Reverse ();
 		foreach (GameObject obj in flippedOrder) {
-			output += obj.transform.name + ",\n";
+			output += obj.name + ",\n";
 		}
 		// Trim the newline and comma we don't need.
 		output = output.Substring(0, output.Length-2);
