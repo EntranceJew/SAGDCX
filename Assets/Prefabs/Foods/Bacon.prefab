@@ -106,7 +106,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -187,14 +187,17 @@ MonoBehaviour:
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   hitSoftSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   hitHardSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-  soundmaker: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 177512}

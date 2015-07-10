@@ -33,11 +33,10 @@ public class Food : MonoBehaviour {
 	public AudioClip hitSoftSound;
 	public AudioClip hitHardSound;
 
-	public AudioSource soundmaker;
+	private AudioSource soundmaker;
 
 	// Use this for initialization
 	void Start () {
-		spawnTime = Time.time;
 		isGrabbed = false;
 		soundmaker = GetComponent<AudioSource> ();
 		transform.rotation = Quaternion.Euler (new Vector3(-90, Random.Range (0,360), 0));
@@ -45,11 +44,7 @@ public class Food : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time >= spawnTime + 0.5f) {
-			if (soundmaker.mute == true) {
-				soundmaker.mute = false;
-			}
-		}
+
 	}
 
 	public void PlaySound(AudioClip clipToPlay){
@@ -66,9 +61,11 @@ public class Food : MonoBehaviour {
 			//isFoodPope = false;
 			bb.ObtainNewPart(col.gameObject);
 		}
-
-		PlaySound (hitSoftSound);
-
+		
+		if (soundmaker.mute == false) {
+			PlaySound (hitSoftSound);
+		}
+		
 	}
 
 	// something to do when we're now property of the burg builder
@@ -80,6 +77,9 @@ public class Food : MonoBehaviour {
 
 	public void Grabbed(){
 		isGrabbed = true;
+		if (soundmaker.mute) {
+			soundmaker.mute = false;
+		}
 
 		PlaySound(grabSound);
 
