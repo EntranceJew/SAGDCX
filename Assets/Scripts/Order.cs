@@ -38,7 +38,7 @@ public class Order {
 		// Not sure why we do this because we already flipped completeOrder when we made him.
 		//completeOrder = completeOrder.Reverse ();
 		//List<GameObject> flippedList = completeOrder.Reverse ();
-		foreach (GameObject obj in flippedOrder) {
+		foreach (GameObject obj in completeOrder) {
 			output += obj.name + ",\n";
 		}
 		// Trim the newline and comma we don't need.

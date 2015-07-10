@@ -62,7 +62,7 @@ public class Food : MonoBehaviour {
 			bb.ObtainNewPart(col.gameObject);
 		}
 		
-		if (soundmaker.mute == false) {
+		if (soundmaker != null && soundmaker.mute == false) {
 			PlaySound (hitSoftSound);
 		}
 		
