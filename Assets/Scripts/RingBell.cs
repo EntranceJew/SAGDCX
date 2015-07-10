@@ -17,27 +17,10 @@ public class RingBell : MonoBehaviour {
 
 	void OnMouseDown() {
 		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.
-		if (!isEvaluating) {
-			isEvaluating = true;
-			score.EvaluateBurger(GetOrder(), GetBurger());
-		}
+		score.EvaluateBurger(GetOrder(), GetBurger());
 		AudioSource audio = GetComponent<AudioSource> ();
 		audio.Play ();
 	}
-
-	void Update(){
-		if (isEvaluating) {
-			evaluated = score.done;
-		}
-		if(evaluated) {
-			isEvaluating = false;
-
-
-
-			evaluated = false;
-		}
-	}
-
 
 	List<GameObject> GetOrder() {
 		//Get order from the lightbulb

@@ -21,13 +21,13 @@ public class TrashBell : MonoBehaviour {
 
 		TrashBurger ();
 
-		lb.GetComponent<GetOrder> ().NewOrder ();
+		lb.GetComponent<AltGetOrder> ().NewOrder ();
 	}
 
 
 	List<GameObject> GetOrder() {
 		//Get order from the lightbulb
-		return lb.GetComponent<GetOrder> ().CurrentOrder().completeOrder;
+		return lb.GetComponent<AltGetOrder> ().CurrentOrder().completeOrder;
 	}
 
 	List<GameObject> GetBurger() {
