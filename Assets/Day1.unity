@@ -5895,9 +5895,8 @@ MonoBehaviour:
     - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
-  - name: SKimpy Hamburger w/ Cheese
+  - name: Skimpy Hamburger w/ Cheese
     contents:
-    - {fileID: 0}
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
     - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
     - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
