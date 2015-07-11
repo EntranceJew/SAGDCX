@@ -8,10 +8,16 @@ public class BurgBuilder : MonoBehaviour {
 	void Start () {
 		pz = gameObject.GetComponentInChildren<PartZone> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public bool EmancipatePart(GameObject part){
+		if (BelongsToMe (part)) {
+			part.GetComponent<Food>().Emancipate();
+			if(transform.childCount == 1){
+				pz.enabled = true;
+			}
+			return true;
+		}
+		return false;
 	}
 
 	public bool ObtainNewPart(GameObject part){

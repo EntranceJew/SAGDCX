@@ -75,6 +75,13 @@ public class Food : MonoBehaviour {
 		this.isFoodPope = true;
 	}
 
+	// @TODO: Make this disentegrate it like the portal fizzler instead.
+	public void Emancipate(){
+		isFoodPope = false;
+		gameObject.transform.parent = null;
+		bb = null;
+	}
+
 	public void Grabbed(){
 		isGrabbed = true;
 		if (soundmaker.mute) {
@@ -83,10 +90,8 @@ public class Food : MonoBehaviour {
 
 		PlaySound(grabSound);
 
-		if (isFoodPope) {
-			isFoodPope = false;
-			gameObject.transform.parent = null;
-			bb = null;
+		if (bb != null) {
+			bb.EmancipatePart(gameObject);
 		}
 	}
 
