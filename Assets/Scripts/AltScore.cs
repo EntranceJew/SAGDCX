@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class AltScore : MonoBehaviour {
+	public GameObject scoreText;
+	public GameObject potentialText;
+
 	public List<GameObject> theOrder;
 	public List<GameObject> theBurg;
 
@@ -16,12 +20,8 @@ public class AltScore : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		scoreText.GetComponent<Text> ().text = "0";
+		potentialText.GetComponent<Text> ().text = "0";
 	}
 
 	// UTILITY BURGSEARCH FUNCTIONS
@@ -84,6 +84,9 @@ public class AltScore : MonoBehaviour {
 
 		theScore += pointsPerEachPartFound * numPartsFound();
 
+		// update UI
+		scoreText.GetComponent<Text> ().text = theScore.ToString();
+
 		return theScore;
 	}
 
@@ -94,6 +97,9 @@ public class AltScore : MonoBehaviour {
 		thePotentialScore += pointsForExactMatch;
 
 		thePotentialScore += pointsPerEachPartFound * theOrder.Count;
+
+		// update UI
+		potentialText.GetComponent<Text> ().text = thePotentialScore.ToString();
 
 		return thePotentialScore;
 	}

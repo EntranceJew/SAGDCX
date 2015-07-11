@@ -8,7 +8,6 @@ public class Order {
 
 	//RANDOM order for empty constructor
 	public Order (List<GameObject> inList) {
-		Debug.Log (inList);
 		// is it really that goddamn difficult to flip a list, really
 		// from: http://forum.unity3d.com/threads/reversing-a-list.79972/
 		GameObject[] listArray = new GameObject[inList.Count];

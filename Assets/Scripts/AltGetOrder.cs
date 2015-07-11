@@ -18,8 +18,6 @@ public class AltGetOrder : MonoBehaviour {
 		
 	void Start () {
 		rMenuElement = rMenu.GetComponent<RMenuElement> ();
-
-		NewOrder ();
 	}
 
 	public void NewOrder() {

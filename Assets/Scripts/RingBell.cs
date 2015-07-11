@@ -3,16 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class RingBell : MonoBehaviour {
-	public GameObject lb;
-	public GameObject burgBuild;
+	public GameObject burger;
+	public GameObject scorer;
+	public GameObject orderer;
 
-	public bool evaluated = false;
-	public bool isEvaluating = false;
-
+	private BurgBuilder burgBuilder;
+	private AltGetOrder getOrder;
 	private AltScore score;
 
 	void Start(){
-		score = GetComponent<AltScore> ();
+		burgBuilder = burger.GetComponent<BurgBuilder> ();
+		score = scorer.GetComponent<AltScore> ();
+		getOrder = orderer.GetComponent<AltGetOrder> ();
 	}
 
 	void OnMouseDown() {
@@ -24,34 +26,11 @@ public class RingBell : MonoBehaviour {
 
 	List<GameObject> GetOrder() {
 		//Get order from the lightbulb
-		return lb.GetComponent<AltGetOrder> ().CurrentOrder().completeOrder;
+		return getOrder.CurrentOrder().completeOrder;
 	}
 
 	List<GameObject> GetBurger() {
 		//Get list of objects in the burgbuilder
-		List<GameObject> burgObjects = new List<GameObject> ();
-		foreach (Transform t in burgBuild.transform) {
-			if (t.name != "PartZone") {
-				burgObjects.Add(t.gameObject);
-			}
-		}
-
-		return burgObjects;
+		return burgBuilder.GetChildParts();
 	}
-
-	void TrashBurger(){
-		foreach (Transform t in burgBuild.transform) {
-			if (t.name != "PartZone") {
-				Destroy (t.gameObject);
-			}
-		}
-		
-		//Allow new burg to be made
-		foreach (Transform t in burgBuild.transform) {
-			if (t.name == "PartZone") {
-				t.GetComponent<PartZone> ().enabled = true;
-			}
-		}
-	}
-
 }

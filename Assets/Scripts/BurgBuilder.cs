@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BurgBuilder : MonoBehaviour {
 	public PartZone pz;
@@ -58,5 +59,23 @@ public class BurgBuilder : MonoBehaviour {
 		//	Debug.Log ("Did not have parent.");
 			return false;
 		}
+	}
+	public List<GameObject> GetChildParts(){
+		List<GameObject> burgObjects = new List<GameObject> ();
+		foreach (Transform t in transform) {
+			if (t.name != "PartZone") {
+				burgObjects.Add (t.gameObject);
+			}
+		}
+		return burgObjects;
+	}
+
+	public void TrashBurger(){
+		foreach (Transform t in transform) {
+			if (t.name != "PartZone") {
+				Destroy (t.gameObject);
+			}
+		}
+		pz.enabled = true;
 	}
 }

@@ -3,39 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ServeBell : MonoBehaviour {
-	public GameObject lb;
-	public GameObject burgBuild;
+	public GameObject orderer;
 
-	public bool evaluated = false;
-	public bool isEvaluating = false;
-
-	private AltScore score;
+	private AltGetOrder getOrder;
 
 	void Start(){
-		score = GetComponent<AltScore> ();
+		getOrder = orderer.GetComponent<AltGetOrder> ();
 	}
 
 	void OnMouseDown() {
-		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.
 		AudioSource audio = GetComponent<AudioSource> ();
 		audio.Play ();
 
-		lb.GetComponent<AltGetOrder> ().NewOrder ();
-	}
+		// @TODO: Make this serve something.
 
-	void TrashBurger(){
-		foreach (Transform t in burgBuild.transform) {
-			if (t.name != "PartZone") {
-				Destroy (t.gameObject);
-			}
-		}
-		
-		//Allow new burg to be made
-		foreach (Transform t in burgBuild.transform) {
-			if (t.name == "PartZone") {
-				t.GetComponent<PartZone> ().enabled = true;
-			}
-		}
+		getOrder.NewOrder ();
 	}
-
 }
