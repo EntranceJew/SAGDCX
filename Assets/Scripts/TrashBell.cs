@@ -20,8 +20,6 @@ public class TrashBell : MonoBehaviour {
 		audio.Play ();
 
 		TrashBurger ();
-
-		lb.GetComponent<AltGetOrder> ().NewOrder ();
 	}
 
 
