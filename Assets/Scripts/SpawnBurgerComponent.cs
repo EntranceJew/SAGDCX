@@ -11,13 +11,16 @@ public class SpawnBurgerComponent : MonoBehaviour {
 	float count = 0;
 	float twoCount = 0;
 
+	private int numParts = -1;
+
 	void Update() {
-		if (burgToJudge.Count > 0) {
+		if (numParts > -1) {
 			burgJudgeCanvas.enabled = true;
 			count += Time.deltaTime;
 			if (count > 1) {
-				SpawnBurgerGameObject (burgToJudge [0]);
+				SpawnBurgerGameObject (burgToJudge [numParts]);
 				burgToJudge.RemoveAt (0);
+				numParts--;
 				count = 0;
 			}
 		} 
@@ -25,9 +28,8 @@ public class SpawnBurgerComponent : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-
 		burgToJudge = GetCurrentBurger ();
-
+		numParts = burgToJudge.Count-1;
 	}
 
 	List<GameObject> GetCurrentBurger() {
