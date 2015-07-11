@@ -9,11 +9,6 @@ public class PartZone : MonoBehaviour {
 	void Start () {
 		bb = transform.parent.GetComponent<BurgBuilder> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	void OnTriggerEnter(Collider col){
 		if (enabled) {
