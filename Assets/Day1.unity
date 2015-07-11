@@ -5290,6 +5290,33 @@ AudioSource:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
   m_PrefabInternal: {fileID: 1635126279}
+--- !u!1 &1361008726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1361008727}
+  m_Layer: 0
+  m_Name: '---HERE BE CLONED OBJECTS---'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1361008727
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1361008726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.30266714, y: -14.1571274, z: 43.2951775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1001 &1375643668
 Prefab:
   m_ObjectHideFlags: 0
