@@ -30,7 +30,7 @@ public class AltGetOrder : MonoBehaviour {
 	void OrderCreation() {
 		canvas = GameObject.FindGameObjectWithTag("MainCanvas");
 
-		RMenuItem rMenuItem = rMenuElement.menuItems[Random.Range(0, rMenuElement.menuItems.Count)];
+		RMenuItem rMenuItem = rMenuElement.menuItems[Random.Range(0, rMenuElement.menuItems.Count-1)];
 
 		order = new Order (rMenuItem.contents);
 		instruction = canvas.transform.Find("OrderText").gameObject.GetComponent<Text> ();
