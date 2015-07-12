@@ -23,10 +23,23 @@ public class DayValue {
 
 	public InventoryItems[] shipments;
 	// projected demands
+
+	public int[] orders;
 }
 
 public class DayValues : MonoBehaviour {
 	public List<DayValue> values; // = new List<DayValue>();
+
+	public int day = 0;
+	public int orderNumber = 0;
+
+	public int GetNextOrder(){
+		return orderNumber++;
+	}
+
+	public int[] GetTodaysOrders(){
+		return values [day].orders;
+	}
 
 	// Use this for initialization
 	void Start () {

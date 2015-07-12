@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ServeBell : MonoBehaviour {
-	public GameObject orderer;
+	public GameObject daymanerer;
 
-	private AltGetOrder getOrder;
+	private DayManager dayManager;
 
 	void Start(){
-		getOrder = orderer.GetComponent<AltGetOrder> ();
+		dayManager = daymanerer.GetComponent<DayManager> ();
 	}
 
 	void OnMouseDown() {
@@ -17,6 +17,6 @@ public class ServeBell : MonoBehaviour {
 
 		// @TODO: Make this serve something.
 
-		getOrder.NewOrder ();
+		dayManager.GetNextOrder ();
 	}
 }

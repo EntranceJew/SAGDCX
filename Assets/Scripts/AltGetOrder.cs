@@ -20,15 +20,19 @@ public class AltGetOrder : MonoBehaviour {
 		rMenuElement = rMenu.GetComponent<RMenuElement> ();
 	}
 
-	public void NewOrder() {
+	public void NewOrder(int orderIndex) {
 		//Get the order
-		OrderCreation ();
+		OrderCreation (orderIndex);
 	}
-	
-	void OrderCreation() {
+
+	void OrderCreation(){
+		OrderCreation (Random.Range (0, rMenuElement.menuItems.Count - 1));
+	}
+
+	void OrderCreation(int theIndex) {
 		canvas = GameObject.FindGameObjectWithTag("MainCanvas");
 
-		RMenuItem rMenuItem = rMenuElement.menuItems[Random.Range(0, rMenuElement.menuItems.Count-1)];
+		RMenuItem rMenuItem = rMenuElement.menuItems[theIndex];
 
 		order = new Order (rMenuItem.contents);
 		instruction = canvas.transform.Find("OrderText").gameObject.GetComponent<Text> ();

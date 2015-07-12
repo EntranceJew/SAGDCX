@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbffffea95f0014da23eecfa508a822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderer: {fileID: 1834493118}
+  daymanerer: {fileID: 2080867308}
 --- !u!82 &82910458
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3422,24 +3422,33 @@ MonoBehaviour:
       quantity: 0
     - name: 
       quantity: 0
+    orders: 010000000800000003000000
   - name: 
     mistakeTolerance: 0
     shipments: []
+    orders: 
   - name: 
     mistakeTolerance: 0
     shipments: []
+    orders: 
   - name: 
     mistakeTolerance: 0
     shipments: []
+    orders: 
   - name: 
     mistakeTolerance: 0
     shipments: []
+    orders: 
   - name: 
     mistakeTolerance: 0
     shipments: []
+    orders: 
   - name: 
     mistakeTolerance: 0
     shipments: []
+    orders: 
+  day: 0
+  orderNumber: 0
 --- !u!1 &794739306
 GameObject:
   m_ObjectHideFlags: 0
@@ -9212,6 +9221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderer: {fileID: 1834493118}
+  dayvaluer: {fileID: 786474127}
 --- !u!1001 &2098637425
 Prefab:
   m_ObjectHideFlags: 0
