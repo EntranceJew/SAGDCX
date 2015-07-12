@@ -17,9 +17,7 @@ public class DayManager : MonoBehaviour {
 		dayValues = dayvaluer.GetComponent<DayValues> ();
 
 		// @TODO: Wait some sort of magical period for the day to start before assigning first order.
-
-
-		GetNextOrder ();
+		StartDay ();
 	}
 	
 	// Update is called once per frame
@@ -33,8 +31,27 @@ public class DayManager : MonoBehaviour {
 		if (dayValues.orderNumber+1 <= orders.Length) {
 			getOrder.NewOrder (dayValues.GetNextOrder ());
 		} else {
-			Debug.Log ("DAY IS OVER, GO HOME");
+			EndDay();
 		}
+	}
 
+	public void EndDay(){
+		Debug.Log ("DAY IS OVER, GO HOME");
+		dayValues.day++;
+		getOrder.TrashLastOrder ();
+		StartCoroutine (Fade ());
+	}
+
+	public void StartDay(){
+		Debug.Log ("DAY STARTED, GO HOME");
+		dayValues.orderNumber = 0;
+		GetNextOrder ();
+	}
+
+	IEnumerator Fade() {
+		Debug.Log ("Waiting politely...");
+		yield return new WaitForSeconds(3.0f);
+		Debug.Log ("THE WAIT IS OVER!");
+		StartDay ();
 	}
 }

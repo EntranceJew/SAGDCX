@@ -61,7 +61,7 @@ public class AltGetOrder : MonoBehaviour {
 		}
 	}
 	
-	void TrashLastOrder() {
+	public void TrashLastOrder() {
 		foreach (Transform child in example.transform) {
 			if (child != example.transform) {
 				//Ok good we aren't deleting the actual example burger gameobject container
