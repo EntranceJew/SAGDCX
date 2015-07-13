@@ -12,12 +12,12 @@ public class PlayerValues : MonoBehaviour {
 	// how much money the player has at any time, this will impact purchases and deductions
 	public float cash;
 
-	// this is actually a reference to the Inventory item, eventually it will be brought in here
-	public InventoryItems[] stock;
+	// here is where all the everything ever lives
+	public Inventory inventory;
 
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
