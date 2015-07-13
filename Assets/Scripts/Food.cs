@@ -19,14 +19,18 @@ public enum FoodEnum {
 }
 
 public class Food : MonoBehaviour {
-	public bool isFoodPope;
-	public BurgBuilder bb;
+	// Category Balance Stuff
 	public FoodCategories foodCategories;
-	public bool isGrabbed;
 	public FoodEnum foodType;
 	public string foodName; //I'm sorry ejew I can't think of how to do this otherwise (to evaluate if the prefab clone is the same thing as the original or w/e)
-	private float spawnTime;
+	public float price;
 
+	// working vars
+	public bool isFoodPope;
+	public BurgBuilder bb;
+	public bool isGrabbed;
+
+	// noise
 	public AudioClip grabSound;
 	public AudioClip releaseSound;
 
@@ -34,6 +38,7 @@ public class Food : MonoBehaviour {
 	public AudioClip hitHardSound;
 
 	private AudioSource soundmaker;
+	private float spawnTime;
 
 	// Use this for initialization
 	void Start () {
