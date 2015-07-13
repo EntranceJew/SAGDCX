@@ -14,6 +14,10 @@ public class InventoryItems {
 
 public class Inventory : MonoBehaviour {
 
+	public Inventory(InventoryItems[] inStock){
+		stock = inStock;
+	}
+
 	public InventoryItems[] stock;
 
 	// Use this for initialization

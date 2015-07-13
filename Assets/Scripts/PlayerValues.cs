@@ -8,10 +8,9 @@ class ValuesForPlayer {
 	public string name;
 	public int dayNumber;
 	public float cash;
-	public Inventory inventory;
+	public InventoryItems[] inStock;
 }
 
-[System.Serializable]
 public class PlayerValues : MonoBehaviour {
 	// the player name won't be used, it's just here as a formality.
 	public string name;
@@ -36,7 +35,7 @@ public class PlayerValues : MonoBehaviour {
 		vals.name = name;
 		vals.dayNumber = dayNumber;
 		vals.cash = cash;
-		vals.inventory = inventory;
+		vals.inStock = inventory.stock;
 
 		bf.Serialize (file, vals);
 		file.Close ();
@@ -53,7 +52,7 @@ public class PlayerValues : MonoBehaviour {
 			name = vals.name;
 			dayNumber = vals.dayNumber;
 			cash = vals.cash;
-			inventory = vals.inventory;
+			inventory.stock = vals.inStock;
 			Debug.Log ("LOADED ALL MY VALUES UP GOOD");
 		} else {
 			Debug.Log ("NO FILE, DINDU NOTHIN'");
