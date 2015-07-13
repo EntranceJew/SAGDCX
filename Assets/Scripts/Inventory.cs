@@ -2,9 +2,14 @@
 using System.Collections;
 
 [System.Serializable]
-public struct InventoryItems {
+public class InventoryItems {
 	public string name;
 	public int quantity;
+
+	public InventoryItems(string tName, int tQuantity){
+		name = tName;
+		quantity = tQuantity;
+	}
 }
 
 public class Inventory : MonoBehaviour {
@@ -47,6 +52,12 @@ public class Inventory : MonoBehaviour {
 				stock[i].quantity += quantity;
 			}
 			i++;
+		}
+	}
+
+	public void ObtainShipment(InventoryItems[] incoming){
+		foreach (InventoryItems item in incoming) {
+			Add (item.name, item.quantity);
 		}
 	}
 }

@@ -6,15 +6,18 @@ using System.Collections;
 public class DayManager : MonoBehaviour {
 	public GameObject orderer;
 	public GameObject dayvaluer;
+	public GameObject inventorer;
 
 	private AltGetOrder getOrder;
 	private DayValues dayValues;
+	private Inventory inventory;
 
 	// Use this for initialization
 	void Start () {
 		// eventually we're going to want to do something that isn't this, but, I'm the king for now
 		getOrder = orderer.GetComponent<AltGetOrder> ();
 		dayValues = dayvaluer.GetComponent<DayValues> ();
+		inventory = inventorer.GetComponent<Inventory> ();
 
 		// @TODO: Wait some sort of magical period for the day to start before assigning first order.
 		StartDay ();
@@ -46,6 +49,11 @@ public class DayManager : MonoBehaviour {
 		Debug.Log ("DAY "+dayValues.day+" STARTED, GO HOME");
 		dayValues.orderNumber = 0;
 		GetNextOrder ();
+	}
+
+	public void AddTodaysShipment(){
+		Debug.Log ("ADDING DAY " + dayValues.day + "'S SHIPMENT");
+		inventory.ObtainShipment(dayValues.GetTodaysShipment ());
 	}
 
 	IEnumerator Fade() {

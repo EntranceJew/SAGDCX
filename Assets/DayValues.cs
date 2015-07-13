@@ -16,14 +16,25 @@ public class PlayerValues {
 
 [System.Serializable]
 public class DayValue {
+	// this isn't ever used, but it makes me feel better, so here it is
 	public string name;
 
-	// range 0 to 1;
+	// how much you got just for being here
+	public float paidWage;
+
+	// range 0 to 1, if a burger is below this tolerance we get points off
 	public float mistakeTolerance;
 
-	public InventoryItems[] shipments;
-	// projected demands
+	// not the money value, but how much a score difference will scale out to money
+	public float deductionMultiplier;
 
+	// expense for every purchase made during the day
+	public float gasPrice;
+
+	// what we will receive at the beginning of each day
+	public InventoryItems[] shipments;
+
+	// the menu item that will be ordered 
 	public int[] orders;
 }
 
@@ -39,6 +50,10 @@ public class DayValues : MonoBehaviour {
 
 	public int[] GetTodaysOrders(){
 		return values [day].orders;
+	}
+
+	public InventoryItems[] GetTodaysShipment(){
+		return values [day].shipments;
 	}
 
 	// Use this for initialization

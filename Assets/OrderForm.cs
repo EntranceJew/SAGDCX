@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class OrderForm : MonoBehaviour {
+	/* 
+	@TODO: establish links to dayvalues for the current cash amount
+	*/
 	
 	private RowManager[] rows;
 
