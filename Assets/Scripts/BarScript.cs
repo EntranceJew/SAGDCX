@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,10 +7,29 @@ public class BarScript : MonoBehaviour {
 
 	public GameObject bar;
 
+	public string yName;
+	public string xName;
 	public List<float> dataList = new List<float>();
 
 	// Use this for initialization
 	void Start () {
+		//Set Axis
+		Text yText = null;
+		Text xText = null;
+
+		foreach (RectTransform t in transform) {
+			if (t.name == "YLabel") {
+				yText = t.gameObject.GetComponent<Text>();
+			}
+
+			if (t.name == "XLabel") {
+				xText = t.gameObject.GetComponent<Text>();
+			}
+		}
+
+		yText.text = yName;
+		xText.text = xName;
+
 		int temp = 0;
 		foreach (int data in dataList) {
 			//Position of start element.
