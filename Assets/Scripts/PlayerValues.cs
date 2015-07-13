@@ -27,6 +27,7 @@ public class PlayerValues : MonoBehaviour {
 
 	// :siren: WATCH OUT IT'S I/O TIME :siren:
 	public void Save(){
+		Debug.Log ("TRYING TO SAVE!!!!");
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream file = File.Create (Application.persistentDataPath+"/PlayerValues.dat");
 
@@ -42,6 +43,7 @@ public class PlayerValues : MonoBehaviour {
 	}
 
 	public void Load(){
+		Debug.Log ("TRYING TO LOAD!!!!");
 		if (File.Exists (Application.persistentDataPath + "/PlayerValues.dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Open (Application.persistentDataPath+"/PlayerValues.dat", FileMode.Open);
