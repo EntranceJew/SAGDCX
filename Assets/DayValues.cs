@@ -3,18 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class PlayerValues {
-	public string name;
-	
-	// range 0 to 1;
-	public int dayNumber;
-
-	public float cash;
-
-	public InventoryItems[] stock;
-}
-
-[System.Serializable]
 public class DayValue {
 	// this isn't ever used, but it makes me feel better, so here it is
 	public string name;

@@ -4411,7 +4411,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   values:
   - name: Beggining
+    paidWage: 0
     mistakeTolerance: .899999976
+    deductionMultiplier: 0
+    gasPrice: 0
     shipments:
     - name: 
       quantity: 0
@@ -4433,27 +4436,45 @@ MonoBehaviour:
       quantity: 0
     orders: 010000000800000003000000
   - name: 
+    paidWage: 0
     mistakeTolerance: 0
+    deductionMultiplier: 0
+    gasPrice: 0
     shipments: []
     orders: 030000000200000001000000040000000500000007000000060000000800000002000000
   - name: 
+    paidWage: 0
     mistakeTolerance: 0
+    deductionMultiplier: 0
+    gasPrice: 0
     shipments: []
     orders: 
   - name: 
+    paidWage: 0
     mistakeTolerance: 0
+    deductionMultiplier: 0
+    gasPrice: 0
     shipments: []
     orders: 
   - name: 
+    paidWage: 0
     mistakeTolerance: 0
+    deductionMultiplier: 0
+    gasPrice: 0
     shipments: []
     orders: 
   - name: 
+    paidWage: 0
     mistakeTolerance: 0
+    deductionMultiplier: 0
+    gasPrice: 0
     shipments: []
     orders: 
   - name: 
+    paidWage: 0
     mistakeTolerance: 0
+    deductionMultiplier: 0
+    gasPrice: 0
     shipments: []
     orders: 
   day: 0
@@ -5900,6 +5921,7 @@ Transform:
   - {fileID: 786474128}
   - {fileID: 1800125092}
   - {fileID: 1834493119}
+  - {fileID: 1987554077}
   m_Father: {fileID: 0}
   m_RootOrder: 10
 --- !u!1 &1147897340
@@ -11122,6 +11144,67 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1984096727}
+--- !u!1 &1987554076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1987554077}
+  - 114: {fileID: 1987554078}
+  m_Layer: 0
+  m_Name: PlayerValues
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1987554077
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987554076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1147586770}
+  m_RootOrder: 9
+--- !u!114 &1987554078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987554076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbf529550b36d142b5df337316f9ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Employee of the Mouth
+  dayNumber: 0
+  cash: 3
+  stock:
+  - name: 
+    quantity: 0
+  - name: 
+    quantity: 0
+  - name: 
+    quantity: 0
+  - name: 
+    quantity: 0
+  - name: 
+    quantity: 0
+  - name: 
+    quantity: 0
+  - name: 
+    quantity: 0
+  - name: 
+    quantity: 0
+  - name: 
+    quantity: 0
 --- !u!1 &1990270273
 GameObject:
   m_ObjectHideFlags: 0
@@ -11332,6 +11415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4a3019908599b4881155341dead2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventorer: {fileID: 2139853223}
+  playerer: {fileID: 1987554076}
 --- !u!1 &2017671357
 GameObject:
   m_ObjectHideFlags: 0
@@ -11936,6 +12021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderer: {fileID: 1834493118}
   dayvaluer: {fileID: 786474127}
+  inventorer: {fileID: 0}
 --- !u!1001 &2098637425
 Prefab:
   m_ObjectHideFlags: 0
