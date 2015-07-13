@@ -20,6 +20,9 @@ public class RingBell : MonoBehaviour {
 	void OnMouseDown() {
 		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.
 		score.EvaluateBurger(GetOrder(), GetBurger());
+		if (gameObject.GetComponent<SpawnBurgerComponent> () != null) {
+			gameObject.GetComponent<SpawnBurgerComponent> ().burgToJudge = GetBurger();
+		}
 		AudioSource audio = GetComponent<AudioSource> ();
 		audio.Play ();
 	}
