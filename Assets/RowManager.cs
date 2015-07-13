@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class RowManager : MonoBehaviour {
-	public string itemName;
+	//public string itemName;
 
 	public int quantity;
 	public float rate;
@@ -31,7 +31,7 @@ public class RowManager : MonoBehaviour {
 	}
 
 	public void SetText(){
-		itemText.text = itemName;
+		itemText.text = represents.name;
 		quantText.text = quantity.ToString();
 		totalText.text = "$"+(quantity * rate).ToString ("F2");
 		stockText.text = "( "+stock.ToString()+" )";
