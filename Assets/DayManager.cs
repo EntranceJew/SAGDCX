@@ -27,7 +27,7 @@ public class DayManager : MonoBehaviour {
 
 	public void GetNextOrder(){
 		int[] orders = dayValues.GetTodaysOrders ();
-		Debug.Log ("HONK: " + dayValues.orderNumber + "/" + orders.Length);
+		Debug.Log ("DAY "+dayValues.day+", ORDER " + dayValues.orderNumber + "/" + orders.Length);
 		if (dayValues.orderNumber+1 <= orders.Length) {
 			getOrder.NewOrder (dayValues.GetNextOrder ());
 		} else {
@@ -36,14 +36,14 @@ public class DayManager : MonoBehaviour {
 	}
 
 	public void EndDay(){
-		Debug.Log ("DAY IS OVER, GO HOME");
+		Debug.Log ("DAY "+dayValues.day+" IS OVER, GO HOME");
 		dayValues.day++;
 		getOrder.TrashLastOrder ();
 		StartCoroutine (Fade ());
 	}
 
 	public void StartDay(){
-		Debug.Log ("DAY STARTED, GO HOME");
+		Debug.Log ("DAY "+dayValues.day+" STARTED, GO HOME");
 		dayValues.orderNumber = 0;
 		GetNextOrder ();
 	}
