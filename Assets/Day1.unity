@@ -1341,7 +1341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147586770}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1 &197241675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2571,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147586770}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &429118215
 GameObject:
   m_ObjectHideFlags: 0
@@ -4550,7 +4550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb7839bfe1517a4d87af511159c354b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
   quantity: 5
   rate: 1.23000002
   stock: 3
@@ -4718,7 +4717,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147586770}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &786474129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6305,7 +6304,6 @@ Transform:
   m_Children:
   - {fileID: 1987554077}
   - {fileID: 1473224186}
-  - {fileID: 2031356192}
   - {fileID: 422140587}
   - {fileID: 1990270274}
   - {fileID: 2080867309}
@@ -8649,6 +8647,8 @@ MonoBehaviour:
     - {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    price: 0
+    value: 0
   - name: Bacon & Cheese
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
@@ -8660,6 +8660,8 @@ MonoBehaviour:
     - {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    price: 0
+    value: 0
   - name: Double Size Burger
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
@@ -8674,6 +8676,8 @@ MonoBehaviour:
     - {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    price: 0
+    value: 0
   - name: The Big Show
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
@@ -8685,6 +8689,8 @@ MonoBehaviour:
     - {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    price: 0
+    value: 0
   - name: The Double Big Show
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
@@ -8697,6 +8703,8 @@ MonoBehaviour:
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    price: 0
+    value: 0
   - name: The Triple Big Show
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
@@ -8710,6 +8718,8 @@ MonoBehaviour:
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    price: 0
+    value: 0
   - name: Double Bacon & Cheese
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
@@ -8722,6 +8732,8 @@ MonoBehaviour:
     - {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    price: 0
+    value: 0
   - name: Skimpy Hamburger
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
@@ -8729,6 +8741,8 @@ MonoBehaviour:
     - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    price: 0
+    value: 0
   - name: Skimpy Hamburger w/ Cheese
     contents:
     - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
@@ -8737,6 +8751,8 @@ MonoBehaviour:
     - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     - {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
     - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    price: 0
+    value: 0
 --- !u!4 &1473224186
 Transform:
   m_ObjectHideFlags: 0
@@ -10940,7 +10956,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147586770}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &1834493118
 GameObject:
   m_ObjectHideFlags: 0
@@ -10968,7 +10984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147586770}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!114 &1834493120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11788,7 +11804,7 @@ Transform:
   m_Children:
   - {fileID: 538077717}
   m_Father: {fileID: 1147586770}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &2012272017
 GameObject:
   m_ObjectHideFlags: 0
@@ -12076,72 +12092,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2020145836}
---- !u!1 &2031356191
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2031356192}
-  - 114: {fileID: 2031356193}
-  m_Layer: 0
-  m_Name: IngredientGameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2031356192
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2031356191}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.174079418, y: 18.0152779, z: -44.0405807}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1147586770}
-  m_RootOrder: 2
---- !u!114 &2031356193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2031356191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa2240543e392448ba08a983181d2fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredientList:
-  - {fileID: 183780, guid: 8ec6465b673d4a64dbc740e4510e32a1, type: 2}
-  - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
-  - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
-  - {fileID: 157486, guid: 9924481f0d446cd4b9563a548cb9e39e, type: 2}
-  - {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
-  - {fileID: 153890, guid: 27cf64ddc7fa2bb48b16a4b6658dd6b0, type: 2}
-  - {fileID: 135180, guid: 0a507f95a4609894a988ea754bcad2c2, type: 2}
-  - {fileID: 166252, guid: 15f10e76772538c43b47f6429a1ceb4f, type: 2}
-  - {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
-  - {fileID: 130346, guid: 983f6f90b3efad54a89db59f62945100, type: 2}
-  - {fileID: 133794, guid: 993006d869e86d449879ae5176d85c8f, type: 2}
-  - {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
-  - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
-  - {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
-  - {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
-  - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
-  - {fileID: 114696, guid: 19c377dd28af55d4fa831f3b9a6c18b5, type: 2}
-  - {fileID: 167574, guid: e0fcfbbac547044419920080da57003f, type: 2}
-  - {fileID: 190024, guid: 61bcb51c5a1d5a946bea0f2650957eb3, type: 2}
-  - {fileID: 189984, guid: 46f2dde8146bcff4a86418ad1afa4956, type: 2}
-  - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
-  - {fileID: 171830, guid: 3453709e0c549f64fa79cc0433e4796d, type: 2}
-  - {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
-  - {fileID: 176600, guid: 9c2884352f33cee419923ff6c0fd1a8d, type: 2}
-  - {fileID: 181392, guid: 8d1355310f1cb1d4b8830f8b4bb170ea, type: 2}
-  - {fileID: 111818, guid: 70c98d55039c1144cb18d517d53f9a4e, type: 2}
 --- !u!1 &2035856715
 GameObject:
   m_ObjectHideFlags: 0
@@ -12492,7 +12442,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147586770}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!114 &2080867310
 MonoBehaviour:
   m_ObjectHideFlags: 0

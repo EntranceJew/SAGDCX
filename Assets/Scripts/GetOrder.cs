@@ -3,22 +3,13 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class GetOrder : MonoBehaviour {
-	
 	GameObject canvas;
-	GameObject ingListObject;
 	Text instruction;
 	Order order;
 	public GameObject example;
 	public float upVar;
 	
-	public bool rand;
-	
-
-	
 	void Start () {
-		//Load Ingredients
-		ingListObject = GameObject.Find ("IngredientGameObject");
-
 		//New Order
 		NewOrder ();
 	}
@@ -33,10 +24,7 @@ public class GetOrder : MonoBehaviour {
 	
 	void OrderCreation() {
 		canvas = GameObject.FindGameObjectWithTag("MainCanvas");
-		
-		if (rand) {
-			order = new Order (ingListObject.GetComponent<IngredientList>().ingredientList);
-		}
+
 		instruction = canvas.transform.Find("OrderText").gameObject.GetComponent<Text> ();
 		instruction.text = "Your order is: " + order.toString ();
 
