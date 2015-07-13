@@ -56,7 +56,6 @@ public class PlayerValues : MonoBehaviour {
 		} else {
 			Debug.Log ("NO FILE, DINDU NOTHIN'");
 		}
-
 	}
 
 	// IF, FOR WHATEVER REASON WE NEED THIS LOADED BEFORE THE MAIN DAY SCENE, CONSULT:
@@ -64,5 +63,14 @@ public class PlayerValues : MonoBehaviour {
 
 	public bool CanAfford(float dosh){
 		return cash >= dosh;
+	}
+
+	public float Spend(float lodsemone){
+		if (CanAfford (lodsemone)) {
+			Debug.Log ("Bought some stuff for $"+lodsemone.ToString("F2")+"!");
+			return cash -= lodsemone;
+		} else {
+			return cash;
+		}
 	}
 }

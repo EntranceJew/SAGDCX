@@ -35,7 +35,7 @@ public class OrderForm : MonoBehaviour {
 			Debug.Log ("MANAGER YOU CRAZY, I CAN'T AFFORD AN XBOX.");
 		} else {
 			// add the board values to the shipment
-			Debug.Log ("PURCHASED A BUNCH OF STUFF FOR $"+GetTotal().ToString());
+			playerValues.Spend(GetTotal ());
 			inventory.ObtainShipment (GetDesiredShipment ());
 		}
 
