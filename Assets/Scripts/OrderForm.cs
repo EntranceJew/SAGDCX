@@ -56,13 +56,14 @@ public class OrderForm : MonoBehaviour {
 	// form buttons
 	public void Confirm(){
 		// buy it
-		if (playerValues.CanAfford (GetTotal ())) {
+		float totalExpense = GetTotal () + dayValues.GetTodaysGasPrice ();
+		if (playerValues.CanAfford (totalExpense)) {
+			// add the board values to the shipment
+			playerValues.Spend(totalExpense);
+			inventory.ObtainShipment (GetDesiredShipment ());
+		} else {
 			// jk lol
 			Debug.Log ("MANAGER YOU CRAZY, I CAN'T AFFORD AN XBOX.");
-		} else {
-			// add the board values to the shipment
-			playerValues.Spend(GetTotal ());
-			inventory.ObtainShipment (GetDesiredShipment ());
 		}
 
 		// done
