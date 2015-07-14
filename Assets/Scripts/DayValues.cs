@@ -40,6 +40,10 @@ public class DayValues : MonoBehaviour {
 		return values [day].orders;
 	}
 
+	public float GetTodaysGasPrice(){
+		return values [day].gasPrice;
+	}
+
 	public InventoryItems[] GetTodaysShipment(){
 		return values [day].shipments;
 	}
