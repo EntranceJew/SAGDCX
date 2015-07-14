@@ -3350,9 +3350,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   judgeSpawnPos: {fileID: 1148905031}
-  burgBuild: {fileID: 1136804443}
   burgToJudge: []
   burgJudgeCanvas: {fileID: 1576209416}
+--- !u!114 &548866141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 548866137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6adc2ec840c28dd4a9e09120b24d4c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burger: {fileID: 1136804441}
+  scorer: {fileID: 1800125090}
+  orderer: {fileID: 1834493118}
 --- !u!1 &556816560
 GameObject:
   m_ObjectHideFlags: 0
@@ -6140,7 +6153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   judgeSpawnPos: {fileID: 0}
-  burgBuild: {fileID: 0}
   burgToJudge: []
   burgJudgeCanvas: {fileID: 0}
 --- !u!1 &1152997215
