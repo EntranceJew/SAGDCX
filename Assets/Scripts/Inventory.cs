@@ -1,24 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [System.Serializable]
-public class InventoryItems {
-	public string name;
+public class InventoryItem {
+	public GameObject represents;
 	public int quantity;
 
-	public InventoryItems(string tName, int tQuantity){
-		name = tName;
+	public InventoryItem(GameObject tRepresents, int tQuantity){
+		represents = tRepresents;
 		quantity = tQuantity;
 	}
 }
 
 public class Inventory : MonoBehaviour {
 
-	public Inventory(InventoryItems[] inStock){
+	public Inventory(List<InventoryItem> inStock){
 		stock = inStock;
 	}
 
-	public InventoryItems[] stock;
+	public List<InventoryItem> stock;
 
 	// Use this for initialization
 	void Start () {
@@ -31,8 +32,8 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public bool Has(string name){
-		foreach (InventoryItems item in stock) {
-			if(item.name == name){
+		foreach (InventoryItem item in stock) {
+			if(item.represents.name == name){
 				return item.quantity >= 1;
 			}
 		}
@@ -41,27 +42,31 @@ public class Inventory : MonoBehaviour {
 
 	public void Remove(string name, int quantity){
 		int i = 0;
-		foreach (InventoryItems item in stock) {
-			if(item.name == name){
+		foreach (InventoryItem item in stock) {
+			if(item.represents.name == name){
 				stock[i].quantity -= quantity;
 			}
 			i++;
 		}
 	}
 
-	public void Add(string name, int quantity){
+	public bool Add(GameObject tRepresents, int quantity){
 		int i = 0;
-		foreach (InventoryItems item in stock) {
-			if(item.name == name){
+		foreach (InventoryItem item in stock) {
+			if(item.represents.name == tRepresents.name){
 				stock[i].quantity += quantity;
+				return false;
 			}
 			i++;
 		}
+		Debug.Log ("Added item that was completely new: " + tRepresents.name);
+		stock.Add (new InventoryItem (tRepresents, quantity));
+		return true;
 	}
 
-	public void ObtainShipment(InventoryItems[] incoming){
-		foreach (InventoryItems item in incoming) {
-			Add (item.name, item.quantity);
+	public void ObtainShipment(List<InventoryItem> incoming){
+		foreach (InventoryItem item in incoming) {
+			Add (item.represents, item.quantity);
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
@@ -8,7 +9,7 @@ class ValuesForPlayer {
 	public string name;
 	public int dayNumber;
 	public float cash;
-	public InventoryItems[] inStock;
+	public List<InventoryItem> inStock;
 }
 
 public class PlayerValues : MonoBehaviour {
