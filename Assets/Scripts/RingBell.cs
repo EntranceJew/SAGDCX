@@ -21,7 +21,7 @@ public class RingBell : MonoBehaviour {
 		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.
 		score.EvaluateBurger(GetOrder(), GetBurger());
 		if (gameObject.GetComponent<SpawnBurgerComponent> () != null) {
-			gameObject.GetComponent<SpawnBurgerComponent> ().burgToJudge = GetBurger();
+			gameObject.GetComponent<SpawnBurgerComponent> ().SpawnJudgeBurger(GetBurger ());
 		}
 		AudioSource audio = GetComponent<AudioSource> ();
 		audio.Play ();
