@@ -9,7 +9,7 @@ class ValuesForPlayer {
 	public string name;
 	public int dayNumber;
 	public float cash;
-	public List<InventoryItem> inStock;
+	public List<SerializableInventoryItem> inStock;
 }
 
 public class PlayerValues : MonoBehaviour {
@@ -36,7 +36,12 @@ public class PlayerValues : MonoBehaviour {
 		vals.name = name;
 		vals.dayNumber = dayNumber;
 		vals.cash = cash;
-		vals.inStock = inventory.stock;
+
+		List<SerializableInventoryItem> serStock = new List<SerializableInventoryItem> ();
+		foreach (InventoryItem item in inventory.stock) {
+			serStock.Add (item.Serialize ());
+		}
+		vals.inStock = serStock;
 
 		bf.Serialize (file, vals);
 		file.Close ();
@@ -53,7 +58,13 @@ public class PlayerValues : MonoBehaviour {
 			name = vals.name;
 			dayNumber = vals.dayNumber;
 			cash = vals.cash;
-			inventory.stock = vals.inStock;
+
+			List<InventoryItem> unserStock = new List<InventoryItem> ();
+			foreach (SerializableInventoryItem item in vals.inStock) {
+				unserStock.Add (new InventoryItem(inventory.fl.GetGameObject(item.name), item.quantity));
+			}
+			inventory.stock = unserStock;
+
 			Debug.Log ("LOADED ALL MY VALUES UP GOOD");
 		} else {
 			Debug.Log ("NO FILE, DINDU NOTHIN'");

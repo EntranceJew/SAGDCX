@@ -11,6 +11,27 @@ public class InventoryItem {
 		represents = tRepresents;
 		quantity = tQuantity;
 	}
+
+	public SerializableInventoryItem Serialize(){
+		return new SerializableInventoryItem (represents.name, quantity);
+	}
+}
+
+[System.Serializable]
+public class SerializableInventoryItem {
+	public string name;
+	public int quantity;
+
+
+	public SerializableInventoryItem(InventoryItem item){
+		name = item.represents.name;
+		quantity = item.quantity;
+	}
+
+	public SerializableInventoryItem(string tName, int tQuantity){
+		name = tName;
+		quantity = tQuantity;
+	}
 }
 
 public class Inventory : MonoBehaviour {

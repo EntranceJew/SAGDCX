@@ -2516,9 +2516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fl: {fileID: 0}
-  stock:
-  - represents: {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
-    quantity: 10
+  stock: []
 --- !u!4 &422140587
 Transform:
   m_ObjectHideFlags: 0
@@ -4643,25 +4641,7 @@ MonoBehaviour:
     mistakeTolerance: .899999976
     deductionMultiplier: 0
     gasPrice: 3.76999998
-    shipments:
-    - represents: {fileID: 0}
-      quantity: 0
-    - represents: {fileID: 0}
-      quantity: 0
-    - represents: {fileID: 0}
-      quantity: 0
-    - represents: {fileID: 0}
-      quantity: 0
-    - represents: {fileID: 0}
-      quantity: 0
-    - represents: {fileID: 0}
-      quantity: 0
-    - represents: {fileID: 0}
-      quantity: 0
-    - represents: {fileID: 0}
-      quantity: 0
-    - represents: {fileID: 0}
-      quantity: 0
+    shipments: []
     orders: 010000000800000003000000
   - name: 
     paidWage: 0
@@ -12317,9 +12297,13 @@ MonoBehaviour:
   - represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
     quantity: 50
   - represents: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
-    quantity: 5
+    quantity: 6
   - represents: {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
     quantity: 6
+  - represents: {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
+    quantity: 7
+  - represents: {fileID: 190024, guid: 61bcb51c5a1d5a946bea0f2650957eb3, type: 2}
+    quantity: 3
 --- !u!4 &2139853225
 Transform:
   m_ObjectHideFlags: 0
