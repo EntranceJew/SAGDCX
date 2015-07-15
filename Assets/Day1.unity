@@ -12304,6 +12304,20 @@ MonoBehaviour:
     quantity: 7
   - represents: {fileID: 190024, guid: 61bcb51c5a1d5a946bea0f2650957eb3, type: 2}
     quantity: 3
+  - represents: {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    quantity: 40
+  - represents: {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
+    quantity: 40
+  - represents: {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
+    quantity: 40
+  - represents: {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
+    quantity: 40
+  - represents: {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
+    quantity: 40
+  - represents: {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
+    quantity: 40
+  - represents: {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
+    quantity: 40
 --- !u!4 &2139853225
 Transform:
   m_ObjectHideFlags: 0
