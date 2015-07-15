@@ -347,6 +347,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quantity: 3
   represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+  itemText: {fileID: 11469492}
+  quantText: {fileID: 11400686}
+  totalText: {fileID: 11483106}
+  stockText: {fileID: 11446678}
+  demandText: {fileID: 11442284}
 --- !u!114 &11433100
 MonoBehaviour:
   m_ObjectHideFlags: 1

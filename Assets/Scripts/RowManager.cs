@@ -20,20 +20,14 @@ public class RowManager : MonoBehaviour {
 	private int stock;
 	private float rate;
 
-	private Text itemText;
-	private Text quantText;
-	private Text totalText;
-	private Text stockText;
-	private Text demandText;
+	public Text itemText;
+	public Text quantText;
+	public Text totalText;
+	public Text stockText;
+	public Text demandText;
 
 	// Use this for initialization
 	void Start () {
-		itemText = transform.Find ("ItemName").gameObject.GetComponent<Text>();
-		quantText = transform.Find ("Quantity").gameObject.GetComponent<Text>();
-		totalText = transform.Find ("Total").gameObject.GetComponent<Text>();
-		stockText = transform.Find ("Supply").gameObject.GetComponent<Text>();
-		demandText = transform.Find ("Demand").gameObject.GetComponent<Text>();
-
 		rate = represents.GetComponent<Food> ().price;
 
 		SetText ();
@@ -58,6 +52,4 @@ public class RowManager : MonoBehaviour {
 	public void Subtract(){
 		quantity--;
 	}
-
-
 }

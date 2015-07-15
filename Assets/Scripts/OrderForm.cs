@@ -4,40 +4,28 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class OrderForm : MonoBehaviour {
-	public GameObject inventorer;
-	public GameObject playerer;
-	public GameObject dayvaluer;
 	/* 
 	@TODO: establish links to dayvalues for the current cash amount
 	*/
 	
 	private RowManager[] rows;
 
-	private Inventory inventory;
-	private PlayerValues playerValues;
-	private DayValues dayValues;
+
 
 	private Color positiveMoney = new Color(0.1953125f,1.0f,0.1953125f);
 	private Color negativeMoney = new Color(0.7109375f,0.1640625f,0.0f);
 
-	public GameObject moneyer;
-	public GameObject gaserer;
-	public GameObject totaler;
+	public Inventory inventory;
+	public PlayerValues playerValues;
+	public DayValues dayValues;
 
-	private Text moneyTotal;
-	private Text gasValue;
-	private Text totalValue;
+	public Text moneyTotal;
+	public Text gasValue;
+	public Text totalValue;
 
 	// Use this for initialization
 	void Start () {
 		rows = gameObject.GetComponentsInChildren<RowManager> ();
-		inventory = inventorer.GetComponent<Inventory> ();
-		playerValues = playerer.GetComponent<PlayerValues> ();
-		dayValues = dayvaluer.GetComponent<DayValues> ();
-
-		moneyTotal = moneyer.GetComponent<Text>();
-		gasValue = gaserer.GetComponent<Text>();
-		totalValue = totaler.GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
