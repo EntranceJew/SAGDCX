@@ -14,6 +14,7 @@ public class InventoryItem {
 }
 
 public class Inventory : MonoBehaviour {
+	public FoodLookup fl;
 
 	public Inventory(List<InventoryItem> inStock){
 		stock = inStock;
@@ -51,16 +52,19 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public bool Add(GameObject tRepresents, int quantity){
+		string[] arr = tRepresents.name.Split('(');
+		string itemName = fl.GetGameObject (arr [0]).name;
+
 		int i = 0;
 		foreach (InventoryItem item in stock) {
-			if(item.represents.name == tRepresents.name){
+			if(item.represents.name == itemName){
 				stock[i].quantity += quantity;
 				return false;
 			}
 			i++;
 		}
-		Debug.Log ("Added item that was completely new: " + tRepresents.name);
-		stock.Add (new InventoryItem (tRepresents, quantity));
+		Debug.Log ("Added item that was completely new: " + itemName);
+		stock.Add (new InventoryItem (fl.GetGameObject(arr[0]), quantity));
 		return true;
 	}
 

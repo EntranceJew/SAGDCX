@@ -2515,6 +2515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383bc3c8e7c6bfb458b6e701b2be8790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fl: {fileID: 0}
   stock:
   - represents: {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
     quantity: 10
@@ -9092,6 +9093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 2139853223}
+  fl: {fileID: 0}
 --- !u!65 &1628474899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12310,6 +12312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383bc3c8e7c6bfb458b6e701b2be8790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fl: {fileID: 741838967}
   stock:
   - represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
     quantity: 50

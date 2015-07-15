@@ -7,11 +7,11 @@ public class FoodLookup : MonoBehaviour {
 	public List<GameObject> lookup;
 	public Dictionary<string, GameObject> nameToObject = new Dictionary<string, GameObject>();
 
-	public GameObject getGO(string name){
+	public GameObject GetGameObject(string name){
 		return nameToObject [name];
 	}
 
-	public Food getFood(string name){
+	public Food GetFood(string name){
 		return nameToObject [name].GetComponent<Food>();
 	}
 

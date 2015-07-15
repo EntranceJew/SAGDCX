@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Recyclotron : MonoBehaviour {
 	public GameObject inventory;
+	public FoodLookup fl;
 
 	private Inventory inv;
 
@@ -17,8 +18,7 @@ public class Recyclotron : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		string[] arr = col.gameObject.name.Split('(');
-		//inv.Add (arr[0], 1);
+		inv.Add (col.gameObject, 1);
 		Destroy (col.gameObject);
 	}
 }
