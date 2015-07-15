@@ -18,7 +18,7 @@ public class Recyclotron : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 		string[] arr = col.gameObject.name.Split('(');
-		inv.Add (arr[0], 1);
+		//inv.Add (arr[0], 1);
 		Destroy (col.gameObject);
 	}
 }

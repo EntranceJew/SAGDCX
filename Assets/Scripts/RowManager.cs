@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 [System.Serializable]
 public class Grocery {
 	public string name;
-	public InventoryItems[] result;
+	public List<InventoryItem> result;
 	public float value;
 	public float costMult;
 }

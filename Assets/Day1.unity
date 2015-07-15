@@ -2516,7 +2516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stock:
-  - name: Rat
+  - represents: {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
     quantity: 10
 --- !u!4 &422140587
 Transform:
@@ -4119,6 +4119,10 @@ Prefab:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 2139853223}
+    - target: {fileID: 155216, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
   m_IsPrefabParent: 0
@@ -4529,6 +4533,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 77831233}
   m_RootOrder: 0
+--- !u!1 &741838966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 741838968}
+  - 114: {fileID: 741838967}
+  m_Layer: 0
+  m_Name: FoodLookup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &741838967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 741838966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2c92c0c4054794f855f99a8d4d0350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookup: []
+--- !u!4 &741838968
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 741838966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1147586770}
+  m_RootOrder: 9
 --- !u!1 &743621280 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: c551d53892e22dd47ae2f50f302e9625, type: 3}
@@ -4599,23 +4643,23 @@ MonoBehaviour:
     deductionMultiplier: 0
     gasPrice: 3.76999998
     shipments:
-    - name: 
+    - represents: {fileID: 0}
       quantity: 0
-    - name: 
+    - represents: {fileID: 0}
       quantity: 0
-    - name: 
+    - represents: {fileID: 0}
       quantity: 0
-    - name: 
+    - represents: {fileID: 0}
       quantity: 0
-    - name: 
+    - represents: {fileID: 0}
       quantity: 0
-    - name: 
+    - represents: {fileID: 0}
       quantity: 0
-    - name: 
+    - represents: {fileID: 0}
       quantity: 0
-    - name: 
+    - represents: {fileID: 0}
       quantity: 0
-    - name: 
+    - represents: {fileID: 0}
       quantity: 0
     orders: 010000000800000003000000
   - name: 
@@ -6045,6 +6089,7 @@ Transform:
   - {fileID: 1800125092}
   - {fileID: 1834493119}
   - {fileID: 189852481}
+  - {fileID: 741838968}
   m_Father: {fileID: 0}
   m_RootOrder: 10
 --- !u!1 &1147897340
@@ -8452,6 +8497,10 @@ Prefab:
     - target: {fileID: 441336, guid: eb834858c357cac41994ef0836f264e3, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 161046, guid: eb834858c357cac41994ef0836f264e3, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb834858c357cac41994ef0836f264e3, type: 2}
@@ -12262,66 +12311,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stock:
-  - name: Bun Top
+  - represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
     quantity: 50
-  - name: Patty
+  - represents: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
     quantity: 5
-  - name: Cheese
+  - represents: {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
     quantity: 6
-  - name: Bun Bottom
-    quantity: 50
-  - name: Rat
-    quantity: 0
-  - name: Carrot
-    quantity: 4
-  - name: Mustard
-    quantity: 999
-  - name: Ketchup
-    quantity: 999
-  - name: Mayo
-    quantity: 999
-  - name: Relish
-    quantity: 999
-  - name: Apple Slice
-    quantity: 4
-  - name: Bacon
-    quantity: 4
-  - name: Bread Slice
-    quantity: 4
-  - name: Chicken
-    quantity: 4
-  - name: Egg
-    quantity: 4
-  - name: Ham
-    quantity: 4
-  - name: Hot Dog
-    quantity: 4
-  - name: Lettuce
-    quantity: 4
-  - name: Lettuce Strips
-    quantity: 4
-  - name: Naan
-    quantity: 4
-  - name: Onion
-    quantity: 4
-  - name: Pepper
-    quantity: 4
-  - name: Pickles
-    quantity: 4
-  - name: Pineapple
-    quantity: 4
-  - name: Pizza
-    quantity: 4
-  - name: Sausage
-    quantity: 4
-  - name: Tomato
-    quantity: 4
-  - name: Mints
-    quantity: 4
-  - name: Shoelace
-    quantity: 2
-  - name: Dog Treat
-    quantity: 1
 --- !u!4 &2139853225
 Transform:
   m_ObjectHideFlags: 0

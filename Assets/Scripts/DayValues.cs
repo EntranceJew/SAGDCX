@@ -20,7 +20,7 @@ public class DayValue {
 	public float gasPrice;
 
 	// what we will receive at the beginning of each day
-	public InventoryItems[] shipments;
+	public List<InventoryItem> shipments;
 
 	// the menu item that will be ordered 
 	public int[] orders;
@@ -44,7 +44,7 @@ public class DayValues : MonoBehaviour {
 		return values [day].gasPrice;
 	}
 
-	public InventoryItems[] GetTodaysShipment(){
+	public List<InventoryItem> GetTodaysShipment(){
 		return values [day].shipments;
 	}
 

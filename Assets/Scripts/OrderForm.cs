@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class OrderForm : MonoBehaviour {
@@ -77,12 +78,10 @@ public class OrderForm : MonoBehaviour {
 	}
 
 	// helpers
-	public InventoryItems[] GetDesiredShipment(){
-		InventoryItems[] items = new InventoryItems[rows.Length];
-		int i = 0;
+	public List<InventoryItem> GetDesiredShipment(){
+		List<InventoryItem> items = new List<InventoryItem>();
 		foreach (RowManager row in rows) {
-			items[i] = new InventoryItems(row.represents.name, row.quantity);
-			i++;
+			items.Add(new InventoryItem(row.represents, row.quantity));
 		}
 		return items;
 	}
