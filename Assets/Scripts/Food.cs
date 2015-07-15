@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class FoodCategories {
@@ -24,6 +25,8 @@ public class Food : MonoBehaviour {
 	public FoodEnum foodType;
 	public string foodName; //I'm sorry ejew I can't think of how to do this otherwise (to evaluate if the prefab clone is the same thing as the original or w/e)
 	public float price;
+
+	public Dictionary<GameObject, bool> collisions = new Dictionary<GameObject, bool>();
 
 	// working vars
 	public bool isFoodPope;
@@ -61,16 +64,46 @@ public class Food : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		if (isFoodPope && col.gameObject.tag == "Food" && !isGrabbed && !col.gameObject.GetComponent<Food>().isGrabbed) {
+		collisions.Add (col.gameObject, true);
+		if (ShouldObtainObject(col.gameObject)) {
 			//Debug.Log ("GRANTING NEW OBJECT: "+col.gameObject);
 			//isFoodPope = false;
-			bb.ObtainNewPart(col.gameObject);
+			ForceObtain(col.gameObject);
 		}
 		
 		if (soundmaker != null && soundmaker.mute == false) {
 			PlaySound (hitSoftSound);
 		}
-		
+	}
+
+	void OnCollisionExit(Collision col){
+		collisions.Remove (col.gameObject);
+	}
+
+	public bool ShouldObtainObject(GameObject obj){
+		if (isFoodPope && obj.tag == "Food" && !isGrabbed && !obj.GetComponent<Food> ().isGrabbed) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public void ForceObtain(GameObject obj){
+		bb.ObtainNewPart (obj);
+	}
+
+	// check to see if we are somehow eligable for foodpope status through inherited collisions
+	public bool IsSecretlyFoodPope(){
+		foreach (KeyValuePair<GameObject, bool> item in collisions) {
+			Food fd = item.Key.GetComponent<Food>();
+			if (fd.ShouldObtainObject(gameObject)){
+				fd.ForceObtain(gameObject);
+				Debug.Log (gameObject.name + " GRANTED BY " + item.Key.name);
+				//Debug.Log (gameObject.name + " WAS REJECTED BY: " + item.Key.name);
+				return true;
+			}
+		}
+		return false;
 	}
 
 	// something to do when we're now property of the burg builder
@@ -102,5 +135,6 @@ public class Food : MonoBehaviour {
 
 	public void Released(){
 		isGrabbed = false;
+		IsSecretlyFoodPope ();
 	}
 }
