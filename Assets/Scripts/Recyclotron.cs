@@ -20,5 +20,7 @@ public class Recyclotron : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		inv.Add (col.gameObject, 1);
 		Destroy (col.gameObject);
+		AudioSource audio = GetComponent<AudioSource> ();
+		audio.Play ();
 	}
 }
