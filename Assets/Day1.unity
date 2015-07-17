@@ -4980,7 +4980,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11453734, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
       propertyPath: spawnList.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 402180, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
       propertyPath: m_LocalPosition.x
@@ -8037,7 +8037,6 @@ MonoBehaviour:
   - {fileID: 183780, guid: 8ec6465b673d4a64dbc740e4510e32a1, type: 2}
   - {fileID: 133794, guid: 993006d869e86d449879ae5176d85c8f, type: 2}
   - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
-  - {fileID: 169516, guid: e7725a634b0a1f74997a09098eaf9b0c, type: 2}
   inventory: {fileID: 2139853223}
 --- !u!23 &1200863091
 MeshRenderer:
