@@ -2561,8 +2561,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383bc3c8e7c6bfb458b6e701b2be8790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fl: {fileID: 0}
-  stock: []
+  fl: {fileID: 741838967}
+  stock:
+  - represents: {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
+    quantity: 1
 --- !u!4 &422140587
 Transform:
   m_ObjectHideFlags: 0
@@ -4128,6 +4130,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1911050101}
     m_Modifications:
+    - target: {fileID: 11453734, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
+      propertyPath: spawnList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 402180, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
       propertyPath: m_LocalPosition.x
       value: 6.30000019
@@ -4168,6 +4174,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11453734, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
+      propertyPath: spawnList.Array.data[5]
+      value: 
+      objectReference: {fileID: 169516, guid: e7725a634b0a1f74997a09098eaf9b0c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
   m_IsPrefabParent: 0
@@ -6659,6 +6669,7 @@ MonoBehaviour:
   - {fileID: 183780, guid: 8ec6465b673d4a64dbc740e4510e32a1, type: 2}
   - {fileID: 133794, guid: 993006d869e86d449879ae5176d85c8f, type: 2}
   - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
+  - {fileID: 169516, guid: e7725a634b0a1f74997a09098eaf9b0c, type: 2}
   inventory: {fileID: 2139853223}
 --- !u!23 &1200863091
 MeshRenderer:
@@ -12343,7 +12354,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
       propertyPath: spawnList.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 414350, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
       propertyPath: m_LocalPosition.x
@@ -12401,6 +12412,10 @@ Prefab:
       propertyPath: spawnDelay
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
+      propertyPath: spawnList.Array.data[3]
+      value: 
+      objectReference: {fileID: 169516, guid: e7725a634b0a1f74997a09098eaf9b0c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
   m_IsPrefabParent: 0
@@ -12589,6 +12604,8 @@ MonoBehaviour:
     quantity: 40
   - represents: {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
     quantity: 40
+  - represents: {fileID: 169516, guid: e7725a634b0a1f74997a09098eaf9b0c, type: 2}
+    quantity: 4
 --- !u!4 &2139853225
 Transform:
   m_ObjectHideFlags: 0
