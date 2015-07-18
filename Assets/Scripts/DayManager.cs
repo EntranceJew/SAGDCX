@@ -16,6 +16,7 @@ public class DayManager : MonoBehaviour {
 	public DayValues dayValues;
 	public Inventory inventory;
 	public PlayerValues playerValues;
+	public Shipment ship;
 	
 	// Use this for initialization
 	void Start () {
@@ -113,12 +114,15 @@ public class DayManager : MonoBehaviour {
 		// @TODO: Maybe save this as an autosave instead of ontop of the existing save?
 		playerValues.Save ("autosave_day_"+dayValues.day);
 		dayValues.orderNumber = 0;
+		AddTodaysShipment ();
 		GetNextOrder ();
 	}
-
+	
 	public void AddTodaysShipment(){
 		Debug.Log ("ADDING DAY " + dayValues.day + "'S SHIPMENT");
-		inventory.ObtainShipment(dayValues.GetTodaysShipment ());
+
+		ship.inventory.ObtainShipment (dayValues.GetTodaysShipment());
+		ship.GoGetIt(0.0f);
 	}
 
 	IEnumerator Fade() {
