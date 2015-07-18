@@ -16,12 +16,13 @@ public class RowManager : MonoBehaviour {
 
 	public int quantity;
 	public GameObject represents;
+	public Inventory inventory;
+	public InputField inputField;
 	
 	private int stock;
 	private float rate;
 
 	public Text itemText;
-	public Text quantText;
 	public Text totalText;
 	public Text stockText;
 	public Text demandText;
@@ -40,9 +41,17 @@ public class RowManager : MonoBehaviour {
 
 	public void SetText(){
 		itemText.text = represents.name;
-		quantText.text = quantity.ToString();
+		inputField.text = quantity.ToString();
 		totalText.text = "$"+(quantity * rate).ToString ("F2");
-		stockText.text = stock.ToString();
+
+		int amtLeft = inventory.HasHowMany (represents.name);
+		if (amtLeft <= 0) {
+			stockText.text = "None!";
+		} else {
+			stockText.text = amtLeft.ToString ();
+		}
+
+		demandText.text = "???";
 	}
 
 	public void Add(){
@@ -51,5 +60,10 @@ public class RowManager : MonoBehaviour {
 
 	public void Subtract(){
 		quantity--;
+	}
+
+	public void SetQuantity(){
+		string quant = inputField.text;
+		int.TryParse (quant, out quantity);
 	}
 }
