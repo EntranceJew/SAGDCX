@@ -62,17 +62,27 @@ public class Inventory : MonoBehaviour {
 		return false;
 	}
 
-	public void Remove(string name, int quantity){
+	public int Remove(string name, int quantity){
 		int i = 0;
 		foreach (InventoryItem item in stock) {
 			if(item.represents.name == name){
-				stock[i].quantity -= quantity;
+				int remaining = stock[i].quantity -= quantity;
+				if(remaining <= 0){
+					stock.Remove(item);
+				}
+				return remaining;
 			}
 			i++;
 		}
+		return -1;
 	}
 
 	public bool Add(GameObject tRepresents, int quantity){
+		// Don't add nothing.
+		if (quantity <= 0) {
+			return false;
+		}
+
 		string[] arr = tRepresents.name.Split('(');
 		string itemName = fl.GetGameObject (arr [0]).name;
 
@@ -93,5 +103,13 @@ public class Inventory : MonoBehaviour {
 		foreach (InventoryItem item in incoming) {
 			Add (item.represents, item.quantity);
 		}
+	}
+
+	public int GetTotal(){
+		int total = 0;
+		foreach(InventoryItem item in stock){
+			total += item.quantity;
+		}
+		return total;
 	}
 }
