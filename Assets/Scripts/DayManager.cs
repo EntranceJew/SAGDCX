@@ -68,10 +68,34 @@ public class DayManager : MonoBehaviour {
 	}
 
 	public void FailDay(){
+		/* CHECKLIST OF SHIT TO DO ON DAY RESET
+		 * [ ] Refund all active food
+		 * [ ] Clear the order.
+		 * [ ] 
+		 * [ ] 
+		*/
 		// @TODO: Make sure TrashLastOrder doesn't do anything unexpected.
-		getOrder.TrashLastOrder ();
 
+		// Refund all active food.
+		getOrder.TrashLastOrder ();
 		GameObject[] got = GameObject.FindGameObjectsWithTag ("Food");
+		foreach (GameObject obj in got) {
+			Food fd = obj.GetComponent<Food>();
+			if(fd != null && !fd.isFake){
+				inventory.Add(obj, 1);
+			} else if(fd == null){
+				Debug.Log (obj);
+			}
+			Destroy(obj);
+		}
+
+		// Clear the order.
+		dayValues.ResetDayValues ();
+		getOrder.NewOrder (dayValues.GetNextOrder ());
+
+		// Fade to black, come back.
+		shouldBlack = true;
+		StartCoroutine (Fade ());
 	}
 
 	public void EndDay(){

@@ -18,12 +18,11 @@ public class FailBell : MonoBehaviour {
 		AudioSource audio = GetComponent<AudioSource> ();
 		audio.Play ();
 
-		dayManager.FailDay();
-
-		Debug.Log ("YOU ARE DEAD. NOT BIG SURPRISE.");
+		FuckEverythingUp ();
 	}
 
 	public void FuckEverythingUp(){
-
+		dayManager.FailDay();
+		Debug.Log ("YOU ARE DEAD. NOT BIG SURPRISE.");
 	}
 }

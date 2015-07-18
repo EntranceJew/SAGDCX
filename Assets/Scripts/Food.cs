@@ -32,6 +32,7 @@ public class Food : MonoBehaviour {
 	public bool isFoodPope;
 	public BurgBuilder bb;
 	public bool isGrabbed;
+	public bool isFake = false;
 
 	// noise
 	public AudioClip grabSound;

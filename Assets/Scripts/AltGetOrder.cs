@@ -54,6 +54,7 @@ public class AltGetOrder : MonoBehaviour {
 			finalPos.y += ingredient * upVar;
 			//Instantiate ingredient
 			GameObject addedIngredient = (GameObject) Instantiate(order.completeOrder[ingredient], finalPos, Quaternion.identity);
+			addedIngredient.GetComponent<Food>().isFake = true;
 			addedIngredient.transform.SetParent(example.transform);
 			addedIngredient.transform.localRotation = Quaternion.Euler(-90,0,0);
 			//Repeat

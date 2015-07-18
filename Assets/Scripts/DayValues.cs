@@ -32,6 +32,10 @@ public class DayValues : MonoBehaviour {
 	public int day = 0;
 	public int orderNumber = 0;
 
+	public void ResetDayValues(){
+		orderNumber = 0;
+	}
+
 	public int GetNextOrder(){
 		return orderNumber++;
 	}
