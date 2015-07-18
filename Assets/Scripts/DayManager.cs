@@ -5,11 +5,6 @@ using System.Collections;
 // DayMan(aaaaAAAAHHHH!!!)ager is meant to keep track of the day progress and stuff.
 // I dislike writing "Managers" as much as the next guy but sometimes we need a deity.
 public class DayManager : MonoBehaviour {
-	public GameObject orderer;
-	public GameObject dayvaluer;
-	public GameObject inventorer;
-
-
 	public Image fadePicture;
 	public float fadeSpeed;
 	public float count = 0;
@@ -17,19 +12,15 @@ public class DayManager : MonoBehaviour {
 	public bool shouldBlack = true;
 
 
-	private AltGetOrder getOrder;
-	private DayValues dayValues;
-	private Inventory inventory;
-
-
-
+	public AltGetOrder getOrder;
+	public DayValues dayValues;
+	public Inventory inventory;
+	public PlayerValues playerValues;
+	
 	// Use this for initialization
 	void Start () {
 		fadePicture.color = Color.black;
 		// eventually we're going to want to do something that isn't this, but, I'm the king for now
-		getOrder = orderer.GetComponent<AltGetOrder> ();
-		dayValues = dayvaluer.GetComponent<DayValues> ();
-		inventory = inventorer.GetComponent<Inventory> ();
 
 		// @TODO: Wait some sort of magical period for the day to start before assigning first order.
 		StartDay ();
@@ -79,6 +70,7 @@ public class DayManager : MonoBehaviour {
 		// Refund all active food.
 		getOrder.TrashLastOrder ();
 		GameObject[] got = GameObject.FindGameObjectsWithTag ("Food");
+		// Trash all food, refund the real ones.
 		foreach (GameObject obj in got) {
 			Food fd = obj.GetComponent<Food>();
 			if(fd != null && !fd.isFake){

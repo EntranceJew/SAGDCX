@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c363f1f2cf4c47543a87288699b98a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bb: {fileID: 0}
+  bb: {fileID: 1136804442}
   enabled: 1
 --- !u!65 &304183332
 BoxCollider:
@@ -3949,6 +3949,7 @@ MonoBehaviour:
   judgeSpawnPos: {fileID: 1148905031}
   burgToJudge: []
   burgJudgeCanvas: {fileID: 1576209416}
+  burgBuilder: {fileID: 1136804441}
 --- !u!114 &548866141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3960,9 +3961,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adc2ec840c28dd4a9e09120b24d4c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burger: {fileID: 1136804441}
-  scorer: {fileID: 1800125090}
-  orderer: {fileID: 1834493118}
+  burgBuilder: {fileID: 1136804442}
+  getOrder: {fileID: 1834493120}
+  score: {fileID: 1800125091}
 --- !u!1 &548954021
 GameObject:
   m_ObjectHideFlags: 0
@@ -7458,7 +7459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3bd36091d54e14894de52e5ea3518b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pz: {fileID: 0}
+  pz: {fileID: 304183331}
 --- !u!4 &1136804443
 Transform:
   m_ObjectHideFlags: 0
@@ -7687,6 +7688,7 @@ MonoBehaviour:
   judgeSpawnPos: {fileID: 0}
   burgToJudge: []
   burgJudgeCanvas: {fileID: 0}
+  burgBuilder: {fileID: 0}
 --- !u!1 &1152997215
 GameObject:
   m_ObjectHideFlags: 0
@@ -8698,9 +8700,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adc2ec840c28dd4a9e09120b24d4c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burger: {fileID: 1136804441}
-  scorer: {fileID: 1800125090}
-  orderer: {fileID: 1834493118}
+  burgBuilder: {fileID: 1136804442}
+  getOrder: {fileID: 1834493120}
+  score: {fileID: 1800125091}
 --- !u!135 &1355821377
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14656,14 +14658,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b02ca663c28fa047b18be15a8b59cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderer: {fileID: 1834493118}
-  dayvaluer: {fileID: 786474127}
-  inventorer: {fileID: 2139853223}
   fadePicture: {fileID: 1877516434}
   fadeSpeed: 1
   count: 1
   pictureBlack: 1
   shouldBlack: 1
+  getOrder: {fileID: 1834493120}
+  dayValues: {fileID: 786474129}
+  inventory: {fileID: 2139853224}
+  playerValues: {fileID: 1987554078}
 --- !u!1 &2082152369
 GameObject:
   m_ObjectHideFlags: 0

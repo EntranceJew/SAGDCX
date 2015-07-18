@@ -4,12 +4,7 @@ using System.Collections.Generic;
 
 public class BurgBuilder : MonoBehaviour {
 	public PartZone pz;
-
-	// Use this for initialization
-	void Start () {
-		pz = gameObject.GetComponentInChildren<PartZone> ();
-	}
-
+	
 	public bool EmancipatePart(GameObject part){
 		if (BelongsToMe (part)) {
 			part.GetComponent<Food>().Emancipate();

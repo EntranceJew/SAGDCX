@@ -3,25 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class RingBell : MonoBehaviour {
-	public GameObject burger;
-	public GameObject scorer;
-	public GameObject orderer;
-
-	private BurgBuilder burgBuilder;
-	private AltGetOrder getOrder;
-	private AltScore score;
-
-	void Start(){
-		burgBuilder = burger.GetComponent<BurgBuilder> ();
-		score = scorer.GetComponent<AltScore> ();
-		getOrder = orderer.GetComponent<AltGetOrder> ();
-	}
+	public BurgBuilder burgBuilder;
+	public AltGetOrder getOrder;
+	public AltScore score;
 
 	void OnMouseDown() {
 		//Check order : THIS SHOULD BE REPLACED WITH ACTUAL CHECK ORDER SCRIPTS, this is just for human evaluation right now.
 		score.EvaluateBurger(GetOrder(), GetBurger());
 		if (gameObject.GetComponent<SpawnBurgerComponent> () != null) {
-			gameObject.GetComponent<SpawnBurgerComponent> ().SpawnJudgeBurger(GetBurger ());
+			gameObject.GetComponent<SpawnBurgerComponent> ().SpawnJudgeBurger(burgBuilder.gameObject);
 		}
 		AudioSource audio = GetComponent<AudioSource> ();
 		audio.Play ();
