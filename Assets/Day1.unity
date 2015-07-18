@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbffffea95f0014da23eecfa508a822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  daymanerer: {fileID: 2080867308}
+  dayManager: {fileID: 2080867310}
 --- !u!82 &82910458
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2835,7 +2835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad1bc2d876b83244a03448c419c1419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burger: {fileID: 1136804441}
+  burgBuilder: {fileID: 1136804442}
 --- !u!114 &418602516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3970,18 +3970,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .569999993
   m_Center: {x: 0, y: 0, z: .409206539}
---- !u!114 &548866140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 548866137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 990b75b2faf7e9c46b2709312674ffc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  judgeSpawnPos: {fileID: 1148905031}
 --- !u!114 &548866141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3996,6 +3984,7 @@ MonoBehaviour:
   burgBuilder: {fileID: 1136804442}
   getOrder: {fileID: 1834493120}
   score: {fileID: 1800125091}
+  dayManager: {fileID: 2080867310}
 --- !u!1 &548954021
 GameObject:
   m_ObjectHideFlags: 0
@@ -8894,6 +8883,19 @@ MonoBehaviour:
   burgBuilder: {fileID: 1136804442}
   getOrder: {fileID: 1834493120}
   score: {fileID: 1800125091}
+  dayManager: {fileID: 2080867310}
+--- !u!114 &1355821376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355821372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990b75b2faf7e9c46b2709312674ffc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  judgeSpawnPos: {fileID: 1148905031}
 --- !u!135 &1355821377
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13236,10 +13238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf56a263b489de4892e358fe12ffdc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressState: 0
-  playerValues: {fileID: 1987554078}
   dayManager: {fileID: 2080867310}
-  ship: {fileID: 595117136}
 --- !u!135 &1897102333
 SphereCollider:
   m_ObjectHideFlags: 0

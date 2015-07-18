@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class FailBell : MonoBehaviour {
-	public int pressState;
 	public DayManager dayManager;
 
 	void OnMouseDown() {
