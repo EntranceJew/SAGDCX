@@ -19,6 +19,12 @@ public class DayValue {
 	// expense for every purchase made during the day
 	public float gasPrice;
 
+	// how long it takes for someone to drive to the store
+	public float traffic;
+
+	// how long it takes for someone to find everything, multiplied by the number of items ordered
+	public float shoppingFatigue;
+
 	// what we will receive at the beginning of each day
 	public List<InventoryItem> shipments;
 
@@ -40,25 +46,39 @@ public class DayValues : MonoBehaviour {
 		return orderNumber++;
 	}
 
-	public int[] GetTodaysOrders(){
-		return values [day].orders;
+	public DayValue GetToday(){
+		return values [day];
+	}
+
+	public float GetTodaysPaidWage(){
+		return values [day].paidWage;
+	}
+
+	public float GetTodaysMistakeTolerance(){
+		return values [day].mistakeTolerance;
+	}
+
+	public float GetTodaysDeductionMultiplier(){
+		return values [day].deductionMultiplier;
 	}
 
 	public float GetTodaysGasPrice(){
 		return values [day].gasPrice;
 	}
 
+	public float GetTodaysTraffic(){
+		return values [day].traffic;
+	}
+
+	public float GetTodaysShoppingFatigue(){
+		return values [day].shoppingFatigue;
+	}
+
 	public List<InventoryItem> GetTodaysShipment(){
 		return values [day].shipments;
 	}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public int[] GetTodaysOrders(){
+		return values [day].orders;
 	}
 }
