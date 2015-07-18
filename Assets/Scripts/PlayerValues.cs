@@ -21,11 +21,17 @@ public class PlayerValues : MonoBehaviour {
 	// here is where all the everything ever lives
 	public Inventory inventory;
 
+	private string defaultSaveName = "slot_1";
+
 	// :siren: WATCH OUT IT'S I/O TIME :siren:
 	public void Save(){
-		Debug.Log ("TRYING TO SAVE!!!!");
+		Save (defaultSaveName);
+	}
+
+	public void Save(string filename){
+		Debug.Log ("TRYING TO SAVE: " + filename + ".save");
 		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream file = File.Create (Application.persistentDataPath+"/PlayerValues.dat");
+		FileStream file = File.Create (Application.persistentDataPath+"/"+filename+".save");
 
 		// @TODO: Try this with the base GameObject and see if this is truly necessary.
 		ValuesForPlayer vals = new ValuesForPlayer();
@@ -43,10 +49,14 @@ public class PlayerValues : MonoBehaviour {
 	}
 
 	public void Load(){
-		Debug.Log ("TRYING TO LOAD!!!!");
-		if (File.Exists (Application.persistentDataPath + "/PlayerValues.dat")) {
+		Load (defaultSaveName);
+	}
+
+	public void Load(string filename){
+		Debug.Log ("TRYING TO LOAD: " + filename + ".save");
+		if (File.Exists (Application.persistentDataPath + "/" + filename + ".save")) {
 			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath+"/PlayerValues.dat", FileMode.Open);
+			FileStream file = File.Open (Application.persistentDataPath+ "/" + filename + ".save", FileMode.Open);
 			ValuesForPlayer vals = (ValuesForPlayer)bf.Deserialize(file);
 			file.Close();
 
