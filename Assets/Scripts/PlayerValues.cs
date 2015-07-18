@@ -6,16 +6,12 @@ using System.IO;
 
 [System.Serializable]
 class ValuesForPlayer {
-	public string name;
 	public int dayNumber;
 	public float cash;
 	public List<SerializableInventoryItem> inStock;
 }
 
 public class PlayerValues : MonoBehaviour {
-	// the player name won't be used, it's just here as a formality.
-	public string name;
-	
 	// if this number becomes bigger than the size of DayValues then all hell will break loose
 	public int dayNumber;
 	
@@ -33,7 +29,6 @@ public class PlayerValues : MonoBehaviour {
 
 		// @TODO: Try this with the base GameObject and see if this is truly necessary.
 		ValuesForPlayer vals = new ValuesForPlayer();
-		vals.name = name;
 		vals.dayNumber = dayNumber;
 		vals.cash = cash;
 
@@ -55,7 +50,6 @@ public class PlayerValues : MonoBehaviour {
 			ValuesForPlayer vals = (ValuesForPlayer)bf.Deserialize(file);
 			file.Close();
 
-			name = vals.name;
 			dayNumber = vals.dayNumber;
 			cash = vals.cash;
 

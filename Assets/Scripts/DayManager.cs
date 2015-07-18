@@ -67,6 +67,13 @@ public class DayManager : MonoBehaviour {
 		}
 	}
 
+	public void FailDay(){
+		// @TODO: Make sure TrashLastOrder doesn't do anything unexpected.
+		getOrder.TrashLastOrder ();
+
+		GameObject[] got = GameObject.FindGameObjectsWithTag ("Food");
+	}
+
 	public void EndDay(){
 		Debug.Log ("DAY "+dayValues.day+" IS OVER, GO HOME");
 		shouldBlack = true;

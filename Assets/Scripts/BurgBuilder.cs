@@ -42,8 +42,8 @@ public class BurgBuilder : MonoBehaviour {
 			//rb.freezeRotation = true;
 			return true;
 		} else {
-			return false;
 			Debug.Log ("NO, FUCK YOUR " + part.name);
+			return false;
 		}
 	}
 

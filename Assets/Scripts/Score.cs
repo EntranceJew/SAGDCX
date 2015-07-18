@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Score : MonoBehaviour {
 	float bestSum = -100;
-	List<GameObject> bestOrder;
+	//List<GameObject> bestOrder;
 	public GameObject fillerFood;
 
 	public bool done = false;
@@ -12,21 +12,16 @@ public class Score : MonoBehaviour {
 
 	public void EvaluateBurger(List<GameObject> order, List<GameObject> burg) {
 		bestSum = -100;
-		bestOrder = new List<GameObject> ();
+		//bestOrder = new List<GameObject> ();
 		done = false;
 		if (burg.Count != 0) {
 			StartCoroutine(HighestScoringOrder (order, burg));
 			done = true;
-
-			string str = "";
-
-
 			/*
 			for (int i = 0; i < order.Count; i++) {
 				str += order[i].GetComponent<Food> ().foodName + " filled with " + bestOrder[i].GetComponent<Food> ().foodName + " ";
 			}
-
-		
+			
 			str += SumResult (order, bestOrder);
 		
 			Debug.Log (str);
@@ -54,7 +49,7 @@ public class Score : MonoBehaviour {
 			
 			if (sum > bestSum) {
 				bestSum = sum;
-				bestOrder = usedList;
+				//bestOrder = usedList;
 			}
 			
 			yield break;

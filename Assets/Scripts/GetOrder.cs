@@ -5,7 +5,7 @@ using System.Collections;
 public class GetOrder : MonoBehaviour {
 	GameObject canvas;
 	Text instruction;
-	Order order;
+	public Order order;
 	public GameObject example;
 	public float upVar;
 	

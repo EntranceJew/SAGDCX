@@ -3,8 +3,8 @@ using System.Collections;
 
 public class FishAI : MonoBehaviour {
 	GameObject foodTarget;
-	float smooth = 2.0f;
-	float tiltAngle = 30.0f;
+	//float smooth = 2.0f;
+	//float tiltAngle = 30.0f;
 	Rigidbody rb;
 	float startDrag;
 
