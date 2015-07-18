@@ -88,7 +88,7 @@ public class DayManager : MonoBehaviour {
 		}
 
 		// Reset inventory and such.
-		playerValues.Load ();
+		playerValues.Load ("autosave_day_"+dayValues.day);
 
 		// Clear the order.
 		dayValues.ResetDayValues ();
@@ -111,7 +111,7 @@ public class DayManager : MonoBehaviour {
 		Debug.Log ("DAY "+dayValues.day+" STARTED, GO HOME");
 		shouldBlack = false;
 		// @TODO: Maybe save this as an autosave instead of ontop of the existing save?
-		playerValues.Save ();
+		playerValues.Save ("autosave_day_"+dayValues.day);
 		dayValues.orderNumber = 0;
 		GetNextOrder ();
 	}
