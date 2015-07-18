@@ -97,7 +97,7 @@ public class Food : MonoBehaviour {
 	public bool IsSecretlyFoodPope(){
 		foreach (KeyValuePair<GameObject, bool> item in collisions) {
 			Food fd = item.Key.GetComponent<Food>();
-			if (fd.ShouldObtainObject(gameObject)){
+			if (fd != null && fd.ShouldObtainObject(gameObject)){
 				fd.ForceObtain(gameObject);
 				Debug.Log (gameObject.name + " GRANTED BY " + item.Key.name);
 				//Debug.Log (gameObject.name + " WAS REJECTED BY: " + item.Key.name);
