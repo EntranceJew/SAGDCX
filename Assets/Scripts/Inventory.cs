@@ -53,6 +53,15 @@ public class Inventory : MonoBehaviour {
 	
 	}
 
+	public int HasHowMany(string name){
+		foreach (InventoryItem item in stock) {
+			if(item.represents.name == name){
+				return item.quantity;
+			}
+		}
+		return -1;
+	}
+
 	public bool Has(string name){
 		foreach (InventoryItem item in stock) {
 			if(item.represents.name == name){
