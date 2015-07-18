@@ -21,6 +21,10 @@ public class PlateThing : MonoBehaviour {
 	void Update () {
 		timeExpected = Time.time + spawnDelay;
 		timePreview = Time.time;
+		// In the event everything disappears.
+		if (spawnedThing == null) {
+			canSpawnThing = true;
+		}
 	}
 
 	void OnTriggerExit(Collider col){
