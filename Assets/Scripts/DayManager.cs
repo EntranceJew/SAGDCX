@@ -60,17 +60,15 @@ public class DayManager : MonoBehaviour {
 
 	public void FailDay(){
 		/* CHECKLIST OF SHIT TO DO ON DAY RESET
-		 * [ ] Refund all active food
+		 * [ ] Destroy all active food
 		 * [ ] Clear the order.
-		 * [ ] 
+		 * [ ] Load State.
 		 * [ ] 
 		*/
 		// @TODO: Make sure TrashLastOrder doesn't do anything unexpected.
 
-		// Refund all active food.
-		getOrder.TrashLastOrder ();
-		GameObject[] got = GameObject.FindGameObjectsWithTag ("Food");
-		// Trash all food, refund the real ones.
+		/*
+		// Trash all food, refund the real ones. (Invalid, won't work with incoming shipments.)
 		foreach (GameObject obj in got) {
 			Food fd = obj.GetComponent<Food>();
 			if(fd != null && !fd.isFake){
@@ -80,6 +78,17 @@ public class DayManager : MonoBehaviour {
 			}
 			Destroy(obj);
 		}
+		*/
+
+		// Trash all food, everywhere.
+		getOrder.TrashLastOrder ();
+		GameObject[] got = GameObject.FindGameObjectsWithTag ("Food");
+		foreach (GameObject obj in got) {
+			Destroy (obj);
+		}
+
+		// Reset inventory and such.
+		playerValues.Load ();
 
 		// Clear the order.
 		dayValues.ResetDayValues ();
@@ -101,6 +110,8 @@ public class DayManager : MonoBehaviour {
 	public void StartDay(){
 		Debug.Log ("DAY "+dayValues.day+" STARTED, GO HOME");
 		shouldBlack = false;
+		// @TODO: Maybe save this as an autosave instead of ontop of the existing save?
+		playerValues.Save ();
 		dayValues.orderNumber = 0;
 		GetNextOrder ();
 	}
