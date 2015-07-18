@@ -15,6 +15,7 @@ public class OrderForm : MonoBehaviour {
 	private Color positiveMoney = new Color(0.1953125f,1.0f,0.1953125f);
 	private Color negativeMoney = new Color(0.7109375f,0.1640625f,0.0f);
 
+	public Shipment ship;
 	public Inventory inventory;
 	public PlayerValues playerValues;
 	public DayValues dayValues;
@@ -49,7 +50,10 @@ public class OrderForm : MonoBehaviour {
 		if (playerValues.CanAfford (totalExpense)) {
 			// add the board values to the shipment
 			playerValues.Spend(totalExpense);
-			inventory.ObtainShipment (GetDesiredShipment ());
+			ship.inventory.ObtainShipment (GetDesiredShipment ());
+			float shopTime = dayValues.GetTodaysTraffic() * 2; // uphill, both ways
+			shopTime += ship.inventory.GetTotal() * dayValues.GetTodaysShoppingFatigue();
+			ship.GoGetIt(shopTime);
 		} else {
 			// jk lol
 			Debug.Log ("MANAGER YOU CRAZY, I CAN'T AFFORD AN XBOX.");
