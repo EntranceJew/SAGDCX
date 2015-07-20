@@ -24,7 +24,7 @@ public class DayManager : MonoBehaviour {
 		// eventually we're going to want to do something that isn't this, but, I'm the king for now
 
 		// @TODO: Wait some sort of magical period for the day to start before assigning first order.
-		StartDay ();
+		StartDay (true);
 	}
 	
 	// Update is called once per frame
@@ -97,7 +97,7 @@ public class DayManager : MonoBehaviour {
 
 		// Fade to black, come back.
 		shouldBlack = true;
-		StartCoroutine (Fade ());
+		StartCoroutine (Fade (false));
 	}
 
 	public void EndDay(){
@@ -105,14 +105,16 @@ public class DayManager : MonoBehaviour {
 		shouldBlack = true;
 		dayValues.day++;
 		getOrder.TrashLastOrder ();
-		StartCoroutine (Fade ());
+		StartCoroutine (Fade (true));
 	}
 
-	public void StartDay(){
+	public void StartDay(bool doSave){
 		Debug.Log ("DAY "+dayValues.day+" STARTED, GO HOME");
 		shouldBlack = false;
 		// @TODO: Maybe save this as an autosave instead of ontop of the existing save?
-		playerValues.Save ("autosave_day_"+dayValues.day);
+		if (doSave) {
+			playerValues.Save ("autosave_day_" + dayValues.day);
+		}
 		dayValues.orderNumber = 0;
 		AddTodaysShipment ();
 		GetNextOrder ();
@@ -125,10 +127,10 @@ public class DayManager : MonoBehaviour {
 		ship.GoGetIt(0.0f);
 	}
 
-	IEnumerator Fade() {
+	IEnumerator Fade(bool doSave) {
 		Debug.Log ("Waiting politely...");
 		yield return new WaitForSeconds(3.0f);
 		Debug.Log ("THE WAIT IS OVER!");
-		StartDay ();
+		StartDay (doSave);
 	}
 }
