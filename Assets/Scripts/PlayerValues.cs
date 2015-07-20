@@ -9,6 +9,7 @@ class ValuesForPlayer {
 	public int dayNumber;
 	public float cash;
 	public List<SerializableInventoryItem> inStock;
+	public bool[] arrows;
 }
 
 public class PlayerValues : MonoBehaviour {
@@ -20,6 +21,10 @@ public class PlayerValues : MonoBehaviour {
 	
 	// here is where all the everything ever lives
 	public Inventory inventory;
+
+	//ARROW STUFF!
+	//Order: Picture Frame, TV, Clipboard
+	public bool[] arrows = new bool[3] {true, true, true};
 
 	private string defaultSaveName = "slot_1";
 
@@ -36,6 +41,7 @@ public class PlayerValues : MonoBehaviour {
 		ValuesForPlayer vals = new ValuesForPlayer();
 		vals.dayNumber = dayNumber;
 		vals.cash = cash;
+		vals.arrows = arrows;
 
 		List<SerializableInventoryItem> serStock = new List<SerializableInventoryItem> ();
 		foreach (InventoryItem item in inventory.stock) {
@@ -89,6 +95,7 @@ public class PlayerValues : MonoBehaviour {
 
 		dayNumber = vals.dayNumber;
 		cash = vals.cash;
+		arrows = vals.arrows;
 
 		List<InventoryItem> unserStock = new List<InventoryItem> ();
 		foreach (SerializableInventoryItem item in vals.inStock) {
