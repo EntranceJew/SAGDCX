@@ -54,7 +54,7 @@ public class PlayerValues : MonoBehaviour {
 			bf.Serialize(ms, vals);
 			string filedata = System.Convert.ToBase64String(ms.ToArray ());
 			PlayerPrefs.SetString(filename+".save", filedata);
-			Debug.LogError ("SERIAL: "+filedata);
+			PlayerPrefs.Save();
 		} else {
 			FileStream file = File.Create (Application.persistentDataPath + "/" + filename + ".save");
 			bf.Serialize (file, vals);
@@ -75,7 +75,6 @@ public class PlayerValues : MonoBehaviour {
 		if (Application.isWebPlayer) {
 			if (PlayerPrefs.HasKey(filename+".save")){
 				string data = PlayerPrefs.GetString(filename+".save");
-				//Debug.LogError ("DESERIAL: "+data);
 				MemoryStream ms = new MemoryStream(System.Convert.FromBase64String (data));
 				vals = (ValuesForPlayer)bf.Deserialize(ms);
 			} else {
