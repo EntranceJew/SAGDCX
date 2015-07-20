@@ -17,19 +17,15 @@ public class FoodLookup : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		string goal = "Assets/Resources/Foods";
-		string shortgoal = "Foods/";
-		DirectoryInfo dir = new DirectoryInfo(goal);
-		FileInfo[] info = dir.GetFiles("*.prefab");
+		Object[] objs = Resources.LoadAll ("Foods");
 
-		for(int j = 0; j < info.Length; j++){
-			Debug.Log("Opening: Assets\\Prefabs\\Foods\\" + info[j].Name);
-			GameObject obj = (GameObject) Resources.Load(shortgoal+Path.GetFileNameWithoutExtension(info[j].Name));
+		foreach(GameObject obj in objs){
+			Debug.Log("Opening: Assets\\Prefabs\\Foods\\" + obj.name);
 			Debug.Log(obj);
-			lookup.Add(obj);
+			lookup.Add((GameObject) obj);
 			nameToObject.Add (
-				Path.GetFileNameWithoutExtension(info[j].Name),
-				obj
+				obj.name,
+				(GameObject) obj
 			);
 		}
 	}
