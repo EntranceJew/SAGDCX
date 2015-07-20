@@ -53,7 +53,9 @@ public class ArrowSpin : MonoBehaviour {
 
 
 		Vector3 curPosition = startPos;
-		curPosition.y += upPos;
+
+		curPosition += upPos * thisWay;
+
 		transform.position = curPosition;
 	}
 }
