@@ -3678,6 +3678,7 @@ MonoBehaviour:
   - {fileID: 189984, guid: 46f2dde8146bcff4a86418ad1afa4956, type: 2}
   - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
   - {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
+  - {fileID: 188832, guid: c9850f5e876fa1b41b2b31f995644914, type: 2}
   inventory: {fileID: 2139853223}
 --- !u!54 &500669056
 Rigidbody:
@@ -11892,6 +11893,10 @@ Prefab:
       propertyPath: spawnList.Array.data[13]
       value: 
       objectReference: {fileID: 178268, guid: fc3b9f2fb8f975d4a96b1b60e611a136, type: 2}
+    - target: {fileID: 11490230, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
+      propertyPath: spawnList.Array.data[14]
+      value: 
+      objectReference: {fileID: 188832, guid: c9850f5e876fa1b41b2b31f995644914, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
   m_IsPrefabParent: 0
