@@ -9,6 +9,7 @@ class ValuesForPlayer {
 	public int dayNumber;
 	public float cash;
 	public List<SerializableInventoryItem> inStock;
+	public bool[] arrowArray;
 }
 
 public class PlayerValues : MonoBehaviour {
@@ -20,6 +21,10 @@ public class PlayerValues : MonoBehaviour {
 	
 	// here is where all the everything ever lives
 	public Inventory inventory;
+
+	//ARROW STUFF!
+	//Order: Picture Frame, TV, Clipboard
+	public bool[] arrows = new bool[3] {true, true, true};
 
 	private string defaultSaveName = "slot_1";
 
@@ -43,6 +48,8 @@ public class PlayerValues : MonoBehaviour {
 			serStock.Add (item.Serialize ());
 		}
 		vals.inStock = serStock;
+
+		//OH BOY time for the boolean array?
 
 		bf.Serialize (file, vals);
 		file.Close ();

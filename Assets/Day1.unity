@@ -1037,6 +1037,10 @@ Prefab:
       propertyPath: m_Name
       value: CLICKHEREARROW1
       objectReference: {fileID: 0}
+    - target: {fileID: 11420918, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
+      propertyPath: playerValues
+      value: 
+      objectReference: {fileID: 1987554078}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
   m_IsPrefabParent: 0
@@ -3239,6 +3243,8 @@ MonoBehaviour:
   theCamera: {fileID: 0}
   wall: 1
   speed: 1
+  playervalues: {fileID: 1987554078}
+  arrowNumber: 2
 --- !u!65 &443243621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4240,6 +4246,14 @@ Prefab:
       propertyPath: m_Name
       value: CLICKHEREARROW2
       objectReference: {fileID: 0}
+    - target: {fileID: 11420918, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
+      propertyPath: arrowNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420918, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
+      propertyPath: playerValues
+      value: 
+      objectReference: {fileID: 1987554078}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
   m_IsPrefabParent: 0
@@ -5430,6 +5444,18 @@ Prefab:
       propertyPath: rotateWhichWay
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2339022, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420918, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
+      propertyPath: arrowNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420918, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
+      propertyPath: playerValues
+      value: 
+      objectReference: {fileID: 1987554078}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
   m_IsPrefabParent: 0
@@ -9794,6 +9820,8 @@ MonoBehaviour:
   theCamera: {fileID: 0}
   wall: 1
   speed: 1
+  playervalues: {fileID: 1987554078}
+  arrowNumber: 1
 --- !u!65 &1448146597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14320,6 +14348,7 @@ MonoBehaviour:
   dayNumber: 0
   cash: 900.099976
   inventory: {fileID: 2139853224}
+  arrows: 010101
 --- !u!1001 &1988258123
 Prefab:
   m_ObjectHideFlags: 0
@@ -15166,6 +15195,8 @@ MonoBehaviour:
   theCamera: {fileID: 0}
   wall: 1
   speed: 1
+  playervalues: {fileID: 1987554078}
+  arrowNumber: 0
 --- !u!1001 &2074751518
 Prefab:
   m_ObjectHideFlags: 0

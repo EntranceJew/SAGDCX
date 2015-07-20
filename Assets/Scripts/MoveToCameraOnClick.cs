@@ -12,6 +12,8 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	float percent = 1;
 	Transform goTo;
 	Transform from;
+	public PlayerValues playervalues;
+	public int arrowNumber;
 
 	// Update is called once per frame
 	void Update () {
@@ -54,6 +56,9 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	void MoveToCamera() {
 		wall = false;
 		percent = 0;
+		if (playervalues.arrows [arrowNumber]) {
+			playervalues.arrows [arrowNumber] = false;
+		}
 	}
 
 	void MoveToWall() {
