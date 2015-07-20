@@ -74,4 +74,12 @@ public class ArrowSpin : MonoBehaviour {
 			gameObject.GetComponent<MeshRenderer> ().enabled = false;
 		}
 	}
+
+	public bool GetState(){
+		return playerValues.arrows [arrowNumber];
+	}
+
+	public bool SetState(bool newState){
+		return playerValues.arrows [arrowNumber] = newState;
+	}
 }

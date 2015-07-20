@@ -12,8 +12,7 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	float percent = 1;
 	Transform goTo;
 	Transform from;
-	public PlayerValues playervalues;
-	public int arrowNumber;
+	public ArrowSpin arrowSpin;
 
 	// Update is called once per frame
 	void Update () {
@@ -35,8 +34,6 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	void Move() {
 		percent += Time.deltaTime * speed;
 
-
-
 		if (wall) {
 			goTo = ownPosition;
 			from = cameraPosition;
@@ -56,8 +53,8 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	void MoveToCamera() {
 		wall = false;
 		percent = 0;
-		if (playervalues.arrows [arrowNumber]) {
-			playervalues.arrows [arrowNumber] = false;
+		if (arrowSpin.GetState()) {
+			arrowSpin.SetState(false);
 		}
 	}
 
