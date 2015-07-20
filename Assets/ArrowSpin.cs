@@ -23,6 +23,10 @@ public class ArrowSpin : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (playerValues.arrows [arrowNumber]) {
+			if (!gameObject.GetComponent<MeshRenderer> ().enabled) {
+				gameObject.GetComponent<MeshRenderer> ().enabled = true;
+			}
+
 			upCount += Time.deltaTime * upSpeed;
 
 			/*Vector3 curRotation = transform.rotation.eulerAngles;

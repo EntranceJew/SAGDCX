@@ -50,6 +50,7 @@ public class PlayerValues : MonoBehaviour {
 		vals.inStock = serStock;
 
 		//OH BOY time for the boolean array?
+		vals.arrowArray = arrows;
 
 		bf.Serialize (file, vals);
 		file.Close ();
@@ -69,6 +70,7 @@ public class PlayerValues : MonoBehaviour {
 
 			dayNumber = vals.dayNumber;
 			cash = vals.cash;
+			arrows = vals.arrowArray;
 
 			List<InventoryItem> unserStock = new List<InventoryItem> ();
 			foreach (SerializableInventoryItem item in vals.inStock) {
