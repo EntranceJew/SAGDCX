@@ -31,7 +31,6 @@ public class PlayerValues : MonoBehaviour {
 	public void Save(string filename){
 		Debug.Log ("TRYING TO SAVE: " + filename + ".save");
 		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream file = File.Create (Application.persistentDataPath+"/"+filename+".save");
 
 		// @TODO: Try this with the base GameObject and see if this is truly necessary.
 		ValuesForPlayer vals = new ValuesForPlayer();
@@ -44,35 +43,61 @@ public class PlayerValues : MonoBehaviour {
 		}
 		vals.inStock = serStock;
 
-		bf.Serialize (file, vals);
-		file.Close ();
+		if (Application.isWebPlayer) {
+			MemoryStream ms = new MemoryStream();
+			bf.Serialize(ms, vals);
+			string filedata = System.Convert.ToBase64String(ms.ToArray ());
+			PlayerPrefs.SetString(filename+".save", filedata);
+			Debug.LogError ("SERIAL: "+filedata);
+		} else {
+			FileStream file = File.Create (Application.persistentDataPath + "/" + filename + ".save");
+			bf.Serialize (file, vals);
+			file.Close ();
+		}
 	}
 
 	public void Load(){
 		Load (defaultSaveName);
 	}
 
-	public void Load(string filename){
+	public bool Load(string filename){
 		Debug.Log ("TRYING TO LOAD: " + filename + ".save");
-		if (File.Exists (Application.persistentDataPath + "/" + filename + ".save")) {
-			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath+ "/" + filename + ".save", FileMode.Open);
-			ValuesForPlayer vals = (ValuesForPlayer)bf.Deserialize(file);
-			file.Close();
 
-			dayNumber = vals.dayNumber;
-			cash = vals.cash;
+		BinaryFormatter bf = new BinaryFormatter ();
+		ValuesForPlayer vals;
 
-			List<InventoryItem> unserStock = new List<InventoryItem> ();
-			foreach (SerializableInventoryItem item in vals.inStock) {
-				unserStock.Add (new InventoryItem(inventory.fl.GetGameObject(item.name), item.quantity));
+		if (Application.isWebPlayer) {
+			if (PlayerPrefs.HasKey(filename+".save")){
+				string data = PlayerPrefs.GetString(filename+".save");
+				//Debug.LogError ("DESERIAL: "+data);
+				MemoryStream ms = new MemoryStream(System.Convert.FromBase64String (data));
+				vals = (ValuesForPlayer)bf.Deserialize(ms);
+			} else {
+				Debug.Log ("NO FILE, DINDU NOTHIN'");
+				return false;
 			}
-			inventory.stock = unserStock;
-
-			Debug.Log ("LOADED ALL MY VALUES UP GOOD");
 		} else {
-			Debug.Log ("NO FILE, DINDU NOTHIN'");
+			if (File.Exists (Application.persistentDataPath + "/" + filename + ".save")) {
+				FileStream file = File.Open (Application.persistentDataPath+ "/" + filename + ".save", FileMode.Open);
+				vals = (ValuesForPlayer)bf.Deserialize(file);
+				file.Close();
+			} else {
+				Debug.Log ("NO FILE, DINDU NOTHIN'");
+				return false;
+			}
 		}
+
+		dayNumber = vals.dayNumber;
+		cash = vals.cash;
+
+		List<InventoryItem> unserStock = new List<InventoryItem> ();
+		foreach (SerializableInventoryItem item in vals.inStock) {
+			unserStock.Add (new InventoryItem(inventory.fl.GetGameObject(item.name), item.quantity));
+		}
+		inventory.stock = unserStock;
+
+		Debug.Log ("LOADED ALL MY VALUES UP GOOD");
+		return true;
 	}
 
 	// IF, FOR WHATEVER REASON WE NEED THIS LOADED BEFORE THE MAIN DAY SCENE, CONSULT:
