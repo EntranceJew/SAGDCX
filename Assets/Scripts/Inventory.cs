@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour {
 				return item.quantity;
 			}
 		}
-		return -1;
+		return 0;
 	}
 
 	public bool Has(string name){
@@ -104,6 +104,28 @@ public class Inventory : MonoBehaviour {
 			i++;
 		}
 		Debug.Log ("Added item that was completely new: " + itemName);
+		stock.Add (new InventoryItem (fl.GetGameObject(arr[0]), quantity));
+		return true;
+	}
+
+	public bool Set(GameObject tRepresents, int quantity){
+		string[] arr = tRepresents.name.Split('(');
+		string itemName = fl.GetGameObject (arr [0]).name;
+
+		if (quantity <= 0) {
+			return Remove (itemName, quantity) > 0;
+		}
+
+		int i = 0;
+		foreach (InventoryItem item in stock) {
+			if(item.represents.name == itemName){
+				stock[i].quantity = quantity;
+
+				return false;
+			}
+			i++;
+		}
+		Debug.Log ("Set stock of item that was completely new: " + itemName);
 		stock.Add (new InventoryItem (fl.GetGameObject(arr[0]), quantity));
 		return true;
 	}
