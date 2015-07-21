@@ -15,6 +15,7 @@ public class OrderForm : MonoBehaviour {
 	private Color positiveMoney = new Color(0.1953125f,1.0f,0.1953125f);
 	private Color negativeMoney = new Color(0.7109375f,0.1640625f,0.0f);
 
+	public MenuAbstractor menuAbs;
 	public Shipment ship;
 	public Inventory inventory;
 	public PlayerValues playerValues;
@@ -50,7 +51,7 @@ public class OrderForm : MonoBehaviour {
 		if (playerValues.CanAfford (totalExpense)) {
 			// add the board values to the shipment
 			playerValues.Spend(totalExpense);
-			ship.inventory.ObtainShipment (GetDesiredShipment ());
+			ship.inventory.ObtainShipment (GetAbstractedShipment ());
 			float shopTime = dayValues.GetTodaysTraffic() * 2; // uphill, both ways
 			shopTime += ship.inventory.GetTotal() * dayValues.GetTodaysShoppingFatigue();
 			ship.GoGetIt(shopTime);
@@ -70,6 +71,31 @@ public class OrderForm : MonoBehaviour {
 	}
 
 	// helpers
+	public List<InventoryItem> GetAbstractedShipment(){
+		Dictionary<GameObject, int> absShipment = new Dictionary<GameObject, int> ();
+		foreach (RowManager row in rows) {
+			for(int i = 0; i < row.quantity; i++){
+				List<GameObject> abs = menuAbs.GetPossibilityFor(row.represents);
+				foreach(GameObject go in abs){
+					int temp;
+					if(absShipment.TryGetValue(go, out temp)){
+						absShipment[go]++;
+					} else {
+						Debug.Log ("INITIALIZED ABSTRACT SHIPMENT");
+						absShipment.Add (go, 1);
+					}
+				}
+			}
+		}
+
+		List<InventoryItem> invShipment = new List<InventoryItem> ();
+		foreach (KeyValuePair<GameObject, int> entry in absShipment) {
+			invShipment.Add (new InventoryItem(entry.Key, entry.Value));
+		}
+
+		return invShipment;
+	}
+
 	public List<InventoryItem> GetDesiredShipment(){
 		List<InventoryItem> items = new List<InventoryItem>();
 		foreach (RowManager row in rows) {

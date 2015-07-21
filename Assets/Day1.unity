@@ -2359,6 +2359,136 @@ RectTransform:
 Transform:
   m_PrefabParentObject: {fileID: 468140, guid: e70e77487397b204b923adda613688af, type: 2}
   m_PrefabInternal: {fileID: 1851736893}
+--- !u!1 &332364048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 332364049}
+  - 114: {fileID: 332364050}
+  m_Layer: 0
+  m_Name: MenuAbstractor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &332364049
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332364048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1147586770}
+  m_RootOrder: 12
+--- !u!114 &332364050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332364048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7227a75241e24f94da201c07e173b454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abstractions:
+  - represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    results:
+    - name: Exact
+      items:
+      - {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+    - name: Confused
+      items:
+      - {fileID: 183780, guid: 8ec6465b673d4a64dbc740e4510e32a1, type: 2}
+  - represents: {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
+    results:
+    - name: Exact
+      items:
+      - {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
+    - name: Confused
+      items:
+      - {fileID: 145720, guid: 77d6206f17b5d6c47a167bfd196fd92a, type: 2}
+  - represents: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
+    results:
+    - name: Chicken Fortune
+      items:
+      - {fileID: 153890, guid: 27cf64ddc7fa2bb48b16a4b6658dd6b0, type: 2}
+      - {fileID: 153890, guid: 27cf64ddc7fa2bb48b16a4b6658dd6b0, type: 2}
+    - name: Fish & Contents
+      items:
+      - {fileID: 188832, guid: c9850f5e876fa1b41b2b31f995644914, type: 2}
+      - {fileID: 181392, guid: 8d1355310f1cb1d4b8830f8b4bb170ea, type: 2}
+    - name: Unwanted Ham
+      items:
+      - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
+      - {fileID: 166252, guid: 15f10e76772538c43b47f6429a1ceb4f, type: 2}
+    - name: What Was Asked For
+      items:
+      - {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
+  - represents: {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    results:
+    - name: Exact
+      items:
+      - {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+    - name: Confused
+      items:
+      - {fileID: 133794, guid: 993006d869e86d449879ae5176d85c8f, type: 2}
+  - represents: {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
+    results:
+    - name: Exact
+      items:
+      - {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
+    - name: Confused
+      items:
+      - {fileID: 130346, guid: 983f6f90b3efad54a89db59f62945100, type: 2}
+  - represents: {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
+    results:
+    - name: Exact
+      items:
+      - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
+    - name: Confused
+      items:
+      - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
+  - represents: {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
+    results:
+    - name: Exact
+      items:
+      - {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
+    - name: Confused
+      items:
+      - {fileID: 190024, guid: 61bcb51c5a1d5a946bea0f2650957eb3, type: 2}
+    - name: Very Confused
+      items:
+      - {fileID: 189984, guid: 46f2dde8146bcff4a86418ad1afa4956, type: 2}
+  - represents: {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
+    results:
+    - name: Exact
+      items:
+      - {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
+    - name: Confused
+      items:
+      - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
+    - name: Very Confused
+      items:
+      - {fileID: 119526, guid: 726137ad9e49fe549852d5186f54c9af, type: 2}
+  - represents: {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
+    results:
+    - name: Exact
+      items:
+      - {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
+    - name: Confused
+      items:
+      - {fileID: 114696, guid: 19c377dd28af55d4fa831f3b9a6c18b5, type: 2}
+    - name: Very Confused
+      items:
+      - {fileID: 171830, guid: 3453709e0c549f64fa79cc0433e4796d, type: 2}
 --- !u!1 &338893386
 GameObject:
   m_ObjectHideFlags: 0
@@ -8363,6 +8493,7 @@ Transform:
   - {fileID: 741838968}
   - {fileID: 1413773760}
   - {fileID: 923965198}
+  - {fileID: 332364049}
   m_Father: {fileID: 0}
   m_RootOrder: 15
 --- !u!1 &1147897340
@@ -15018,6 +15149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4a3019908599b4881155341dead2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuAbs: {fileID: 332364050}
   ship: {fileID: 595117136}
   inventory: {fileID: 2139853224}
   playerValues: {fileID: 1987554078}
