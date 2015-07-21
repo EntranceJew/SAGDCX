@@ -20,8 +20,8 @@ public class FoodLookup : MonoBehaviour {
 		Object[] objs = Resources.LoadAll ("Foods");
 
 		foreach(GameObject obj in objs){
-			Debug.Log("Opening: Assets\\Prefabs\\Foods\\" + obj.name);
-			Debug.Log(obj);
+			//Debug.Log("Opening: Assets\\Prefabs\\Foods\\" + obj.name);
+			//Debug.Log(obj);
 			lookup.Add((GameObject) obj);
 			nameToObject.Add (
 				obj.name,
