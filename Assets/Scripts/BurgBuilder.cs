@@ -4,6 +4,84 @@ using System.Collections.Generic;
 
 public class BurgBuilder : MonoBehaviour {
 	public PartZone pz;
+	public DayManager dayManager;
+	public SpawnBurgerComponent spawnBurgerComponent;
+
+	public Transform idlePos;
+	public Transform activePos;
+
+	public bool active = true;
+	public float timeToSwitch;
+
+	public bool inMotion = false;
+
+	private Transform goTo;
+	private Transform from;
+	
+	private float startTime;
+	private float journeyLength;
+
+	void Update(){
+		if (inMotion) {
+			float distCovered = (Time.time - startTime) * timeToSwitch;
+			transform.position = Vector3.Lerp (from.position, goTo.position, distCovered / journeyLength);
+			transform.rotation = Quaternion.Lerp (from.rotation, goTo.rotation, distCovered / journeyLength);
+			if(distCovered >= journeyLength){
+				inMotion = false;
+				if(active){
+					DeliverPayload();
+				} else {
+					DeliverReturnPayload();
+				}
+			}
+		}
+	}
+
+	public void DeliverPayload(){
+		Debug.Log ("I'M HERE, FUCKERS");
+		spawnBurgerComponent.SpawnJudgeBurger(gameObject);
+		//pz.enabled = true;
+	}
+
+	public void DeliverReturnPayload(){
+		Debug.Log ("I'M BACK, HONKIES");
+		// @TODO: Make the scoring sequence handle this, this is just in case we have a rapid burger builder on our hands.
+		spawnBurgerComponent.TrashIt ();
+
+		// Prepare the next order.
+		dayManager.GetNextOrder ();
+		pz.enabled = true;
+	}
+
+	public void DoIt(){
+		inMotion = true;
+		startTime = Time.time;
+		journeyLength = Vector3.Distance (from.position, goTo.position);
+	}
+
+	// elevate me to the heavens
+	public void Hoist(){
+		Debug.Log ("LATER, PLEBS");
+		// @TODO: FREEZE AND WELD ALL FOOD. YEAH, WE GMOD NOW.
+		pz.enabled = false; // just in case
+		goTo = activePos;
+		from = idlePos;
+		active = true;
+		DoIt ();
+	}
+
+	// return me, mortals
+	public void UnHoist(){
+		Debug.Log ("BACK, PLEBS");
+
+		// Trash the existing burger as soon as we're out of frame.
+		TrashBurger ();
+
+		goTo = idlePos;
+		from = activePos;
+		active = false;
+		DoIt ();
+	}
 	
 	public bool EmancipatePart(GameObject part){
 		if (BelongsToMe (part)) {
@@ -58,7 +136,7 @@ public class BurgBuilder : MonoBehaviour {
 	public List<GameObject> GetChildParts(){
 		List<GameObject> burgObjects = new List<GameObject> ();
 		foreach (Transform t in transform) {
-			if (t.name != "PartZone") {
+			if (t.name != "PartZone" && t.name != "Plate") {
 				burgObjects.Add (t.gameObject);
 			}
 		}
@@ -67,7 +145,7 @@ public class BurgBuilder : MonoBehaviour {
 
 	public void TrashBurger(){
 		foreach (Transform t in transform) {
-			if (t.name != "PartZone") {
+			if (t.name != "PartZone" && t.name != "Plate") {
 				Destroy (t.gameObject);
 			}
 		}
