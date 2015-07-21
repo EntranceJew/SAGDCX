@@ -76,13 +76,32 @@ public class AltScore : MonoBehaviour {
 		theBurg = burg;
 
 		// let everyone else know what is possible
-		evaluatePotentialScore ();
+		evaluatePotentialScore (order.Count);
 
-		if (isExactMatch ()) {
-			theScore += pointsForExactMatch;
-		}
+		Debug.Log ("The Score starting out : " + theScore);
 
-		theScore += pointsPerEachPartFound * numPartsFound();
+		//See if burg has same top and bottom ingredient
+		theScore += TopBottomBonus (burg);
+		Debug.Log ("The Score after top bottom bonus : " + theScore);
+
+		//See if there are perfect matches, lifting this straight from isExactMatch but since I need the lists to now have those ingredients no longer I need to basically lift the function.
+		List<GameObject> orderLeft;
+		List<GameObject> burgLeft;
+		theScore += FindPerfectIngredients (order, burg, out orderLeft, out burgLeft);
+		Debug.Log ("The Score after perfect ingredients : " + theScore);
+
+		//evaluate Foodiness of orderLeft
+
+		FoodCategories orderLeftFoodSum = EvaluateFoodiness (orderLeft);
+
+		//evaluate Foodiness of burgLeft
+
+		FoodCategories burgLeftFoodSum = EvaluateFoodiness (burgLeft);
+
+		//evaluate scores.
+
+		theScore += EvaluateFoodinessScores (orderLeft.Count, orderLeftFoodSum, burgLeftFoodSum);
+		Debug.Log ("The Score after evaluation : " + theScore);
 
 		// update UI
 		scoreText.GetComponent<Text> ().text = theScore.ToString();
@@ -91,12 +110,17 @@ public class AltScore : MonoBehaviour {
 	}
 
 	// the layout of this method should resemble the one above it (EvaluateBurger)
-	public int evaluatePotentialScore(){
+	public int evaluatePotentialScore(int burgCount){
 		thePotentialScore = 0;
 
+		/*
 		thePotentialScore += pointsForExactMatch;
 
 		thePotentialScore += pointsPerEachPartFound * theOrder.Count;
+		*/
+
+		thePotentialScore  = burgCount * 125; 	//Score for perfect burger substitutions
+		thePotentialScore += 50; 				//Top Bottom Bonus Score
 
 		// update UI
 		potentialText.GetComponent<Text> ().text = thePotentialScore.ToString();
@@ -105,6 +129,106 @@ public class AltScore : MonoBehaviour {
 	}
 
 	// SCORING METHODS & FUNCTIONS
+	int TopBottomBonus(List<GameObject> burgIn) {
+		int bonusScoreTopBottom = 50;
+		if (burgIn.Count < 1) {
+			//OF COURSE a burger with less than two things has the top and bottom the same, THAT'S CHEATING NO BONUS FOR YOU!
+			return 0;
+		}
+
+		GameObject top 		= burgIn [0];
+		GameObject bottom 	= burgIn [burgIn.Count - 1];
+
+
+		if (AreNamedSimilar (top, bottom)) {
+			//CONGRATULATIONS!
+			return bonusScoreTopBottom;
+		}
+
+		if (top.GetComponent<Food>().foodName == "Bun" && bottom.GetComponent<Food>().foodName == "Bun") {
+			//CONGERATULATON
+			return bonusScoreTopBottom;
+		}
+
+		//welp, we tried
+		return 0;
+	}
+
+	FoodCategories EvaluateFoodiness (List<GameObject> evalList) {
+		FoodCategories tempFC;
+		FoodCategories output = new FoodCategories();
+		foreach (GameObject obj in evalList) {
+			tempFC = obj.GetComponent<Food>().foodCategories;
+
+			output.bun 			+= tempFC.bun;
+			output.cheese 		+= tempFC.cheese;
+			output.condiment 	+= tempFC.condiment;
+			output.meat 		+= tempFC.meat;
+			output.vegetable 	+= tempFC.vegetable;
+		}
+		return output;
+	}
+
+	int EvaluateFoodinessScores (int ListSize, FoodCategories order, FoodCategories burg) {
+		int output = ListSize * 100;
+		FoodCategories temp = new FoodCategories();
+
+		temp.bun 		= Mathf.Abs(order.bun 		- burg.bun);
+		temp.cheese		= Mathf.Abs(order.cheese 	- burg.cheese);
+		temp.condiment 	= Mathf.Abs(order.condiment - burg.condiment);
+        temp.meat 		= Mathf.Abs(order.meat 		- burg.meat);
+        temp.vegetable 	= Mathf.Abs(order.vegetable - burg.vegetable);
+
+		temp.bun 		*= .5f;
+		temp.cheese 	*= .5f;
+		temp.condiment 	*= .5f;
+		temp.meat 		*= .5f;
+		temp.vegetable 	*= .5f;
+
+		temp.bun 		*= temp.bun;
+		temp.cheese 	*= temp.cheese;
+		temp.condiment	*= temp.condiment;
+		temp.meat 		*= temp.meat;
+		temp.vegetable 	*= temp.vegetable;
+
+		if (temp.bun > 100)				temp.bun = 100;
+		if (temp.cheese > 100)			temp.cheese = 100;
+		if (temp.condiment > 100)		temp.condiment = 100;
+		if (temp.meat > 100)			temp.meat = 100;
+		if (temp.vegetable > 100)		temp.vegetable = 100;
+
+		output = Mathf.FloorToInt (temp.bun + temp.cheese + temp.condiment + temp.meat + temp.vegetable);
+
+		return output;
+	}
+
+	int FindPerfectIngredients(List<GameObject> inOrder, List<GameObject> inBurg, out List<GameObject> outOrder, out List<GameObject> outBurg) {
+		int output = 0;
+		int perfectMatchScore = 125;
+		outOrder = new List<GameObject> (inOrder);
+		outBurg = new List<GameObject> (inBurg);
+
+		foreach (GameObject a in inOrder) {
+
+			foreach (GameObject b in inBurg) {
+
+				if (AreNamedSimilar(a,b)) {
+
+					output += perfectMatchScore;
+					outOrder.Remove(a);
+
+					if (outBurg.Contains(b)) {
+
+						outBurg.Remove(b);
+
+					}
+				}
+			}
+		}
+
+		return output;
+	}
+
 	bool isExactMatch(){
 		int i = 0;
 		foreach (GameObject orderItem in theOrder) {
@@ -120,6 +244,8 @@ public class AltScore : MonoBehaviour {
 		}
 		return true;
 	}
+
+
 
 	int numPartsFound(){
 		int i = 0;
@@ -213,9 +339,6 @@ public class AltScore : MonoBehaviour {
 	Veggie: 	abs(41 - 23) = 18
 	Condiment: 	abs(33 - 25) = 8
 	Meat: 		abs(11 - 15) = 4
-
-	//Start with the score of the burger. Every ingredient you give determines how many points those %'s are worth.
-	6/4 = 1.5
 
 	Start from a max of 100 * ingredients
 	600 points
