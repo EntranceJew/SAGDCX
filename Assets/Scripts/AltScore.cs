@@ -163,4 +163,84 @@ public class AltScore : MonoBehaviour {
 	public float GetMaxScore () {
 		return thePotentialScore;
 	}
+
+	/*Forer's concept of how to score
+	1. Evaluate if the burger has [the same] ingredient on top and bottom, OR a pair ingredient (bun top & bun bottom]
+	2. Take the burger components and see if any of them are perfect matches. If they are remove them from the burger to be evaluated
+	3. Find all the components in the order and tally up their % on each vector BUN CHEESE CONDIMENT MEAT VEGETABLE
+	4. Find all the components in the given and tally up their % on each vector
+	5. Compare how close the % are
+
+	Example:
+	[Order]
+	BunTop
+	Ketchup
+	Mustard
+	Onion
+	Cheese
+	Patty
+	BunBottom
+
+	[Given]
+	Bread
+	Mayonaise
+	Lettuce
+	Patty
+	Bread
+
+	1. Given has same top and bottom. + 100 points
+	2. Patty is in both, remove from order and given.
+	3. Order Tally
+	--			BunTop	Ketchup	Mustard	Onion	Cheese	BunBottom
+	[Bun] 		1,		0, 		0, 		.3,		.3,		1 			= 2.6 / 6 = 43%
+	[Cheese]	.1,		0,		0,		.3,		1,		.1			= 1.5 / 6 = 25%
+	[Veggie] 	.1,		.5,		.5,		1,		.3,		.1			= 2.5 / 6 = 41%
+	[Condiment] 0,		1,		1,		0,		0,		0			= 2   / 6 = 33%
+	[Meat]		.1,		0,		0,		.3,		.1,		.2			= .7  / 6 = 11%
+
+	4. Given Tally
+	--			Bread	Mayonaise		Lettuce		Bread
+	[Bun]		1,		0,				.5,			1				= 2.5 / 4 = 62%
+	[Cheese]	.1,		.5,				.4,			.1				= 1.1 / 4 = 27%
+	[Veggie]	.1,		0,				1,			.1				= 1.2 / 4 = 23%
+	[Condiment]	0,		1,				0,			0				= 1   / 4 = 25%
+	[Meat]		.1,		0,				.5,			0				= .6  / 4 = 15%
+
+
+	5. Compare how close they are
+	Bun: 		abs(43 - 62) = 19
+	Cheese: 	abs(25 - 27) = 2
+	Veggie: 	abs(41 - 23) = 18
+	Condiment: 	abs(33 - 25) = 8
+	Meat: 		abs(11 - 15) = 4
+
+	//Start with the score of the burger. Every ingredient you give determines how many points those %'s are worth.
+	6/4 = 1.5
+
+	Start from a max of 100 * ingredients
+	600 points
+
+	Follow an exponential function to see how quick the points get subtracted from that
+	Bun 		((19/2)^2) 	= 90.25
+	Cheese 		((2/2)^2)	= 1
+	Veggie		((18/2)^2)	= 81
+	Condiment 	((8/2)^2)	= 16
+	Meat		((4/2)^2)	= 4
+
+	IF final result over 100, Cap at 100
+
+	90.25 + 1 + 81 + 16 + 4 = 192.25
+
+	Floor value
+	192
+
+	Subtract from max points
+	600 - 192 = 408
+
+	CONGRATULATIONS WE HAVE A BURGER!
+	408 out of 600 points
+
+	*/
+
+
 }
