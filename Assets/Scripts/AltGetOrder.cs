@@ -44,7 +44,8 @@ public class AltGetOrder : MonoBehaviour {
 	void MakeOrderExample() {
 		//Clean out previous order
 		TrashLastOrder ();
-		
+
+		Debug.Log ("REV UP THOSE FRYERS");
 		
 		//Take order
 		int ingredient = 0;

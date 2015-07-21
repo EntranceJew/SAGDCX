@@ -11,6 +11,8 @@ public class DayManager : MonoBehaviour {
 	public bool pictureBlack = true;
 	public bool shouldBlack = true;
 
+	public bool isDayActive = false;
+
 
 	public AltGetOrder getOrder;
 	public DayValues dayValues;
@@ -80,6 +82,8 @@ public class DayManager : MonoBehaviour {
 			Destroy(obj);
 		}
 		*/
+		// Disable food spawning.
+		isDayActive = false;
 
 		// Trash all food, everywhere.
 		getOrder.TrashLastOrder ();
@@ -93,7 +97,7 @@ public class DayManager : MonoBehaviour {
 
 		// Clear the order.
 		dayValues.ResetDayValues ();
-		getOrder.NewOrder (dayValues.GetNextOrder ());
+		//getOrder.NewOrder (dayValues.GetNextOrder ());
 
 		// Fade to black, come back.
 		shouldBlack = true;
@@ -102,6 +106,7 @@ public class DayManager : MonoBehaviour {
 
 	public void EndDay(){
 		Debug.Log ("DAY "+dayValues.day+" IS OVER, GO HOME");
+		isDayActive = false;
 		shouldBlack = true;
 		dayValues.day++;
 		getOrder.TrashLastOrder ();
@@ -118,6 +123,7 @@ public class DayManager : MonoBehaviour {
 		dayValues.orderNumber = 0;
 		AddTodaysShipment ();
 		GetNextOrder ();
+		isDayActive = true;
 	}
 	
 	public void AddTodaysShipment(){

@@ -1914,6 +1914,10 @@ Prefab:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 422140585}
+    - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
+      propertyPath: dayManager
+      value: 
+      objectReference: {fileID: 2080867310}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
   m_IsPrefabParent: 0
@@ -3772,6 +3776,7 @@ MonoBehaviour:
   - {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
   - {fileID: 188832, guid: c9850f5e876fa1b41b2b31f995644914, type: 2}
   inventory: {fileID: 2139853223}
+  dayManager: {fileID: 2080867310}
 --- !u!54 &500669056
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5361,6 +5366,10 @@ Prefab:
       propertyPath: spawnList.Array.data[5]
       value: 
       objectReference: {fileID: 180548, guid: d50e416fa82db944f92ac5acc14135ca, type: 2}
+    - target: {fileID: 11453734, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
+      propertyPath: dayManager
+      value: 
+      objectReference: {fileID: 2080867310}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
   m_IsPrefabParent: 0
@@ -7661,6 +7670,7 @@ MonoBehaviour:
   spawnList:
   - {fileID: 150546, guid: e4ef6a53cf544ae43b4a319eee00284a, type: 2}
   inventory: {fileID: 2139853223}
+  dayManager: {fileID: 2080867310}
 --- !u!23 &1059288981
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7783,6 +7793,7 @@ MonoBehaviour:
   - {fileID: 114696, guid: 19c377dd28af55d4fa831f3b9a6c18b5, type: 2}
   - {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
   inventory: {fileID: 2139853223}
+  dayManager: {fileID: 2080867310}
 --- !u!4 &1098086038 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 87eb6ce4ed610684eb3164e5da27a41b, type: 3}
@@ -8209,6 +8220,7 @@ MonoBehaviour:
   spawnList:
   - {fileID: 145720, guid: 77d6206f17b5d6c47a167bfd196fd92a, type: 2}
   inventory: {fileID: 2139853223}
+  dayManager: {fileID: 2080867310}
 --- !u!23 &1152997218
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8416,6 +8428,7 @@ MonoBehaviour:
   spawnList:
   - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
   inventory: {fileID: 2139853223}
+  dayManager: {fileID: 2080867310}
 --- !u!23 &1195796836
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8516,6 +8529,7 @@ MonoBehaviour:
   - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
   - {fileID: 180548, guid: d50e416fa82db944f92ac5acc14135ca, type: 2}
   inventory: {fileID: 2139853223}
+  dayManager: {fileID: 2080867310}
 --- !u!23 &1200863091
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10748,6 +10762,7 @@ MonoBehaviour:
   spawnList:
   - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
   inventory: {fileID: 2139853223}
+  dayManager: {fileID: 2080867310}
 --- !u!23 &1563557676
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12107,6 +12122,10 @@ Prefab:
       propertyPath: spawnList.Array.data[14]
       value: 
       objectReference: {fileID: 188832, guid: c9850f5e876fa1b41b2b31f995644914, type: 2}
+    - target: {fileID: 11490230, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
+      propertyPath: dayManager
+      value: 
+      objectReference: {fileID: 2080867310}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
   m_IsPrefabParent: 0
@@ -15337,6 +15356,7 @@ MonoBehaviour:
   count: 1
   pictureBlack: 1
   shouldBlack: 1
+  isDayActive: 0
   getOrder: {fileID: 1834493120}
   dayValues: {fileID: 786474129}
   inventory: {fileID: 2139853224}
@@ -15801,6 +15821,10 @@ Prefab:
       propertyPath: spawnList.Array.data[3]
       value: 
       objectReference: {fileID: 169516, guid: e7725a634b0a1f74997a09098eaf9b0c, type: 2}
+    - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
+      propertyPath: dayManager
+      value: 
+      objectReference: {fileID: 2080867310}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
   m_IsPrefabParent: 0

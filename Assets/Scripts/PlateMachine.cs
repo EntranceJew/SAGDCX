@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class PlateMachine : MonoBehaviour {
 	public List<GameObject> spawnList;
 	public GameObject inventory;
+	public DayManager dayManager;
 
 	private int listPos;
 	private Inventory inv;
@@ -17,17 +18,19 @@ public class PlateMachine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		foreach(PlateThing plate in this.gameObject.GetComponentsInChildren<PlateThing>()){
-			if(inv.Has (spawnList[listPos].name)){
-				if(plate.SpawnThing(spawnList[listPos])){
-					inv.Remove (spawnList[listPos].name, 1);
+		if (dayManager.isDayActive) {
+			foreach (PlateThing plate in this.gameObject.GetComponentsInChildren<PlateThing>()) {
+				if (inv.Has (spawnList [listPos].name)) {
+					if (plate.SpawnThing (spawnList [listPos])) {
+						inv.Remove (spawnList [listPos].name, 1);
+						listPos += 1;
+					}
+				} else {
 					listPos += 1;
 				}
-			} else {
-				listPos += 1;
-			}
-			if(listPos >= spawnList.Count){
-				listPos = 0;
+				if (listPos >= spawnList.Count) {
+					listPos = 0;
+				}
 			}
 		}
 	}
