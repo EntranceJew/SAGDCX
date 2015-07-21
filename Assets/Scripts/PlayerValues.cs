@@ -10,6 +10,9 @@ class ValuesForPlayer {
 	public float cash;
 	public List<SerializableInventoryItem> inStock;
 	public bool[] arrows;
+	public int[] scoresGot;
+	public int[] scoresMax;
+	public int ratsInHouse;
 }
 
 public class PlayerValues : MonoBehaviour {
@@ -21,6 +24,15 @@ public class PlayerValues : MonoBehaviour {
 	
 	// here is where all the everything ever lives
 	public Inventory inventory;
+
+	// how many rats are around
+	public Inventory ratsInHouse;
+
+	// the scores achieved during the day
+	public List<int> scoresGot;
+
+	// the scores achievable during the day
+	public List<int> scoresMax;
 
 	//ARROW STUFF!
 	//Order: Picture Frame, TV, Clipboard
@@ -42,6 +54,14 @@ public class PlayerValues : MonoBehaviour {
 		vals.dayNumber = dayNumber;
 		vals.cash = cash;
 		vals.arrows = arrows;
+
+		vals.scoresGot = new int[scoresGot.Count];
+		scoresGot.CopyTo (vals.scoresGot);
+
+		vals.scoresMax = new int[scoresMax.Count];
+		scoresMax.CopyTo (vals.scoresMax);
+
+		vals.ratsInHouse = ratsInHouse.HasHowMany ("Rat");
 
 		List<SerializableInventoryItem> serStock = new List<SerializableInventoryItem> ();
 		foreach (InventoryItem item in inventory.stock) {
@@ -95,6 +115,12 @@ public class PlayerValues : MonoBehaviour {
 		dayNumber = vals.dayNumber;
 		cash = vals.cash;
 		arrows = vals.arrows;
+		scoresGot = new List<int> (vals.scoresGot);
+		scoresMax = new List<int> (vals.scoresMax);
+
+		List<InventoryItem> unserRatsInHouse = new List<InventoryItem> ();
+		unserRatsInHouse.Add (new InventoryItem (ratsInHouse.fl.GetGameObject ("Rat"), vals.ratsInHouse));
+		ratsInHouse.stock = unserRatsInHouse;
 
 		List<InventoryItem> unserStock = new List<InventoryItem> ();
 		foreach (SerializableInventoryItem item in vals.inStock) {
