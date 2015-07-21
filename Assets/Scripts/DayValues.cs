@@ -85,6 +85,16 @@ public class DayValues : MonoBehaviour {
 		return values [day].demand;
 	}
 
+	public int GetTodaysDemandFor(GameObject obj){
+		foreach (InventoryItem inv in values [day].demand) {
+			if(inv.represents == obj){
+				return inv.quantity;
+			}
+		}
+		Debug.Log ("COULDN'T FIND DEMAND FOR: " + obj);
+		return -1;
+	}
+
 	public int[] GetTodaysOrders(){
 		return values [day].orders;
 	}
