@@ -1113,7 +1113,7 @@ GameObject:
   - 222: {fileID: 94098075}
   - 114: {fileID: 94098074}
   m_Layer: 0
-  m_Name: Potential
+  m_Name: out of
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1131,9 +1131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 498cd47aa82e4554eafd631956e4dcd0, type: 3}
+    m_Font: {fileID: 12800000, guid: 600fad67040ff8a47a29270aab88d06a, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -1161,13 +1161,13 @@ RectTransform:
   m_GameObject: {fileID: 94098073}
   m_LocalRotation: {x: -7.45057971e-09, y: 1, z: -1.117587e-08, w: -1.89989777e-07}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: .495728016, y: .495728165, z: 1.65242696}
+  m_LocalScale: {x: .347870171, y: .495728165, z: 1.65242696}
   m_Children: []
   m_Father: {fileID: 300844940}
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -71.6999969, y: -215.399994}
+  m_AnchoredPosition: {x: -26.7999992, y: -215.399994}
   m_SizeDelta: {x: 550, y: 700}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &94181729
@@ -4732,7 +4732,7 @@ GameObject:
   - 222: {fileID: 582146582}
   - 114: {fileID: 582146581}
   m_Layer: 0
-  m_Name: Score
+  m_Name: Scored
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4746,13 +4746,13 @@ RectTransform:
   m_GameObject: {fileID: 582146579}
   m_LocalRotation: {x: -7.45057971e-09, y: 1, z: -1.117587e-08, w: -1.89989777e-07}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: .495728016, y: .495728165, z: 1.65242696}
+  m_LocalScale: {x: .347870171, y: .495728165, z: 1.65242696}
   m_Children: []
   m_Father: {fileID: 300844940}
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -71.6999969, y: -195.600006}
+  m_AnchoredPosition: {x: -26.7999992, y: -195.600006}
   m_SizeDelta: {x: 550, y: 700}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &582146581
@@ -4767,9 +4767,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 498cd47aa82e4554eafd631956e4dcd0, type: 3}
+    m_Font: {fileID: 12800000, guid: 600fad67040ff8a47a29270aab88d06a, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -6041,6 +6041,7 @@ GameObject:
   - 114: {fileID: 718999071}
   - 114: {fileID: 718999072}
   - 114: {fileID: 718999073}
+  - 114: {fileID: 718999074}
   m_Layer: 0
   m_Name: BurgJudgeCamera
   m_TagString: Untagged
@@ -6189,6 +6190,44 @@ MonoBehaviour:
   strengthX: .5
   strengthY: .5
   fishEyeShader: {fileID: 4800000, guid: 874ceab4425f64bccb1d14032f4452b1, type: 3}
+--- !u!114 &718999074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 718999064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fceaeb339b971b429c4cc600acabd13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweakMode: 0
+  screenBlendMode: 1
+  hdr: 0
+  sepBlurSpread: 2.5
+  quality: 0
+  bloomIntensity: 1.79999995
+  bloomThreshold: .5
+  bloomThresholdColor: {r: 1, g: 1, b: 1, a: 1}
+  bloomBlurIterations: 2
+  hollywoodFlareBlurIterations: 2
+  flareRotation: 0
+  lensflareMode: 1
+  hollyStretchWidth: 2.5
+  lensflareIntensity: 0
+  lensflareThreshold: .300000012
+  lensFlareSaturation: .75
+  flareColorA: {r: .400000006, g: .400000006, b: .800000012, a: .75}
+  flareColorB: {r: .400000006, g: .800000012, b: .800000012, a: .75}
+  flareColorC: {r: .800000012, g: .400000006, b: .800000012, a: .75}
+  flareColorD: {r: .800000012, g: .400000006, b: 0, a: .75}
+  lensFlareVignetteMask: {fileID: 2800000, guid: 95ef4804fe0be4c999ddaa383536cde8,
+    type: 3}
+  lensFlareShader: {fileID: 4800000, guid: 459fe69d2f6d74ddb92f04dbf45a866b, type: 3}
+  screenBlendShader: {fileID: 4800000, guid: 7856cbff0a0ca45c787d5431eb805bb0, type: 3}
+  blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
+  brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
+    type: 3}
 --- !u!1 &729456638
 GameObject:
   m_ObjectHideFlags: 0
@@ -8120,13 +8159,13 @@ RectTransform:
   m_GameObject: {fileID: 1052832145}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: .495727807, y: .495728105, z: 1.65242696}
+  m_LocalScale: {x: .347870022, y: .495728105, z: 1.65242696}
   m_Children: []
   m_Father: {fileID: 300844940}
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -121.300003, y: -195.600006}
+  m_AnchoredPosition: {x: -88.9000015, y: -195.600006}
   m_SizeDelta: {x: 550, y: 700}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1052832147
@@ -8141,9 +8180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 498cd47aa82e4554eafd631956e4dcd0, type: 3}
+    m_Font: {fileID: 12800000, guid: 600fad67040ff8a47a29270aab88d06a, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -8657,13 +8696,13 @@ RectTransform:
   m_GameObject: {fileID: 1147897340}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: .495727807, y: .495728105, z: 1.65242696}
+  m_LocalScale: {x: .347870022, y: .495728105, z: 1.65242696}
   m_Children: []
   m_Father: {fileID: 300844940}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -121.300003, y: -215.399994}
+  m_AnchoredPosition: {x: -88.9000015, y: -215.399994}
   m_SizeDelta: {x: 550, y: 700}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1147897342
@@ -8678,9 +8717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 498cd47aa82e4554eafd631956e4dcd0, type: 3}
+    m_Font: {fileID: 12800000, guid: 600fad67040ff8a47a29270aab88d06a, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
