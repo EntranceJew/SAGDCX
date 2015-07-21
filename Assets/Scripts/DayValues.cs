@@ -28,6 +28,9 @@ public class DayValue {
 	// what we will receive at the beginning of each day
 	public List<InventoryItem> shipments;
 
+	// how much of each item is projected for consumption this day
+	public List<InventoryItem> demand;
+
 	// the menu item that will be ordered 
 	public int[] orders;
 }
@@ -76,6 +79,10 @@ public class DayValues : MonoBehaviour {
 
 	public List<InventoryItem> GetTodaysShipment(){
 		return values [day].shipments;
+	}
+
+	public List<InventoryItem> GetTodaysDemand(){
+		return values [day].demand;
 	}
 
 	public int[] GetTodaysOrders(){
