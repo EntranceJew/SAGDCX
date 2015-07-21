@@ -11,6 +11,8 @@ public class AltGetOrder : MonoBehaviour {
 	public GameObject rMenu;
 	public GameObject example;
 	public float upVar;
+
+	public RandomGrunts rg;
 	
 	public bool rand;
 
@@ -37,6 +39,8 @@ public class AltGetOrder : MonoBehaviour {
 		order = new Order (rMenuItem.contents);
 		instruction = canvas.transform.Find("OrderText").gameObject.GetComponent<Text> ();
 		instruction.text = "Your order is: " + "["+rMenuItem.name+"]\n" + order.toString ();
+
+		rg.SetStartTime (Time.time);
 
 		MakeOrderExample ();
 	}
