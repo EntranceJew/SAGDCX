@@ -17,6 +17,7 @@ public class RowManager : MonoBehaviour {
 	public int quantity;
 	public GameObject represents;
 	public Inventory inventory;
+	public DayValues dayValues;
 	public InputField inputField;
 	
 	private int stock;
@@ -51,7 +52,7 @@ public class RowManager : MonoBehaviour {
 			stockText.text = amtLeft.ToString ();
 		}
 
-		demandText.text = "???";
+		demandText.text = dayValues.GetTodaysDemandFor(represents).ToString();
 	}
 
 	public void Add(){

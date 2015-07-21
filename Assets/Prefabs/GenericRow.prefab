@@ -479,8 +479,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantity: 0
-  represents: {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
+  represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
   inventory: {fileID: 0}
+  dayValues: {fileID: 0}
   inputField: {fileID: 11418540}
   itemText: {fileID: 11469492}
   totalText: {fileID: 11483106}
@@ -1292,7 +1293,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22477522}
@@ -1312,7 +1313,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -.140000001}
+  m_AnchoredPosition: {x: 0, y: -2.23000002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22496370
