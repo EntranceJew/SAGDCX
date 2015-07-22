@@ -10708,7 +10708,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1448146591}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58230298092711749a11c11f9feec447, type: 3}
   m_Name: 
@@ -10733,6 +10733,92 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.00000024, y: 1.53904772, z: 1.6163404}
   m_Center: {x: 7.18061813e-07, y: -.123244099, z: -.0581694767}
+--- !u!114 &1448146598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448146591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96b6272a2ee6a546bb75961c68153f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  amount: 1
+  timeToReturn: 1
+  doShake: 0
+  aud: {fileID: 1448146599}
+  badSound: {fileID: 8300000, guid: cd7ff2913d7f6594d86ded219829d9cb, type: 3}
+--- !u!82 &1448146599
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448146591}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1449526307
 GameObject:
   m_ObjectHideFlags: 0
@@ -13897,8 +13983,9 @@ MonoBehaviour:
   theOrder: []
   theBurg: []
   done: 0
-  pointsForExactMatch: 1024
-  pointsPerEachPartFound: 4
+  perfectScoreBonus: 25
+  maxNonPerfect: 100
+  topBottomPerfectBonus: 50
 --- !u!4 &1800125092
 Transform:
   m_ObjectHideFlags: 0
