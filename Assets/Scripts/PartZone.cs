@@ -7,10 +7,10 @@ public class PartZone : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		bb = transform.parent.GetComponent<BurgBuilder> ();
+		//bb = transform.parent.GetComponent<BurgBuilder> ();
 	}
 
-	void OnTriggerEnter(Collider col){
+	void OnCollisionEnter(Collision col){
 		if (enabled) {
 			if (col.gameObject.tag == "Food") {
 				//Debug.Log (col.gameObject);

@@ -59,6 +59,22 @@ public class BurgBuilder : MonoBehaviour {
 		journeyLength = Vector3.Distance (from.position, goTo.position);
 	}
 
+	public bool CanHoist(){
+		if (active) {
+			// we can't hoist if we're hoisted
+			return false;
+		}
+		if (inMotion) {
+			// we can't hoist if we're (un)hoisting
+			return false;
+		}
+		if (transform.childCount <= 1) {
+			// we can't hoist, we have nothing to hoist
+			return false;
+		}
+		return true;
+	}
+
 	// elevate me to the heavens
 	public void Hoist(){
 		Debug.Log ("LATER, PLEBS");

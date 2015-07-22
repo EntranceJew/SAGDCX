@@ -33,6 +33,10 @@ public class DayValue {
 
 	// the menu item that will be ordered 
 	public int[] orders;
+
+	// how much each menu item is marked up, determines profit
+	// for reference, mcdonalds makes $0.06 profit on each dollar menu item
+	public float markup;
 }
 
 public class DayValues : MonoBehaviour {
@@ -97,5 +101,13 @@ public class DayValues : MonoBehaviour {
 
 	public int[] GetTodaysOrders(){
 		return values [day].orders;
+	}
+
+	public float GetTodaysMarkup(){
+		return values [day].markup;
+	}
+
+	public float CalculateValue(float price){
+		return values [day].markup+price;
 	}
 }
