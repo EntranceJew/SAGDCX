@@ -40,8 +40,38 @@ public class DayValue {
 }
 
 public class DayValues : MonoBehaviour {
-	public List<DayValue> values; // = new List<DayValue>();
+	// THESE ARE PUBLIC, BUT THEY'RE NOT FOR YOU!
+	public RMenuElement myMenuElement;
 
+	void Start(){
+		// Calculate all demands for all days.
+		Dictionary<GameObject, int> dicDemand = new Dictionary<GameObject, int> ();
+		int i = 0;
+		foreach (DayValue dayValue in values) {
+			foreach (int orderNo in dayValue.orders) {
+				RMenuItem item = myMenuElement.menuItems [orderNo];
+				foreach (GameObject content in item.contents) {
+					int dem = 0;
+					dicDemand.TryGetValue (content, out dem);
+					if (dem > 0) {
+						dicDemand [content]++;
+					} else {
+						dicDemand.Add (content, 1);
+					}
+				}
+			}
+
+			List<InventoryItem> theDemand = new List<InventoryItem> ();
+			foreach (KeyValuePair<GameObject, int> entry in dicDemand) {
+				theDemand.Add (new InventoryItem (entry.Key, entry.Value));
+			}
+			values[i].demand = new List<InventoryItem>(theDemand);
+			i++;
+		}
+	}
+
+	// WE'RE SUPPOSED TO HAVE THESE
+	public List<DayValue> values; // = new List<DayValue>();
 	public int day = 0;
 	public int orderNumber = 0;
 

@@ -2594,8 +2594,6 @@ MonoBehaviour:
     - name: Red Onion
       items:
       - {fileID: 172914, guid: 00927f8a20220654096aca2966acdd30, type: 2}
-      items:
-      - {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
     - name: Confused
       items:
       - {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
@@ -6820,6 +6818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e99f6453c09da4699b7108f2fa85d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myMenuElement: {fileID: 1473224185}
   values:
   - name: Beggining
     paidWage: 0
@@ -6853,76 +6852,8 @@ MonoBehaviour:
       quantity: 5
     - represents: {fileID: 100266, guid: d077c36131e6c0e4e8a67acb7372a9ea, type: 2}
       quantity: 1
-    demand:
-    - represents: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
-      quantity: 3
+    demand: []
     orders: 010000000800000003000000
-    markup: 0
-  - name: 
-    paidWage: 0
-    mistakeTolerance: 0
-    deductionMultiplier: 0
-    gasPrice: 4
-    traffic: 0
-    shoppingFatigue: 0
-    shipments: []
-    demand: []
-    orders: 030000000200000001000000040000000500000007000000060000000800000002000000
-    markup: 0
-  - name: 
-    paidWage: 0
-    mistakeTolerance: 0
-    deductionMultiplier: 0
-    gasPrice: 0
-    traffic: 0
-    shoppingFatigue: 0
-    shipments: []
-    demand: []
-    orders: 
-    markup: 0
-  - name: 
-    paidWage: 0
-    mistakeTolerance: 0
-    deductionMultiplier: 0
-    gasPrice: 0
-    traffic: 0
-    shoppingFatigue: 0
-    shipments: []
-    demand: []
-    orders: 
-    markup: 0
-  - name: 
-    paidWage: 0
-    mistakeTolerance: 0
-    deductionMultiplier: 0
-    gasPrice: 0
-    traffic: 0
-    shoppingFatigue: 0
-    shipments: []
-    demand: []
-    orders: 
-    markup: 0
-  - name: 
-    paidWage: 0
-    mistakeTolerance: 0
-    deductionMultiplier: 0
-    gasPrice: 0
-    traffic: 0
-    shoppingFatigue: 0
-    shipments: []
-    demand: []
-    orders: 
-    markup: 0
-  - name: 
-    paidWage: 0
-    mistakeTolerance: 0
-    deductionMultiplier: 0
-    gasPrice: 0
-    traffic: 0
-    shoppingFatigue: 0
-    shipments: []
-    demand: []
-    orders: 
     markup: 0
   day: 0
   orderNumber: 0
@@ -16000,9 +15931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42b2c0ccafab024cbd1d4f4292cd228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rmenu: {fileID: 1473224185}
-  dayValues: {fileID: 786474129}
-  demand: []
 --- !u!1 &2012272017
 GameObject:
   m_ObjectHideFlags: 0
