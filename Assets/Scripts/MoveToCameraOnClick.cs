@@ -21,6 +21,12 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	private float startTime;
 	private float journeyLength;
 
+	private Collider col;
+
+	void Start(){
+		col = gameObject.GetComponent<Collider> ();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (inMotion) {
@@ -55,6 +61,7 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	}
 
 	void DoIt(){
+		col.isTrigger = true;
 		fromPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 		fromAngle = new Quaternion (transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
 		inMotion = true;
@@ -75,6 +82,7 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	}
 
 	void MovedToCamera() {
+		col.isTrigger = false;
 		if (graphicRaycaster) {
 			blockClickThrough = true;
 			graphicRaycaster.enabled = true;
@@ -85,6 +93,7 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	}
 
 	void MovedToWall() {
+		col.isTrigger = false;
 		if (graphicRaycaster) {
 			blockClickThrough = false;
 			graphicRaycaster.enabled = false;
