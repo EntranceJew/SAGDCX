@@ -3,7 +3,6 @@ using System.Collections;
 
 public class SpawnArea : MonoBehaviour {
 	public bool shouldSpawn;
-	public GameObject spawnObject;
 	public float rateOfSpawn;
 	public float scaleRange = 2.0f;
 
@@ -31,13 +30,6 @@ public class SpawnArea : MonoBehaviour {
 				spawnSource.Remove(ii.represents.name, 1);
 			}
 		}
-	}
-
-	public Object SpawnThis(){
-		Vector3 position = getRandomPosition ();
-		GameObject go = (GameObject) Instantiate (spawnObject, position, transform.rotation);
-		go.GetComponent<Collider> ().isTrigger = true;
-		return go;
 	}
 
 	public GameObject SpawnA(Object objToSpawn){

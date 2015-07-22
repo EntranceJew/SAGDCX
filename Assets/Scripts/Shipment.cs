@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Shipment : MonoBehaviour {
 	// @TODO: If we slide in with an empty shipment, then we should play a buzzer noise and have a single junk item fall out.
@@ -13,6 +14,8 @@ public class Shipment : MonoBehaviour {
 	public SpawnArea spawnArea;
 
 	public bool inMotion = false;
+
+	public List<GameObject> notifyWhenDone;
 
 	private Transform goTo;
 	private Transform from;
@@ -31,7 +34,9 @@ public class Shipment : MonoBehaviour {
 			if(distCovered >= journeyLength){
 				inMotion = false;
 				if(active){
-					spawnArea.shouldSpawn = true;
+					MovedTo();
+				} else {
+					MovedFrom();
 				}
 			}
 		}
@@ -65,6 +70,10 @@ public class Shipment : MonoBehaviour {
 		DoIt ();
 	}
 
+	public void MovedTo(){
+		spawnArea.shouldSpawn = true;
+	}
+
 	public void GoGetIt(float shopTime){
 		shopEndTime = Time.time + shopTime;
 		Debug.Log ("Grocery run! " + shopEndTime);
@@ -77,5 +86,11 @@ public class Shipment : MonoBehaviour {
 		from = activePos;
 		active = false;
 		DoIt ();
+	}
+
+	public void MovedFrom(){
+		foreach (GameObject go in notifyWhenDone) {
+			go.SendMessage ("ShipmentDone");
+		}
 	}
 }

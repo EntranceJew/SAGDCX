@@ -5048,6 +5048,8 @@ MonoBehaviour:
   inventory: {fileID: 595117138}
   spawnArea: {fileID: 595117140}
   inMotion: 0
+  notifyWhenDone:
+  - {fileID: 760075138}
 --- !u!4 &595117137 stripped
 Transform:
   m_PrefabParentObject: {fileID: 420964, guid: 309cb1d9253da8b45b0a48c8387ce541, type: 2}
@@ -5077,8 +5079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldSpawn: 0
-  spawnObject: {fileID: 157486, guid: 9924481f0d446cd4b9563a548cb9e39e, type: 2}
-  rateOfSpawn: 1
+  rateOfSpawn: .25
   scaleRange: 3
   ship: {fileID: 595117136}
   spawnSource: {fileID: 595117138}
@@ -6463,6 +6464,49 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 470598, guid: c62837644b3ddba42a615a691b535d50, type: 2}
   m_PrefabInternal: {fileID: 1332360756}
+--- !u!1 &760075138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 760075139}
+  - 114: {fileID: 760075140}
+  m_Layer: 0
+  m_Name: TutorialHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &760075139
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 760075138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1147586770}
+  m_RootOrder: 13
+--- !u!114 &760075140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 760075138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ce61247661fc04b90deb253db50ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showTutorials: 0
+  dayValues: {fileID: 786474129}
+  lookAt: {fileID: 1628474893}
+  mouseObject: {fileID: 1685270725}
 --- !u!4 &772638270 stripped
 Transform:
   m_PrefabParentObject: {fileID: 429214, guid: deb720ef5e5350d4882d29bc1e36e5c8, type: 2}
@@ -6575,8 +6619,28 @@ MonoBehaviour:
     traffic: 2.29999995
     shoppingFatigue: .100000001
     shipments:
-    - represents: {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
-      quantity: 10
+    - represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
+      quantity: 5
+    - represents: {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
+      quantity: 5
+    - represents: {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
+      quantity: 5
+    - represents: {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
+      quantity: 5
+    - represents: {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
+      quantity: 5
+    - represents: {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
+      quantity: 5
+    - represents: {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
+      quantity: 5
+    - represents: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
+      quantity: 5
+    - represents: {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
+      quantity: 5
+    - represents: {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
+      quantity: 5
+    - represents: {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
+      quantity: 5
     demand:
     - represents: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
       quantity: 3
@@ -8815,6 +8879,7 @@ Transform:
   - {fileID: 923965198}
   - {fileID: 332364049}
   - {fileID: 2011103390}
+  - {fileID: 760075139}
   m_Father: {fileID: 0}
   m_RootOrder: 16
 --- !u!1 &1147897340
@@ -17000,33 +17065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fl: {fileID: 741838967}
-  stock:
-  - represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
-    quantity: 50
-  - represents: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
-    quantity: 6
-  - represents: {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
-    quantity: 6
-  - represents: {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
-    quantity: 7
-  - represents: {fileID: 190024, guid: 61bcb51c5a1d5a946bea0f2650957eb3, type: 2}
-    quantity: 3
-  - represents: {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
-    quantity: 40
-  - represents: {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
-    quantity: 40
-  - represents: {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
-    quantity: 40
-  - represents: {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
-    quantity: 40
-  - represents: {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
-    quantity: 40
-  - represents: {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
-    quantity: 40
-  - represents: {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
-    quantity: 40
-  - represents: {fileID: 169516, guid: e7725a634b0a1f74997a09098eaf9b0c, type: 2}
-    quantity: 4
+  stock: []
 --- !u!4 &2139853225
 Transform:
   m_ObjectHideFlags: 0
