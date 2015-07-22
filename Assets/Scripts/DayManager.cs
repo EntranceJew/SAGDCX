@@ -22,6 +22,7 @@ public class DayManager : MonoBehaviour {
 
 	public GraphicRaycaster graphicRaycaster;
 	public GameObject failureGUI;
+	public GameObject victoryGUI;
 	
 	// Use this for initialization
 	void Start () {
@@ -64,6 +65,14 @@ public class DayManager : MonoBehaviour {
 		}
 	}
 
+	public void WinGame(){
+		isDayActive = false;
+		RefundAllFoodInScene ();
+		dayValues.ResetDayValues ();
+		shouldBlack = true;
+		EnableVictoryGUI ();
+	}
+
 	public void LoseDay(){
 		// disable spawners
 		isDayActive = false;
@@ -89,6 +98,17 @@ public class DayManager : MonoBehaviour {
 		failureGUI.SetActive (false);
 		graphicRaycaster.enabled = false;
 	}
+
+	public void EnableVictoryGUI(){
+		victoryGUI.SetActive (true);
+		graphicRaycaster.enabled = true;
+	}
+	
+	public void DisableVictoryGUI(){
+		victoryGUI.SetActive (false);
+		graphicRaycaster.enabled = false;
+	}
+
 
 	public void FailDay(){
 		/* CHECKLIST OF SHIT TO DO ON DAY RESET
@@ -123,11 +143,18 @@ public class DayManager : MonoBehaviour {
 
 	public void EndDay(){
 		Debug.Log ("DAY "+dayValues.day+" IS OVER, GO HOME");
+		getOrder.TrashLastOrder ();
 		RefundAllFoodInScene ();
 		isDayActive = false;
 		shouldBlack = true;
 		dayValues.day++;
-		getOrder.TrashLastOrder ();
+		if (dayValues.day > dayValues.values.Count - 1) {
+			// we reset to zero so things don't fucking break if we're on a day that isn't valid (lastday+1)
+			dayValues.ResetToZero ();
+			Debug.Log ("WON GAME BY REACHING LAST DAY");
+			WinGame ();
+			return;
+		}
 		StartCoroutine (Fade (true));
 	}
 
@@ -143,8 +170,19 @@ public class DayManager : MonoBehaviour {
 		StartCoroutine (Fade (false));
 	}
 
+	public void NewGamePlus(){
+		DisableVictoryGUI ();
+		dayValues.ResetToZero ();
+		StartCoroutine (Fade (true));
+	}
+	
 	public void QuitGame(){
 		Debug.Log ("QUIT, QUIT, GET OUT, I WANT TO LEAVE, LET ME SPLIT");
+		Application.Quit ();
+	}
+
+	public void VictoryQuitGame(){
+		Debug.Log ("We made it through the darkness to the light, \nOh, how we fought yet still we won the fight [...]");
 		Application.Quit ();
 	}
 
