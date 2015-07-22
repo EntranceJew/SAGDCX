@@ -11,9 +11,9 @@ GameObject:
   - 33: {fileID: 3352630}
   - 23: {fileID: 2330186}
   - 54: {fileID: 5406800}
-  - 65: {fileID: 6568234}
   - 114: {fileID: 11435854}
   - 82: {fileID: 8246176}
+  - 64: {fileID: 6486036}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: Food
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191002}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.96556997, y: .550000072, z: -.973153591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191002}
-  m_Mesh: {fileID: 4300000, guid: 250135d525a9f234ca9964b52c6e598c, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 250135d525a9f234ca9964b52c6e598c, type: 3}
 --- !u!54 &5406800
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -79,8 +79,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &6568234
-BoxCollider:
+--- !u!64 &6486036
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -89,8 +89,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.39999998, y: 1.39999986, z: .0999999866}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 250135d525a9f234ca9964b52c6e598c, type: 3}
 --- !u!82 &8246176
 AudioSource:
   m_ObjectHideFlags: 1

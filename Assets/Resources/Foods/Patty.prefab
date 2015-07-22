@@ -11,9 +11,9 @@ GameObject:
   - 33: {fileID: 3375164}
   - 23: {fileID: 2328900}
   - 54: {fileID: 5486042}
-  - 65: {fileID: 6560360}
   - 114: {fileID: 11455344}
   - 82: {fileID: 8269692}
+  - 64: {fileID: 6422276}
   m_Layer: 0
   m_Name: Patty
   m_TagString: Food
@@ -79,8 +79,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &6560360
-BoxCollider:
+--- !u!64 &6422276
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -89,8 +89,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.25322175, y: 2.24320722, z: .397077858}
-  m_Center: {x: -.00666511059, y: .00372117711, z: .00215224153}
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 1403255b00b90d04eba918f8004ff84a, type: 3}
 --- !u!82 &8269692
 AudioSource:
   m_ObjectHideFlags: 1
@@ -183,6 +183,7 @@ MonoBehaviour:
   isFoodPope: 0
   bb: {fileID: 0}
   isGrabbed: 0
+  isFake: 0
   grabSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   hitSoftSound: {fileID: 8300000, guid: 4ffad6479b0c9f14cbf5b4b234cef0c7, type: 3}
@@ -277,10 +278,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: 161da3fa1a12fdc45af0be2c8e864588, type: 3}
+      objectReference: {fileID: 4300000, guid: 1403255b00b90d04eba918f8004ff84a, type: 3}
     - target: {fileID: 0}
       propertyPath: price
       value: 1.23000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

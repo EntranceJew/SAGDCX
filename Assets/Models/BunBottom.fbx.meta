@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: f0c25cb6966b02c478cb2c64ff7b31d6
-timeCreated: 1435850148
+guid: 2cb54a63838807546821a033c2e358b0
+timeCreated: 1437560485
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: BunBottom
+    100004: BunBottomCol
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Icosphere
+    400002: BunBottom
+    400004: BunBottomCol
+    2300000: BunBottom
+    2300002: BunBottomCol
+    3300000: BunBottom
+    3300002: BunBottomCol
+    4300000: BunBottomCol
+    4300002: BunBottom
   materials:
     importMaterials: 1
     materialName: 0

@@ -11,9 +11,9 @@ GameObject:
   - 33: {fileID: 3381612}
   - 23: {fileID: 2369388}
   - 54: {fileID: 5472190}
-  - 65: {fileID: 6520068}
   - 114: {fileID: 11479214}
   - 82: {fileID: 8279452}
+  - 64: {fileID: 6404484}
   m_Layer: 0
   m_Name: Onion
   m_TagString: Food
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110524}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.32522917, y: .550000072, z: -.803029776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,6 +43,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
+  - {fileID: 2100000, guid: 0c5636f053690f94e8806f00e1b8b657, type: 2}
   - {fileID: 2100000, guid: 0c5636f053690f94e8806f00e1b8b657, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -63,7 +64,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110524}
-  m_Mesh: {fileID: 4300000, guid: 909dd6c5dca423f4e8d3631dcb11abbf, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 909dd6c5dca423f4e8d3631dcb11abbf, type: 3}
 --- !u!54 &5472190
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -79,8 +80,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &6520068
-BoxCollider:
+--- !u!64 &6404484
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -89,8 +90,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.99999976, z: .10235855}
-  m_Center: {x: 0, y: 0, z: -.00117923121}
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 909dd6c5dca423f4e8d3631dcb11abbf, type: 3}
 --- !u!82 &8279452
 AudioSource:
   m_ObjectHideFlags: 1

@@ -1,22 +1,15 @@
 fileFormatVersion: 2
-guid: 909dd6c5dca423f4e8d3631dcb11abbf
-timeCreated: 1437561292
+guid: 1403255b00b90d04eba918f8004ff84a
+timeCreated: 1437559750
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Onion
-    100004: OnionCol
     400000: //RootNode
-    400002: Onion
-    400004: OnionCol
-    2300000: Onion
-    2300002: OnionCol
-    3300000: Onion
-    3300002: OnionCol
-    4300000: OnionCol
-    4300002: Onion
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: PattyCol
   materials:
     importMaterials: 1
     materialName: 0

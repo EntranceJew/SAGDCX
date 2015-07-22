@@ -1,49 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &125926
+--- !u!1 &172914
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 457552}
-  - 33: {fileID: 3338968}
-  - 23: {fileID: 2315972}
-  - 54: {fileID: 5477068}
-  - 114: {fileID: 11411322}
-  - 82: {fileID: 8292792}
-  - 64: {fileID: 6446254}
+  - 4: {fileID: 498484}
+  - 33: {fileID: 3374458}
+  - 23: {fileID: 2318102}
+  - 54: {fileID: 5411738}
+  - 114: {fileID: 11489130}
+  - 82: {fileID: 8295826}
+  - 64: {fileID: 6454002}
   m_Layer: 0
-  m_Name: Lettuce
+  m_Name: Red Onion
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &457552
+--- !u!4 &498484
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 172914}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
-  m_LocalPosition: {x: 2.64190388, y: .566833973, z: -.768068075}
+  m_LocalPosition: {x: 2.32522917, y: .550000072, z: -.803029776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2315972
+--- !u!23 &2318102
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 172914}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0697958b046e5584b9deaace4562b9bb, type: 2}
+  - {fileID: 2100000, guid: 6c79ba2c69b8ebd4badf0126faf5ab44, type: 2}
+  - {fileID: 2100000, guid: 0c5636f053690f94e8806f00e1b8b657, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -57,19 +58,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3338968
+--- !u!33 &3374458
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
-  m_Mesh: {fileID: 4300000, guid: d3af22b21d169f94eac1a357867f98d6, type: 3}
---- !u!54 &5477068
+  m_GameObject: {fileID: 172914}
+  m_Mesh: {fileID: 4300002, guid: 909dd6c5dca423f4e8d3631dcb11abbf, type: 3}
+--- !u!54 &5411738
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 172914}
   serializedVersion: 2
   m_Mass: 5
   m_Drag: 5
@@ -79,24 +80,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!64 &6446254
+--- !u!64 &6454002
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 172914}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 909dd6c5dca423f4e8d3631dcb11abbf, type: 3}
---- !u!82 &8292792
+--- !u!82 &8295826
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 172914}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -160,26 +161,26 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11411322
+--- !u!114 &11489130
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125926}
+  m_GameObject: {fileID: 172914}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a1c26159d90c7498ba813c546bf770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   foodCategories:
-    bun: .5
+    bun: .300000012
     vegetable: 1
-    meat: .5
-    cheese: .400000006
+    meat: .300000012
+    cheese: .300000012
     condiment: 0
   foodType: 1
-  foodName: Lettuce
-  price: .50999999
+  foodName: Red Onion
+  price: .370000005
   isFoodPope: 0
   bb: {fileID: 0}
   isGrabbed: 0
@@ -194,92 +195,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: Food
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Drag
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Mass
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: foodCategories.lettuce
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: foodType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: foodName
-      value: Lettuce
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: foodCategories.vegetable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: foodCategories.bun
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: foodCategories.meat
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: foodCategories.cheese
-      value: .400000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: grabSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-    - target: {fileID: 0}
-      propertyPath: releaseSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-    - target: {fileID: 0}
-      propertyPath: hitSoftSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-    - target: {fileID: 0}
-      propertyPath: hitHardSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-    - target: {fileID: 0}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Mute
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: price
-      value: .50999999
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 125926}
+  m_RootGameObject: {fileID: 172914}
   m_IsPrefabParent: 1

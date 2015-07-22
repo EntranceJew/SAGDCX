@@ -11,9 +11,9 @@ GameObject:
   - 33: {fileID: 3393462}
   - 23: {fileID: 2321898}
   - 54: {fileID: 5443534}
-  - 65: {fileID: 6589996}
   - 114: {fileID: 11428834}
   - 82: {fileID: 8249300}
+  - 64: {fileID: 6459152}
   m_Layer: 0
   m_Name: Pineapple
   m_TagString: Food
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171830}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
-  m_LocalPosition: {x: 1.86259317, y: .550000131, z: -1.19191194}
+  m_LocalPosition: {x: 2.82263136, y: .550000131, z: -1.2326405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,8 +79,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &6589996
-BoxCollider:
+--- !u!64 &6459152
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -89,8 +89,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.99999976, z: .099999994}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: b982992caa6d9904887ddeca6f08beaa, type: 3}
 --- !u!82 &8249300
 AudioSource:
   m_ObjectHideFlags: 1
