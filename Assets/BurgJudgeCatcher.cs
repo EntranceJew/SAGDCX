@@ -17,7 +17,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider col){
+	void OnCollisionEnter(Collision col){
 		if (col.gameObject.tag == "Food") {
 			Debug.Log ("CAUGHT SOME FOOD, Y'ALL");
 			// @TODO: Display scores on the TV, time it out. You know, do what the people like.
