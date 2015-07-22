@@ -12,8 +12,9 @@ public class AltScore : MonoBehaviour {
 
 	public bool done = false;
 
-	public int pointsForExactMatch = 1024;
-	public int pointsPerEachPartFound = 4;
+	public int perfectScoreBonus = 25;
+	public int maxNonPerfect = 100;
+	public int topBottomPerfectBonus = 50;
 
 	private int theScore = 0;
 	private int thePotentialScore = 0;
@@ -122,8 +123,8 @@ public class AltScore : MonoBehaviour {
 		thePotentialScore += pointsPerEachPartFound * theOrder.Count;
 		*/
 
-		thePotentialScore  = burgCount * 125; 	//Score for perfect burger substitutions
-		thePotentialScore += 50; 				//Top Bottom Bonus Score
+		thePotentialScore  = burgCount * (maxNonPerfect + perfectScoreBonus); 	//Score for perfect burger substitutions
+		thePotentialScore += topBottomPerfectBonus; 				//Top Bottom Bonus Score
 
 		// update UI
 		potentialText.GetComponent<Text> ().text = thePotentialScore.ToString();
@@ -133,7 +134,6 @@ public class AltScore : MonoBehaviour {
 
 	// SCORING METHODS & FUNCTIONS
 	int TopBottomBonus(List<GameObject> burgIn) {
-		int bonusScoreTopBottom = 50;
 		if (burgIn.Count < 2) {
 			//OF COURSE a burger with less than two things has the top and bottom the same, THAT'S CHEATING NO BONUS FOR YOU!
 			return 0;
@@ -145,12 +145,12 @@ public class AltScore : MonoBehaviour {
 
 		if (AreNamedSimilar (top, bottom)) {
 			//CONGRATULATIONS!
-			return bonusScoreTopBottom;
+			return topBottomPerfectBonus;
 		}
 
 		if (top.GetComponent<Food>().foodName == "Bun" && bottom.GetComponent<Food>().foodName == "Bun") {
 			//CONGERATULATON
-			return bonusScoreTopBottom;
+			return topBottomPerfectBonus;
 		}
 
 		//welp, we tried
@@ -173,7 +173,7 @@ public class AltScore : MonoBehaviour {
 	}
 
 	int EvaluateFoodinessScores (int ListSize, FoodCategories order, FoodCategories burg) {
-		int output = ListSize * 100;
+		int output = ListSize * maxNonPerfect;
 		FoodCategories temp = new FoodCategories();
 
 		temp.bun 		= Mathf.Abs(order.bun 		- burg.bun);
@@ -194,11 +194,11 @@ public class AltScore : MonoBehaviour {
 		temp.meat 		*= temp.meat;
 		temp.vegetable 	*= temp.vegetable;
 
-		if (temp.bun > 100)				temp.bun = 100;
-		if (temp.cheese > 100)			temp.cheese = 100;
-		if (temp.condiment > 100)		temp.condiment = 100;
-		if (temp.meat > 100)			temp.meat = 100;
-		if (temp.vegetable > 100)		temp.vegetable = 100;
+		if (temp.bun > maxNonPerfect)				temp.bun = maxNonPerfect;
+		if (temp.cheese > maxNonPerfect)			temp.cheese = maxNonPerfect;
+		if (temp.condiment > maxNonPerfect)		temp.condiment = maxNonPerfect;
+		if (temp.meat > maxNonPerfect)			temp.meat = maxNonPerfect;
+		if (temp.vegetable > maxNonPerfect)		temp.vegetable = maxNonPerfect;
 
 		output = Mathf.FloorToInt (temp.bun + temp.cheese + temp.condiment + temp.meat + temp.vegetable);
 
@@ -242,11 +242,6 @@ public class AltScore : MonoBehaviour {
 			}
 
 		}
-
-		//BunTop
-		//BunBottom
-
-		//
 
 		return output;
 	}
