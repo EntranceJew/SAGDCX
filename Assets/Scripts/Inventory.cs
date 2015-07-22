@@ -103,7 +103,8 @@ public class Inventory : MonoBehaviour {
 			}
 			i++;
 		}
-		Debug.Log ("Added item that was completely new: " + itemName);
+		// shut up
+		//Debug.Log ("Added item that was completely new: " + itemName);
 		stock.Add (new InventoryItem (fl.GetGameObject(arr[0]), quantity));
 		return true;
 	}

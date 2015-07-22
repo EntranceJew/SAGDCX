@@ -95,7 +95,8 @@ public class DayValues : MonoBehaviour {
 				return inv.quantity;
 			}
 		}
-		Debug.Log ("COULDN'T FIND DEMAND FOR: " + obj);
+		// shut up for right now
+		//Debug.Log ("COULDN'T FIND DEMAND FOR: " + obj);
 		return -1;
 	}
 

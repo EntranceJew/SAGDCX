@@ -72,15 +72,7 @@ public class DayManager : MonoBehaviour {
 
 		/*
 		// Trash all food, refund the real ones. (Invalid, won't work with incoming shipments.)
-		foreach (GameObject obj in got) {
-			Food fd = obj.GetComponent<Food>();
-			if(fd != null && !fd.isFake){
-				inventory.Add(obj, 1);
-			} else if(fd == null){
-				Debug.Log (obj);
-			}
-			Destroy(obj);
-		}
+
 		*/
 		// Disable food spawning.
 		isDayActive = false;
@@ -115,6 +107,9 @@ public class DayManager : MonoBehaviour {
 
 	public void StartDay(bool doSave){
 		Debug.Log ("DAY "+dayValues.day+" STARTED, GO HOME");
+
+		RefundAllFoodInScene ();
+
 		shouldBlack = false;
 		// @TODO: Maybe save this as an autosave instead of ontop of the existing save?
 		if (doSave) {
@@ -124,6 +119,19 @@ public class DayManager : MonoBehaviour {
 		AddTodaysShipment ();
 		GetNextOrder ();
 		isDayActive = true;
+	}
+
+	public void RefundAllFoodInScene(){
+		GameObject[] got = GameObject.FindGameObjectsWithTag ("Food");
+		foreach (GameObject obj in got) {
+			Food fd = obj.GetComponent<Food> ();
+			if (fd != null && !fd.isFake) {
+				inventory.Add (obj, 1);
+				Destroy (obj);
+			} else {
+				Debug.Log (obj);
+			}
+		}
 	}
 	
 	public void AddTodaysShipment(){

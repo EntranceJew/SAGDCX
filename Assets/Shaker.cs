@@ -18,7 +18,9 @@ public class Shaker : MonoBehaviour {
 	public AudioClip goodSound;
 	public bool isShakeGood = false;
 
-	private Vector3 startPos;
+	public MoveToCameraOnClick mtcoc;
+	
+	private Vector3 startShakePos;
 	private float timeOfArrival = Mathf.NegativeInfinity;
 
 	private float shakeDuration = 1.0f;
@@ -43,7 +45,7 @@ public class Shaker : MonoBehaviour {
 				StopShake();
 			}
 		} else if(timeOfArrival >= Time.time){
-			Vector3 hork = Vector3.Lerp (transform.position, startPos, Time.time/timeOfArrival);
+			Vector3 hork = Vector3.Lerp (transform.position, startShakePos, Time.time/timeOfArrival);
 			transform.position = hork;
 		}
 	}
@@ -53,6 +55,10 @@ public class Shaker : MonoBehaviour {
 	}
 
 	public void StartShake(float duration){
+		if (mtcoc && mtcoc.inMotion) {
+			return;
+		}
+		startShakePos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 		shakeDuration = duration;
 		doShake = true;
 		shakeElapsed = 0.0f;
@@ -65,6 +71,11 @@ public class Shaker : MonoBehaviour {
 		doShake = false;
 		timeOfArrival = Time.time + timeToReturn;
 		aud.Stop ();
+		/*
+		if (mtcoc.inPosition) {
+			timeOfArrival = Mathf.NegativeInfinity;
+		}
+		*/
 	}
 
 	public void GoodShake(){
@@ -85,10 +96,5 @@ public class Shaker : MonoBehaviour {
 		isShakeGood = false;
 		clipToPlay = badSound;
 		StartShake (duration);
-	}
-
-	// Use this for initialization
-	void Start () {
-		startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 	}
 }

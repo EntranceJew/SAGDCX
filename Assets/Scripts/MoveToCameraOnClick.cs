@@ -22,9 +22,10 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	private float journeyLength;
 
 	private Collider col;
-
+	private Shaker shaker;
 	void Start(){
 		col = gameObject.GetComponent<Collider> ();
+		shaker = gameObject.GetComponent<Shaker> ();
 	}
 
 	// Update is called once per frame
@@ -49,11 +50,17 @@ public class MoveToCameraOnClick : MonoBehaviour {
 			return;
 		}
 
+		if(shaker && shaker.doShake){
+			return;
+		}
+
 		if (inPosition) {
 			Camera.main.GetComponent<LookTowards>().attached = false;
 			MoveToWall ();
 		} else {
 			if (!Camera.main.GetComponent<LookTowards>().attached) {
+				// don't get closer if we're shaking
+
 				Camera.main.GetComponent<LookTowards>().attached = true;
 				MoveToCamera ();
 			}
