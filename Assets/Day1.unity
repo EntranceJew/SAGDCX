@@ -1113,7 +1113,7 @@ GameObject:
   - 222: {fileID: 94098075}
   - 114: {fileID: 94098074}
   m_Layer: 0
-  m_Name: out of
+  m_Name: Out Of
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1144,7 +1144,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'out of
+  m_Text: 'Out Of
 
 '
 --- !u!222 &94098075
@@ -1164,7 +1164,7 @@ RectTransform:
   m_LocalScale: {x: .347870171, y: .495728165, z: 1.65242696}
   m_Children: []
   m_Father: {fileID: 300844940}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -26.7999992, y: -215.399994}
@@ -2193,6 +2193,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: .0249999985, y: .0249999985, z: .0199999921}
   m_Children:
+  - {fileID: 389860628}
   - {fileID: 1147897341}
   - {fileID: 1052832146}
   - {fileID: 582146580}
@@ -2953,6 +2954,72 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &389860627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 389860628}
+  - 222: {fileID: 389860630}
+  - 114: {fileID: 389860629}
+  m_Layer: 0
+  m_Name: GetMoney
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &389860628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389860627}
+  m_LocalRotation: {x: -7.45057971e-09, y: 1, z: -1.117587e-08, w: -1.89989777e-07}
+  m_LocalPosition: {x: 0, y: 0, z: -.000465362682}
+  m_LocalScale: {x: .347870141, y: .495728195, z: 1.65242743}
+  m_Children: []
+  m_Father: {fileID: 300844940}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -26.6000004, y: -158.800003}
+  m_SizeDelta: {x: 550, y: 700}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &389860629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389860627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 0a6b550ee52770d409333bc8ad7b6d6c, type: 2}
+  m_Color: {r: .325557768, g: 1, b: .301470578, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 600fad67040ff8a47a29270aab88d06a, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: +$1.00
+--- !u!222 &389860630
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389860627}
 --- !u!114 &392793180 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11420918, guid: d6a7423c01b633342a569a80ec484f96,
@@ -4749,7 +4816,7 @@ RectTransform:
   m_LocalScale: {x: .347870171, y: .495728165, z: 1.65242696}
   m_Children: []
   m_Father: {fileID: 300844940}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -26.7999992, y: -195.600006}
@@ -6508,6 +6575,7 @@ MonoBehaviour:
     - represents: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
       quantity: 3
     orders: 010000000800000003000000
+    markup: 0
   - name: 
     paidWage: 0
     mistakeTolerance: 0
@@ -6518,6 +6586,7 @@ MonoBehaviour:
     shipments: []
     demand: []
     orders: 030000000200000001000000040000000500000007000000060000000800000002000000
+    markup: 0
   - name: 
     paidWage: 0
     mistakeTolerance: 0
@@ -6528,6 +6597,7 @@ MonoBehaviour:
     shipments: []
     demand: []
     orders: 
+    markup: 0
   - name: 
     paidWage: 0
     mistakeTolerance: 0
@@ -6538,6 +6608,7 @@ MonoBehaviour:
     shipments: []
     demand: []
     orders: 
+    markup: 0
   - name: 
     paidWage: 0
     mistakeTolerance: 0
@@ -6548,6 +6619,7 @@ MonoBehaviour:
     shipments: []
     demand: []
     orders: 
+    markup: 0
   - name: 
     paidWage: 0
     mistakeTolerance: 0
@@ -6558,6 +6630,7 @@ MonoBehaviour:
     shipments: []
     demand: []
     orders: 
+    markup: 0
   - name: 
     paidWage: 0
     mistakeTolerance: 0
@@ -6568,6 +6641,7 @@ MonoBehaviour:
     shipments: []
     demand: []
     orders: 
+    markup: 0
   day: 0
   orderNumber: 0
 --- !u!1 &794739306
@@ -8229,7 +8303,7 @@ RectTransform:
   m_LocalScale: {x: .347870022, y: .495728105, z: 1.65242696}
   m_Children: []
   m_Father: {fileID: 300844940}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -88.9000015, y: -195.600006}
@@ -8765,7 +8839,7 @@ RectTransform:
   m_LocalScale: {x: .347870022, y: .495728105, z: 1.65242696}
   m_Children: []
   m_Father: {fileID: 300844940}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -88.9000015, y: -215.399994}
@@ -15239,8 +15313,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2011103390}
+  - 114: {fileID: 2011103391}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FinanceOrphan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15258,6 +15333,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1147586770}
   m_RootOrder: 12
+--- !u!114 &2011103391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2011103389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42b2c0ccafab024cbd1d4f4292cd228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rmenu: {fileID: 1473224185}
+  dayValues: {fileID: 786474129}
+  demand: []
 --- !u!1 &2012272017
 GameObject:
   m_ObjectHideFlags: 0
