@@ -90,18 +90,21 @@ public class AltScore : MonoBehaviour {
 		theScore += FindPerfectIngredients (order, burg, out orderLeft, out burgLeft);
 		Debug.Log ("The Score after perfect ingredients : " + theScore);
 
-		//evaluate Foodiness of orderLeft
 
-		FoodCategories orderLeftFoodSum = EvaluateFoodiness (orderLeft);
+		if (burgLeft.Count > 0) {
+			//evaluate Foodiness of orderLeft
 
-		//evaluate Foodiness of burgLeft
+			FoodCategories orderLeftFoodSum = EvaluateFoodiness (orderLeft);
 
-		FoodCategories burgLeftFoodSum = EvaluateFoodiness (burgLeft);
+			//evaluate Foodiness of burgLeft
 
-		//evaluate scores.
+			FoodCategories burgLeftFoodSum = EvaluateFoodiness (burgLeft);
 
-		theScore += EvaluateFoodinessScores (orderLeft.Count, orderLeftFoodSum, burgLeftFoodSum);
-		Debug.Log ("The Score after evaluation : " + theScore);
+			//evaluate scores.
+
+			theScore += EvaluateFoodinessScores (orderLeft.Count, orderLeftFoodSum, burgLeftFoodSum);
+		}
+			Debug.Log ("The Score after evaluation : " + theScore);
 
 		// update UI
 		scoreText.GetComponent<Text> ().text = theScore.ToString();
@@ -131,7 +134,7 @@ public class AltScore : MonoBehaviour {
 	// SCORING METHODS & FUNCTIONS
 	int TopBottomBonus(List<GameObject> burgIn) {
 		int bonusScoreTopBottom = 50;
-		if (burgIn.Count < 1) {
+		if (burgIn.Count < 2) {
 			//OF COURSE a burger with less than two things has the top and bottom the same, THAT'S CHEATING NO BONUS FOR YOU!
 			return 0;
 		}
@@ -208,8 +211,11 @@ public class AltScore : MonoBehaviour {
 		outOrder = new List<GameObject> (inOrder);
 		outBurg = new List<GameObject> (inBurg);
 
-		foreach (GameObject a in inOrder) {
 
+		bool temp = false;
+		GameObject tempMatch = null;
+		//With help from Sighnoceros.
+		foreach (GameObject a in inOrder) {
 			foreach (GameObject b in inBurg) {
 
 				if (AreNamedSimilar(a,b)) {
@@ -222,9 +228,25 @@ public class AltScore : MonoBehaviour {
 						outBurg.Remove(b);
 
 					}
+					temp = true;
+					tempMatch = b;
+					break;
+
 				}
 			}
+
+			if (temp) {
+				inBurg.Remove (tempMatch);
+				tempMatch = null;
+				temp = false;
+			}
+
 		}
+
+		//BunTop
+		//BunBottom
+
+		//
 
 		return output;
 	}

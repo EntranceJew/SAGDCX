@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MoveToCameraOnClick : MonoBehaviour {
 	public Transform ownPosition;
@@ -8,6 +9,7 @@ public class MoveToCameraOnClick : MonoBehaviour {
 
 	public GameObject theCamera;
 
+	public bool blockClickThrough = false;
 	public bool wall = true;
 	public float speed;
 	float percent = 1;
@@ -21,7 +23,29 @@ public class MoveToCameraOnClick : MonoBehaviour {
 		Move ();
 	}
 
+	/*void OnMouseOver() {
+
+		bool isOver = EventSystem.current.IsPointerOverGameObject ();
+		GameObject overObject = null;
+		if (isOver) {
+			overObject = EventSystem.current.currentSelectedGameObject;
+
+		}
+		string name = "";
+		if (overObject != null) {
+			name = overObject.transform.name;
+		}
+
+		Debug.Log ("is over: " + isOver + " Name: " + name);
+	}*/
+
 	void OnMouseDown() {
+
+
+		if (blockClickThrough && EventSystem.current.IsPointerOverGameObject ()) {
+			return;
+		}
+
 		if (wall) {
 			if (!Camera.main.GetComponent<LookTowards>().attached) {
 				Camera.main.GetComponent<LookTowards>().attached = true;
