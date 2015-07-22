@@ -3013,7 +3013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: +$1.00
+  m_Text: ~$x.yz
 --- !u!222 &389860630
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4183,6 +4183,10 @@ MonoBehaviour:
   getOrder: {fileID: 1834493120}
   score: {fileID: 1800125091}
   playerValues: {fileID: 1987554078}
+  dayValues: {fileID: 786474129}
+  moneyText: {fileID: 389860629}
+  gainMoney: {r: .325490206, g: 1, b: .301960796, a: 1}
+  loseMoney: {r: 1, g: .301960826, b: .301960826, a: 1}
 --- !u!1 &538077716
 GameObject:
   m_ObjectHideFlags: 0
@@ -14157,6 +14161,11 @@ MonoBehaviour:
   upVar: .5
   rg: {fileID: 923965200}
   rand: 0
+  lastMenuItem:
+    name: 
+    contents: []
+    price: 0
+    value: 0
 --- !u!1 &1834520945
 GameObject:
   m_ObjectHideFlags: 0
