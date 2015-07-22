@@ -16,6 +16,8 @@ public class AltGetOrder : MonoBehaviour {
 	
 	public bool rand;
 
+	public RMenuItem lastMenuItem;
+
 	private RMenuElement rMenuElement;
 		
 	void Start () {
@@ -34,11 +36,11 @@ public class AltGetOrder : MonoBehaviour {
 	void OrderCreation(int theIndex) {
 		canvas = GameObject.FindGameObjectWithTag("MainCanvas");
 
-		RMenuItem rMenuItem = rMenuElement.menuItems[theIndex];
+		lastMenuItem = rMenuElement.menuItems[theIndex];
 
-		order = new Order (rMenuItem.contents);
+		order = new Order (lastMenuItem.contents);
 		instruction = canvas.transform.Find("OrderText").gameObject.GetComponent<Text> ();
-		instruction.text = "Your order is: " + "["+rMenuItem.name+"]\n" + order.toString ();
+		instruction.text = "Your order is: " + "["+lastMenuItem.name+"]\n" + order.toString ();
 
 		rg.SetStartTime (Time.time);
 
