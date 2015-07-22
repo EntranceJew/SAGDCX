@@ -2591,6 +2591,9 @@ MonoBehaviour:
     - name: Very Confused
       items:
       - {fileID: 171830, guid: 3453709e0c549f64fa79cc0433e4796d, type: 2}
+    - name: Red Onion
+      items:
+      - {fileID: 172914, guid: 00927f8a20220654096aca2966acdd30, type: 2}
 --- !u!1 &338893386
 GameObject:
   m_ObjectHideFlags: 0
