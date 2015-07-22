@@ -7,91 +7,87 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	public Transform ownPosition;
 	public Transform cameraPosition;
 
-	public GameObject theCamera;
+	public bool inPosition = true;
+	public float timeToSwitch;
+	public bool inMotion = false;
 
 	public bool blockClickThrough = false;
-	public bool wall = true;
-	public float speed;
-	float percent = 1;
 	Transform goTo;
-	Transform from;
+	Vector3 fromPos;
+	Quaternion fromAngle;
 	public ArrowSpin arrowSpin;
 	public GraphicRaycaster graphicRaycaster;
 
+	private float startTime;
+	private float journeyLength;
+
 	// Update is called once per frame
 	void Update () {
-		Move ();
+		if (inMotion) {
+			float distCovered = (Time.time - startTime) * timeToSwitch;
+			transform.position = Vector3.Lerp (fromPos, goTo.position, distCovered / journeyLength);
+			transform.rotation = Quaternion.Lerp (fromAngle, goTo.rotation, distCovered / journeyLength);
+			if(distCovered >= journeyLength){
+				inMotion = false;
+				if(inPosition){
+					MovedToCamera();
+				} else {
+					MovedToWall();
+				}
+			}
+		}
 	}
 
-	/*void OnMouseOver() {
-
-		bool isOver = EventSystem.current.IsPointerOverGameObject ();
-		GameObject overObject = null;
-		if (isOver) {
-			overObject = EventSystem.current.currentSelectedGameObject;
-
-		}
-		string name = "";
-		if (overObject != null) {
-			name = overObject.transform.name;
-		}
-
-		Debug.Log ("is over: " + isOver + " Name: " + name);
-	}*/
-
 	void OnMouseDown() {
-
-
 		if (blockClickThrough && EventSystem.current.IsPointerOverGameObject ()) {
 			return;
 		}
 
-		if (wall) {
+		if (inPosition) {
+			Camera.main.GetComponent<LookTowards>().attached = false;
+			MoveToWall ();
+		} else {
 			if (!Camera.main.GetComponent<LookTowards>().attached) {
 				Camera.main.GetComponent<LookTowards>().attached = true;
 				MoveToCamera ();
 			}
-		} else {
-			Camera.main.GetComponent<LookTowards>().attached = false;
-			MoveToWall ();
 		}
 	}
 
-	void Move() {
-		percent += Time.deltaTime * speed;
-
-		if (wall) {
-			goTo = ownPosition;
-			from = cameraPosition;
-		} else {
-			goTo = cameraPosition;
-			from = ownPosition;
-		}
-
-		transform.position = Vector3.Lerp (from.position, goTo.position, percent);
-		transform.rotation = Quaternion.Lerp (from.rotation, goTo.rotation, percent);
-
-		if (percent > 1) {
-			percent = 1;
-		}
+	void DoIt(){
+		fromPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+		fromAngle = new Quaternion (transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+		inMotion = true;
+		startTime = Time.time;
+		journeyLength = Vector3.Distance (fromPos, goTo.position);
 	}
 
-	void MoveToCamera() {
-		wall = false;
+	public void MoveToCamera(){
+		goTo = cameraPosition;
+		inPosition = true;
+		DoIt ();
+	}
+
+	public void MoveToWall(){
+		goTo = ownPosition;
+		inPosition = false;
+		DoIt ();
+	}
+
+	void MovedToCamera() {
 		if (graphicRaycaster) {
+			blockClickThrough = true;
 			graphicRaycaster.enabled = true;
 		}
-		percent = 0;
 		if (arrowSpin.GetState()) {
 			arrowSpin.SetState(false);
 		}
 	}
 
-	void MoveToWall() {
+	void MovedToWall() {
 		if (graphicRaycaster) {
+			blockClickThrough = false;
 			graphicRaycaster.enabled = false;
 		}
-		wall = true;
-		percent = 0;
 	}
 }
