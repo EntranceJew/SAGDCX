@@ -3635,6 +3635,7 @@ MonoBehaviour:
   ownPosition: {fileID: 1896403401}
   cameraPosition: {fileID: 1243544908}
   theCamera: {fileID: 0}
+  blockClickThrough: 1
   wall: 1
   speed: 1
   arrowSpin: {fileID: 357619786}
@@ -10715,6 +10716,7 @@ MonoBehaviour:
   ownPosition: {fileID: 2092206476}
   cameraPosition: {fileID: 473584952}
   theCamera: {fileID: 0}
+  blockClickThrough: 0
   wall: 1
   speed: 1
   arrowSpin: {fileID: 218576550}
@@ -16119,6 +16121,7 @@ MonoBehaviour:
   ownPosition: {fileID: 690422712}
   cameraPosition: {fileID: 1375762272}
   theCamera: {fileID: 0}
+  blockClickThrough: 0
   wall: 1
   speed: 1
   arrowSpin: {fileID: 392793180}
