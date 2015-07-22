@@ -46,23 +46,41 @@ public class BurgJudgeCatcher : MonoBehaviour {
 
 		if (satisfaction > dayValues.GetTodaysMistakeTolerance ()) {
 			Debug.Log ("SATISFACTION: I LIKED IT!");
-			Debug.Log (mitem.value);
-			Debug.Log (mitem.price);
-			playerValues.Earn (mitem.value * satisfaction);
+			Debug.Log ("VALUE: "+ mitem.value);
+			Debug.Log ("PRICE: "+mitem.price);
+			Debug.Log ("MARKUP: " + dayValues.GetTodaysMarkup());
+			Debug.Log ("SATISFACTION: " + satisfaction);
+
+			float baseItemValue = mitem.value + dayValues.GetTodaysMarkup();
+
+			playerValues.Earn (baseItemValue * satisfaction);
 			moneyText.color = gainMoney;
-			moneyText.text = "+$" + (mitem.value * satisfaction).ToString ("F2");
+			moneyText.text = "+$" + (baseItemValue * satisfaction).ToString ("F2");
 			monitorShaker.GoodShake ();
 		} else if (satisfaction > dayValues.GetTodaysFailureTolerance ()) {
 			Debug.Log ("SATISFACTION: I FUCKING HATED IT!");
 			Debug.Log ("VALUE: " + mitem.value);
 			Debug.Log ("PRICE: " + mitem.price);
+			Debug.Log ("MARKUP: " + dayValues.GetTodaysMarkup());
 			Debug.Log ("SATISFACTION: " + satisfaction);
-			Debug.Log ("FUCKED UP: " + (mitem.value * (1.0f - satisfaction)));
-			playerValues.Spend (mitem.value * (1.0f - satisfaction));
+
+			float baseItemValue = mitem.value + dayValues.GetTodaysMarkup();
+
+			// get the amount the burger is worth minus dissatisfaction
+			float fuckupAmount = baseItemValue * (1.0f - satisfaction);
+			Debug.Log ("FUCKUP PASS1: " + fuckupAmount);
+			// flip it to see how much our dissatisfaction cost
+			fuckupAmount = baseItemValue - fuckupAmount;
+			Debug.Log ("FUCKUP PASS2: " + fuckupAmount);
+			// multiply it by penalization
+			fuckupAmount *= dayValues.GetTodaysDeductionMultiplier();
+			Debug.Log ("FUCKUP PASS3: " + fuckupAmount);
+			playerValues.Spend (fuckupAmount);
 			moneyText.color = loseMoney;
-			moneyText.text = "-$" + (mitem.value * (1.0f - satisfaction)).ToString ("F2");
+			moneyText.text = "-$" + (fuckupAmount).ToString ("F2");
 			monitorShaker.BadShake ();
 		} else {
+			Debug.Log ("YOU FUCKED UP SO BAD");
 			// we lose
 			dayManager.LoseDay();
 			moneyText.color = loseMoney;
