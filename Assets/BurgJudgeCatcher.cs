@@ -84,7 +84,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 			// we lose
 			dayManager.LoseDay();
 			moneyText.color = loseMoney;
-			moneyText.text = "YOU'RE FIRED";
+			moneyText.text = "UR FIRED";
 			monitorShaker.BadShake();
 		}
 	}

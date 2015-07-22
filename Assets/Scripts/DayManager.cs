@@ -239,8 +239,10 @@ public class DayManager : MonoBehaviour {
 		RefundAllFoodInScene ();
 		Debug.Log ("FADING DAY IN...");
 		List<GameObject> tempList = new List<GameObject> ();
-		ShowEndOfDayText (tempList);
-		yield return new WaitForSeconds (15.0f);
+		float waitBase = 3.0f;
+		waitBase += ShowEndOfDayText (tempList);
+
+		yield return new WaitForSeconds (waitBase);
 
 		foreach (GameObject obj in tempList) {
 			Destroy (obj);
@@ -250,7 +252,7 @@ public class DayManager : MonoBehaviour {
 		StartDay (doSave);
 	}
 
-	void ShowEndOfDayText(List<GameObject> destroyMeLater) {
+	float ShowEndOfDayText(List<GameObject> destroyMeLater) {
 		int day = 0;
 		//instantiate "Today was day X" text
 		GameObject temp = Instantiate (canvasTextObject) as GameObject;
@@ -261,16 +263,24 @@ public class DayManager : MonoBehaviour {
 		destroyMeLater.Add (temp);
 
 		int i = 0;
-		int total = playerValues.scores[day].scores.Count;
-		//Instantiate a text line for each order
-		foreach (OrderScore os in playerValues.scores[day].scores) {
-			temp = Instantiate (canvasTextObject) as GameObject;
-			temp.transform.SetParent(bigCanvasObject.transform);
-			temp.name = "ScoreRowText" + i;
-			temp.transform.localPosition = new Vector3(0, (48 * i) / 2, 0);
-			temp.GetComponent<Text>().text = "Order " + i + " got " + os.value + " out of " + os.maxValue;
-			destroyMeLater.Add (temp);
-			i++;
+		if (playerValues.scores.Count - 1 >= day) {
+			int total = playerValues.scores [day].scores.Count;
+			//Instantiate a text line for each order
+			foreach (OrderScore os in playerValues.scores[day].scores) {
+				temp = Instantiate (canvasTextObject) as GameObject;
+				temp.transform.SetParent (bigCanvasObject.transform);
+				temp.name = "ScoreRowText" + i;
+				temp.transform.localPosition = new Vector3 (0, (48 * i) / 2, 0);
+				temp.GetComponent<Text> ().text = "Order " + i + " got " + os.value + " out of " + os.maxValue;
+				destroyMeLater.Add (temp);
+				i++;
+			}
+			Debug.Log ("a: "+ ((float)total * 1.5f));
+			Debug.Log ("b: "+ ((float)(total * 1.5f)));
+			return (float)total * 1.5f;
+		} else {
+			Debug.LogWarning ("ATTEMPTED TO INDEX SCORES THAT DIDN'T EXIST.");
+			return 0.0f;
 		}
 	}
 }

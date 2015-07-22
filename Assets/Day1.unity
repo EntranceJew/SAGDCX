@@ -3409,7 +3409,7 @@ MonoBehaviour:
   m_Color: {r: .325557768, g: 1, b: .301470578, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 600fad67040ff8a47a29270aab88d06a, type: 3}
-    m_FontSize: 100
+    m_FontSize: 78
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3419,7 +3419,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: ~$x.yz
+  m_Text: UR FIRED
 --- !u!222 &389860630
 CanvasRenderer:
   m_ObjectHideFlags: 0
