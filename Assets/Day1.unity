@@ -3608,6 +3608,7 @@ MonoBehaviour:
   wall: 1
   speed: 1
   arrowSpin: {fileID: 357619786}
+  graphicRaycaster: {fileID: 2012272019}
 --- !u!65 &443243621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3618,8 +3619,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.38704562, y: 1, z: .511408567}
-  m_Center: {x: -.0277328659, y: 4.9589346e-09, z: -2.75646639}
+  m_Size: {x: 3.9000001, y: .449999988, z: 5.07999992}
+  m_Center: {x: 0, y: .100000001, z: -.550000012}
 --- !u!1 &454230630
 GameObject:
   m_ObjectHideFlags: 0
@@ -10670,6 +10671,7 @@ MonoBehaviour:
   wall: 1
   speed: 1
   arrowSpin: {fileID: 218576550}
+  graphicRaycaster: {fileID: 0}
 --- !u!65 &1448146597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15393,7 +15395,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2012272017}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -16109,6 +16111,7 @@ MonoBehaviour:
   wall: 1
   speed: 1
   arrowSpin: {fileID: 392793180}
+  graphicRaycaster: {fileID: 0}
 --- !u!1001 &2074751518
 Prefab:
   m_ObjectHideFlags: 0

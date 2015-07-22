@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MoveToCameraOnClick : MonoBehaviour {
 	public Transform ownPosition;
@@ -13,6 +14,7 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	Transform goTo;
 	Transform from;
 	public ArrowSpin arrowSpin;
+	public GraphicRaycaster graphicRaycaster;
 
 	// Update is called once per frame
 	void Update () {
@@ -52,6 +54,9 @@ public class MoveToCameraOnClick : MonoBehaviour {
 
 	void MoveToCamera() {
 		wall = false;
+		if (graphicRaycaster) {
+			graphicRaycaster.enabled = true;
+		}
 		percent = 0;
 		if (arrowSpin.GetState()) {
 			arrowSpin.SetState(false);
@@ -59,6 +64,9 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	}
 
 	void MoveToWall() {
+		if (graphicRaycaster) {
+			graphicRaycaster.enabled = false;
+		}
 		wall = true;
 		percent = 0;
 	}
