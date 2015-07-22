@@ -15,12 +15,15 @@ public class Shaker : MonoBehaviour {
 
 	public AudioSource aud;
 	public AudioClip badSound;
+	public AudioClip goodSound;
+	public bool isShakeGood = false;
 
 	private Vector3 startPos;
-	private float timeOfArrival;
+	private float timeOfArrival = Mathf.NegativeInfinity;
 
 	private float shakeDuration = 1.0f;
 	private float shakeElapsed = 0.0f;
+	private AudioClip clipToPlay;
 
 
 	void Update(){
@@ -28,7 +31,13 @@ public class Shaker : MonoBehaviour {
 			shakeElapsed += Time.deltaTime;
 			Vector3 pos = transform.position;
 			float what = Mathf.Sin (Time.time * speed) * amount;
-			pos.y += what;
+			if(isShakeGood){
+				pos.y += what;
+			} else {
+				Vector3 xpos = transform.right;
+				// it looks really bad when we don't do it like this, so we half the transform
+				pos += what * xpos * 0.5f;
+			}
 			transform.position = pos;
 			if(shakeElapsed >= shakeDuration){
 				StopShake();
@@ -41,15 +50,15 @@ public class Shaker : MonoBehaviour {
 
 	public void StartShake(){
 		StartShake (shakeDuration);
-		aud.Stop ();
-		aud.clip = badSound;
-		aud.Play ();
 	}
 
 	public void StartShake(float duration){
 		shakeDuration = duration;
 		doShake = true;
 		shakeElapsed = 0.0f;
+		aud.Stop ();
+		aud.clip = clipToPlay;
+		aud.Play ();
 	}
 
 	public void StopShake(){
@@ -58,9 +67,28 @@ public class Shaker : MonoBehaviour {
 		aud.Stop ();
 	}
 
+	public void GoodShake(){
+		GoodShake (shakeDuration);
+	}
+
+	public void GoodShake(float duration){
+		isShakeGood = true;
+		clipToPlay = goodSound;
+		StartShake (duration);
+	}
+
+	public void BadShake(){
+		BadShake (shakeDuration);
+	}
+
+	public void BadShake(float duration){
+		isShakeGood = false;
+		clipToPlay = badSound;
+		StartShake (duration);
+	}
+
 	// Use this for initialization
 	void Start () {
 		startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-		StartShake ();
 	}
 }

@@ -4186,6 +4186,7 @@ MonoBehaviour:
   playerValues: {fileID: 1987554078}
   dayValues: {fileID: 786474129}
   moneyText: {fileID: 389860629}
+  monitorShaker: {fileID: 1448146598}
   gainMoney: {r: .325490206, g: 1, b: .301960796, a: 1}
   loseMoney: {r: 1, g: .301960826, b: .301960826, a: 1}
 --- !u!1 &538077716
@@ -6568,7 +6569,7 @@ MonoBehaviour:
   values:
   - name: Beggining
     paidWage: 0
-    mistakeTolerance: .899999976
+    mistakeTolerance: .699999988
     deductionMultiplier: 0
     gasPrice: 3.76999998
     traffic: 2.29999995
@@ -10744,12 +10745,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96b6272a2ee6a546bb75961c68153f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  amount: 1
+  speed: 30
+  amount: .5
   timeToReturn: 1
   doShake: 0
   aud: {fileID: 1448146599}
   badSound: {fileID: 8300000, guid: cd7ff2913d7f6594d86ded219829d9cb, type: 3}
+  goodSound: {fileID: 8300000, guid: 246f092e73d959a45a0461969447afdc, type: 3}
+  isShakeGood: 0
 --- !u!82 &1448146599
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10763,7 +10766,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1

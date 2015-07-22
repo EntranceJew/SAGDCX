@@ -9,6 +9,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 	public PlayerValues playerValues;
 	public DayValues dayValues;
 	public Text moneyText;
+	public Shaker monitorShaker;
 
 	public Color gainMoney = new Color( 83.0f/255.0f, 255.0f/255.0f, 77.0f/255.0f);
 	public Color loseMoney = new Color(255.0f/255.0f,  77.0f/255.0f, 77.0f/255.0f);
@@ -49,6 +50,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 			playerValues.Earn (mitem.value * satisfaction);
 			moneyText.color = gainMoney;
 			moneyText.text = "+$"+(mitem.value*satisfaction).ToString("F2");
+			monitorShaker.GoodShake();
 		} else {
 			Debug.Log ("SATISFACTION: I FUCKING HATED IT!");
 			Debug.Log ("VALUE: "+mitem.value);
@@ -58,6 +60,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 			playerValues.Spend (mitem.value * (1.0f-satisfaction));
 			moneyText.color = loseMoney;
 			moneyText.text = "-$"+(mitem.value * (1.0f-satisfaction)).ToString("F2");
+			monitorShaker.BadShake();
 		}
 	}
 }
