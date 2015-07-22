@@ -10,11 +10,21 @@ public class DayValue {
 	// how much you got just for being here
 	public float paidWage;
 
+	// how long you work each day
+	public float workedHours;
+
 	// range 0 to 1, if a burger is below this tolerance we get points off
 	public float mistakeTolerance;
 
+	// range 0 to 1, if a burger is below this tolerance we fail the day immediately
+	public float failureTolerance;
+
 	// not the money value, but how much a score difference will scale out to money
 	public float deductionMultiplier;
+
+	// how much each menu item is marked up, determines profit
+	// for reference, mcdonalds makes $0.06 profit on each dollar menu item
+	public float markup;
 
 	// expense for every purchase made during the day
 	public float gasPrice;
@@ -25,18 +35,14 @@ public class DayValue {
 	// how long it takes for someone to find everything, multiplied by the number of items ordered
 	public float shoppingFatigue;
 
+	// the menu item IDs that will be ordered 
+	public int[] orders;
+
 	// what we will receive at the beginning of each day
 	public List<InventoryItem> shipments;
 
-	// how much of each item is projected for consumption this day
+	// (calculated at run time) how much of each item is projected for consumption this day
 	public List<InventoryItem> demand;
-
-	// the menu item that will be ordered 
-	public int[] orders;
-
-	// how much each menu item is marked up, determines profit
-	// for reference, mcdonalds makes $0.06 profit on each dollar menu item
-	public float markup;
 }
 
 public class DayValues : MonoBehaviour {
@@ -93,6 +99,10 @@ public class DayValues : MonoBehaviour {
 
 	public float GetTodaysMistakeTolerance(){
 		return values [day].mistakeTolerance;
+	}
+
+	public float GetTodaysFailureTolerance(){
+		return values [day].failureTolerance;
 	}
 
 	public float GetTodaysDeductionMultiplier(){

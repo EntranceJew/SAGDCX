@@ -8,6 +8,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 	public AltScore score;
 	public PlayerValues playerValues;
 	public DayValues dayValues;
+	public DayManager dayManager;
 	public Text moneyText;
 	public Shaker monitorShaker;
 
@@ -49,17 +50,23 @@ public class BurgJudgeCatcher : MonoBehaviour {
 			Debug.Log (mitem.price);
 			playerValues.Earn (mitem.value * satisfaction);
 			moneyText.color = gainMoney;
-			moneyText.text = "+$"+(mitem.value*satisfaction).ToString("F2");
-			monitorShaker.GoodShake();
-		} else {
+			moneyText.text = "+$" + (mitem.value * satisfaction).ToString ("F2");
+			monitorShaker.GoodShake ();
+		} else if (satisfaction > dayValues.GetTodaysFailureTolerance ()) {
 			Debug.Log ("SATISFACTION: I FUCKING HATED IT!");
-			Debug.Log ("VALUE: "+mitem.value);
-			Debug.Log ("PRICE: "+mitem.price);
-			Debug.Log ("SATISFACTION: "+satisfaction);
-			Debug.Log ("FUCKED UP: "+(mitem.value * (1.0f-satisfaction)));
-			playerValues.Spend (mitem.value * (1.0f-satisfaction));
+			Debug.Log ("VALUE: " + mitem.value);
+			Debug.Log ("PRICE: " + mitem.price);
+			Debug.Log ("SATISFACTION: " + satisfaction);
+			Debug.Log ("FUCKED UP: " + (mitem.value * (1.0f - satisfaction)));
+			playerValues.Spend (mitem.value * (1.0f - satisfaction));
 			moneyText.color = loseMoney;
-			moneyText.text = "-$"+(mitem.value * (1.0f-satisfaction)).ToString("F2");
+			moneyText.text = "-$" + (mitem.value * (1.0f - satisfaction)).ToString ("F2");
+			monitorShaker.BadShake ();
+		} else {
+			// we lose
+			dayManager.LoseDay();
+			moneyText.color = loseMoney;
+			moneyText.text = "YOU'RE FIRED";
 			monitorShaker.BadShake();
 		}
 	}

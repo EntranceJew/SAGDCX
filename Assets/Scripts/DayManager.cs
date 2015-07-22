@@ -19,6 +19,9 @@ public class DayManager : MonoBehaviour {
 	public Inventory inventory;
 	public PlayerValues playerValues;
 	public Shipment ship;
+
+	public GraphicRaycaster graphicRaycaster;
+	public GameObject failureGUI;
 	
 	// Use this for initialization
 	void Start () {
@@ -61,6 +64,27 @@ public class DayManager : MonoBehaviour {
 		}
 	}
 
+	public void LoseDay(){
+		// disable spawners
+		isDayActive = false;
+		// trash food
+		DestroyAllFoodInScene ();
+		// clear orders
+		dayValues.ResetDayValues ();
+		// blank screen
+		shouldBlack = true;
+		// @TODO: Silence audio.
+		// show the UI
+		failureGUI.SetActive (true);
+		// enable clicking on UI
+		graphicRaycaster.enabled = true;
+
+	}
+
+	public void EnableFailureGUI(){
+
+	}
+
 	public void FailDay(){
 		/* CHECKLIST OF SHIT TO DO ON DAY RESET
 		 * [ ] Destroy all active food
@@ -78,18 +102,14 @@ public class DayManager : MonoBehaviour {
 		isDayActive = false;
 
 		// Trash all food, everywhere.
-		getOrder.TrashLastOrder ();
-		GameObject[] got = GameObject.FindGameObjectsWithTag ("Food");
-		foreach (GameObject obj in got) {
-			Destroy (obj);
-		}
-
-		// Reset inventory and such.
-		playerValues.Load ("autosave_day_"+dayValues.day);
+		DestroyAllFoodInScene ();
 
 		// Clear the order.
 		dayValues.ResetDayValues ();
 		//getOrder.NewOrder (dayValues.GetNextOrder ());
+
+		// Reset inventory and such.
+		playerValues.Load ("autosave_day_"+dayValues.day);
 
 		// Fade to black, come back.
 		shouldBlack = true;
@@ -108,8 +128,6 @@ public class DayManager : MonoBehaviour {
 	public void StartDay(bool doSave){
 		Debug.Log ("DAY "+dayValues.day+" STARTED, GO HOME");
 
-		RefundAllFoodInScene ();
-
 		shouldBlack = false;
 		// @TODO: Maybe save this as an autosave instead of ontop of the existing save?
 		if (doSave) {
@@ -119,6 +137,14 @@ public class DayManager : MonoBehaviour {
 		AddTodaysShipment ();
 		GetNextOrder ();
 		isDayActive = true;
+	}
+
+	public void DestroyAllFoodInScene(){
+		getOrder.TrashLastOrder ();
+		GameObject[] got = GameObject.FindGameObjectsWithTag ("Food");
+		foreach (GameObject obj in got) {
+			Destroy (obj);
+		}
 	}
 
 	public void RefundAllFoodInScene(){
@@ -145,6 +171,9 @@ public class DayManager : MonoBehaviour {
 		Debug.Log ("Waiting politely...");
 		yield return new WaitForSeconds(3.0f);
 		Debug.Log ("THE WAIT IS OVER!");
+		// we do this here so that we're sure the scene is faded before we execute
+		RefundAllFoodInScene ();
+		Debug.Log ("FADING DAY IN...");
 		StartDay (doSave);
 	}
 }
