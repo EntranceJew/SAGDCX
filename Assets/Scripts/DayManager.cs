@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 // DayMan(aaaaAAAAHHHH!!!)ager is meant to keep track of the day progress and stuff.
 // I dislike writing "Managers" as much as the next guy but sometimes we need a deity.
@@ -19,6 +20,8 @@ public class DayManager : MonoBehaviour {
 	public Inventory inventory;
 	public PlayerValues playerValues;
 	public Shipment ship;
+	public GameObject bigCanvasObject;
+	public GameObject canvasTextObject;
 
 	public GraphicRaycaster graphicRaycaster;
 	public GameObject failureGUI;
@@ -197,6 +200,39 @@ public class DayManager : MonoBehaviour {
 		// we do this here so that we're sure the scene is faded before we execute
 		RefundAllFoodInScene ();
 		Debug.Log ("FADING DAY IN...");
+		List<GameObject> tempList = new List<GameObject> ();
+		ShowEndOfDayText (tempList);
+		yield return new WaitForSeconds (15.0f);
+
+		foreach (GameObject obj in tempList) {
+			Destroy (obj);
+		}
+		tempList.Clear ();
+
 		StartDay (doSave);
+	}
+
+	void ShowEndOfDayText(List<GameObject> destroyMeLater) {
+		int day = 0;
+		//instantiate "Today was day X" text
+		GameObject temp = Instantiate (canvasTextObject) as GameObject;
+		temp.transform.SetParent (bigCanvasObject.transform);
+		temp.name = "TitleText";
+		temp.transform.localPosition = new Vector3 (0, 240, 0);
+		temp.GetComponent<Text> ().text = "Goodbye day " + (day + 1) + " we will miss you";
+		destroyMeLater.Add (temp);
+
+		int i = 0;
+		int total = playerValues.scores[day].scores.Count;
+		//Instantiate a text line for each order
+		foreach (OrderScore os in playerValues.scores[day].scores) {
+			temp = Instantiate (canvasTextObject) as GameObject;
+			temp.transform.SetParent(bigCanvasObject.transform);
+			temp.name = "ScoreRowText" + i;
+			temp.transform.localPosition = new Vector3(0, (48 * i) / 2, 0);
+			temp.GetComponent<Text>().text = "Order " + i + " got " + os.value + " out of " + os.maxValue;
+			destroyMeLater.Add (temp);
+			i++;
+		}
 	}
 }
