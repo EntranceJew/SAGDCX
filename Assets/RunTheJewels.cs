@@ -35,6 +35,8 @@ public class RunTheJewels : MonoBehaviour {
 		foreach (KeyValuePair<GameObject, int> entry in dicDemand) {
 			demand.Add(new InventoryItem(entry.Key, entry.Value));
 		}
+		// stop a bunch of errors
+		dayValues.values [dayValues.day].demand = demand;
 	}
 	
 	// Update is called once per frame
