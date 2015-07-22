@@ -1251,7 +1251,7 @@ Transform:
   - {fileID: 570893169}
   - {fileID: 145809767}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1 &99134897
 GameObject:
   m_ObjectHideFlags: 0
@@ -11818,8 +11818,8 @@ MonoBehaviour:
   m_Target: {fileID: 1685270726}
   m_AutoTargetPlayer: 0
   m_UpdateType: 0
-  m_RotationRange: {x: 15, y: 45}
-  m_FollowSpeed: 1
+  m_RotationRange: {x: 4, y: 45}
+  m_FollowSpeed: .800000012
   attached: 0
 --- !u!1 &1527676352
 GameObject:

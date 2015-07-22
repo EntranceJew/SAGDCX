@@ -71,8 +71,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153890}
   serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 5
+  m_Mass: 50
+  m_Drag: 1
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -171,22 +171,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a1c26159d90c7498ba813c546bf770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFoodPope: 0
-  bb: {fileID: 0}
   foodCategories:
     bun: .600000024
     vegetable: .400000006
     meat: 1
     cheese: .200000003
     condiment: 0
-  isGrabbed: 0
   foodType: 2
   foodName: Chicken
+  price: 0
+  isFoodPope: 0
+  bb: {fileID: 0}
+  isGrabbed: 0
+  isFake: 0
   grabSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   hitSoftSound: {fileID: 8300000, guid: 4ffad6479b0c9f14cbf5b4b234cef0c7, type: 3}
   hitHardSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-  soundmaker: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -248,6 +249,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Drag
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
