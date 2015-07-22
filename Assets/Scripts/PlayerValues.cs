@@ -159,6 +159,11 @@ public class PlayerValues : MonoBehaviour {
 		}
 	}
 
+	public float Earn(float spendoli){
+		Debug.Log ("Just earned $"+spendoli.ToString("F2")+"!");
+		return cash -= spendoli;
+	}
+
 	public void AddScores(int obtained, int maximum){
 		if (scores.Count < dayNumber + 1) {
 			DayOrderScore dos = new DayOrderScore (obtained, maximum);
