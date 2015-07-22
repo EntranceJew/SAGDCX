@@ -81,6 +81,11 @@ public class DayValues : MonoBehaviour {
 	public int day = 0;
 	public int orderNumber = 0;
 
+	public void ResetToZero(){
+		day = 0;
+		orderNumber = 0;
+	}
+
 	public void ResetDayValues(){
 		orderNumber = 0;
 	}

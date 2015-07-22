@@ -71,18 +71,23 @@ public class DayManager : MonoBehaviour {
 		DestroyAllFoodInScene ();
 		// clear orders
 		dayValues.ResetDayValues ();
+		// reload player values
+		playerValues.Load ("autosave_day_"+dayValues.day);
 		// blank screen
 		shouldBlack = true;
 		// @TODO: Silence audio.
 		// show the UI
-		failureGUI.SetActive (true);
-		// enable clicking on UI
-		graphicRaycaster.enabled = true;
-
+		EnableFailureGUI ();
 	}
 
 	public void EnableFailureGUI(){
+		failureGUI.SetActive (true);
+		graphicRaycaster.enabled = true;
+	}
 
+	public void DisableFailureGUI(){
+		failureGUI.SetActive (false);
+		graphicRaycaster.enabled = false;
 	}
 
 	public void FailDay(){
@@ -109,7 +114,7 @@ public class DayManager : MonoBehaviour {
 		//getOrder.NewOrder (dayValues.GetNextOrder ());
 
 		// Reset inventory and such.
-		playerValues.Load ("autosave_day_"+dayValues.day);
+
 
 		// Fade to black, come back.
 		shouldBlack = true;
@@ -118,11 +123,29 @@ public class DayManager : MonoBehaviour {
 
 	public void EndDay(){
 		Debug.Log ("DAY "+dayValues.day+" IS OVER, GO HOME");
+		RefundAllFoodInScene ();
 		isDayActive = false;
 		shouldBlack = true;
 		dayValues.day++;
 		getOrder.TrashLastOrder ();
 		StartCoroutine (Fade (true));
+	}
+
+	public void RetryDay(){
+		DisableFailureGUI ();
+		StartCoroutine (Fade (false));
+	}
+
+	public void RestartGame(){
+		DisableFailureGUI ();
+		dayValues.ResetToZero ();
+		playerValues.Load ("autosave_day_0");
+		StartCoroutine (Fade (false));
+	}
+
+	public void QuitGame(){
+		Debug.Log ("QUIT, QUIT, GET OUT, I WANT TO LEAVE, LET ME SPLIT");
+		Application.Quit ();
 	}
 
 	public void StartDay(bool doSave){
