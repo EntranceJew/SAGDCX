@@ -4364,6 +4364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burgBuilder: {fileID: 1136804442}
+  inactiveClip: {fileID: 0}
 --- !u!1 &548954021
 GameObject:
   m_ObjectHideFlags: 0
@@ -9803,19 +9804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burgBuilder: {fileID: 1136804442}
---- !u!114 &1355821376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1355821372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 990b75b2faf7e9c46b2709312674ffc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  judgeSpawnPos: {fileID: 0}
-  theSpawnedClone: {fileID: 0}
+  inactiveClip: {fileID: 8300000, guid: cd7ff2913d7f6594d86ded219829d9cb, type: 3}
 --- !u!135 &1355821377
 SphereCollider:
   m_ObjectHideFlags: 0

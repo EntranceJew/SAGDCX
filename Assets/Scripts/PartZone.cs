@@ -7,7 +7,7 @@ public class PartZone : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		bb = transform.parent.GetComponent<BurgBuilder> ();
+		//bb = transform.parent.GetComponent<BurgBuilder> ();
 	}
 
 	void OnCollisionEnter(Collision col){
