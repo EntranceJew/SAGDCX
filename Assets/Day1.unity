@@ -11917,6 +11917,7 @@ MonoBehaviour:
   burgBuilder: {fileID: 1136804442}
   getOrder: {fileID: 1834493120}
   score: {fileID: 1800125091}
+  playerValues: {fileID: 1987554078}
 --- !u!65 &1599227770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15225,8 +15226,7 @@ MonoBehaviour:
   cash: 900.099976
   inventory: {fileID: 2139853224}
   ratsInHouse: {fileID: 422140586}
-  scoresGot: 
-  scoresMax: 
+  scores: []
   arrows: 010101
 --- !u!1001 &1988258123
 Prefab:

@@ -282,11 +282,11 @@ public class AltScore : MonoBehaviour {
 	}
 
 	// GETTERS AND SETTERS
-	public float GetMinScore () {
+	public int GetAchievedScore () {
 		return theScore;
 	}
 
-	public float GetMaxScore () {
+	public int GetMaxScore () {
 		return thePotentialScore;
 	}
 

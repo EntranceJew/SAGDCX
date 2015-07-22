@@ -10,9 +10,29 @@ class ValuesForPlayer {
 	public float cash;
 	public List<SerializableInventoryItem> inStock;
 	public bool[] arrows;
-	public int[] scoresGot;
-	public int[] scoresMax;
+	public List<DayOrderScore> scores;
 	public int ratsInHouse;
+}
+
+[System.Serializable]
+public class OrderScore {
+	public OrderScore(int val, int maxVal){
+		value = val;
+		maxValue = maxVal;
+	}
+
+	public int value;
+	public int maxValue;
+}
+
+[System.Serializable]
+public class DayOrderScore {
+	public DayOrderScore(int value, int maxValue){
+		scores = new List<OrderScore> ();
+		scores.Add (new OrderScore (value, maxValue));
+	}
+
+	public List<OrderScore> scores;
 }
 
 public class PlayerValues : MonoBehaviour {
@@ -28,11 +48,8 @@ public class PlayerValues : MonoBehaviour {
 	// how many rats are around
 	public Inventory ratsInHouse;
 
-	// the scores achieved during the day
-	public List<int> scoresGot;
-
-	// the scores achievable during the day
-	public List<int> scoresMax;
+	// the scores achieved during the day and their maximums
+	public List<DayOrderScore> scores;
 
 	//ARROW STUFF!
 	//Order: Picture Frame, TV, Clipboard
@@ -54,12 +71,7 @@ public class PlayerValues : MonoBehaviour {
 		vals.dayNumber = dayNumber;
 		vals.cash = cash;
 		vals.arrows = arrows;
-
-		vals.scoresGot = new int[scoresGot.Count];
-		scoresGot.CopyTo (vals.scoresGot);
-
-		vals.scoresMax = new int[scoresMax.Count];
-		scoresMax.CopyTo (vals.scoresMax);
+		vals.scores = scores;
 
 		vals.ratsInHouse = ratsInHouse.HasHowMany ("Rat");
 
@@ -115,8 +127,7 @@ public class PlayerValues : MonoBehaviour {
 		dayNumber = vals.dayNumber;
 		cash = vals.cash;
 		arrows = vals.arrows;
-		scoresGot = new List<int> (vals.scoresGot);
-		scoresMax = new List<int> (vals.scoresMax);
+		scores = vals.scores;
 
 		List<InventoryItem> unserRatsInHouse = new List<InventoryItem> ();
 		unserRatsInHouse.Add (new InventoryItem (ratsInHouse.fl.GetGameObject ("Rat"), vals.ratsInHouse));
@@ -145,6 +156,15 @@ public class PlayerValues : MonoBehaviour {
 			return cash -= lodsemone;
 		} else {
 			return cash;
+		}
+	}
+
+	public void AddScores(int obtained, int maximum){
+		if (scores.Count < dayNumber + 1) {
+			DayOrderScore dos = new DayOrderScore (obtained, maximum);
+			scores.Add (dos);
+		} else {
+			scores[dayNumber].scores.Add (new OrderScore (obtained, maximum));
 		}
 	}
 }
