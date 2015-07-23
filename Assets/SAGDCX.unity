@@ -3567,6 +3567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fl: {fileID: 328657748}
+  maxTime: 7
 --- !u!1 &698367419
 GameObject:
   m_ObjectHideFlags: 0
