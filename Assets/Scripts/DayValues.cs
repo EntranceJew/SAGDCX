@@ -49,7 +49,8 @@ public class DayValues : MonoBehaviour {
 	// THESE ARE PUBLIC, BUT THEY'RE NOT FOR YOU!
 	public RMenuElement myMenuElement;
 
-	void Start(){
+	void Awake(){
+		Debug.Log ("DAYVALUES BORN!");
 		// Calculate all demands for all days.
 		Dictionary<GameObject, int> dicDemand = new Dictionary<GameObject, int> ();
 		int i = 0;
@@ -74,15 +75,17 @@ public class DayValues : MonoBehaviour {
 			values[i].demand = new List<InventoryItem>(theDemand);
 			i++;
 		}
+
+		// Sync the day number from PlayerValues.
+		Debug.Log ("DAYVALUES READ! "+PlayerValues.pv.dayNumber);
 	}
 
 	// WE'RE SUPPOSED TO HAVE THESE
 	public List<DayValue> values; // = new List<DayValue>();
-	public int day = 0;
 	public int orderNumber = 0;
 
 	public void ResetToZero(){
-		day = 0;
+		PlayerValues.pv.dayNumber = 0;
 		orderNumber = 0;
 	}
 
@@ -95,47 +98,47 @@ public class DayValues : MonoBehaviour {
 	}
 
 	public DayValue GetToday(){
-		return values [day];
+		return values [PlayerValues.pv.dayNumber];
 	}
 
 	public float GetTodaysPaidWage(){
-		return values [day].paidWage;
+		return values [PlayerValues.pv.dayNumber].paidWage;
 	}
 
 	public float GetTodaysMistakeTolerance(){
-		return values [day].mistakeTolerance;
+		return values [PlayerValues.pv.dayNumber].mistakeTolerance;
 	}
 
 	public float GetTodaysFailureTolerance(){
-		return values [day].failureTolerance;
+		return values [PlayerValues.pv.dayNumber].failureTolerance;
 	}
 
 	public float GetTodaysDeductionMultiplier(){
-		return values [day].deductionMultiplier;
+		return values [PlayerValues.pv.dayNumber].deductionMultiplier;
 	}
 
 	public float GetTodaysGasPrice(){
-		return values [day].gasPrice;
+		return values [PlayerValues.pv.dayNumber].gasPrice;
 	}
 
 	public float GetTodaysTraffic(){
-		return values [day].traffic;
+		return values [PlayerValues.pv.dayNumber].traffic;
 	}
 
 	public float GetTodaysShoppingFatigue(){
-		return values [day].shoppingFatigue;
+		return values [PlayerValues.pv.dayNumber].shoppingFatigue;
 	}
 
 	public List<InventoryItem> GetTodaysShipment(){
-		return values [day].shipments;
+		return values [PlayerValues.pv.dayNumber].shipments;
 	}
 
 	public List<InventoryItem> GetTodaysDemand(){
-		return values [day].demand;
+		return values [PlayerValues.pv.dayNumber].demand;
 	}
 
 	public int GetTodaysDemandFor(GameObject obj){
-		foreach (InventoryItem inv in values [day].demand) {
+		foreach (InventoryItem inv in values [PlayerValues.pv.dayNumber].demand) {
 			if(inv.represents == obj){
 				return inv.quantity;
 			}
@@ -146,14 +149,14 @@ public class DayValues : MonoBehaviour {
 	}
 
 	public int[] GetTodaysOrders(){
-		return values [day].orders;
+		return values [PlayerValues.pv.dayNumber].orders;
 	}
 
 	public float GetTodaysMarkup(){
-		return values [day].markup;
+		return values [PlayerValues.pv.dayNumber].markup;
 	}
 
 	public float CalculateValue(float price){
-		return values [day].markup+price;
+		return values [PlayerValues.pv.dayNumber].markup+price;
 	}
 }

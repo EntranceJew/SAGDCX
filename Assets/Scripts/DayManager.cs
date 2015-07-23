@@ -17,8 +17,6 @@ public class DayManager : MonoBehaviour {
 
 	public AltGetOrder getOrder;
 	public DayValues dayValues;
-	public Inventory inventory;
-	public PlayerValues playerValues;
 	public Shipment ship;
 	public GameObject bigCanvasObject;
 	public GameObject canvasTextObject;
@@ -60,7 +58,7 @@ public class DayManager : MonoBehaviour {
 
 	public void GetNextOrder(){
 		int[] orders = dayValues.GetTodaysOrders ();
-		Debug.Log ("DAY "+dayValues.day+", ORDER " + dayValues.orderNumber + "/" + orders.Length);
+		Debug.Log ("DAY "+PlayerValues.pv.dayNumber+", ORDER " + dayValues.orderNumber + "/" + orders.Length);
 		if (dayValues.orderNumber+1 <= orders.Length) {
 			getOrder.NewOrder (dayValues.GetNextOrder ());
 		} else {
@@ -84,7 +82,7 @@ public class DayManager : MonoBehaviour {
 		// clear orders
 		dayValues.ResetDayValues ();
 		// reload player values
-		playerValues.Load ("autosave_day_"+dayValues.day);
+		PlayerValues.pv.Load ("autosave_day_"+PlayerValues.pv.dayNumber);
 		// blank screen
 		shouldBlack = true;
 		// @TODO: Silence audio.
@@ -145,13 +143,13 @@ public class DayManager : MonoBehaviour {
 	}
 
 	public void EndDay(){
-		Debug.Log ("DAY "+dayValues.day+" IS OVER, GO HOME");
+		Debug.Log ("DAY "+PlayerValues.pv.dayNumber+" IS OVER, GO HOME");
 		getOrder.TrashLastOrder ();
 		RefundAllFoodInScene ();
 		isDayActive = false;
 		shouldBlack = true;
-		dayValues.day++;
-		if (dayValues.day > dayValues.values.Count - 1) {
+		PlayerValues.pv.dayNumber++;
+		if (PlayerValues.pv.dayNumber > dayValues.values.Count - 1) {
 			// we reset to zero so things don't fucking break if we're on a day that isn't valid (lastday+1)
 			dayValues.ResetToZero ();
 			Debug.Log ("WON GAME BY REACHING LAST DAY");
@@ -169,7 +167,7 @@ public class DayManager : MonoBehaviour {
 	public void RestartGame(){
 		DisableFailureGUI ();
 		dayValues.ResetToZero ();
-		playerValues.Load ("autosave_day_0");
+		PlayerValues.pv.Load ("autosave_day_0");
 		StartCoroutine (Fade (false));
 	}
 
@@ -194,12 +192,12 @@ public class DayManager : MonoBehaviour {
 	}
 
 	public void StartDay(bool doSave){
-		Debug.Log ("DAY "+dayValues.day+" STARTED, GO HOME");
+		Debug.Log ("DAY "+PlayerValues.pv.dayNumber+" STARTED, GO HOME");
 
 		shouldBlack = false;
 		// @TODO: Maybe save this as an autosave instead of ontop of the existing save?
 		if (doSave) {
-			playerValues.Save ("autosave_day_" + dayValues.day);
+			PlayerValues.pv.Save ("autosave_day_" + PlayerValues.pv.dayNumber);
 		}
 		dayValues.orderNumber = 0;
 		AddTodaysShipment ();
@@ -220,7 +218,7 @@ public class DayManager : MonoBehaviour {
 		foreach (GameObject obj in got) {
 			Food fd = obj.GetComponent<Food> ();
 			if (fd != null && !fd.isFake) {
-				inventory.Add (obj, 1);
+				PlayerValues.pv.inventory.Add (obj, 1);
 				Destroy (obj);
 			} else {
 				Debug.Log (obj);
@@ -229,7 +227,7 @@ public class DayManager : MonoBehaviour {
 	}
 	
 	public void AddTodaysShipment(){
-		Debug.Log ("ADDING DAY " + dayValues.day + "'S SHIPMENT");
+		Debug.Log ("ADDING DAY " + PlayerValues.pv.dayNumber + "'S SHIPMENT");
 
 		ship.inventory.ObtainShipment (dayValues.GetTodaysShipment());
 		ship.GoGetIt(0.0f);
@@ -267,10 +265,10 @@ public class DayManager : MonoBehaviour {
 		destroyMeLater.Add (temp);
 
 		int i = 0;
-		if (playerValues.scores.Count - 1 >= day) {
-			int total = playerValues.scores [day].scores.Count;
+		if (PlayerValues.pv.scores.Count - 1 >= day) {
+			int total = PlayerValues.pv.scores [day].scores.Count;
 			//Instantiate a text line for each order
-			foreach (OrderScore os in playerValues.scores[day].scores) {
+			foreach (OrderScore os in PlayerValues.pv.scores[day].scores) {
 				temp = Instantiate (canvasTextObject) as GameObject;
 				temp.transform.SetParent (bigCanvasObject.transform);
 				temp.name = "ScoreRowText" + i;

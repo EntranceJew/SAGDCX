@@ -1040,7 +1040,7 @@ Prefab:
     - target: {fileID: 11420918, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
       propertyPath: playerValues
       value: 
-      objectReference: {fileID: 1987554078}
+      objectReference: {fileID: 0}
     - target: {fileID: 441768, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
       propertyPath: m_LocalScale.x
       value: .800000072
@@ -1867,7 +1867,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 181466, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: m_Name
       value: PattyRow
@@ -2272,12 +2272,13 @@ Prefab:
     - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 422140585}
+      objectReference: {fileID: 0}
     - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
       propertyPath: dayManager
       value: 
       objectReference: {fileID: 2080867310}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &281240118
@@ -3053,7 +3054,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: dayValues
       value: 
@@ -3955,7 +3956,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1987554078}
+      - m_Target: {fileID: 0}
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -4500,7 +4501,7 @@ MonoBehaviour:
   - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
   - {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
   - {fileID: 188832, guid: c9850f5e876fa1b41b2b31f995644914, type: 2}
-  inventory: {fileID: 2139853223}
+  inventory: {fileID: 0}
   dayManager: {fileID: 2080867310}
 --- !u!54 &500669056
 Rigidbody:
@@ -4595,7 +4596,6 @@ MonoBehaviour:
   burgBuilder: {fileID: 1136804442}
   getOrder: {fileID: 1834493120}
   score: {fileID: 1800125091}
-  playerValues: {fileID: 1987554078}
   dayValues: {fileID: 786474129}
   dayManager: {fileID: 2080867310}
   moneyText: {fileID: 389860629}
@@ -5046,7 +5046,7 @@ Prefab:
     - target: {fileID: 11420918, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
       propertyPath: playerValues
       value: 
-      objectReference: {fileID: 1987554078}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
   m_IsPrefabParent: 0
@@ -6113,7 +6113,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: dayValues
       value: 
@@ -6248,7 +6248,7 @@ Prefab:
     - target: {fileID: 11453734, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853223}
+      objectReference: {fileID: 0}
     - target: {fileID: 155216, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -6485,7 +6485,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: dayValues
       value: 
@@ -6620,7 +6620,7 @@ Prefab:
     - target: {fileID: 11420918, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
       propertyPath: playerValues
       value: 
-      objectReference: {fileID: 1987554078}
+      objectReference: {fileID: 0}
     - target: {fileID: 193852, guid: d6a7423c01b633342a569a80ec484f96, type: 2}
       propertyPath: m_Name
       value: TVArrow
@@ -6780,7 +6780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcce7bf0bd4cd044c969c7d3fd1cc939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratsInHouse: {fileID: 422140586}
+  ratsInHouse: {fileID: 0}
   rat: {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
   fl: {fileID: 741838967}
   powerOfRat: 2
@@ -7214,7 +7214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showTutorials: 0
-  playerValues: {fileID: 1987554078}
   dayValues: {fileID: 786474129}
   lookAt: {fileID: 1628474893}
   mouseObject: {fileID: 1685270725}
@@ -9514,7 +9513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnList:
   - {fileID: 150546, guid: e4ef6a53cf544ae43b4a319eee00284a, type: 2}
-  inventory: {fileID: 2139853223}
+  inventory: {fileID: 0}
   dayManager: {fileID: 2080867310}
 --- !u!23 &1059288981
 MeshRenderer:
@@ -9637,7 +9636,7 @@ MonoBehaviour:
   - {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
   - {fileID: 114696, guid: 19c377dd28af55d4fa831f3b9a6c18b5, type: 2}
   - {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
-  inventory: {fileID: 2139853223}
+  inventory: {fileID: 0}
   dayManager: {fileID: 2080867310}
 --- !u!4 &1098086038 stripped
 Transform:
@@ -10055,7 +10054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnList:
   - {fileID: 145720, guid: 77d6206f17b5d6c47a167bfd196fd92a, type: 2}
-  inventory: {fileID: 2139853223}
+  inventory: {fileID: 0}
   dayManager: {fileID: 2080867310}
 --- !u!23 &1152997218
 MeshRenderer:
@@ -10264,7 +10263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnList:
   - {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
-  inventory: {fileID: 2139853223}
+  inventory: {fileID: 0}
   dayManager: {fileID: 2080867310}
 --- !u!23 &1195796836
 MeshRenderer:
@@ -10365,7 +10364,7 @@ MonoBehaviour:
   - {fileID: 133794, guid: 993006d869e86d449879ae5176d85c8f, type: 2}
   - {fileID: 100366, guid: d880e094d2e883e4d8743f623c3024d2, type: 2}
   - {fileID: 180548, guid: d50e416fa82db944f92ac5acc14135ca, type: 2}
-  inventory: {fileID: 2139853223}
+  inventory: {fileID: 0}
   dayManager: {fileID: 2080867310}
 --- !u!23 &1200863091
 MeshRenderer:
@@ -11373,7 +11372,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: dayValues
       value: 
@@ -13417,7 +13416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnList:
   - {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
-  inventory: {fileID: 2139853223}
+  inventory: {fileID: 0}
   dayManager: {fileID: 2080867310}
 --- !u!23 &1563557676
 MeshRenderer:
@@ -14073,7 +14072,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: dayValues
       value: 
@@ -14251,7 +14250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da3e335666348c4dac3180e7cdc6947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 2139853223}
   fl: {fileID: 0}
 --- !u!65 &1628474899
 BoxCollider:
@@ -14815,7 +14813,7 @@ Prefab:
     - target: {fileID: 11490230, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853223}
+      objectReference: {fileID: 0}
     - target: {fileID: 11490230, guid: beb15d11e8ab6914584b7ab2c98715d5, type: 2}
       propertyPath: spawnList.Array.data[7]
       value: 
@@ -15586,7 +15584,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 181466, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: m_Name
       value: PicklesRow
@@ -15990,7 +15988,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: dayValues
       value: 
@@ -16104,7 +16102,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: dayValues
       value: 
@@ -17327,6 +17325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbf529550b36d142b5df337316f9ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  savesFound: []
   dayNumber: 0
   cash: 900.099976
   inventory: {fileID: 2139853224}
@@ -17575,8 +17574,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuAbs: {fileID: 332364050}
   ship: {fileID: 595117136}
-  inventory: {fileID: 2139853224}
-  playerValues: {fileID: 1987554078}
   dayValues: {fileID: 786474129}
   moneyTotal: {fileID: 2095827491}
   gasValue: {fileID: 2111562304}
@@ -17934,7 +17931,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: dayValues
       value: 
@@ -18068,7 +18065,7 @@ Prefab:
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853224}
+      objectReference: {fileID: 0}
     - target: {fileID: 11427574, guid: 6600a85b514b75e4580aa795bd329be9, type: 2}
       propertyPath: dayValues
       value: 
@@ -18469,8 +18466,6 @@ MonoBehaviour:
   isDayActive: 0
   getOrder: {fileID: 1834493120}
   dayValues: {fileID: 786474129}
-  inventory: {fileID: 2139853224}
-  playerValues: {fileID: 1987554078}
   ship: {fileID: 595117136}
   bigCanvasObject: {fileID: 1492596675}
   canvasTextObject: {fileID: 129938, guid: 359482e2d91dce045a3715a473c1935c, type: 2}
@@ -18735,7 +18730,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1987554078}
+      - m_Target: {fileID: 0}
         m_MethodName: Load
         m_Mode: 1
         m_Arguments:
@@ -18949,7 +18944,7 @@ Prefab:
     - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 2139853223}
+      objectReference: {fileID: 0}
     - target: {fileID: 11430788, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
       propertyPath: spawnList.Array.data[1]
       value: 
@@ -19167,6 +19162,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c62837644b3ddba42a615a691b535d50, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2124740134 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 168394, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
+  m_PrefabInternal: {fileID: 276896296}
+--- !u!114 &2124740136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2124740134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b42b22705c7c84f896f758f7ecbb98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnList:
+  - {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
+  inventory: {fileID: 0}
+  dayManager: {fileID: 2080867310}
 --- !u!4 &2127427286 stripped
 Transform:
   m_PrefabParentObject: {fileID: 436952, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
