@@ -6,7 +6,6 @@ public class BurgJudgeCatcher : MonoBehaviour {
 	public BurgBuilder burgBuilder;
 	public AltGetOrder getOrder;
 	public AltScore score;
-	public PlayerValues playerValues;
 	public DayValues dayValues;
 	public DayManager dayManager;
 	public Text moneyText;
@@ -30,7 +29,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 			Debug.Log ("CAUGHT SOME FOOD, Y'ALL");
 			// @TODO: Display scores on the TV, time it out. You know, do what the people like.
 			score.EvaluateBurger(getOrder.CurrentOrder().completeOrder, burgBuilder.GetChildParts());
-			playerValues.AddScores(score.GetAchievedScore(), score.GetMaxScore());
+			PlayerValues.pv.AddScores(score.GetAchievedScore(), score.GetMaxScore());
 			GetDollarDollarBillsYall();
 			// get down from there you rapscallion
 			burgBuilder.UnHoist();
@@ -53,7 +52,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 
 			float baseItemValue = mitem.value + dayValues.GetTodaysMarkup();
 
-			playerValues.Earn (baseItemValue * satisfaction);
+			PlayerValues.pv.Earn (baseItemValue * satisfaction);
 			moneyText.color = gainMoney;
 			moneyText.text = "+$" + (baseItemValue * satisfaction).ToString ("F2");
 			monitorShaker.GoodShake ();
@@ -75,7 +74,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 			// multiply it by penalization
 			fuckupAmount *= dayValues.GetTodaysDeductionMultiplier();
 			Debug.Log ("FUCKUP PASS3: " + fuckupAmount);
-			playerValues.Spend (fuckupAmount);
+			PlayerValues.pv.Spend (fuckupAmount);
 			moneyText.color = loseMoney;
 			moneyText.text = "-$" + (fuckupAmount).ToString ("F2");
 			monitorShaker.BadShake ();

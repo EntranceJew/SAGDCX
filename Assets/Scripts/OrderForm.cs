@@ -17,8 +17,6 @@ public class OrderForm : MonoBehaviour {
 
 	public MenuAbstractor menuAbs;
 	public Shipment ship;
-	public Inventory inventory;
-	public PlayerValues playerValues;
 	public DayValues dayValues;
 
 	public Text moneyTotal;
@@ -32,12 +30,12 @@ public class OrderForm : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (playerValues.cash >= 0.0f) {
+		if (PlayerValues.pv.cash >= 0.0f) {
 			moneyTotal.color = positiveMoney;
 		} else {
 			moneyTotal.color = negativeMoney;
 		}
-		moneyTotal.text = "$"+playerValues.cash.ToString ("F2");
+		moneyTotal.text = "$"+PlayerValues.pv.cash.ToString ("F2");
 
 		gasValue.text = "$" + dayValues.GetTodaysGasPrice ().ToString ("F2");
 
@@ -48,9 +46,9 @@ public class OrderForm : MonoBehaviour {
 	public void Confirm(){
 		// buy it
 		float totalExpense = GetTotal () + dayValues.GetTodaysGasPrice ();
-		if (playerValues.CanAfford (totalExpense)) {
+		if (PlayerValues.pv.CanAfford (totalExpense)) {
 			// add the board values to the shipment
-			playerValues.Spend(totalExpense);
+			PlayerValues.pv.Spend(totalExpense);
 			ship.inventory.ObtainShipment (GetAbstractedShipment ());
 			float shopTime = dayValues.GetTodaysTraffic() * 2; // uphill, both ways
 			shopTime += ship.inventory.GetTotal() * dayValues.GetTodaysShoppingFatigue();

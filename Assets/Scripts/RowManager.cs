@@ -16,7 +16,6 @@ public class RowManager : MonoBehaviour {
 
 	public int quantity;
 	public GameObject represents;
-	public Inventory inventory;
 	public DayValues dayValues;
 	public InputField inputField;
 	
@@ -45,7 +44,7 @@ public class RowManager : MonoBehaviour {
 		inputField.text = quantity.ToString();
 		totalText.text = "$"+(quantity * rate).ToString ("F2");
 
-		int amtLeft = inventory.HasHowMany (represents.name);
+		int amtLeft = PlayerValues.pv.inventory.HasHowMany (represents.name);
 		if (amtLeft <= 0) {
 			stockText.text = "None!";
 		} else {

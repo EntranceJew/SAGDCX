@@ -14,7 +14,6 @@ public class ArrowSpin : MonoBehaviour {
 	Vector3 startPos;
 	public float upCount = 0;
 	public rotationAxis rotateWhichWay;
-	public PlayerValues playerValues;
 
 	void Start() {
 		startPos = transform.position;
@@ -22,7 +21,7 @@ public class ArrowSpin : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (playerValues.arrows [arrowNumber]) {
+		if (PlayerValues.pv.arrows [arrowNumber]) {
 			if (!gameObject.GetComponent<MeshRenderer> ().enabled) {
 				gameObject.GetComponent<MeshRenderer> ().enabled = true;
 			}
@@ -76,10 +75,10 @@ public class ArrowSpin : MonoBehaviour {
 	}
 
 	public bool GetState(){
-		return playerValues.arrows [arrowNumber];
+		return PlayerValues.pv.arrows [arrowNumber];
 	}
 
 	public bool SetState(bool newState){
-		return playerValues.arrows [arrowNumber] = newState;
+		return PlayerValues.pv.arrows [arrowNumber] = newState;
 	}
 }

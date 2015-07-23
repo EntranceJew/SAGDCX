@@ -36,6 +36,54 @@ public class DayOrderScore {
 }
 
 public class PlayerValues : MonoBehaviour {
+
+	public static PlayerValues pv;
+
+	public string[] savesFound;
+
+	void Awake(){
+		if (pv == null) {
+			DontDestroyOnLoad (gameObject);
+			DontDestroyOnLoad (inventory.gameObject);
+			DontDestroyOnLoad (ratsInHouse.gameObject);
+			pv = this;
+		} else if(pv != this){
+			// kill yourself squidward
+			Debug.Log ("DESTROYED SELF, OVERPOPULATED");
+			Destroy (gameObject);
+		}
+	}
+
+	void Start(){
+		List<string> savesToPeep = ScanForSaves (7);
+		Debug.Log (savesToPeep);
+	}
+
+	public List<string> ScanForSaves(int maxDays){
+		List<string> possibleNames = new List<string> ();
+		possibleNames.Add (defaultSaveName);
+		for (int i = 0; i < maxDays + 1; i++) {
+			possibleNames.Add ("autosave_day_" + i.ToString ());
+		}
+
+		List<string> foundNames = new List<string> ();
+		foreach (string possibleName in possibleNames) {
+			if (Application.isWebPlayer) {
+				if (PlayerPrefs.HasKey (possibleName + ".save")) {
+					//Debug.Log ("FOUND SAVE: "+possibleName+".save");
+					foundNames.Add (possibleName);
+				}
+			} else {
+				if (File.Exists (Application.persistentDataPath + "/" + possibleName + ".save")) {
+					//Debug.Log ("FOUND SAVE: "+possibleName+".save");
+					foundNames.Add (possibleName);
+				}
+			}
+		}
+
+		return foundNames;
+	}
+
 	// if this number becomes bigger than the size of DayValues then all hell will break loose
 	public int dayNumber;
 	
@@ -58,6 +106,20 @@ public class PlayerValues : MonoBehaviour {
 	private string defaultSaveName = "slot_1";
 
 	// :siren: WATCH OUT IT'S I/O TIME :siren:
+	public void DeleteSave(string filename){
+		if (Application.isWebPlayer) {
+			if (PlayerPrefs.HasKey (filename + ".save")) {
+				PlayerPrefs.DeleteKey(filename+".save");
+				PlayerPrefs.Save();
+			}
+		} else {
+			if (File.Exists (Application.persistentDataPath + "/" + filename + ".save")) {
+				File.Delete(Application.persistentDataPath + "/" + filename + ".save");
+			}
+		}
+	}
+
+
 	public void Save(){
 		Save (defaultSaveName);
 	}
@@ -68,6 +130,7 @@ public class PlayerValues : MonoBehaviour {
 
 		// @TODO: Try this with the base GameObject and see if this is truly necessary.
 		ValuesForPlayer vals = new ValuesForPlayer();
+		Debug.Log ("UH " + dayNumber + "  HOMES?");
 		vals.dayNumber = dayNumber;
 		vals.cash = cash;
 		vals.arrows = arrows;
@@ -123,19 +186,19 @@ public class PlayerValues : MonoBehaviour {
 				return false;
 			}
 		}
-
+		Debug.Log ("YO " + dayNumber + " HOMES " + vals.dayNumber);
 		dayNumber = vals.dayNumber;
 		cash = vals.cash;
 		arrows = vals.arrows;
 		scores = vals.scores;
 
 		List<InventoryItem> unserRatsInHouse = new List<InventoryItem> ();
-		unserRatsInHouse.Add (new InventoryItem (ratsInHouse.fl.GetGameObject ("Rat"), vals.ratsInHouse));
+		unserRatsInHouse.Add (new InventoryItem (FoodLookup.fl.GetGameObject ("Rat"), vals.ratsInHouse));
 		ratsInHouse.stock = unserRatsInHouse;
 
 		List<InventoryItem> unserStock = new List<InventoryItem> ();
 		foreach (SerializableInventoryItem item in vals.inStock) {
-			unserStock.Add (new InventoryItem(inventory.fl.GetGameObject(item.name), item.quantity));
+			unserStock.Add (new InventoryItem(FoodLookup.fl.GetGameObject(item.name), item.quantity));
 		}
 		inventory.stock = unserStock;
 

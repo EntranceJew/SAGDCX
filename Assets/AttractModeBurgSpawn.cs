@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class AttractModeBurgSpawn : MonoBehaviour {
-	public FoodLookup fl;
 	List<GameObject> currentBurg = new List<GameObject>();
 	float count = 0;
 	public float maxTime;
@@ -19,10 +18,10 @@ public class AttractModeBurgSpawn : MonoBehaviour {
 			int numToSpawn = Random.Range (minToSpawn,maxToSpawn);
 
 			for (int i = 0; i < numToSpawn; i++) {
-				int foodToSpawn = Random.Range (0, fl.lookup.Count);
+				int foodToSpawn = Random.Range (0, FoodLookup.fl.lookup.Count);
 				Vector3 burgSpawnPosition = transform.position;
 				burgSpawnPosition.y += i * upVar;
-				GameObject food = Instantiate(fl.lookup[foodToSpawn], burgSpawnPosition, Quaternion.Euler(new Vector3(0,Random.Range(0,360),0))) as GameObject;
+				GameObject food = Instantiate(FoodLookup.fl.lookup[foodToSpawn], burgSpawnPosition, Quaternion.Euler(new Vector3(0,Random.Range(0,360),0))) as GameObject;
 				Rigidbody rb = food.GetComponent<Rigidbody>();
 				rb.freezeRotation = false;
 				rb.mass = 50;

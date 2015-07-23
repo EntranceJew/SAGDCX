@@ -35,8 +35,6 @@ public class SerializableInventoryItem {
 }
 
 public class Inventory : MonoBehaviour {
-	public FoodLookup fl;
-
 	public Inventory(List<InventoryItem> inStock){
 		stock = inStock;
 	}
@@ -93,7 +91,7 @@ public class Inventory : MonoBehaviour {
 		}
 
 		string[] arr = tRepresents.name.Split('(');
-		string itemName = fl.GetGameObject (arr [0]).name;
+		string itemName = FoodLookup.fl.GetGameObject (arr [0]).name;
 
 		int i = 0;
 		foreach (InventoryItem item in stock) {
@@ -105,13 +103,13 @@ public class Inventory : MonoBehaviour {
 		}
 		// shut up
 		//Debug.Log ("Added item that was completely new: " + itemName);
-		stock.Add (new InventoryItem (fl.GetGameObject(arr[0]), quantity));
+		stock.Add (new InventoryItem (FoodLookup.fl.GetGameObject(arr[0]), quantity));
 		return true;
 	}
 
 	public bool Set(GameObject tRepresents, int quantity){
 		string[] arr = tRepresents.name.Split('(');
-		string itemName = fl.GetGameObject (arr [0]).name;
+		string itemName = FoodLookup.fl.GetGameObject (arr [0]).name;
 
 		if (quantity <= 0) {
 			return Remove (itemName, quantity) > 0;
@@ -127,7 +125,7 @@ public class Inventory : MonoBehaviour {
 			i++;
 		}
 		Debug.Log ("Set stock of item that was completely new: " + itemName);
-		stock.Add (new InventoryItem (fl.GetGameObject(arr[0]), quantity));
+		stock.Add (new InventoryItem (FoodLookup.fl.GetGameObject(arr[0]), quantity));
 		return true;
 	}
 

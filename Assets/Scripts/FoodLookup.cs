@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 
 public class FoodLookup : MonoBehaviour {
+
+	public static FoodLookup fl;
+
 	public List<GameObject> lookup;
 	public Dictionary<string, GameObject> nameToObject = new Dictionary<string, GameObject>();
 
@@ -22,9 +25,21 @@ public class FoodLookup : MonoBehaviour {
 
 	// we have to do this instead of Start because the timing / execution of certain things were choking without this
 	// we're the most important singleton in the game, so, it's only fair
-	void Awake () {
-		Object[] objs = Resources.LoadAll ("Foods");
+	void Awake(){
+		if (fl == null) {
+			DontDestroyOnLoad (gameObject);
+			fl = this;
+		} else if(fl != this){
+			// kill yourself squidward
+			Debug.Log ("DESTROYED SELF, OVERPOPULATED");
+			Destroy (gameObject);
+		}
+		ScanForFoods ();
+	}
 
+	void ScanForFoods () {
+		Object[] objs = Resources.LoadAll ("Foods");
+		
 		foreach(GameObject obj in objs){
 			//Debug.Log("Opening: Assets\\Prefabs\\Foods\\" + obj.name);
 			//Debug.Log(obj);
@@ -32,7 +47,7 @@ public class FoodLookup : MonoBehaviour {
 			nameToObject.Add (
 				obj.name,
 				(GameObject) obj
-			);
+				);
 		}
 	}
 	

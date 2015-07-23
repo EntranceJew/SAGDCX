@@ -4,25 +4,26 @@ using System.Collections.Generic;
 
 public class PlateMachine : MonoBehaviour {
 	public List<GameObject> spawnList;
-	public GameObject inventory;
+	public Inventory inventory;
 	public DayManager dayManager;
 
 	private int listPos;
-	private Inventory inv;
 
 	// Use this for initialization
 	void Start () {
 		listPos = 0;
-		inv = inventory.GetComponent<Inventory> ();
+		if (inventory == null) {
+			inventory = PlayerValues.pv.inventory;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (dayManager.isDayActive) {
 			foreach (PlateThing plate in this.gameObject.GetComponentsInChildren<PlateThing>()) {
-				if (inv.Has (spawnList [listPos].name)) {
+				if (inventory.Has (spawnList [listPos].name)) {
 					if (plate.SpawnThing (spawnList [listPos])) {
-						inv.Remove (spawnList [listPos].name, 1);
+						inventory.Remove (spawnList [listPos].name, 1);
 						listPos += 1;
 					}
 				} else {
