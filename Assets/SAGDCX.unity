@@ -3589,6 +3589,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fl: {fileID: 328657748}
   maxTime: 7
+  minToSpawn: 5
+  maxToSpawn: 10
 --- !u!1 &698367419
 GameObject:
   m_ObjectHideFlags: 0

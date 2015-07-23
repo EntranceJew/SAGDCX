@@ -143,22 +143,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a1c26159d90c7498ba813c546bf770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFoodPope: 0
-  bb: {fileID: 0}
   foodCategories:
     bun: 0
     vegetable: 0
     meat: 0
     cheese: 0
     condiment: 0
-  isGrabbed: 0
   foodType: 0
   foodName: Filler
+  price: 0
+  isFoodPope: 0
+  bb: {fileID: 0}
+  isGrabbed: 0
+  isFake: 0
   grabSound: {fileID: 0}
   releaseSound: {fileID: 0}
   hitSoftSound: {fileID: 0}
   hitHardSound: {fileID: 0}
-  soundmaker: {fileID: 0}
 --- !u!135 &13518732
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -6,7 +6,9 @@ public class AttractModeBurgSpawn : MonoBehaviour {
 	public FoodLookup fl;
 	List<GameObject> currentBurg = new List<GameObject>();
 	float count = 0;
-	public float maxTime = 7;
+	public float maxTime;
+	public int minToSpawn;
+	public int maxToSpawn;
 
 	void Update() {
 		count += Time.deltaTime;
@@ -14,7 +16,7 @@ public class AttractModeBurgSpawn : MonoBehaviour {
 		if (currentBurg.Count == 0) {
 			count = 0;
 			float upVar = .5f;
-			int numToSpawn = Random.Range (5,11);
+			int numToSpawn = Random.Range (minToSpawn,maxToSpawn);
 
 			for (int i = 0; i < numToSpawn; i++) {
 				int foodToSpawn = Random.Range (0, fl.lookup.Count);
