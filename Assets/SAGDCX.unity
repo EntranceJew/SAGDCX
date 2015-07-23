@@ -729,6 +729,7 @@ GameObject:
   - 92: {fileID: 169972611}
   - 124: {fileID: 169972610}
   - 81: {fileID: 169972609}
+  - 114: {fileID: 169972614}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -802,6 +803,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!114 &169972614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169972608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730475ee64f9a894bbac0d9e6f22e813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  sensitivityDepth: 4.92000008
+  sensitivityNormals: 1.08000004
+  lumThreshold: .200000003
+  edgeExp: 1
+  sampleDist: 1
+  edgesOnly: 0
+  edgesOnlyBgColor: {r: 1, g: 1, b: 1, a: 1}
+  edgeDetectShader: {fileID: 4800000, guid: 0d1644bdf064147baa97f235fc5b4903, type: 3}
 --- !u!4 &181795166 stripped
 Transform:
   m_PrefabParentObject: {fileID: 436952, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
@@ -3567,6 +3588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fl: {fileID: 328657748}
+  maxTime: 7
 --- !u!1 &698367419
 GameObject:
   m_ObjectHideFlags: 0
