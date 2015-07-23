@@ -182,11 +182,15 @@ public class DayManager : MonoBehaviour {
 	public void QuitGame(){
 		Debug.Log ("QUIT, QUIT, GET OUT, I WANT TO LEAVE, LET ME SPLIT");
 		Application.Quit ();
+		// if we get this far, then that means that we're not a build
+		Application.LoadLevel ("RatHell");
 	}
 
 	public void VictoryQuitGame(){
 		Debug.Log ("We made it through the darkness to the light, \nOh, how we fought yet still we won the fight [...]");
 		Application.Quit ();
+		// if we get this far, then that means that we're not a build
+		Application.LoadLevel ("RatHell");
 	}
 
 	public void StartDay(bool doSave){
