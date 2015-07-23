@@ -3419,7 +3419,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: UR FIRED
+  m_Text: NO WAY
 --- !u!222 &389860630
 CanvasRenderer:
   m_ObjectHideFlags: 0
