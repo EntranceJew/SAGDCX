@@ -6247,23 +6247,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 87eb6ce4ed610684eb3164e5da27a41b, type: 3}
   m_PrefabInternal: {fileID: 403444935}
---- !u!114 &1348803164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1348803163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcce7bf0bd4cd044c969c7d3fd1cc939, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ratsInHouse: {fileID: 0}
-  rat: {fileID: 176296, guid: 204f9d17ab8a208418f7e8a3b1dc3766, type: 2}
-  fl: {fileID: 0}
-  powerOfRat: 2
-  minimumRats: 2
-  maximumRats: -1
 --- !u!65 &1348803165
 BoxCollider:
   m_ObjectHideFlags: 0
