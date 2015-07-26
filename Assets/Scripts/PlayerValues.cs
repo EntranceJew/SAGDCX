@@ -224,7 +224,7 @@ public class PlayerValues : MonoBehaviour {
 
 	public float Earn(float spendoli){
 		Debug.Log ("Just earned $"+spendoli.ToString("F2")+"!");
-		return cash -= spendoli;
+		return cash += spendoli;
 	}
 
 	public void AddScores(int obtained, int maximum){
