@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: d60191fc18dfe6044976a1d04c9b39ba
+timeCreated: 1438013077
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: GP ONOFF
+    100004: GP_Back
+    100006: GP_Bluetootfh
+    100008: GP_Joy
+    100010: GP_Letters
+    100012: GP_LowD
+    100014: GP_LowG
+    100016: GP_Start
+    100018: GP_ToG
+    100020: Gp_TopD
+    100022: GPBlue_button
+    100024: GPBody
+    100026: GPemitt
+    100028: GPGreen_button
+    100030: GPHandle
+    100032: GPRed_Button
+    100034: GPRed_Button_ab
+    100036: GPYellow
+    100038: pad
+    100040: pad.003
+    100042: pad.006
+    100044: pad.009
+    100046: pad.010
+    400000: //RootNode
+    400002: GP ONOFF
+    400004: GP_Back
+    400006: GP_Bluetootfh
+    400008: GP_Joy
+    400010: GP_Letters
+    400012: GP_LowD
+    400014: GP_LowG
+    400016: GP_Start
+    400018: GP_ToG
+    400020: Gp_TopD
+    400022: GPBlue_button
+    400024: GPBody
+    400026: GPemitt
+    400028: GPGreen_button
+    400030: GPHandle
+    400032: GPRed_Button
+    400034: GPRed_Button_ab
+    400036: GPYellow
+    400038: pad
+    400040: pad.003
+    400042: pad.006
+    400044: pad.009
+    400046: pad.010
+    2300000: GP ONOFF
+    2300002: GP_Back
+    2300004: GP_Bluetootfh
+    2300006: GP_Joy
+    2300008: GP_Letters
+    2300010: GP_LowD
+    2300012: GP_LowG
+    2300014: GP_Start
+    2300016: GP_ToG
+    2300018: Gp_TopD
+    2300020: GPBlue_button
+    2300022: GPBody
+    2300024: GPemitt
+    2300026: GPGreen_button
+    2300028: GPHandle
+    2300030: GPRed_Button
+    2300032: GPRed_Button_ab
+    2300034: GPYellow
+    2300036: pad
+    2300038: pad.003
+    2300040: pad.006
+    2300042: pad.009
+    2300044: pad.010
+    3300000: GP ONOFF
+    3300002: GP_Back
+    3300004: GP_Bluetootfh
+    3300006: GP_Joy
+    3300008: GP_Letters
+    3300010: GP_LowD
+    3300012: GP_LowG
+    3300014: GP_Start
+    3300016: GP_ToG
+    3300018: Gp_TopD
+    3300020: GPBlue_button
+    3300022: GPBody
+    3300024: GPemitt
+    3300026: GPGreen_button
+    3300028: GPHandle
+    3300030: GPRed_Button
+    3300032: GPRed_Button_ab
+    3300034: GPYellow
+    3300036: pad
+    3300038: pad.003
+    3300040: pad.006
+    3300042: pad.009
+    3300044: pad.010
+    4300000: GPHandle
+    4300002: GPemitt
+    4300004: GPBody
+    4300006: GP_Back
+    4300008: GP_Start
+    4300010: GP_LowD
+    4300012: GP_LowG
+    4300014: GP_ToG
+    4300016: Gp_TopD
+    4300018: GPYellow
+    4300020: pad.010
+    4300022: GPRed_Button
+    4300024: GPRed_Button_ab
+    4300026: GPGreen_button
+    4300028: pad.003
+    4300030: GPBlue_button
+    4300032: pad.009
+    4300034: GP_Letters
+    4300036: GP_Joy
+    4300038: GP ONOFF
+    4300040: pad.006
+    4300042: GP_Bluetootfh
+    4300044: pad
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 15
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
