@@ -255,13 +255,13 @@ public class DayManager : MonoBehaviour {
 	}
 
 	float ShowEndOfDayText(List<GameObject> destroyMeLater) {
-		int day = 0;
+		int day = PlayerValues.pv.dayNumber-1; //ghetto fix HELLS YEAH!
 		//instantiate "Today was day X" text
 		GameObject temp = Instantiate (canvasTextObject) as GameObject;
 		temp.transform.SetParent (bigCanvasObject.transform);
 		temp.name = "TitleText";
 		temp.transform.localPosition = new Vector3 (0, 240, 0);
-		temp.GetComponent<Text> ().text = "Goodbye day " + (day + 1) + " we will miss you";
+		temp.GetComponent<Text> ().text = "Goodbye day " + (day + 1) + " we will miss you"; //day + 1 because we don't want people to see "day 0" that sounds stupid.
 		destroyMeLater.Add (temp);
 
 		int i = 0;
