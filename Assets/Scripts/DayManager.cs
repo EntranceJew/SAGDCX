@@ -222,7 +222,12 @@ public class DayManager : MonoBehaviour {
 		foreach (GameObject obj in got) {
 			Food fd = obj.GetComponent<Food> ();
 			if (fd != null && !fd.isFake) {
-				PlayerValues.pv.inventory.Add (obj, 1);
+				if(fd.belongsOnFloor){
+					PlayerValues.pv.ratsInHouse.Add (obj, 1);
+				} else {
+					PlayerValues.pv.inventory.Add (obj, 1);
+				}
+				
 				Destroy (obj);
 			} else {
 				Debug.Log (obj);

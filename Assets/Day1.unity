@@ -12122,6 +12122,27 @@ BoxCollider:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 55ebcd4ca775f904dbb2a30ed20c90de, type: 3}
   m_PrefabInternal: {fileID: 1939039314}
+--- !u!1 &1243180858 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 106454, guid: 0ca22d37ead59be4c80677e12d5f8d18, type: 2}
+  m_PrefabInternal: {fileID: 276896296}
+--- !u!114 &1243180860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1243180858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9c91ab72dfcc74e83e3a253042940c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSpawnThing: 0
+  spawnedThing: {fileID: 0}
+  spawnDelay: 2
+  lastSpawnTime: -Infinity
+  timeExpected: 0
+  timePreview: 0
 --- !u!1 &1243544907
 GameObject:
   m_ObjectHideFlags: 0
@@ -20515,7 +20536,6 @@ MonoBehaviour:
   inventory: {fileID: 2139853224}
   ratsInHouse: {fileID: 422140586}
   menuAbs: {fileID: 332364050}
-  abstractorState: []
   scores: []
   arrows: 010101
 --- !u!1001 &1988258123
@@ -20758,7 +20778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4a3019908599b4881155341dead2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuAbs: {fileID: 332364050}
   ship: {fileID: 595117136}
   dayValues: {fileID: 786474129}
   moneyTotal: {fileID: 2095827491}

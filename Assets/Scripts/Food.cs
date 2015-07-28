@@ -33,6 +33,7 @@ public class Food : MonoBehaviour {
 	public BurgBuilder bb;
 	public bool isGrabbed;
 	public bool isFake = false;
+	public bool belongsOnFloor = false;
 
 	// noise
 	public AudioClip grabSound;

@@ -20,7 +20,7 @@ public class RatMachine : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (dayManager.isDayActive) {
-			foreach (PlateThing plate in this.gameObject.GetComponentsInChildren<PlateThing>()) {
+			foreach (RatThing plate in this.gameObject.GetComponentsInChildren<RatThing>()) {
 				if (inventory.Has (spawnList [listPos].name)) {
 					if (plate.SpawnThing (spawnList [listPos])) {
 						inventory.Remove (spawnList [listPos].name, 1);
