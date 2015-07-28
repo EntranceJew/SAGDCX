@@ -184,9 +184,9 @@ MonoBehaviour:
   bb: {fileID: 0}
   isGrabbed: 0
   isFake: 0
-  grabSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  grabSound: {fileID: 8300000, guid: b0761186961e4084ab4a05fd077d03b9, type: 3}
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-  hitSoftSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  hitSoftSound: {fileID: 8300000, guid: d5694fe687fc0b440bdbf507d7bf544d, type: 3}
   hitHardSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
 --- !u!1001 &100100000
 Prefab:
@@ -254,7 +254,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: grabSound
       value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+      objectReference: {fileID: 8300000, guid: b0761186961e4084ab4a05fd077d03b9, type: 3}
     - target: {fileID: 0}
       propertyPath: releaseSound
       value: 
@@ -262,7 +262,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: hitSoftSound
       value: 
-      objectReference: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+      objectReference: {fileID: 8300000, guid: d5694fe687fc0b440bdbf507d7bf544d, type: 3}
     - target: {fileID: 0}
       propertyPath: hitHardSound
       value: 

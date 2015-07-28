@@ -184,9 +184,9 @@ MonoBehaviour:
   bb: {fileID: 0}
   isGrabbed: 0
   isFake: 0
-  grabSound: {fileID: 8300000, guid: de797119155b27c46a7002ebb069c027, type: 3}
+  grabSound: {fileID: 8300000, guid: 6852da78e0bc11f4fa552da90312ec58, type: 3}
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-  hitSoftSound: {fileID: 8300000, guid: 03c1434519e86944dbe64e19299b4bb9, type: 3}
+  hitSoftSound: {fileID: 8300000, guid: 35e896d75f4b2174ab9a9096abff2c43, type: 3}
   hitHardSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
 --- !u!1001 &100100000
 Prefab:
@@ -194,7 +194,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: grabSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6852da78e0bc11f4fa552da90312ec58, type: 3}
+    - target: {fileID: 0}
+      propertyPath: hitSoftSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 35e896d75f4b2174ab9a9096abff2c43, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 177758}

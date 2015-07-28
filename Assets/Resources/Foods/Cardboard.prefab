@@ -183,9 +183,10 @@ MonoBehaviour:
   isFoodPope: 0
   bb: {fileID: 0}
   isGrabbed: 0
-  grabSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  isFake: 0
+  grabSound: {fileID: 8300000, guid: 0c52cb11c96d6104d84de5edc58b955a, type: 3}
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-  hitSoftSound: {fileID: 8300000, guid: 4ffad6479b0c9f14cbf5b4b234cef0c7, type: 3}
+  hitSoftSound: {fileID: 8300000, guid: 302f8215cff859b4bb4c03d3cdbdedea, type: 3}
   hitHardSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
 --- !u!1001 &100100000
 Prefab:
@@ -193,7 +194,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: hitSoftSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 302f8215cff859b4bb4c03d3cdbdedea, type: 3}
+    - target: {fileID: 0}
+      propertyPath: grabSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c52cb11c96d6104d84de5edc58b955a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169516}

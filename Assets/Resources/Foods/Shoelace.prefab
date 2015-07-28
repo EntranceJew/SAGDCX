@@ -171,29 +171,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a1c26159d90c7498ba813c546bf770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFoodPope: 0
-  bb: {fileID: 0}
   foodCategories:
     bun: .100000001
     vegetable: .100000001
     meat: .100000001
     cheese: .100000001
     condiment: 0
-  isGrabbed: 0
   foodType: 1
   foodName: Shoelace
-  grabSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  price: 0
+  isFoodPope: 0
+  bb: {fileID: 0}
+  isGrabbed: 0
+  isFake: 0
+  grabSound: {fileID: 8300000, guid: b12160a7d8e009c40812150ec74f8c45, type: 3}
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-  hitSoftSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
+  hitSoftSound: {fileID: 8300000, guid: 9ae1562f75ea4c5468ff592e8f00258f, type: 3}
   hitHardSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
-  soundmaker: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: grabSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b12160a7d8e009c40812150ec74f8c45, type: 3}
+    - target: {fileID: 0}
+      propertyPath: hitSoftSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ae1562f75ea4c5468ff592e8f00258f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181392}

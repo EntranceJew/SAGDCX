@@ -6,6 +6,9 @@ public class Recyclotron : MonoBehaviour {
 		PlayerValues.pv.inventory.Add (col.gameObject, 1);
 		Destroy (col.gameObject);
 		AudioSource audio = GetComponent<AudioSource> ();
-		audio.Play ();
+		if (!audio.isPlaying) {
+			audio.pitch = Random.Range(0.85f, 1.15f);
+			audio.Play ();
+		}
 	}
 }
