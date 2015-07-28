@@ -14,8 +14,7 @@ public class OrderForm : MonoBehaviour {
 
 	private Color positiveMoney = new Color(0.1953125f,1.0f,0.1953125f);
 	private Color negativeMoney = new Color(0.7109375f,0.1640625f,0.0f);
-
-	public MenuAbstractor menuAbs;
+	
 	public Shipment ship;
 	public DayValues dayValues;
 
@@ -73,7 +72,7 @@ public class OrderForm : MonoBehaviour {
 		Dictionary<GameObject, int> absShipment = new Dictionary<GameObject, int> ();
 		foreach (RowManager row in rows) {
 			for(int i = 0; i < row.quantity; i++){
-				List<GameObject> abs = menuAbs.GetPossibilityFor(row.represents);
+				List<GameObject> abs = PlayerValues.pv.menuAbs.GetPossibilityFor(row.represents);
 				foreach(GameObject go in abs){
 					int temp;
 					if(absShipment.TryGetValue(go, out temp)){
