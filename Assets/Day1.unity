@@ -2897,8 +2897,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1147586770}
-  m_RootOrder: 12
+  m_Father: {fileID: 1987554077}
+  m_RootOrder: 2
 --- !u!114 &332364050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11508,7 +11508,6 @@ Transform:
   - {fileID: 741838968}
   - {fileID: 1413773760}
   - {fileID: 923965198}
-  - {fileID: 332364049}
   - {fileID: 2011103390}
   m_Father: {fileID: 0}
   m_RootOrder: 16
@@ -20488,6 +20487,7 @@ Transform:
   m_Children:
   - {fileID: 2139853225}
   - {fileID: 422140587}
+  - {fileID: 332364049}
   m_Father: {fileID: 1147586770}
   m_RootOrder: 1
 --- !u!114 &1987554078
@@ -20506,6 +20506,8 @@ MonoBehaviour:
   cash: 100
   inventory: {fileID: 2139853224}
   ratsInHouse: {fileID: 422140586}
+  menuAbs: {fileID: 332364050}
+  abstractorState: []
   scores: []
   arrows: 010101
 --- !u!1001 &1988258123
@@ -20625,7 +20627,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147586770}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!114 &2011103391
 MonoBehaviour:
   m_ObjectHideFlags: 0

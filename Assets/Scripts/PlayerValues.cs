@@ -12,6 +12,7 @@ class ValuesForPlayer {
 	public bool[] arrows;
 	public List<DayOrderScore> scores;
 	public int ratsInHouse;
+	public List<MenuAbstractionSave> abstractorState;
 }
 
 [System.Serializable]
@@ -96,6 +97,9 @@ public class PlayerValues : MonoBehaviour {
 	// how many rats are around
 	public Inventory ratsInHouse;
 
+	// the menu abstractor
+	public MenuAbstractor menuAbs;
+
 	// the scores achieved during the day and their maximums
 	public List<DayOrderScore> scores;
 
@@ -135,6 +139,7 @@ public class PlayerValues : MonoBehaviour {
 		vals.cash = cash;
 		vals.arrows = arrows;
 		vals.scores = scores;
+		vals.abstractorState = menuAbs.Save ();
 
 		vals.ratsInHouse = ratsInHouse.HasHowMany ("Rat");
 
@@ -191,6 +196,8 @@ public class PlayerValues : MonoBehaviour {
 		cash = vals.cash;
 		arrows = vals.arrows;
 		scores = vals.scores;
+
+		menuAbs.Load (vals.abstractorState);
 
 		List<InventoryItem> unserRatsInHouse = new List<InventoryItem> ();
 		unserRatsInHouse.Add (new InventoryItem (FoodLookup.fl.GetGameObject ("Rat"), vals.ratsInHouse));

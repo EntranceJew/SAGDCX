@@ -5,8 +5,19 @@ using System.Collections.Generic;
 // In my defense, I don't have time to worry about Unity's absurd refusal to handle dictionaries during this competition.
 
 [System.Serializable]
+public class MenuAbstractionSave {
+	// use a telepor eh mariyah
+	public MenuAbstractionSave(GameObject go, int dex){
+		name = go.name;
+		index = dex;
+	}
+	public string name;
+	public int index;
+}
+
+[System.Serializable]
 public class MenuAbstraction {
-	// this is never used, it just helps us figure out where we our in this list shaped hell
+	// this is never used, it just helps us figure out where we are in this list shaped hell
 	public string name;
 	public List<GameObject> items;
 }
@@ -35,6 +46,23 @@ public class MenuAbstractor : MonoBehaviour {
 		foreach (MenuAbstractions mAbstractor in abstractions) {
 			objToAbs.Add (mAbstractor.represents, mAbstractor);
 			objToInt.Add (mAbstractor.represents, 0);
+		}
+	}
+
+	public List<MenuAbstractionSave> Save(){
+		List<MenuAbstractionSave> mas = new List<MenuAbstractionSave> ();
+		foreach (KeyValuePair<GameObject, int> maSubject in objToInt) {
+			mas.Add (new MenuAbstractionSave(maSubject.Key, maSubject.Value));
+		}
+		return mas;
+	}
+
+	public void Load(List<MenuAbstractionSave> mas){
+		objToInt = new Dictionary<GameObject, int>();
+
+		foreach (MenuAbstractionSave maSubject in mas) {
+			GameObject obj = FoodLookup.fl.nameToObject[maSubject.name];
+			objToInt.Add (obj, maSubject.index);
 		}
 	}
 
