@@ -158,7 +158,7 @@ public class DayManager : MonoBehaviour {
 			WinGame ();
 			return;
 		}
-		StartCoroutine (Fade (true));
+		StartCoroutine (FadeToEndOfDay (true));
 	}
 
 	public void RetryDay(){
@@ -244,17 +244,28 @@ public class DayManager : MonoBehaviour {
 		// we do this here so that we're sure the scene is faded before we execute
 		RefundAllFoodInScene ();
 		Debug.Log ("FADING DAY IN...");
+
+		StartDay (doSave);
+	}
+
+	IEnumerator FadeToEndOfDay(bool doSave) {
+		Debug.Log ("Waiting politely...");
+		yield return new WaitForSeconds(3.0f);
+		Debug.Log ("THE WAIT IS OVER!");
+		// we do this here so that we're sure the scene is faded before we execute
+		RefundAllFoodInScene ();
+		Debug.Log ("FADING DAY IN...");
 		List<GameObject> tempList = new List<GameObject> ();
 		float waitBase = 3.0f;
 		waitBase += ShowEndOfDayText (tempList);
-
+		
 		yield return new WaitForSeconds (waitBase);
-
+		
 		foreach (GameObject obj in tempList) {
 			Destroy (obj);
 		}
 		tempList.Clear ();
-
+		
 		StartDay (doSave);
 	}
 
