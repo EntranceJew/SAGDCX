@@ -59,11 +59,16 @@ public class RowManager : MonoBehaviour {
 	}
 
 	public void Subtract(){
-		quantity--;
+		if (quantity > 0) {
+			quantity--;
+		}
 	}
 
 	public void SetQuantity(){
 		string quant = inputField.text;
 		int.TryParse (quant, out quantity);
+		if(quantity < 0){
+			quantity = 0;
+		}
 	}
 }
