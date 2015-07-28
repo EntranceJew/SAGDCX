@@ -94,7 +94,9 @@ public class DayValues : MonoBehaviour {
 	}
 
 	public int GetNextOrder(){
-		return orderNumber++;
+		int ordNo = orderNumber;
+		orderNumber++;
+		return values [PlayerValues.pv.dayNumber].orders [ordNo];
 	}
 
 	public DayValue GetToday(){
