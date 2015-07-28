@@ -68,6 +68,8 @@ public class Shipment : MonoBehaviour {
 		from = idlePos;
 		active = true;
 		DoIt ();
+		AudioSource audio = GetComponent<AudioSource> ();
+		audio.Play ();
 	}
 
 	public void MovedTo(){

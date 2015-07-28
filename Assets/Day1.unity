@@ -6151,6 +6151,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.69000006, y: 3.61999989, z: 2.6099999}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &595117143
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595117135}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b088ed17d31743b4098af4c4e21a60ec, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!4 &595526794 stripped
 Transform:
   m_PrefabParentObject: {fileID: 402180, guid: 80e43fd826fc97c4e8840eeb08b0a747, type: 2}
@@ -13157,7 +13226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burgBuilder: {fileID: 1136804442}
-  inactiveClip: {fileID: 8300000, guid: cd7ff2913d7f6594d86ded219829d9cb, type: 3}
+  inactiveClip: {fileID: 8300000, guid: d9732a777d5fa8043967d37ba5e3f450, type: 3}
 --- !u!135 &1355821377
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14110,8 +14179,8 @@ MonoBehaviour:
   timeToReturn: 1
   doShake: 0
   aud: {fileID: 1448146599}
-  badSound: {fileID: 8300000, guid: cd7ff2913d7f6594d86ded219829d9cb, type: 3}
-  goodSound: {fileID: 8300000, guid: 246f092e73d959a45a0461969447afdc, type: 3}
+  badSound: {fileID: 8300000, guid: 0d4856878147f2d4495e090133d2609d, type: 3}
+  goodSound: {fileID: 8300000, guid: 485e53926df05a2479bb7006de2124b8, type: 3}
   isShakeGood: 0
   mtcoc: {fileID: 1448146596}
 --- !u!82 &1448146599
