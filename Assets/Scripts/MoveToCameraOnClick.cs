@@ -18,6 +18,11 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	public ArrowSpin arrowSpin;
 	public GraphicRaycaster graphicRaycaster;
 
+	public AudioClip grabSound;
+	public AudioClip dropSound;
+
+	public AudioSource soundmaker;
+
 	private float startTime;
 	private float journeyLength;
 
@@ -42,6 +47,14 @@ public class MoveToCameraOnClick : MonoBehaviour {
 					MovedToWall();
 				}
 			}
+		}
+	}
+
+	public void PlaySound(AudioClip clipToPlay){
+		if (soundmaker != null) {
+			soundmaker.Stop ();
+			soundmaker.clip = clipToPlay;
+			soundmaker.Play ();
 		}
 	}
 
@@ -80,12 +93,14 @@ public class MoveToCameraOnClick : MonoBehaviour {
 		goTo = cameraPosition;
 		inPosition = true;
 		DoIt ();
+		PlaySound (grabSound);
 	}
 
 	public void MoveToWall(){
 		goTo = ownPosition;
 		inPosition = false;
 		DoIt ();
+		PlaySound (dropSound);
 	}
 
 	void MovedToCamera() {
