@@ -115,6 +115,24 @@ public class Food : MonoBehaviour {
 		bb = newBurgBuilder;
 		gameObject.transform.parent = bb.gameObject.transform;
 		this.isFoodPope = true;
+		/* disable the following if we're not in the future */
+		BecomeLilMac ();
+	}
+
+	public void BecomeLilMac(){
+		Material lilMat = Resources.Load("ResHighlight", typeof(Material)) as Material;
+		List<Renderer> renderers = new List<Renderer> (GetComponents<Renderer> ());
+		renderers.AddRange (gameObject.GetComponentsInChildren<Renderer> ());
+		// ALL THE RENDERERS GET TICKLED, ALL OF 'EM.
+		//Debug.Log (gameObject.GetComponents<Material> ());
+		foreach (Renderer renderer in renderers) {
+			Material[] mats = renderer.materials;
+			for(int i = 0; i < mats.Length; i++){
+				Debug.Log ("RENDERER? "+mats[i]);
+				mats[i] = lilMat;
+			}
+			renderer.materials = mats;
+		}
 	}
 
 	// @TODO: Make this disentegrate it like the portal fizzler instead.
