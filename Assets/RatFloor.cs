@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class RatFloor : MonoBehaviour {
-	public Inventory ratsInHouse;
 	public GameObject rat;
 	public FoodLookup fl;
 	public float powerOfRat = 2.0f;
@@ -26,11 +25,14 @@ public class RatFloor : MonoBehaviour {
 			string[] arr = col.gameObject.name.Split('(');
 			string itemName = fl.GetGameObject (arr [0]).name;
 
-			if(itemName == rat.name) {
+			if(itemName == rat.name && fd.belongsOnFloor) {
+				Debug.Log ("THIS RAT IS OURS. GOOD.");
+			} else if(itemName == rat.name && !fd.belongsOnFloor) {
 				Debug.Log ("RAT LOCATED, GLORIOUS RAT.");
-				//ratsInHouse.Add (rat, 1);
+				PlayerValues.pv.ratsInHouse.Add (rat, 1);
+				Destroy(col.gameObject);
 			} else if(itemName != rat.name){
-				int rats = ratsInHouse.HasHowMany(rat.name);
+				int rats = PlayerValues.pv.ratsInHouse.HasHowMany(rat.name);
 				int newRats = Mathf.RoundToInt(Mathf.Pow (rats, powerOfRat));
 
 				// YOU CAN TRY TO LIMIT US,
@@ -41,13 +43,12 @@ public class RatFloor : MonoBehaviour {
 				if(newRats <= minimumRats){
 					newRats = minimumRats;
 				}
-				ratsInHouse.Set(rat, newRats);
+				PlayerValues.pv.ratsInHouse.Set(rat, newRats);
 				Debug.Log ("FEEDING "+col.gameObject+" TO THE RATS, "+rats.ToString()+"->"+newRats.ToString()+"|"+(newRats-rats).ToString());
 				Destroy(col.gameObject);
 			} else {
 				Debug.Log("NOT SURE WHAT TO DO WITH "+col.gameObject+" AND IT DOESN'T LOOK LIKE A RAT TO ME.");
 			}
-
 		}
 	}
 }

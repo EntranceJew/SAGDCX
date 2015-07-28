@@ -130,6 +130,10 @@ public class Food : MonoBehaviour {
 			soundmaker.mute = false;
 		}
 
+		if (belongsOnFloor) {
+			belongsOnFloor = false;
+		}
+
 		PlaySound(grabSound);
 
 		if (bb != null) {
