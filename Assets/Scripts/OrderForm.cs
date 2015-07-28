@@ -105,7 +105,9 @@ public class OrderForm : MonoBehaviour {
 	public float GetTotal(){
 		float total = 0.0f;
 		foreach (RowManager row in rows) {
-			total += row.quantity*row.represents.GetComponent<Food>().price;
+			if(row.quantity > 0){
+				total += row.quantity*row.represents.GetComponent<Food>().price;
+			}
 		}
 		return total;
 	}
