@@ -27,8 +27,18 @@ public class RowManager : MonoBehaviour {
 	public Text stockText;
 	public Text demandText;
 
+	private AudioSource aud;
+
+	void PlaySound (){
+		if (aud != null) {
+			aud.Stop ();
+			aud.Play ();
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
+		aud = GetComponent<AudioSource> ();
 		rate = represents.GetComponent<Food> ().price;
 
 		SetText ();
@@ -55,16 +65,19 @@ public class RowManager : MonoBehaviour {
 	}
 
 	public void Add(){
+		PlaySound ();
 		quantity++;
 	}
 
 	public void Subtract(){
 		if (quantity > 0) {
+			PlaySound ();
 			quantity--;
 		}
 	}
 
 	public void SetQuantity(){
+		PlaySound ();
 		string quant = inputField.text;
 		int.TryParse (quant, out quantity);
 		if(quantity < 0){
