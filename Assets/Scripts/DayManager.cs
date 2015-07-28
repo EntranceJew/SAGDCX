@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -24,7 +25,8 @@ public class DayManager : MonoBehaviour {
 	public GraphicRaycaster graphicRaycaster;
 	public GameObject failureGUI;
 	public GameObject victoryGUI;
-	
+
+	public AudioMixerSnapshot title;
 	// Use this for initialization
 	void Start () {
 		fadePicture.color = Color.black;
@@ -181,6 +183,7 @@ public class DayManager : MonoBehaviour {
 		Debug.Log ("QUIT, QUIT, GET OUT, I WANT TO LEAVE, LET ME SPLIT");
 		//Application.Quit ();
 		// if we get this far, then that means that we're not a build
+		title.TransitionTo (1.0f);
 		Application.LoadLevel ("SAGDCX");
 	}
 
@@ -188,6 +191,7 @@ public class DayManager : MonoBehaviour {
 		Debug.Log ("We made it through the darkness to the light, \nOh, how we fought yet still we won the fight [...]");
 		//Application.Quit ();
 		// if we get this far, then that means that we're not a build
+		title.TransitionTo (1.0f);
 		Application.LoadLevel ("SAGDCX");
 	}
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MainMenuButtons : MonoBehaviour {
 	public int maxNoDays = 0;
@@ -9,6 +10,9 @@ public class MainMenuButtons : MonoBehaviour {
 	public Text loadFileText;
 	public GameObject loadButton;
 	public GameObject clearAllButton;
+
+	public AudioMixerSnapshot title;
+	public AudioMixerSnapshot game;
 
 	private List<string> foundSaves;
 	private string saveToLoad;
@@ -28,11 +32,13 @@ public class MainMenuButtons : MonoBehaviour {
 	}
 
 	public void StartGame() {
+		game.TransitionTo (1.0f);
 		Application.LoadLevel ("Day1");
 	}
 
 	public void LoadGame(){
 		// load via
+		game.TransitionTo (1.0f);
 		PlayerValues.pv.Load (saveToLoad);
 		Application.LoadLevel ("Day1");
 	}

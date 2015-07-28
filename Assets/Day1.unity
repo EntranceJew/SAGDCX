@@ -5359,7 +5359,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 77b7340bc7ac88543ab95837d6d66187, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .800000012
+  m_Volume: .703999996
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -21933,7 +21933,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .600000024
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22168,6 +22168,7 @@ MonoBehaviour:
   graphicRaycaster: {fileID: 1492596677}
   failureGUI: {fileID: 1400357739}
   victoryGUI: {fileID: 995404826}
+  title: {fileID: 24500003, guid: e00d12b9c454876428ee16ec4621bfab, type: 2}
 --- !u!1 &2082152369
 GameObject:
   m_ObjectHideFlags: 0

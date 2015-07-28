@@ -73,7 +73,9 @@ public class Food : MonoBehaviour {
 		}
 		
 		if (soundmaker != null && soundmaker.mute == false) {
-			PlaySound (hitSoftSound);
+			if (!soundmaker.isPlaying){
+				PlaySound (hitSoftSound);
+			}
 		}
 	}
 
