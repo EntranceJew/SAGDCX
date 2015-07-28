@@ -8563,8 +8563,8 @@ MonoBehaviour:
     deductionMultiplier: 1
     markup: .0599999987
     gasPrice: 3.76999998
-    traffic: 2.29999995
-    shoppingFatigue: .100000001
+    traffic: 0
+    shoppingFatigue: 0
     orders: 07000000000000000800000007000000
     shipments:
     - represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
