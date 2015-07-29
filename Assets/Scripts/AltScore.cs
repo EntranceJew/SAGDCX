@@ -148,7 +148,7 @@ public class AltScore : MonoBehaviour {
 			return topBottomPerfectBonus;
 		}
 
-		if (top.GetComponent<Food>().foodName == "Bun" && bottom.GetComponent<Food>().foodName == "Bun") {
+		if (top.GetComponent<Food>().foodType == FoodEnum.Bun && bottom.GetComponent<Food>().foodType == FoodEnum.Bun) {
 			//CONGERATULATON
 			return topBottomPerfectBonus;
 		}
