@@ -12,6 +12,6 @@ public class TrashBell : MonoBehaviour {
 
 		burgBuilder.TrashBurger ();
 
-		dayManager.LoseDay ();
+		dayManager.LoseDay ("You \"git commit -m 'soduko'\"");
 	}
 }

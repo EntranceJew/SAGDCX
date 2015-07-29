@@ -87,7 +87,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 		} else {
 			Debug.Log ("YOU FUCKED UP SO BAD");
 			// we lose
-			dayManager.LoseDay();
+			dayManager.LoseDay("That's not at all what was ordered!");
 			moneyText.color = loseMoney;
 			moneyText.text = "UR FIRED";
 			monitorShaker.BadShake();
