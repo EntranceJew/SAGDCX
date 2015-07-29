@@ -10316,27 +10316,27 @@ MonoBehaviour:
     orders: 07000000000000000800000007000000
     shipments:
     - represents: {fileID: 120490, guid: d70c83ea96d5e1f468e1a4eac92d64c2, type: 2}
-      quantity: 12
+      quantity: 24
     - represents: {fileID: 157214, guid: ca47d552a77a0da4c9f59159ea2e9dff, type: 2}
-      quantity: 12
+      quantity: 24
     - represents: {fileID: 142258, guid: a91084c3c32b6114e922c837456173f0, type: 2}
-      quantity: 12
+      quantity: 24
     - represents: {fileID: 125926, guid: 603605b0dbd89e142acc17b295f40051, type: 2}
-      quantity: 2
+      quantity: 4
     - represents: {fileID: 191002, guid: 4c5c4ec417082224db61cc6852fa9ab6, type: 2}
-      quantity: 2
+      quantity: 4
     - represents: {fileID: 177512, guid: 3cd3a913d2240ce42a2c66c9edfd0bdd, type: 2}
       quantity: 0
     - represents: {fileID: 100782, guid: 12e42cde49a9a87418adf637fa081a61, type: 2}
-      quantity: 7
+      quantity: 14
     - represents: {fileID: 159302, guid: cc39d86ed2937fb4fa867822facca692, type: 2}
-      quantity: 14
+      quantity: 28
     - represents: {fileID: 137262, guid: 760a6772a9b31ae4aa3596cfa2172079, type: 2}
-      quantity: 14
+      quantity: 28
     - represents: {fileID: 110524, guid: ab6956f66580a0945b927e4194f5b25b, type: 2}
-      quantity: 2
+      quantity: 4
     - represents: {fileID: 119136, guid: 8e34509c02f457148b543e9116033b83, type: 2}
-      quantity: 3
+      quantity: 6
     - represents: {fileID: 100266, guid: d077c36131e6c0e4e8a67acb7372a9ea, type: 2}
       quantity: 0
     demand: []
