@@ -179,11 +179,12 @@ MonoBehaviour:
     condiment: .800000012
   foodType: 1
   foodName: Relish
-  price: 0
+  price: .100000001
   isFoodPope: 0
   bb: {fileID: 0}
   isGrabbed: 0
   isFake: 0
+  belongsOnFloor: 0
   grabSound: {fileID: 8300000, guid: cd7ff2913d7f6594d86ded219829d9cb, type: 3}
   releaseSound: {fileID: 8300000, guid: 3e0975a461e77684fa85483ecb6f1a07, type: 3}
   hitSoftSound: {fileID: 8300000, guid: bd1d68b889ecd5d40819cea5df986585, type: 3}
@@ -234,6 +235,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: Mute
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: price
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
