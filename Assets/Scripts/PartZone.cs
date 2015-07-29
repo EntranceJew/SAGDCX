@@ -15,7 +15,9 @@ public class PartZone : MonoBehaviour {
 	void Update(){
 		List<GameObject> keys = new List<GameObject>(collisions.Keys);
 		foreach (GameObject key in keys){
-			if(collisions[key] && ShouldObtainObject (key)){
+			bool wasfound = false;
+			collisions.TryGetValue(key, out wasfound);
+			if(wasfound && ShouldObtainObject (key)){
 				ForceObtain(key);
 			}
 		}

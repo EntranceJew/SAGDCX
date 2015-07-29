@@ -10195,7 +10195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ce61247661fc04b90deb253db50ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showTutorials: 0
+  showTutorials: 1
   dayValues: {fileID: 786474129}
   lookAt: {fileID: 1628474893}
   mouseObject: {fileID: 1685270725}
