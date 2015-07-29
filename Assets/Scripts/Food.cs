@@ -117,7 +117,7 @@ public class Food : MonoBehaviour {
 		gameObject.transform.parent = bb.gameObject.transform;
 		this.isFoodPope = true;
 		/* disable the following if we're not in the future */
-		BecomeLilMac ();
+		//BecomeLilMac ();
 	}
 
 	public void BecomeLilMac(){
@@ -164,7 +164,7 @@ public class Food : MonoBehaviour {
 		isFoodPope = false;
 		gameObject.transform.parent = null;
 		bb = null;
-		UnBecomeLilMac ();
+		//UnBecomeLilMac ();
 	}
 
 	public void Grabbed(){
