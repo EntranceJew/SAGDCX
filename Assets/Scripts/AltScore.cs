@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class AltScore : MonoBehaviour {
-	public GameObject scoreText;
-	public GameObject potentialText;
+	public Text scoreText;
+	public Text potentialText;
 
 	public List<GameObject> theOrder;
 	public List<GameObject> theBurg;
@@ -21,8 +21,8 @@ public class AltScore : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		scoreText.GetComponent<Text> ().text = "0";
-		potentialText.GetComponent<Text> ().text = "0";
+		scoreText.text = "0";
+		potentialText.text = "0";
 	}
 
 	// UTILITY BURGSEARCH FUNCTIONS

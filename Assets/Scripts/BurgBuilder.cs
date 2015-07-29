@@ -57,8 +57,6 @@ public class BurgBuilder : MonoBehaviour {
 	public void DeliverReturnPayload(){
 		Debug.Log ("I'M BACK, HONKIES");
 		// @TODO: Make the scoring sequence handle this, this is just in case we have a rapid burger builder on our hands.
-		spawnBurgerComponent.TrashIt ();
-
 		// Prepare the next order.
 		dayManager.GetNextOrder ();
 	}
@@ -92,6 +90,10 @@ public class BurgBuilder : MonoBehaviour {
 			Food fd = go.GetComponent<Food>();
 			fd.UnBecomeLilMac();
 		}
+		// make way
+		spawnBurgerComponent.TrashIt ();
+		burgJudgeCatcher.ResetTexts ();
+
 		// @TODO: FREEZE AND WELD ALL FOOD. YEAH, WE GMOD NOW.
 		goTo = activePos;
 		from = idlePos;

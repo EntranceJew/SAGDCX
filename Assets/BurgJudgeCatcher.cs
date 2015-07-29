@@ -25,6 +25,12 @@ public class BurgJudgeCatcher : MonoBehaviour {
 	
 	}
 
+	public void ResetTexts (){
+		moneyText.text = "";
+		score.scoreText.text = "0";
+		score.potentialText.text = "0";
+	}
+
 	public void ChewOnThis(){
 		Debug.Log ("PROCESSING MENU INGREDIENTS");
 		score.EvaluateBurger(getOrder.CurrentOrder().completeOrder, spawnBurgerComponent.GetChildParts());

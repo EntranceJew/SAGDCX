@@ -25,6 +25,8 @@ public class DayManager : MonoBehaviour {
 	public Text hintText;
 	public List<string> hints;
 
+	public BurgJudgeCatcher burgJudgeCatcher;
+
 	public GraphicRaycaster graphicRaycaster;
 	public GameObject failureGUI;
 	public GameObject victoryGUI;
@@ -257,7 +259,7 @@ public class DayManager : MonoBehaviour {
 
 	public void StartDay(bool doSave){
 		Debug.Log ("DAY "+PlayerValues.pv.dayNumber+" STARTED, GO HOME");
-
+		burgJudgeCatcher.ResetTexts ();
 		shouldBlack = false;
 		// @TODO: Maybe save this as an autosave instead of ontop of the existing save?
 		if (doSave) {
