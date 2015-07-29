@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class RingBell : MonoBehaviour {
 	public BurgBuilder burgBuilder;
 	public AudioClip inactiveClip;
+	public bool shouldDing = true;
 
 	private AudioClip initClip;
 	private AudioSource aud;
@@ -15,7 +16,7 @@ public class RingBell : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		if (burgBuilder.CanHoist ()) {
+		if (burgBuilder.CanHoist () && shouldDing) {
 			aud.clip = initClip;
 			// Lift it up, someone will tell him to come down eventually.
 			burgBuilder.Hoist();

@@ -9,10 +9,16 @@ public class TutorialHandler : MonoBehaviour {
 	public GameObject lookAt;
 	public GameObject mouseObject;
 
+	public RingBell ringBell;
+
 	// Use this for initialization
 	void Start () {
 		if (PlayerValues.pv.dayNumber == 0) {
 			if (showTutorials) {
+				// == DISABLE THINGS THAT NEED DISABLING
+				// disable the bell until first order is prepared
+				ringBell.shouldDing = false;
+				// == EMPHASIS PEEPING
 				Camera.main.GetComponent<LookTowards> ().SetTarget (lookAt.transform);
 			} else {
 				PlayerValues.pv.inventory.ObtainShipment (dayValues.GetTodaysShipment ());
@@ -30,6 +36,7 @@ public class TutorialHandler : MonoBehaviour {
 		if (PlayerValues.pv.dayNumber == 0) {
 			if (lt.Target == lookAt.transform && showTutorials) {
 				lt.SetTarget (mouseObject.transform);
+				ringBell.shouldDing = true;
 			}
 		}
 	}
