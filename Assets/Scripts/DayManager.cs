@@ -307,7 +307,7 @@ public class DayManager : MonoBehaviour {
 				temp = Instantiate (canvasTextObject) as GameObject;
 				temp.transform.SetParent (bigCanvasObject.transform);
 				temp.name = "ScoreRowText" + i;
-				temp.transform.localPosition = new Vector3 (0, (48 * i) / 2, 0);
+				temp.transform.localPosition = new Vector3 (0, ((48 * i) / 2) - ((24 * PlayerValues.pv.scores[day].scores.Count) / 2), 0);
 				temp.GetComponent<Text> ().text = "Order " + i + " got " + os.value + " out of " + os.maxValue;
 				destroyMeLater.Add (temp);
 				i++;
