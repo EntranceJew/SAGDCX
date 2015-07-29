@@ -10,6 +10,8 @@ public class MainMenuButtons : MonoBehaviour {
 	public Text loadFileText;
 	public GameObject loadButton;
 	public GameObject clearAllButton;
+	public GameObject creditsPanel;
+	public GameObject optionsPanel;
 
 	public AudioMixerSnapshot title;
 	public AudioMixerSnapshot game;
@@ -22,7 +24,7 @@ public class MainMenuButtons : MonoBehaviour {
 		foundSaves = PlayerValues.pv.ScanForSaves (maxNoDays);
 		if (foundSaves.Count > 0) {
 			saveToLoad = foundSaves [foundSaves.Count - 1];
-			loadFileText.text = loadFileText.text + "\n(" + saveToLoad + ")";
+			loadFileText.text = loadFileText.text + "\n" + saveToLoad;
 		} else {
 			saveToLoad = "";
 			loadButton.SetActive(false);
@@ -41,6 +43,22 @@ public class MainMenuButtons : MonoBehaviour {
 		game.TransitionTo (1.0f);
 		PlayerValues.pv.Load (saveToLoad);
 		Application.LoadLevel ("Day1");
+	}
+
+	public void ShowCredits(){
+		creditsPanel.SetActive (true);
+	}
+
+	public void HideCredits(){
+		creditsPanel.SetActive (false);
+	}
+
+	public void ShowOptions(){
+		optionsPanel.SetActive (true);
+	}
+	
+	public void HideOptions(){
+		optionsPanel.SetActive (false);
 	}
 
 	public void ClearAllSaves(){
