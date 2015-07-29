@@ -86,10 +86,10 @@ public class BurgBuilder : MonoBehaviour {
 	// elevate me to the heavens
 	public void Hoist(){
 		Debug.Log ("LATER, PLEBS");
-		foreach(GameObject go in GetChildParts()){
-			Food fd = go.GetComponent<Food>();
-			//fd.UnBecomeLilMac();
-		}
+		//foreach(GameObject go in GetChildParts()){
+		//	Food fd = go.GetComponent<Food>();
+		//	fd.UnBecomeLilMac();
+		//}
 		// make way
 		spawnBurgerComponent.TrashIt ();
 		burgJudgeCatcher.ResetTexts ();
