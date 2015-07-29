@@ -28,6 +28,8 @@ public class DayManager : MonoBehaviour {
 	public GraphicRaycaster graphicRaycaster;
 	public GameObject failureGUI;
 	public GameObject victoryGUI;
+	public GameObject victoryGUIText;
+	public GameObject rankGUIText;
 
 	public AudioMixerSnapshot title;
 	// Use this for initialization
@@ -117,8 +119,52 @@ public class DayManager : MonoBehaviour {
 	}
 
 	public void EnableVictoryGUI(){
+		int x = 0;
+		int y = 0;
+
+		foreach (DayOrderScore dos in PlayerValues.pv.scores) {
+			foreach (OrderScore os in dos.scores) {
+				x += os.value;
+				y += os.maxValue;
+			}
+		}
+
+		victoryGUIText.GetComponent<Text> ().text = "Wow, You scored " + x + " out of " + y + " points!";
+
+		rankGUIText.GetComponent<Text>().text = GetFinalRank (x,y);
+
 		victoryGUI.SetActive (true);
 		graphicRaycaster.enabled = true;
+	}
+
+	string GetFinalRank(int score, int maxScore) {
+		if (score == maxScore) {
+			return "Burger God";
+		}
+
+		float perc = (float)score / (float)maxScore;
+
+		if (perc > .9) {
+			return "Patty Queen";
+		}
+
+		if (perc > .75) {
+			return "Avid Couponist";
+		}
+
+		if (perc > .5) {
+			return "Struggle Smith";
+		}
+
+		if (perc > .3) {
+			return "Minimum Wage Mannequin";
+		}
+
+		if (perc > .1) {
+			return "Burger Baby";
+		}
+
+		return "Rat Party";
 	}
 	
 	public void DisableVictoryGUI(){
