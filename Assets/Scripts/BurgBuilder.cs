@@ -50,7 +50,6 @@ public class BurgBuilder : MonoBehaviour {
 
 		// Prepare the next order.
 		dayManager.GetNextOrder ();
-		pz.enabled = true;
 	}
 
 	public void DoIt(){
@@ -79,7 +78,6 @@ public class BurgBuilder : MonoBehaviour {
 	public void Hoist(){
 		Debug.Log ("LATER, PLEBS");
 		// @TODO: FREEZE AND WELD ALL FOOD. YEAH, WE GMOD NOW.
-		pz.enabled = false; // just in case
 		goTo = activePos;
 		from = idlePos;
 		active = true;
@@ -103,7 +101,7 @@ public class BurgBuilder : MonoBehaviour {
 		if (BelongsToMe (part)) {
 			part.GetComponent<Food>().Emancipate();
 			if(transform.childCount == 1){
-				pz.enabled = true;
+				//pz.enabled = true;
 			}
 			return true;
 		}
@@ -165,6 +163,5 @@ public class BurgBuilder : MonoBehaviour {
 				Destroy (t.gameObject);
 			}
 		}
-		pz.enabled = true;
 	}
 }

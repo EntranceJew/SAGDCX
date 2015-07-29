@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class PartZone : MonoBehaviour {
 	public BurgBuilder bb;
-	new public bool enabled = true;
 	
 	public Dictionary<GameObject, bool> collisions = new Dictionary<GameObject, bool>();
 	
