@@ -7418,7 +7418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldSpawn: 0
-  rateOfSpawn: .25
+  rateOfSpawn: .00999999978
   scaleRange: 3
   ship: {fileID: 595117136}
   spawnSource: {fileID: 595117138}

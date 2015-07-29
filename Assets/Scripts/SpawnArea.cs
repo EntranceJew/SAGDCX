@@ -36,6 +36,9 @@ public class SpawnArea : MonoBehaviour {
 		Vector3 position = getRandomPosition ();
 		GameObject go = (GameObject) Instantiate (objToSpawn, position, transform.rotation);
 		go.GetComponent<Collider> ().isTrigger = true;
+		go.GetComponent<Rigidbody> ().angularDrag = 1.0f;
+		go.GetComponent<Rigidbody> ().drag = 1.0f;
+		go.GetComponent<Rigidbody> ().mass = 50.0f;
 		return go;
 	}
 
