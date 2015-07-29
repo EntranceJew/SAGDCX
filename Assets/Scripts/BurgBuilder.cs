@@ -6,6 +6,7 @@ public class BurgBuilder : MonoBehaviour {
 	public PartZone pz;
 	public DayManager dayManager;
 	public SpawnBurgerComponent spawnBurgerComponent;
+	public BurgJudgeCatcher burgJudgeCatcher;
 
 	public Transform idlePos;
 	public Transform activePos;
@@ -14,6 +15,8 @@ public class BurgBuilder : MonoBehaviour {
 	public float timeToSwitch;
 
 	public bool inMotion = false;
+
+	public float timeBeforeForciblyUnHoist = 4.0f;
 
 	private Transform goTo;
 	private Transform from;
@@ -39,8 +42,17 @@ public class BurgBuilder : MonoBehaviour {
 
 	public void DeliverPayload(){
 		Debug.Log ("I'M HERE, FUCKERS");
-		spawnBurgerComponent.SpawnJudgeBurger(gameObject);
+		spawnBurgerComponent.SpawnJudgeBurger (gameObject);
+		TrashBurger ();
+		StartCoroutine ("LifeAlert");
 		//pz.enabled = true;
+	}
+
+	public IEnumerator LifeAlert() {
+		yield return new WaitForSeconds(timeBeforeForciblyUnHoist);
+		Debug.LogWarning ("HAD TO FORCIBLY UNHOIST");
+		burgJudgeCatcher.ChewOnThis ();
+		UnHoist ();
 	}
 
 	public void DeliverReturnPayload(){
@@ -86,6 +98,7 @@ public class BurgBuilder : MonoBehaviour {
 
 	// return me, mortals
 	public void UnHoist(){
+		StopCoroutine ("LifeAlert");
 		Debug.Log ("BACK, PLEBS");
 
 		// Trash the existing burger as soon as we're out of frame.
@@ -98,6 +111,7 @@ public class BurgBuilder : MonoBehaviour {
 	}
 	
 	public bool EmancipatePart(GameObject part){
+		Debug.Log ("WHY AM I EMANCIPATING " + part);
 		if (BelongsToMe (part)) {
 			part.GetComponent<Food>().Emancipate();
 			if(transform.childCount == 1){

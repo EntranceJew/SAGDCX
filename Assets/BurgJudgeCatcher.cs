@@ -10,6 +10,7 @@ public class BurgJudgeCatcher : MonoBehaviour {
 	public DayManager dayManager;
 	public Text moneyText;
 	public Shaker monitorShaker;
+	public SpawnBurgerComponent spawnBurgerComponent;
 
 	public Color gainMoney = new Color( 83.0f/255.0f, 255.0f/255.0f, 77.0f/255.0f);
 	public Color loseMoney = new Color(255.0f/255.0f,  77.0f/255.0f, 77.0f/255.0f);
@@ -24,15 +25,20 @@ public class BurgJudgeCatcher : MonoBehaviour {
 	
 	}
 
+	public void ChewOnThis(){
+		Debug.Log ("PROCESSING MENU INGREDIENTS");
+		score.EvaluateBurger(getOrder.CurrentOrder().completeOrder, spawnBurgerComponent.GetChildParts());
+		PlayerValues.pv.AddScores(score.GetAchievedScore(), score.GetMaxScore());
+		GetDollarDollarBillsYall();
+		// get down from there you rapscallion
+		burgBuilder.UnHoist();
+	}
+
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.tag == "Food") {
 			Debug.Log ("CAUGHT SOME FOOD, Y'ALL");
 			// @TODO: Display scores on the TV, time it out. You know, do what the people like.
-			score.EvaluateBurger(getOrder.CurrentOrder().completeOrder, burgBuilder.GetChildParts());
-			PlayerValues.pv.AddScores(score.GetAchievedScore(), score.GetMaxScore());
-			GetDollarDollarBillsYall();
-			// get down from there you rapscallion
-			burgBuilder.UnHoist();
+			ChewOnThis ();
 		} else {
 			Debug.Log ("WHAT TO HECK: " + col.gameObject.name);
 		}

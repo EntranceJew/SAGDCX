@@ -29,4 +29,14 @@ public class SpawnBurgerComponent : MonoBehaviour {
 	public void TrashIt(){
 		Destroy (theSpawnedClone);
 	}
+
+	public List<GameObject> GetChildParts(){
+		List<GameObject> burgObjects = new List<GameObject> ();
+		foreach (Transform t in theSpawnedClone.transform) {
+			if (t.name != "PartZone" && t.name != "Plate") {
+				burgObjects.Add (t.gameObject);
+			}
+		}
+		return burgObjects;
+	}
 }
