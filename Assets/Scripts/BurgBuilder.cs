@@ -88,6 +88,10 @@ public class BurgBuilder : MonoBehaviour {
 	// elevate me to the heavens
 	public void Hoist(){
 		Debug.Log ("LATER, PLEBS");
+		foreach(GameObject go in GetChildParts()){
+			Food fd = go.GetComponent<Food>();
+			fd.UnBecomeLilMac();
+		}
 		// @TODO: FREEZE AND WELD ALL FOOD. YEAH, WE GMOD NOW.
 		goTo = activePos;
 		from = idlePos;

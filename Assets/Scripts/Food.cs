@@ -44,6 +44,7 @@ public class Food : MonoBehaviour {
 
 	private AudioSource soundmaker;
 	private float spawnTime;
+	private List<Material> materials;
 
 	// Use this for initialization
 	void Start () {
@@ -120,35 +121,42 @@ public class Food : MonoBehaviour {
 	}
 
 	public void BecomeLilMac(){
+		Debug.Log ("==  WHAT'S YOUR FAVORITE KIND OF FLOWER?");
+		materials = new List<Material> ();
 		Material lilMat = Resources.Load("ResHighlight", typeof(Material)) as Material;
-		List<Renderer> renderers = new List<Renderer> (GetComponents<Renderer> ());
+		List<Renderer> renderers = new List<Renderer> ();
 		renderers.AddRange (gameObject.GetComponentsInChildren<Renderer> ());
 		// ALL THE RENDERERS GET TICKLED, ALL OF 'EM.
 		//Debug.Log (gameObject.GetComponents<Material> ());
 		foreach (Renderer renderer in renderers) {
-			Material[] mats = renderer.materials;
-			for(int i = 0; i < mats.Length; i++){
-				Debug.Log ("RENDERER? "+mats[i]);
-				mats[i] = lilMat;
+			Material[] newMats = new Material[renderer.materials.Length];
+			renderer.materials.CopyTo(newMats, 0);
+			//List<Material> newMats = new List<Material>(renderer.materials);
+			materials.AddRange(newMats);
+			for(int i = 0; i < newMats.Length ; i++){
+				Debug.Log ("RENDERER? "+newMats[i]);
+				newMats[i] = lilMat;
 			}
-			renderer.materials = mats;
+			renderer.materials = newMats;
 		}
 	}
 
 	public void UnBecomeLilMac(){
-		Material lilMat = Resources.Load("ResHighlight2", typeof(Material)) as Material;
-		List<Renderer> renderers = new List<Renderer> (GetComponents<Renderer> ());
+		List<Renderer> renderers = new List<Renderer> ();
 		renderers.AddRange (gameObject.GetComponentsInChildren<Renderer> ());
 		// ALL THE RENDERERS GET TICKLED, ALL OF 'EM.
 		//Debug.Log (gameObject.GetComponents<Material> ());
+		int gi = 0;
 		foreach (Renderer renderer in renderers) {
-			Material[] mats = renderer.materials;
-			for(int i = 0; i < mats.Length; i++){
-				Debug.Log ("RENDERER? "+mats[i]);
-				mats[i] = lilMat;
+			Material[] newMats = new Material[renderer.materials.Length];
+			renderer.materials.CopyTo(newMats, 0);
+			for(int i = 0; i < newMats.Length; i++){
+				newMats[i] = materials[gi];
 			}
-			renderer.materials = mats;
+			renderer.materials = newMats;
+			gi++;
 		}
+		materials = new List<Material> ();
 	}
 
 	// @TODO: Make this disentegrate it like the portal fizzler instead.
