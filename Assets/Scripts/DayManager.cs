@@ -207,6 +207,7 @@ public class DayManager : MonoBehaviour {
 		AddTodaysShipment ();
 		GetNextOrder ();
 		isDayActive = true;
+		//PlayerValues.pv.Earn (dayValues.GetTodaysEarnings ());
 	}
 
 	public void DestroyAllFoodInScene(){

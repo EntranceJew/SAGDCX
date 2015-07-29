@@ -107,6 +107,14 @@ public class DayValues : MonoBehaviour {
 		return values [PlayerValues.pv.dayNumber].paidWage;
 	}
 
+	public float GetTodaysWorkedHours(){
+		return values [PlayerValues.pv.dayNumber].workedHours;
+	}
+
+	public float GetTodaysEarnings(){
+		return GetTodaysPaidWage()*GetTodaysWorkedHours();
+	}
+
 	public float GetTodaysMistakeTolerance(){
 		return values [PlayerValues.pv.dayNumber].mistakeTolerance;
 	}
