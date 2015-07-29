@@ -45,7 +45,6 @@ public class BurgBuilder : MonoBehaviour {
 		spawnBurgerComponent.SpawnJudgeBurger (gameObject);
 		TrashBurger ();
 		StartCoroutine ("LifeAlert");
-		//pz.enabled = true;
 	}
 
 	public IEnumerator LifeAlert() {
@@ -115,7 +114,7 @@ public class BurgBuilder : MonoBehaviour {
 		if (BelongsToMe (part)) {
 			part.GetComponent<Food>().Emancipate();
 			if(transform.childCount == 1){
-				//pz.enabled = true;
+				// we used to enable here, now we don't
 			}
 			return true;
 		}
