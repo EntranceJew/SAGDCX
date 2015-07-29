@@ -68,13 +68,10 @@ public class MoveToCameraOnClick : MonoBehaviour {
 		}
 
 		if (inPosition) {
-			Camera.main.GetComponent<LookTowards>().attached = false;
 			MoveToWall ();
 		} else {
 			if (!Camera.main.GetComponent<LookTowards>().attached) {
 				// don't get closer if we're shaking
-
-				Camera.main.GetComponent<LookTowards>().attached = true;
 				MoveToCamera ();
 			}
 		}
@@ -90,6 +87,7 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	}
 
 	public void MoveToCamera(){
+		Camera.main.GetComponent<LookTowards>().attached = true;
 		goTo = cameraPosition;
 		inPosition = true;
 		DoIt ();
@@ -97,6 +95,7 @@ public class MoveToCameraOnClick : MonoBehaviour {
 	}
 
 	public void MoveToWall(){
+		Camera.main.GetComponent<LookTowards>().attached = false;
 		goTo = ownPosition;
 		inPosition = false;
 		DoIt ();
