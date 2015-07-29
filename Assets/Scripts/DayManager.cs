@@ -344,7 +344,7 @@ public class DayManager : MonoBehaviour {
 		temp.transform.SetParent (bigCanvasObject.transform);
 		temp.name = "TitleText";
 		temp.transform.localPosition = new Vector3 (0, 240, 0);
-		temp.GetComponent<Text> ().text = "Goodbye day " + (day + 1) + " we will miss you"; //day + 1 because we don't want people to see "day 0" that sounds stupid.
+		temp.GetComponent<Text> ().text = "Goodbye day " + (day + 1) + ", we will miss you."; //day + 1 because we don't want people to see "day 0" that sounds stupid.
 		destroyMeLater.Add (temp);
 
 		int i = 0;
@@ -356,7 +356,7 @@ public class DayManager : MonoBehaviour {
 				temp.transform.SetParent (bigCanvasObject.transform);
 				temp.name = "ScoreRowText" + i;
 				temp.transform.localPosition = new Vector3 (0, ((48 * i) / 2) - ((24 * PlayerValues.pv.scores[day].scores.Count) / 2), 0);
-				temp.GetComponent<Text> ().text = "Order " + i + " got " + os.value + " out of " + os.maxValue;
+				temp.GetComponent<Text> ().text = "Order " + (i+1) + ": Got " + os.value + " out of " + os.maxValue;
 				destroyMeLater.Add (temp);
 				i++;
 			}
