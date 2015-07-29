@@ -61,7 +61,13 @@ public class RowManager : MonoBehaviour {
 			stockText.text = amtLeft.ToString ();
 		}
 
-		demandText.text = dayValues.GetTodaysDemandFor(represents).ToString();
+		int dmndValue = dayValues.GetTodaysDemandFor (represents);
+
+		if (dmndValue <= 0) {
+			demandText.text = "None!";
+		} else {
+			demandText.text = dmndValue.ToString ();
+		}
 	}
 
 	public void Add(){
