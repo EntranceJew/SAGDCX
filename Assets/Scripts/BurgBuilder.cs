@@ -88,7 +88,7 @@ public class BurgBuilder : MonoBehaviour {
 		Debug.Log ("LATER, PLEBS");
 		foreach(GameObject go in GetChildParts()){
 			Food fd = go.GetComponent<Food>();
-			fd.UnBecomeLilMac();
+			//fd.UnBecomeLilMac();
 		}
 		// make way
 		spawnBurgerComponent.TrashIt ();
