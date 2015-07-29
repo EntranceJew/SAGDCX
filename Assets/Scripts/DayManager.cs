@@ -21,6 +21,9 @@ public class DayManager : MonoBehaviour {
 	public Shipment ship;
 	public GameObject bigCanvasObject;
 	public GameObject canvasTextObject;
+	public Text lossReason;
+	public Text hintText;
+	public List<string> hints;
 
 	public GraphicRaycaster graphicRaycaster;
 	public GameObject failureGUI;
@@ -76,7 +79,7 @@ public class DayManager : MonoBehaviour {
 		EnableVictoryGUI ();
 	}
 
-	public void LoseDay(){
+	public void LoseDay(string reason){
 		// disable spawners
 		isDayActive = false;
 		// trash food
@@ -89,7 +92,18 @@ public class DayManager : MonoBehaviour {
 		shouldBlack = true;
 		// @TODO: Silence audio.
 		// show the UI
+		lossReason.text = reason;
+		hintText.text = "Hint: " + GetNewHint ();
 		EnableFailureGUI ();
+	}
+
+	public string GetNewHint(){
+		int randDex = Random.Range (0, hints.Count);
+		if (hints [randDex] != null) {
+			return hints [randDex];
+		} else {
+			return "Remember to set hint texts.";
+		}
 	}
 
 	public void EnableFailureGUI(){
