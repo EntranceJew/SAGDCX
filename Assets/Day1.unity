@@ -1404,7 +1404,7 @@ Transform:
   - {fileID: 570893169}
   - {fileID: 145809767}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1 &99134897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,7 +1942,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bb: {fileID: 1136804442}
-  enabled: 1
 --- !u!4 &145809767 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 467dc7fbf08ba684ca2cb58968f4bb82, type: 3}
@@ -6409,6 +6408,7 @@ MonoBehaviour:
   dayManager: {fileID: 2080867310}
   moneyText: {fileID: 389860629}
   monitorShaker: {fileID: 1448146598}
+  spawnBurgerComponent: {fileID: 1136804444}
   gainMoney: {r: .325490206, g: 1, b: .301960796, a: 1}
   loseMoney: {r: 1, g: .301960826, b: .301960826, a: 1}
 --- !u!1 &538077716
@@ -6679,6 +6679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burgBuilder: {fileID: 1136804442}
   inactiveClip: {fileID: 0}
+  shouldDing: 1
 --- !u!1 &548954021
 GameObject:
   m_ObjectHideFlags: 0
@@ -8146,7 +8147,7 @@ Transform:
   - {fileID: 548866136}
   - {fileID: 1897102330}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1001 &666952406
 Prefab:
   m_ObjectHideFlags: 0
@@ -10152,6 +10153,7 @@ MonoBehaviour:
   dayValues: {fileID: 786474129}
   lookAt: {fileID: 1628474893}
   mouseObject: {fileID: 1685270725}
+  ringBell: {fileID: 1355821373}
 --- !u!4 &772638270 stripped
 Transform:
   m_PrefabParentObject: {fileID: 429214, guid: deb720ef5e5350d4882d29bc1e36e5c8, type: 2}
@@ -13716,11 +13718,13 @@ MonoBehaviour:
   pz: {fileID: 139743877}
   dayManager: {fileID: 2080867310}
   spawnBurgerComponent: {fileID: 1136804444}
+  burgJudgeCatcher: {fileID: 520390644}
   idlePos: {fileID: 978247985}
   activePos: {fileID: 1696997612}
   active: 0
   timeToSwitch: 10
   inMotion: 0
+  timeBeforeForciblyUnHoist: 5
 --- !u!4 &1136804443
 Transform:
   m_ObjectHideFlags: 0
@@ -16343,6 +16347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burgBuilder: {fileID: 1136804442}
   inactiveClip: {fileID: 8300000, guid: d9732a777d5fa8043967d37ba5e3f450, type: 3}
+  shouldDing: 1
 --- !u!135 &1355821377
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -24124,15 +24129,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.5500002
+      value: .25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.775425
+      value: 18.7800007
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -44.1551781
+      value: -37.6899986
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -24172,7 +24177,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8eb0f799d67cedc4a8d027c583bf2ae1, type: 3}
